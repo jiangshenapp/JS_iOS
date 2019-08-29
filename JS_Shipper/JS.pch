@@ -1,0 +1,31 @@
+//
+//  JS.pch
+//  JS_Driver
+//
+//  Created by Jason_zyl on 2019/3/6.
+//  Copyright © 2019 Jason_zyl. All rights reserved.
+//
+
+#ifndef JS_pch
+#define JS_pch
+
+#import "Public.h"
+
+/******************************keys****************************/
+
+#define kAPPScheme  @"com.js.shipper"
+
+// 微信key
+#define kWechatKey @"wxc681f388f78e07c9"
+
+// 友盟key
+#define kUMKey     @"5c710878b465f5fa50000071"
+
+// 网络请求key
+#define kSignKey   @"ghOwfR7Wz44cbKU93KVSxwYXPGloNu"
+#define kNonceStr  [SignKeyUtil getNonceString]
+
+
+
+
+#endif /* JS_pch */
