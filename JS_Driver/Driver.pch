@@ -10,7 +10,7 @@
 #define Driver_pch
 
 #import "Public.h"
-#import "DriverURLConfig.h"
+#import "DriverConfig.h"
 
 #define kAPPScheme  @"com.js.transporter"
 // 微信key

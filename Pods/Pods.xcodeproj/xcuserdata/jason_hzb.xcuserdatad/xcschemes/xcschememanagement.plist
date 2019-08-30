@@ -20,8 +20,10 @@
 		</dict>
 		<key>FLAnimatedImage.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>23</integer>
 		</dict>
 		<key>FXToast.xcscheme</key>
 		<dict>
@@ -60,8 +62,10 @@
 		</dict>
 		<key>MBProgressHUD.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>24</integer>
 		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
@@ -163,6 +167,17 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>4A8E8992707D01510894596DB9BCCA00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>82B0A41D3031FF27D78E17B0A9A46FB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

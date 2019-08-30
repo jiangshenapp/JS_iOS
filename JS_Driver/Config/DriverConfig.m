@@ -1,13 +1,13 @@
 //
-//  DriverURLConfig.m
+//  DriverConfig.m
 //  JS_Driver
 //
 //  Created by zhanbing han on 2019/8/29.
 //  Copyright © 2019 zhanbing han. All rights reserved.
 //
 
-#import "DriverURLConfig.h"
+#import "DriverConfig.h"
 
-@implementation DriverURLConfig
+@implementation DriverConfig
 
 @end

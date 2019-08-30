@@ -1,5 +1,5 @@
 //
-//  DriverURLConfig.h
+//  DriverConfig.h
 //  JS_Driver
 //
 //  Created by zhanbing han on 2019/8/29.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DriverURLConfig : NSObject
+@interface DriverConfig : NSObject
 
 #define URL_RechargeDriverDeposit @"/app/account/rechargeDriverDeposit"//运力端缴纳保证金
 
