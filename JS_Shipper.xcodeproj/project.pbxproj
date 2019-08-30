@@ -2008,12 +2008,12 @@
 		20118DA222DEE95F00A195D1 /* Chatroom */ = {
 			isa = PBXGroup;
 			children = (
+				20118DAA22DEE95F00A195D1 /* EMCreateChatroomViewController.h */,
 				20118DA322DEE95F00A195D1 /* EMCreateChatroomViewController.m */,
+				20118DB822DEE95F00A195D1 /* EMChatroomsViewController.h */,
 				20118DA422DEE95F00A195D1 /* EMChatroomsViewController.m */,
 				20118DA522DEE95F00A195D1 /* ChatroomImgs */,
-				20118DAA22DEE95F00A195D1 /* EMCreateChatroomViewController.h */,
 				20118DAB22DEE95F00A195D1 /* ChatroomInfo */,
-				20118DB822DEE95F00A195D1 /* EMChatroomsViewController.h */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";

@@ -43,9 +43,10 @@
 // AppDelegate
 #define JSAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
-//1货主 2司机
-#define AppChannel         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"channel"]
+
 #define EaseMobKey @"1114190326030612#android-driver"
+#define OnlineCustomerEaseMobKey @"kefuchannelimid_484880"
+
 // cache key
 #define kServerKey @"ServerKey"
 #define kWifiKey   @"WifiKey"
@@ -113,6 +114,8 @@
 #define AppBuildVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 // app名称
 #define AppName         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+//1货主 2司机
+#define AppChannel         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"channel"]
 // 当前系统语言
 #define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
 

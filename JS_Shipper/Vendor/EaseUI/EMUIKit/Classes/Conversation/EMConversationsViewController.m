@@ -175,6 +175,7 @@
     if (dic1.count>0) {
         NSString *nickName = dic1[@"nickName"];
         NSString *avatar = dic1[@"avatar"];
+        model.name = model.emModel.conversationId;
         if (![NSString isEmpty:nickName]) {
             model.name = nickName;
         }

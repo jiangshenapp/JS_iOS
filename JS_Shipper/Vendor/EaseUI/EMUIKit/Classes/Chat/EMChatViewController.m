@@ -202,6 +202,9 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.text = self.conversationModel.name;
     [titleView addSubview:self.titleLabel];
+    if ([self.conversationModel.name isEqualToString:OnlineCustomerEaseMobKey]) {
+        self.titleLabel.text = @"在线客服";
+    }
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(titleView);
         make.left.equalTo(titleView).offset(5);

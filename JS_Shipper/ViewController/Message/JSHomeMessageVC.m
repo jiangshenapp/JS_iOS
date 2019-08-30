@@ -50,6 +50,6 @@
 */
 
 - (IBAction)chatWithCustomAction:(UIButton *)sender {
-    [CustomEaseUtils EaseChatConversationID:@"15737937177"];
+    [CustomEaseUtils EaseChatConversationID:OnlineCustomerEaseMobKey];
 }
 @end
