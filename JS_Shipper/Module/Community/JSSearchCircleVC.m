@@ -1,24 +1,30 @@
 //
-//  JSCommunityVC.m
-//  JS_Driver
+//  JSSearchCircleVC.m
+//  JS_Shipper
 //
-//  Created by Jason_zyl on 2019/3/6.
-//  Copyright © 2019 Jason_zyl. All rights reserved.
+//  Created by zhanbing han on 2019/9/2.
+//  Copyright © 2019 zhanbing han. All rights reserved.
 //
 
-#import "JSCommunityVC.h"
+#import "JSSearchCircleVC.h"
+#import "CircleListTabCell.h"
 
-@interface JSCommunityVC ()
+@interface JSSearchCircleVC ()
 
 @end
 
-@implementation JSCommunityVC
+@implementation JSSearchCircleVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"社区";
-    
+    self.title = @"找圈子";
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 45, 34)];
+    UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(15, 7, 20, 20)];
+    img.image = [UIImage imageNamed:@"equipment_icon_search_gray"];
+    [view addSubview:img];
+    self.searchTF.leftView = view;
+    self.searchTF.leftViewMode = UITextFieldViewModeAlways;
+    // Do any additional setup after loading the view.
 }
 
 #pragma mark - UITableView 代理
@@ -28,7 +34,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CircleListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CircleTabCell"];
+    CircleListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCircleTabCell"];
     return cell;
 }
 

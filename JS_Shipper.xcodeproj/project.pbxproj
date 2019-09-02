@@ -283,6 +283,7 @@
 		203D7FA2229BDC6100A3D847 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7FA1229BDC6100A3D847 /* BaiduMapAPI_Search.framework */; };
 		203D8EF6224DFC460066333A /* JSPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203D8EF5224DFC460066333A /* JSPayVC.m */; };
 		203D8EF9224DFDE10066333A /* JSMyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203D8EF8224DFDE10066333A /* JSMyInfoVC.m */; };
+		20421FD9231CC169007CB64B /* JSCircleContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20421FD8231CC169007CB64B /* JSCircleContentVC.m */; };
 		204AFAAF22A4CCCB0077D8C0 /* ListOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 204AFAAE22A4CCCB0077D8C0 /* ListOrderModel.m */; };
 		204E5299227068E600DE65A8 /* JSFeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 204E5298227068E600DE65A8 /* JSFeedBackVC.m */; };
 		2055C111225C3B4D000E13C3 /* JSSystemMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2055C110225C3B4D000E13C3 /* JSSystemMessageVC.m */; };
@@ -791,6 +792,12 @@
 		20F934E0224B18B4008C80DB /* JSRechargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F934DF224B18B4008C80DB /* JSRechargeVC.m */; };
 		20F934E3224B1C95008C80DB /* JSWithdrawalMoneyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F934E2224B1C95008C80DB /* JSWithdrawalMoneyVC.m */; };
 		20F934E6224B2469008C80DB /* JSBillDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F934E5224B2469008C80DB /* JSBillDetailsVC.m */; };
+		20FB0377231CE9BE0015787F /* JSSearchCircleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0376231CE9BE0015787F /* JSSearchCircleVC.m */; };
+		20FB037D231CEBB60015787F /* CircleListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB037C231CEBB60015787F /* CircleListTabCell.m */; };
+		20FB037F231CF32E0015787F /* JSCircleContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20421FD8231CC169007CB64B /* JSCircleContentVC.m */; };
+		20FB0380231CF3300015787F /* JSSearchCircleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0376231CE9BE0015787F /* JSSearchCircleVC.m */; };
+		20FB0381231CF3330015787F /* CircleListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB037C231CEBB60015787F /* CircleListTabCell.m */; };
+		20FB0384231CF5C90015787F /* JSTopicDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0383231CF5C90015787F /* JSTopicDetailVC.m */; };
 		A00A227822A5FA57002E2E0C /* JSOrderDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00A227722A5FA57002E2E0C /* JSOrderDetailsVC.m */; };
 		A02221D922C799B9006AD29A /* AEFlowLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02221D722C799B9006AD29A /* AEFlowLayoutView.m */; };
 		A02221DC22C79A09006AD29A /* AEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A02221DA22C79A09006AD29A /* AEButton.m */; };
@@ -1287,6 +1294,8 @@
 		203D8EF5224DFC460066333A /* JSPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPayVC.m; sourceTree = "<group>"; };
 		203D8EF7224DFDE10066333A /* JSMyInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyInfoVC.h; sourceTree = "<group>"; };
 		203D8EF8224DFDE10066333A /* JSMyInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyInfoVC.m; sourceTree = "<group>"; };
+		20421FD7231CC169007CB64B /* JSCircleContentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCircleContentVC.h; sourceTree = "<group>"; };
+		20421FD8231CC169007CB64B /* JSCircleContentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCircleContentVC.m; sourceTree = "<group>"; };
 		204AFAAD22A4CCCB0077D8C0 /* ListOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListOrderModel.h; sourceTree = "<group>"; };
 		204AFAAE22A4CCCB0077D8C0 /* ListOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListOrderModel.m; sourceTree = "<group>"; };
 		204E5297227068E600DE65A8 /* JSFeedBackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSFeedBackVC.h; sourceTree = "<group>"; };
@@ -1496,6 +1505,12 @@
 		20F934E2224B1C95008C80DB /* JSWithdrawalMoneyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSWithdrawalMoneyVC.m; sourceTree = "<group>"; };
 		20F934E4224B2469008C80DB /* JSBillDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBillDetailsVC.h; sourceTree = "<group>"; };
 		20F934E5224B2469008C80DB /* JSBillDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBillDetailsVC.m; sourceTree = "<group>"; };
+		20FB0375231CE9BE0015787F /* JSSearchCircleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSearchCircleVC.h; sourceTree = "<group>"; };
+		20FB0376231CE9BE0015787F /* JSSearchCircleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSearchCircleVC.m; sourceTree = "<group>"; };
+		20FB037B231CEBB60015787F /* CircleListTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleListTabCell.h; sourceTree = "<group>"; };
+		20FB037C231CEBB60015787F /* CircleListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleListTabCell.m; sourceTree = "<group>"; };
+		20FB0382231CF5C90015787F /* JSTopicDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTopicDetailVC.h; sourceTree = "<group>"; };
+		20FB0383231CF5C90015787F /* JSTopicDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTopicDetailVC.m; sourceTree = "<group>"; };
 		3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.release.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.release.xcconfig"; sourceTree = "<group>"; };
 		485FFBE123B387C4A4ABBCD1 /* Pods-JS_Shipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.debug.xcconfig"; sourceTree = "<group>"; };
 		9B67392921C6C16FAB28EC6A /* Pods-JS_Shipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.debug.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2909,6 +2924,13 @@
 			children = (
 				20BD73752248BE430020EA5D /* JSCommunityVC.h */,
 				20BD73762248BE430020EA5D /* JSCommunityVC.m */,
+				20421FD7231CC169007CB64B /* JSCircleContentVC.h */,
+				20421FD8231CC169007CB64B /* JSCircleContentVC.m */,
+				20FB0375231CE9BE0015787F /* JSSearchCircleVC.h */,
+				20FB0376231CE9BE0015787F /* JSSearchCircleVC.m */,
+				20FB0382231CF5C90015787F /* JSTopicDetailVC.h */,
+				20FB0383231CF5C90015787F /* JSTopicDetailVC.m */,
+				20FB037E231CEC240015787F /* View */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -3082,6 +3104,15 @@
 				20BD73A62248BE440020EA5D /* XLGLogVC.m */,
 			);
 			path = "接口日志";
+			sourceTree = "<group>";
+		};
+		20FB037E231CEC240015787F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20FB037B231CEBB60015787F /* CircleListTabCell.h */,
+				20FB037C231CEBB60015787F /* CircleListTabCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A02221D622C799B9006AD29A /* FlowLayout(仿安卓流式布局) */ = {
@@ -3822,6 +3853,7 @@
 				205A8FED23175F72004C756E /* EMMsgVideoBubbleView.m in Sources */,
 				205A8FEE23175F72004C756E /* EMChatroomInfoViewController.m in Sources */,
 				205A8FEF23175F72004C756E /* PSTCollectionViewCell.m in Sources */,
+				20FB037F231CF32E0015787F /* JSCircleContentVC.m in Sources */,
 				205A8FF023175F72004C756E /* JSConfirmAddressMapVC.m in Sources */,
 				205A8FF123175F72004C756E /* AEIndicator.m in Sources */,
 				205A8FF223175F72004C756E /* XLGMapNavVC.m in Sources */,
@@ -3938,6 +3970,7 @@
 				205A905523175F72004C756E /* BaseNC.m in Sources */,
 				205A905623175F72004C756E /* wav.mm in Sources */,
 				A022CCD323191F5E00E3EDD5 /* MOFSDatePicker.m in Sources */,
+				20FB0381231CF3330015787F /* CircleListTabCell.m in Sources */,
 				20815E9E23176D9700E24C75 /* OrderInfoModel.m in Sources */,
 				205A905723175F72004C756E /* MKMapView+ZoomLevel.m in Sources */,
 				205A905823175F72004C756E /* RegularPhoneTF.m in Sources */,
@@ -3952,6 +3985,7 @@
 				205A906223175F72004C756E /* JHHJAnimation.m in Sources */,
 				205A906323175F72004C756E /* ListOrderModel.m in Sources */,
 				205A906423175F72004C756E /* NetworkManager.m in Sources */,
+				20FB0380231CF3300015787F /* JSSearchCircleVC.m in Sources */,
 				205A906523175F72004C756E /* FilterCustomView.m in Sources */,
 				205A906623175F72004C756E /* CityCustomView.m in Sources */,
 				205A906723175F72004C756E /* TradeRecordModel.m in Sources */,
@@ -4078,6 +4112,7 @@
 				20118E6D22DEE96000A195D1 /* EMChatroomOwnerViewController.m in Sources */,
 				20118F6922DEEA7600A195D1 /* MWPhoto.m in Sources */,
 				20118F6622DEEA7600A195D1 /* MWZoomingScrollView.m in Sources */,
+				20FB037D231CEBB60015787F /* CircleListTabCell.m in Sources */,
 				20118F7E22DEEA7600A195D1 /* EMTextView.m in Sources */,
 				20118F4522DEEA7600A195D1 /* UIViewController+Util.m in Sources */,
 				20781E6F224A054F00F0767D /* JSAuthenticationVC.m in Sources */,
@@ -4118,6 +4153,7 @@
 				20118E7322DEE96000A195D1 /* EMCreateGroupViewController.m in Sources */,
 				20118F6B22DEEA7600A195D1 /* MWGridViewController.m in Sources */,
 				20118E1E22DEE96000A195D1 /* EMChatBar.m in Sources */,
+				20FB0377231CE9BE0015787F /* JSSearchCircleVC.m in Sources */,
 				20BD73C52248BE440020EA5D /* BaseTabBarVC.m in Sources */,
 				20118E6F22DEE96000A195D1 /* EMChatroomBlacklistViewController.m in Sources */,
 				20BD74182248C6D70020EA5D /* JSForgetPwdVC.m in Sources */,
@@ -4127,6 +4163,7 @@
 				20118F7822DEEA7600A195D1 /* PSTGridLayoutRow.m in Sources */,
 				20BD74122248C1FC0020EA5D /* JSRegisterVC.m in Sources */,
 				2055C111225C3B4D000E13C3 /* JSSystemMessageVC.m in Sources */,
+				20FB0384231CF5C90015787F /* JSTopicDetailVC.m in Sources */,
 				20118E4F22DEE96000A195D1 /* EMChatViewController.m in Sources */,
 				20118E2722DEE96000A195D1 /* EMMsgImageBubbleView.m in Sources */,
 				20BD73C32248BE440020EA5D /* JSPaswdLoginVC.m in Sources */,
@@ -4200,6 +4237,7 @@
 				20BD73CB2248BE440020EA5D /* XLGInternalDemoVC.m in Sources */,
 				20BD73C82248BE440020EA5D /* BaseNavBar.m in Sources */,
 				A033F2DD22B61C030051C285 /* JSChangeOrderDetailVC.m in Sources */,
+				20421FD9231CC169007CB64B /* JSCircleContentVC.m in Sources */,
 				20118F6522DEEA7600A195D1 /* MWCaptionView.m in Sources */,
 				20118E1F22DEE96000A195D1 /* EMMessageCell.m in Sources */,
 				203D8EF6224DFC460066333A /* JSPayVC.m in Sources */,

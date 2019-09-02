@@ -1,24 +1,23 @@
 //
-//  JSCommunityVC.m
-//  JS_Driver
+//  JSCircleContentVC.m
+//  JS_Shipper
 //
-//  Created by Jason_zyl on 2019/3/6.
-//  Copyright © 2019 Jason_zyl. All rights reserved.
+//  Created by zhanbing han on 2019/9/2.
+//  Copyright © 2019 zhanbing han. All rights reserved.
 //
 
-#import "JSCommunityVC.h"
+#import "JSCircleContentVC.h"
 
-@interface JSCommunityVC ()
+@interface JSCircleContentVC ()
 
 @end
 
-@implementation JSCommunityVC
+@implementation JSCircleContentVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"社区";
-    
+    self.title = @"XXX的圈子";
+    // Do any additional setup after loading the view.
 }
 
 #pragma mark - UITableView 代理
@@ -28,14 +27,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CircleListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CircleTabCell"];
+    CircleContentTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CircleContentTabCell"];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *vc = [Utils getViewController:@"Community" WithVCName:@"JSCircleContentVC"];
-    [self.navigationController pushViewController:vc animated:YES];
-}
+
+
 
 /*
 #pragma mark - Navigation
@@ -46,5 +43,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+@end
+
+
+@implementation CircleContentTabCell
+
 
 @end

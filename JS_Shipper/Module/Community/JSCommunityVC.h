@@ -7,11 +7,13 @@
 //
 
 #import "BaseVC.h"
+#import "CircleListTabCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSCommunityVC : BaseVC
 
 @end
+
 
 NS_ASSUME_NONNULL_END
