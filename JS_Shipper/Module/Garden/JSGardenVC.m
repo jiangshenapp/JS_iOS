@@ -293,6 +293,7 @@
         cell.sendMsgBtn.tag = 2000+indexPath.section;
         [cell.iphoneCallBtn addTarget:self action:@selector(callAction:) forControlEvents:UIControlEventTouchUpInside];
         [cell.sendMsgBtn addTarget:self action:@selector(chatAction:) forControlEvents:UIControlEventTouchUpInside];
+        cell.starView.hidden = _pageFlag;
         return cell;
     }
     else if (_pageFlag == 1) {
@@ -325,6 +326,19 @@
     label.width = view.width-24;
     [view addSubview:label];
     return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_pageFlag==0) {
+        return 145;
+    }
+    else if(_pageFlag==1){
+        return 120;
+    }
+    else if(_pageFlag==2){
+        return 100;
+    }
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

@@ -8,6 +8,7 @@
 
 #import "BaseVC.h"
 #import "DriverModel.h"
+#import "YYStarView.h"
 
 typedef void (^SelectDriverBlock) (DriverModel * _Nullable driverModel);
 
@@ -44,6 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLab;
 @property (weak, nonatomic) IBOutlet UILabel *driverTypeLab;
+@property (weak, nonatomic) IBOutlet YYStarView *starView;
 
 - (void)setContentWithModel:(DriverModel *)model;
 

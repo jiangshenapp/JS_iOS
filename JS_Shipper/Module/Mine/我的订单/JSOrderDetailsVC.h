@@ -8,6 +8,7 @@
 
 #import "BaseVC.h"
 #import "ListOrderModel.h"
+#import "YYStarView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 订单model */
 @property (nonatomic,retain) ListOrderModel *model;
+@property (weak, nonatomic) IBOutlet YYStarView *starView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScroView;
 /** 预约N分钟视图 */

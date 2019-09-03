@@ -20,6 +20,12 @@
     [super viewDidLoad];
     
     [self createTabBar];
+    self.tabBar.barStyle = UIBarStyleBlack;
+    [UITabBar appearance].translucent = NO;
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
+    self.tabBar.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.tabBar.layer.shadowOffset = CGSizeMake(0, -1);
+    self.tabBar.layer.shadowOpacity =0.2;
 }
 
 - (void)createTabBar {

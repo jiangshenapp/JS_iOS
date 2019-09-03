@@ -23,6 +23,7 @@
         self.countBtn.hidden = YES;
         self.contentLab.text = model.remark;
     }
+    self.starView.starScore = 3;
 }
 
 @end

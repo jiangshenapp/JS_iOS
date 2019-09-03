@@ -46,6 +46,11 @@
 }
 
 - (void)createUI {
+    self.starView.starScore = 4;
+    self.starView.starSize = CGSizeMake(14, 14);
+    self.signInBtn.borderColor = AppThemeColor;
+    self.signInBtn.borderWidth = 1;
+    self.signInBtn.cornerRadius = 2;
     menuBtnH = (WIDTH-2)/LineCount;
     NSInteger line = menuTileArr.count%LineCount==0?(menuTileArr.count/LineCount):(menuTileArr.count/LineCount+1);
     _bottomViewH.constant = menuBtnH*line;

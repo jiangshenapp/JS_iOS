@@ -7,9 +7,11 @@
 //
 
 #import "JSCarSourceDetailVC.h"
+#import "YYStarView.h"
 
 @interface JSCarSourceDetailVC ()
 
+@property (weak, nonatomic) IBOutlet YYStarView *starView;
 @property (weak, nonatomic) IBOutlet UIImageView *carImgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *carImgH;
 @property (weak, nonatomic) IBOutlet UILabel *startAddressLab;
@@ -27,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"车源详情";
+    self.starView.starScore = 4;
     [self refreshUI];
     [self getData];
 }

@@ -2948,12 +2948,17 @@ Cg
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="张女士" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDj-mk-fZ5">
-                                                <rect key="frame" x="60" y="10" width="204" height="20"/>
+                                                <rect key="frame" x="60" y="10" width="43" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHj-BF-lIP" customClass="YYStarView">
+                                                <rect key="frame" x="113" y="12" width="87" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="介绍文字text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTC-I5-eaB">
                                                 <rect key="frame" x="60" y="30" width="200" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -3435,6 +3440,7 @@ Cg
                         <outlet property="receiptNumerLab" destination="Lrq-rH-qKS" id="OMY-EO-TVA"/>
                         <outlet property="receiptView" destination="SJF-go-b7R" id="UXu-9z-ZN5"/>
                         <outlet property="sendMSgBtn" destination="FZ2-td-3dR" id="gV0-Sa-Y0y"/>
+                        <outlet property="starView" destination="wHj-BF-lIP" id="TzF-uv-31e"/>
                         <outlet property="startAddressLab" destination="ls5-Wy-NR8" id="1q6-uh-xhf"/>
                         <outlet property="tileView1" destination="qSB-9W-zzu" id="A6w-5B-S3I"/>
                         <outlet property="titleView2" destination="VZk-3n-rvf" id="oPt-o8-vW5"/>

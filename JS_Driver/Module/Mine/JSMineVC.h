@@ -7,10 +7,13 @@
 //
 
 #import "BaseVC.h"
+#import "YYStarView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSMineVC : BaseVC
+@property (weak, nonatomic) IBOutlet YYStarView *starView;
+@property (weak, nonatomic) IBOutlet UIButton *signInBtn;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;

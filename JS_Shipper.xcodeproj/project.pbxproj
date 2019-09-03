@@ -789,6 +789,9 @@
 		20BD741B2248C8230020EA5D /* JSResetPswVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD741A2248C8230020EA5D /* JSResetPswVC.m */; };
 		20CDDAFE22C0CB0D005432F3 /* JSSelectGoodsNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CDDAFD22C0CB0D005432F3 /* JSSelectGoodsNameVC.m */; };
 		20DC7D6522BB68BF003CB4FD /* noDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DC7D6422BB68BE003CB4FD /* noDataView.xib */; };
+		20E41985231E1587001E89C7 /* JSSendTopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E41984231E1587001E89C7 /* JSSendTopicVC.m */; };
+		20E41988231E3AD7001E89C7 /* JSManagerCircleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E41987231E3AD7001E89C7 /* JSManagerCircleVC.m */; };
+		20E41989231E4089001E89C7 /* JSManagerCircleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E41987231E3AD7001E89C7 /* JSManagerCircleVC.m */; };
 		20F934E0224B18B4008C80DB /* JSRechargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F934DF224B18B4008C80DB /* JSRechargeVC.m */; };
 		20F934E3224B1C95008C80DB /* JSWithdrawalMoneyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F934E2224B1C95008C80DB /* JSWithdrawalMoneyVC.m */; };
 		20F934E6224B2469008C80DB /* JSBillDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F934E5224B2469008C80DB /* JSBillDetailsVC.m */; };
@@ -798,6 +801,13 @@
 		20FB0380231CF3300015787F /* JSSearchCircleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0376231CE9BE0015787F /* JSSearchCircleVC.m */; };
 		20FB0381231CF3330015787F /* CircleListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB037C231CEBB60015787F /* CircleListTabCell.m */; };
 		20FB0384231CF5C90015787F /* JSTopicDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0383231CF5C90015787F /* JSTopicDetailVC.m */; };
+		20FB0389231D000A0015787F /* YYStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0386231D00090015787F /* YYStarView.m */; };
+		20FB038A231D000A0015787F /* YYStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0386231D00090015787F /* YYStarView.m */; };
+		20FB038B231D000A0015787F /* YYStarView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20FB0387231D00090015787F /* YYStarView.bundle */; };
+		20FB038C231D000A0015787F /* YYStarView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20FB0387231D00090015787F /* YYStarView.bundle */; };
+		20FB038D231D20710015787F /* JSTopicDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0383231CF5C90015787F /* JSTopicDetailVC.m */; };
+		20FB0390231E09220015787F /* JSSendCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB038F231E09220015787F /* JSSendCommentVC.m */; };
+		20FB0391231E09220015787F /* JSSendCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB038F231E09220015787F /* JSSendCommentVC.m */; };
 		A00A227822A5FA57002E2E0C /* JSOrderDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00A227722A5FA57002E2E0C /* JSOrderDetailsVC.m */; };
 		A02221D922C799B9006AD29A /* AEFlowLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02221D722C799B9006AD29A /* AEFlowLayoutView.m */; };
 		A02221DC22C79A09006AD29A /* AEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A02221DA22C79A09006AD29A /* AEButton.m */; };
@@ -1499,6 +1509,10 @@
 		20CDDAFC22C0CB0D005432F3 /* JSSelectGoodsNameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSelectGoodsNameVC.h; sourceTree = "<group>"; };
 		20CDDAFD22C0CB0D005432F3 /* JSSelectGoodsNameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSelectGoodsNameVC.m; sourceTree = "<group>"; };
 		20DC7D6422BB68BE003CB4FD /* noDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noDataView.xib; sourceTree = "<group>"; };
+		20E41983231E1587001E89C7 /* JSSendTopicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSendTopicVC.h; sourceTree = "<group>"; };
+		20E41984231E1587001E89C7 /* JSSendTopicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSendTopicVC.m; sourceTree = "<group>"; };
+		20E41986231E3AD7001E89C7 /* JSManagerCircleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSManagerCircleVC.h; sourceTree = "<group>"; };
+		20E41987231E3AD7001E89C7 /* JSManagerCircleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSManagerCircleVC.m; sourceTree = "<group>"; };
 		20F934DE224B18B4008C80DB /* JSRechargeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSRechargeVC.h; sourceTree = "<group>"; };
 		20F934DF224B18B4008C80DB /* JSRechargeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSRechargeVC.m; sourceTree = "<group>"; };
 		20F934E1224B1C95008C80DB /* JSWithdrawalMoneyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSWithdrawalMoneyVC.h; sourceTree = "<group>"; };
@@ -1511,6 +1525,11 @@
 		20FB037C231CEBB60015787F /* CircleListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleListTabCell.m; sourceTree = "<group>"; };
 		20FB0382231CF5C90015787F /* JSTopicDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTopicDetailVC.h; sourceTree = "<group>"; };
 		20FB0383231CF5C90015787F /* JSTopicDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTopicDetailVC.m; sourceTree = "<group>"; };
+		20FB0386231D00090015787F /* YYStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYStarView.m; sourceTree = "<group>"; };
+		20FB0387231D00090015787F /* YYStarView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YYStarView.bundle; sourceTree = "<group>"; };
+		20FB0388231D00090015787F /* YYStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYStarView.h; sourceTree = "<group>"; };
+		20FB038E231E09220015787F /* JSSendCommentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSendCommentVC.h; sourceTree = "<group>"; };
+		20FB038F231E09220015787F /* JSSendCommentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSendCommentVC.m; sourceTree = "<group>"; };
 		3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.release.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.release.xcconfig"; sourceTree = "<group>"; };
 		485FFBE123B387C4A4ABBCD1 /* Pods-JS_Shipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.debug.xcconfig"; sourceTree = "<group>"; };
 		9B67392921C6C16FAB28EC6A /* Pods-JS_Shipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.debug.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2525,16 +2544,16 @@
 		20815E4523176C8900E24C75 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				20815E5C23176C8900E24C75 /* JSMineVC.h */,
+				20815E6D23176C8900E24C75 /* JSMineVC.m */,
 				20815E4623176C8900E24C75 /* 我的路线 */,
 				20815E4E23176C8900E24C75 /* 钱包 */,
-				20815E5C23176C8900E24C75 /* JSMineVC.h */,
 				20815E5D23176C8900E24C75 /* 我的司机 */,
 				20815E6123176C8900E24C75 /* 认证 */,
 				20815E6623176C8900E24C75 /* JSMyInfoVC.h */,
-				20815E6723176C8900E24C75 /* 我的车辆 */,
-				20815E6D23176C8900E24C75 /* JSMineVC.m */,
-				20815E7023176C8900E24C75 /* 我的订单 */,
 				20815E7923176C8900E24C75 /* JSMyInfoVC.m */,
+				20815E6723176C8900E24C75 /* 我的车辆 */,
+				20815E7023176C8900E24C75 /* 我的订单 */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2574,8 +2593,8 @@
 		20815E5D23176C8900E24C75 /* 我的司机 */ = {
 			isa = PBXGroup;
 			children = (
-				20815E5E23176C8900E24C75 /* JSMyDriverVC.m */,
 				20815E5F23176C8900E24C75 /* JSMyDriverVC.h */,
+				20815E5E23176C8900E24C75 /* JSMyDriverVC.m */,
 			);
 			path = "我的司机";
 			sourceTree = "<group>";
@@ -2727,6 +2746,7 @@
 				A0E9270422852C9C00D07C58 /* AEFilePath.m */,
 				209B6ACB2272DCCE0060F509 /* MKMapView+ZoomLevel.h */,
 				209B6ACA2272DCCE0060F509 /* MKMapView+ZoomLevel.m */,
+				20FB0385231D00090015787F /* YYStarView */,
 				20914FE022B8C734005B4A4E /* LocationTransform */,
 				20BD733C2248BE420020EA5D /* Cache */,
 				20BD73412248BE420020EA5D /* StarView */,
@@ -2930,6 +2950,12 @@
 				20FB0376231CE9BE0015787F /* JSSearchCircleVC.m */,
 				20FB0382231CF5C90015787F /* JSTopicDetailVC.h */,
 				20FB0383231CF5C90015787F /* JSTopicDetailVC.m */,
+				20FB038E231E09220015787F /* JSSendCommentVC.h */,
+				20FB038F231E09220015787F /* JSSendCommentVC.m */,
+				20E41983231E1587001E89C7 /* JSSendTopicVC.h */,
+				20E41984231E1587001E89C7 /* JSSendTopicVC.m */,
+				20E41986231E3AD7001E89C7 /* JSManagerCircleVC.h */,
+				20E41987231E3AD7001E89C7 /* JSManagerCircleVC.m */,
 				20FB037E231CEC240015787F /* View */,
 			);
 			path = Community;
@@ -3113,6 +3139,16 @@
 				20FB037C231CEBB60015787F /* CircleListTabCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		20FB0385231D00090015787F /* YYStarView */ = {
+			isa = PBXGroup;
+			children = (
+				20FB0388231D00090015787F /* YYStarView.h */,
+				20FB0386231D00090015787F /* YYStarView.m */,
+				20FB0387231D00090015787F /* YYStarView.bundle */,
+			);
+			path = YYStarView;
 			sourceTree = "<group>";
 		};
 		A02221D622C799B9006AD29A /* FlowLayout(仿安卓流式布局) */ = {
@@ -3462,6 +3498,7 @@
 				205A912F23175F72004C756E /* chatbar_photo_blue@2x.png in Resources */,
 				205A913023175F72004C756E /* icon_035_cover.png in Resources */,
 				205A913123175F72004C756E /* icon_020_cover.png in Resources */,
+				20FB038C231D000A0015787F /* YYStarView.bundle in Resources */,
 				205A913223175F72004C756E /* msg_img_broken@2x.png in Resources */,
 				205A913323175F72004C756E /* chatroom_create@3x.png in Resources */,
 				205A913423175F72004C756E /* chatbar_extend_blue@2x.png in Resources */,
@@ -3677,6 +3714,7 @@
 				20118E3A22DEE96000A195D1 /* msg_recv_audio01@2x.png in Resources */,
 				20118E2C22DEE96000A195D1 /* msg_location@2x.png in Resources */,
 				20118DEB22DEE95F00A195D1 /* icon_012_cover.png in Resources */,
+				20FB038B231D000A0015787F /* YYStarView.bundle in Resources */,
 				20BD74032248BEB00020EA5D /* Message.storyboard in Resources */,
 				20118F5B22DEEA7600A195D1 /* user_avatar_me@3x.png in Resources */,
 				20118E4122DEE96000A195D1 /* msg_video_white@2x.png in Resources */,
@@ -3882,6 +3920,7 @@
 				205A900723175F72004C756E /* EMChatroomOwnerViewController.m in Sources */,
 				205A900823175F72004C756E /* MWPhoto.m in Sources */,
 				205A900923175F72004C756E /* MWZoomingScrollView.m in Sources */,
+				20FB038D231D20710015787F /* JSTopicDetailVC.m in Sources */,
 				20815E8923176C8A00E24C75 /* JSMineVC.m in Sources */,
 				205A900A23175F72004C756E /* EMTextView.m in Sources */,
 				205A900B23175F72004C756E /* UIViewController+Util.m in Sources */,
@@ -3902,6 +3941,7 @@
 				205A901923175F72004C756E /* EMSearchResultController.m in Sources */,
 				205A901A23175F72004C756E /* EMMessageModel.m in Sources */,
 				20815E8223176C8A00E24C75 /* JSMyDepositVC.m in Sources */,
+				20FB0391231E09220015787F /* JSSendCommentVC.m in Sources */,
 				205A901B23175F72004C756E /* EMMsgTranspondViewController.m in Sources */,
 				20815E9D23176D9700E24C75 /* DriverModel.m in Sources */,
 				205A901C23175F72004C756E /* FilterButton.m in Sources */,
@@ -3923,6 +3963,7 @@
 				205A902923175F72004C756E /* MWTapDetectingImageView.m in Sources */,
 				20815E7C23176C8900E24C75 /* JSAddRouteVC.m in Sources */,
 				205A902A23175F72004C756E /* EMChatroomMembersViewController.m in Sources */,
+				20FB038A231D000A0015787F /* YYStarView.m in Sources */,
 				A022CCD623191F5E00E3EDD5 /* MOFSPickerView.m in Sources */,
 				205A902B23175F72004C756E /* EMSearchViewController.m in Sources */,
 				205A902C23175F72004C756E /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
@@ -4039,6 +4080,7 @@
 				205A909423175F72004C756E /* CZNotDataView.m in Sources */,
 				20815E7B23176C8900E24C75 /* JSMyRouteVC.m in Sources */,
 				20815E3C23176C3100E24C75 /* JSFindGoodsVC.m in Sources */,
+				20E41989231E4089001E89C7 /* JSManagerCircleVC.m in Sources */,
 				205A909523175F72004C756E /* CityDeliveryTabCell.m in Sources */,
 				205A909623175F72004C756E /* JHHJCenterBGView.m in Sources */,
 				205A909723175F72004C756E /* NSObject+Alert.m in Sources */,
@@ -4078,6 +4120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20118F4122DEEA7600A195D1 /* EMNotificationHelper.m in Sources */,
+				20E41988231E3AD7001E89C7 /* JSManagerCircleVC.m in Sources */,
 				A075190B227D17710032A974 /* HmAddressCityModel.m in Sources */,
 				203C1982225AE02000AB5970 /* JSCarSourceDetailVC.m in Sources */,
 				20BD73B22248BE440020EA5D /* XLGAlertView.m in Sources */,
@@ -4154,6 +4197,7 @@
 				20118F6B22DEEA7600A195D1 /* MWGridViewController.m in Sources */,
 				20118E1E22DEE96000A195D1 /* EMChatBar.m in Sources */,
 				20FB0377231CE9BE0015787F /* JSSearchCircleVC.m in Sources */,
+				20FB0389231D000A0015787F /* YYStarView.m in Sources */,
 				20BD73C52248BE440020EA5D /* BaseTabBarVC.m in Sources */,
 				20118E6F22DEE96000A195D1 /* EMChatroomBlacklistViewController.m in Sources */,
 				20BD74182248C6D70020EA5D /* JSForgetPwdVC.m in Sources */,
@@ -4182,6 +4226,7 @@
 				20BD73B72248BE440020EA5D /* Config.m in Sources */,
 				20BD73BA2248BE440020EA5D /* CZUpdateView.m in Sources */,
 				204E5299227068E600DE65A8 /* JSFeedBackVC.m in Sources */,
+				20FB0390231E09220015787F /* JSSendCommentVC.m in Sources */,
 				20118E5222DEE96000A195D1 /* EMImageBrowser.m in Sources */,
 				207D1443227153E300594520 /* JSDeliverConfirmVC.m in Sources */,
 				A096484F22B8BDB7000FDBE6 /* JSMyGardenVC.m in Sources */,
@@ -4254,6 +4299,7 @@
 				20118F6F22DEEA7600A195D1 /* PSTCollectionViewFlowLayout.m in Sources */,
 				20118E4922DEE96000A195D1 /* EMLocationViewController.m in Sources */,
 				20BD741B2248C8230020EA5D /* JSResetPswVC.m in Sources */,
+				20E41985231E1587001E89C7 /* JSSendTopicVC.m in Sources */,
 				20BD73BB2248BE440020EA5D /* CZNotDataView.m in Sources */,
 				A096484C22B88260000FDBE6 /* CityDeliveryTabCell.m in Sources */,
 				20BD73AD2248BE440020EA5D /* JHHJCenterBGView.m in Sources */,
