@@ -271,6 +271,7 @@
 		2012E5B322B33904001F8001 /* JSLineDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B222B33904001F8001 /* JSLineDetaileVC.m */; };
 		2012E5B622B33941001F8001 /* JSCityDeliveryDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B522B33941001F8001 /* JSCityDeliveryDetaileVC.m */; };
 		2012E5B922B37643001F8001 /* JSHomeDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B822B37643001F8001 /* JSHomeDetaileVC.m */; };
+		203B4E2A231F5D0200A288CC /* JSTieziListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B4E29231F5D0200A288CC /* JSTieziListVC.m */; };
 		203C1982225AE02000AB5970 /* JSCarSourceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C1981225AE02000AB5970 /* JSCarSourceDetailVC.m */; };
 		203D7F96229BD16E00A3D847 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F91229BD16E00A3D847 /* libcrypto.a */; };
 		203D7F97229BD16E00A3D847 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F92229BD16E00A3D847 /* libssl.a */; };
@@ -1289,6 +1290,8 @@
 		2012E5B522B33941001F8001 /* JSCityDeliveryDetaileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCityDeliveryDetaileVC.m; sourceTree = "<group>"; };
 		2012E5B722B37643001F8001 /* JSHomeDetaileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSHomeDetaileVC.h; sourceTree = "<group>"; };
 		2012E5B822B37643001F8001 /* JSHomeDetaileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSHomeDetaileVC.m; sourceTree = "<group>"; };
+		203B4E28231F5D0200A288CC /* JSTieziListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTieziListVC.h; sourceTree = "<group>"; };
+		203B4E29231F5D0200A288CC /* JSTieziListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTieziListVC.m; sourceTree = "<group>"; };
 		203C1980225AE02000AB5970 /* JSCarSourceDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCarSourceDetailVC.h; sourceTree = "<group>"; };
 		203C1981225AE02000AB5970 /* JSCarSourceDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCarSourceDetailVC.m; sourceTree = "<group>"; };
 		203D7F91229BD16E00A3D847 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
@@ -2956,6 +2959,8 @@
 				20E41984231E1587001E89C7 /* JSSendTopicVC.m */,
 				20E41986231E3AD7001E89C7 /* JSManagerCircleVC.h */,
 				20E41987231E3AD7001E89C7 /* JSManagerCircleVC.m */,
+				203B4E28231F5D0200A288CC /* JSTieziListVC.h */,
+				203B4E29231F5D0200A288CC /* JSTieziListVC.m */,
 				20FB037E231CEC240015787F /* View */,
 			);
 			path = Community;
@@ -4329,6 +4334,7 @@
 				20BD73BF2248BE440020EA5D /* JSDeliverGoodsVC.m in Sources */,
 				20BD73C22248BE440020EA5D /* JSGardenVC.m in Sources */,
 				201040BD229E7C6A00B7B258 /* ZHPickView.m in Sources */,
+				203B4E2A231F5D0200A288CC /* JSTieziListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

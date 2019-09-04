@@ -25,6 +25,8 @@
 #define kSignKey   @"ghOwfR7Wz44cbKU93KVSxwYXPGloNu"
 #define kNonceStr  [SignKeyUtil getNonceString]
 
+#define MapKey @"lgrnXXszi8tp8KLsjo3LGjnO9USnydId"
+
 
 
 

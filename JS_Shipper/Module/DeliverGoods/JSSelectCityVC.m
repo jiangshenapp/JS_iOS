@@ -114,6 +114,15 @@
     return 1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+
+
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
 
     NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:self.groupTempArray];
@@ -146,9 +155,7 @@
     return index;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 30;
-}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

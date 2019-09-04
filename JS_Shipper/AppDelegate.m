@@ -18,7 +18,6 @@
 #import "CustomEaseUtils.h"
 #import "EMNotificationHelper.h"
 
-#define MapKey @"lgrnXXszi8tp8KLsjo3LGjnO9USnydId"
 
 @interface AppDelegate ()<BMKLocationAuthDelegate, WXApiDelegate,UNUserNotificationCenterDelegate>
 @property (nonatomic, strong) BMKMapManager *mapManager; //主引擎类
@@ -164,6 +163,7 @@
 }
 
 - (void)initMapKey {
+    NSLog(@"%@",MapKey);
     // 初始化定位SDK
     [[BMKLocationAuth sharedInstance] checkPermisionWithKey:MapKey authDelegate:self];
     //要使用百度地图，请先启动BMKMapManager
