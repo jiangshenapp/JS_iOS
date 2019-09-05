@@ -1182,10 +1182,10 @@
             </objects>
             <point key="canvasLocation" x="1596" y="64.31784107946028"/>
         </scene>
-        <!--Tiezi ListVC-->
+        <!--帖子列表-->
         <scene sceneID="OpX-KH-yXl">
             <objects>
-                <viewController storyboardIdentifier="JSTieziListVC" id="QhZ-52-X63" customClass="JSTieziListVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JSTieziListVC" title="帖子列表" id="QhZ-52-X63" customClass="JSTieziListVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fL8-uE-BYz"/>
                         <viewControllerLayoutGuide type="bottom" id="ydv-pf-Eb6"/>

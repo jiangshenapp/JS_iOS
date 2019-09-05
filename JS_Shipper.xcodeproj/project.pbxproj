@@ -273,6 +273,8 @@
 		2012E5B922B37643001F8001 /* JSHomeDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B822B37643001F8001 /* JSHomeDetaileVC.m */; };
 		203B4E2A231F5D0200A288CC /* JSTieziListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B4E29231F5D0200A288CC /* JSTieziListVC.m */; };
 		203C1982225AE02000AB5970 /* JSCarSourceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C1981225AE02000AB5970 /* JSCarSourceDetailVC.m */; };
+		203C30292320D5D20007FC53 /* JSParkAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C30282320D5D20007FC53 /* JSParkAddressVC.m */; };
+		203C302B2320EBD10007FC53 /* Shipper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203C302A2320EBD10007FC53 /* Shipper.xcassets */; };
 		203D7F96229BD16E00A3D847 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F91229BD16E00A3D847 /* libcrypto.a */; };
 		203D7F97229BD16E00A3D847 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F92229BD16E00A3D847 /* libssl.a */; };
 		203D7F98229BD16E00A3D847 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F93229BD16E00A3D847 /* BaiduMapAPI_Utils.framework */; };
@@ -1294,6 +1296,9 @@
 		203B4E29231F5D0200A288CC /* JSTieziListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTieziListVC.m; sourceTree = "<group>"; };
 		203C1980225AE02000AB5970 /* JSCarSourceDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCarSourceDetailVC.h; sourceTree = "<group>"; };
 		203C1981225AE02000AB5970 /* JSCarSourceDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCarSourceDetailVC.m; sourceTree = "<group>"; };
+		203C30272320D5D20007FC53 /* JSParkAddressVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSParkAddressVC.h; sourceTree = "<group>"; };
+		203C30282320D5D20007FC53 /* JSParkAddressVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSParkAddressVC.m; sourceTree = "<group>"; };
+		203C302A2320EBD10007FC53 /* Shipper.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shipper.xcassets; sourceTree = "<group>"; };
 		203D7F91229BD16E00A3D847 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		203D7F92229BD16E00A3D847 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		203D7F93229BD16E00A3D847 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
@@ -2549,12 +2554,14 @@
 			children = (
 				20815E5C23176C8900E24C75 /* JSMineVC.h */,
 				20815E6D23176C8900E24C75 /* JSMineVC.m */,
+				20815E6623176C8900E24C75 /* JSMyInfoVC.h */,
+				20815E7923176C8900E24C75 /* JSMyInfoVC.m */,
+				203C30272320D5D20007FC53 /* JSParkAddressVC.h */,
+				203C30282320D5D20007FC53 /* JSParkAddressVC.m */,
 				20815E4623176C8900E24C75 /* 我的路线 */,
 				20815E4E23176C8900E24C75 /* 钱包 */,
 				20815E5D23176C8900E24C75 /* 我的司机 */,
 				20815E6123176C8900E24C75 /* 认证 */,
-				20815E6623176C8900E24C75 /* JSMyInfoVC.h */,
-				20815E7923176C8900E24C75 /* JSMyInfoVC.m */,
 				20815E6723176C8900E24C75 /* 我的车辆 */,
 				20815E7023176C8900E24C75 /* 我的订单 */,
 			);
@@ -2734,6 +2741,7 @@
 				A0263530228C236700C924E2 /* Resource */,
 				20BD732F2248BDC30020EA5D /* LaunchScreen.storyboard */,
 				20BD732D2248BDC30020EA5D /* Assets.xcassets */,
+				203C302A2320EBD10007FC53 /* Shipper.xcassets */,
 				20BD73322248BDC30020EA5D /* Info.plist */,
 				20BD73332248BDC30020EA5D /* main.m */,
 			);
@@ -3789,6 +3797,7 @@
 				20118E6B22DEE96000A195D1 /* chatroom_avatar@3x.png in Resources */,
 				20118E5822DEE96000A195D1 /* call@3x.png in Resources */,
 				20118F5322DEEA7600A195D1 /* close_white@3x.png in Resources */,
+				203C302B2320EBD10007FC53 /* Shipper.xcassets in Resources */,
 				20118E3322DEE96000A195D1 /* msg_recv_audio02@3x.png in Resources */,
 				20118E7922DEE96000A195D1 /* group_create@2x.png in Resources */,
 				A0263523228C234900C924E2 /* ic_refresh_image_002@2x.png in Resources */,
@@ -4092,6 +4101,7 @@
 				205A909823175F72004C756E /* EMMsgExtGifBubbleView.m in Sources */,
 				205A909923175F72004C756E /* EMGroupSettingsViewController.m in Sources */,
 				205A909A23175F72004C756E /* LocationTransform.m in Sources */,
+				203C30292320D5D20007FC53 /* JSParkAddressVC.m in Sources */,
 				205A909B23175F72004C756E /* DACircularProgressView.m in Sources */,
 				205A909C23175F72004C756E /* EMGlobalVariables.m in Sources */,
 				20815E8023176C8900E24C75 /* JSBillDetailsVC.m in Sources */,
