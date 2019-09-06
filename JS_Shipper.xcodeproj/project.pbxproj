@@ -2571,12 +2571,12 @@
 		20815E4623176C8900E24C75 /* 我的路线 */ = {
 			isa = PBXGroup;
 			children = (
-				20815E4723176C8900E24C75 /* JSMyRouteVC.h */,
-				20815E4823176C8900E24C75 /* JSMyRouteDetailVC.m */,
 				20815E4923176C8900E24C75 /* JSAddRouteVC.h */,
-				20815E4A23176C8900E24C75 /* JSMyRouteVC.m */,
 				20815E4B23176C8900E24C75 /* JSAddRouteVC.m */,
 				20815E4C23176C8900E24C75 /* JSMyRouteDetailVC.h */,
+				20815E4823176C8900E24C75 /* JSMyRouteDetailVC.m */,
+				20815E4723176C8900E24C75 /* JSMyRouteVC.h */,
+				20815E4A23176C8900E24C75 /* JSMyRouteVC.m */,
 			);
 			path = "我的路线";
 			sourceTree = "<group>";
@@ -2584,18 +2584,18 @@
 		20815E4E23176C8900E24C75 /* 钱包 */ = {
 			isa = PBXGroup;
 			children = (
-				20815E4F23176C8900E24C75 /* JSWithdrawalMoneyVC.m */,
-				20815E5023176C8900E24C75 /* JSRechargeDepositVC.h */,
 				20815E5123176C8900E24C75 /* JSBillDetailsVC.h */,
-				20815E5223176C8900E24C75 /* JSMyDepositVC.h */,
-				20815E5323176C8900E24C75 /* JSMyWalletVC.m */,
-				20815E5423176C8900E24C75 /* JSRechargeVC.m */,
 				20815E5523176C8900E24C75 /* JSBillDetailsVC.m */,
-				20815E5623176C8900E24C75 /* JSRechargeDepositVC.m */,
-				20815E5723176C8900E24C75 /* JSWithdrawalMoneyVC.h */,
+				20815E5223176C8900E24C75 /* JSMyDepositVC.h */,
 				20815E5823176C8900E24C75 /* JSMyDepositVC.m */,
 				20815E5923176C8900E24C75 /* JSMyWalletVC.h */,
+				20815E5323176C8900E24C75 /* JSMyWalletVC.m */,
+				20815E5023176C8900E24C75 /* JSRechargeDepositVC.h */,
+				20815E5623176C8900E24C75 /* JSRechargeDepositVC.m */,
 				20815E5A23176C8900E24C75 /* JSRechargeVC.h */,
+				20815E5423176C8900E24C75 /* JSRechargeVC.m */,
+				20815E5723176C8900E24C75 /* JSWithdrawalMoneyVC.h */,
+				20815E4F23176C8900E24C75 /* JSWithdrawalMoneyVC.m */,
 			);
 			path = "钱包";
 			sourceTree = "<group>";
@@ -2612,10 +2612,10 @@
 		20815E6123176C8900E24C75 /* 认证 */ = {
 			isa = PBXGroup;
 			children = (
-				20815E6223176C8900E24C75 /* JSAuthenticationVC.m */,
+				20815E6523176C8900E24C75 /* JSAuthencationHomeVC.h */,
 				20815E6323176C8900E24C75 /* JSAuthencationHomeVC.m */,
 				20815E6423176C8900E24C75 /* JSAuthenticationVC.h */,
-				20815E6523176C8900E24C75 /* JSAuthencationHomeVC.h */,
+				20815E6223176C8900E24C75 /* JSAuthenticationVC.m */,
 			);
 			path = "认证";
 			sourceTree = "<group>";
@@ -2623,10 +2623,10 @@
 		20815E6723176C8900E24C75 /* 我的车辆 */ = {
 			isa = PBXGroup;
 			children = (
-				20815E6823176C8900E24C75 /* JSAddCarVC.m */,
-				20815E6923176C8900E24C75 /* JSMyCarVC.m */,
 				20815E6A23176C8900E24C75 /* JSAddCarVC.h */,
+				20815E6823176C8900E24C75 /* JSAddCarVC.m */,
 				20815E6B23176C8900E24C75 /* JSMyCarVC.h */,
+				20815E6923176C8900E24C75 /* JSMyCarVC.m */,
 			);
 			path = "我的车辆";
 			sourceTree = "<group>";
@@ -2634,14 +2634,14 @@
 		20815E7023176C8900E24C75 /* 我的订单 */ = {
 			isa = PBXGroup;
 			children = (
-				20815E7123176C8900E24C75 /* JSOrderDistributionVC.m */,
+				20815E7523176C8900E24C75 /* JSAllOrderVC.h */,
 				20815E7223176C8900E24C75 /* JSAllOrderVC.m */,
+				20815E7823176C8900E24C75 /* JSOrderDetailMapVC.h */,
 				20815E7323176C8900E24C75 /* JSOrderDetailMapVC.m */,
 				20815E7423176C8900E24C75 /* JSOrderDetailsVC.h */,
-				20815E7523176C8900E24C75 /* JSAllOrderVC.h */,
-				20815E7623176C8900E24C75 /* JSOrderDistributionVC.h */,
 				20815E7723176C8900E24C75 /* JSOrderDetailsVC.m */,
-				20815E7823176C8900E24C75 /* JSOrderDetailMapVC.h */,
+				20815E7623176C8900E24C75 /* JSOrderDistributionVC.h */,
+				20815E7123176C8900E24C75 /* JSOrderDistributionVC.m */,
 			);
 			path = "我的订单";
 			sourceTree = "<group>";

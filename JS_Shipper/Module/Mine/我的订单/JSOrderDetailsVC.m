@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"我的订单";
+    self.title = @"订单详情";
     
     self.changeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
     [self.changeBtn setTitle:@"修改" forState:UIControlStateNormal];
@@ -59,8 +59,6 @@
 
 #pragma mark - init data
 - (void)initData {
-    
-//    self.model.state = @"9";
     
     [self.headImgView2 sd_setImageWithURL:[NSURL URLWithString:self.model.driverAvatar] placeholderImage:[UIImage imageNamed:@"personalcenter_driver_icon_head_land"]];
     self.nameLab.text = self.model.driverName;

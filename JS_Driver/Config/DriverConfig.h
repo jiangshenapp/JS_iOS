@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define URL_RechargeDriverDeposit @"/app/account/rechargeDriverDeposit"//运力端缴纳保证金
 
-
 #pragma mark - 我的车辆
 #define URL_AddCar @"/app/car/add" //添加车辆"
 #define URL_ReAuditCar @"/app/car/reAudit" //重新审核车辆
@@ -37,9 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_LineEnable @"/app/line/enable" //启用停用 1启用0停用
 #define URL_LineDelete @"/app/line/remove"//删除线路
 #define URL_LineEdit @"/app/line/edit"// 编辑线路
-
 #define URL_DriverFind @"/app/driver/order/find"//找货 所有待分配订单"
-
 
 #pragma mark - 订单
 #define URL_DriverOrdeList @"/app/driver/order/list"//我的运单
@@ -53,7 +50,6 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_DistributionOrder @"/app/driver/order/distribution"//开始配送"
 #define URL_CompleteDistributionOrder  @"/app/driver/order/completeDistribution"//完成配送"
 #define URL_CommentOrder @"/app/driver/order/comment"//回执评价"
-
 
 @end
 

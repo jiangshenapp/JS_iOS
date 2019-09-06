@@ -20,6 +20,15 @@
     
     [self.backBtn setImage:[UIImage imageNamed:@"app_navigationbar_icon_close_black"] forState:UIControlStateNormal];
     self.phoneTF.text = [CacheUtil getCacherWithKey:@"loginPhone"];
+    
+    if (DEBUG) {
+        if ([AppChannel isEqualToString:@"1"]) { //货主端
+            self.phoneTF.text = @"13758132864";
+        } else { //司机端
+            self.phoneTF.text = @"15737936517";
+        }
+        self.pswTF.text = @"000000";
+    }
 }
 
 #pragma mark - methods

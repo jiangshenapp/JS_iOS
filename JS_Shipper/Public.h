@@ -60,8 +60,6 @@
 #define kAuthStateStrDic @{@(0):@"未提交",@(1):@"认证中",@(2):@"已认证",@(3):@"认证失败"}
 #define kAuthStateColorDic @{@(0):kVerifiedUnCommitColor,@(1):kVerifiedOnColor,@(2):AppThemeColor,@(3):kVerifiedFailColor}
 
-
-
 /******************************通知****************************/
 
 #define kLoginStateChangeNotification  @"kLoginStateChangeNotification"

@@ -264,7 +264,7 @@ static NetworkManager *_manager = nil;
 
 // 重新登录
 - (void)reLogin {
-    [Utils showToast:@"登录失效，请重新登录"];
+//    [Utils showToast:@"登录失效，请重新登录"];
     [[UserInfo share] setUserInfo:nil]; //清除用户信息
     //跳转到登录页
     [Utils isLoginWithJump:YES];

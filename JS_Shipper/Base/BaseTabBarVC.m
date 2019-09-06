@@ -45,7 +45,7 @@
           picArr = @[@"app_menubar_icon_searchcar_black",@"app_menubar_icon_goods_black",@"app_menubar_icon_news_black",@"app_menubar_icon_community_black",@"app_menubar_icon_my_black"];
           storyArr = @[@"Garden",@"DeliverGoods",@"Message",@"Community",@"Mine"];
       }
-      else if ([AppChannel isEqualToString:@"2"]) {
+      else if ([AppChannel isEqualToString:@"2"]) { //司机端
           controllerArr = @[@"JSFindGoodsVC",@"JSServiceVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
           titleArr = @[@"找货",@"服务",@"消息",@"社区",@"我的"];
           picArr = @[@"app_home_icon_cargoods_black",@"app_home_icon_service_black",@"app_menubar_icon_news2_black",@"app_menubar_icon_community2_black",@"app_menubar_icon_me_black"];
