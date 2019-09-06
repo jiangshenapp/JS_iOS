@@ -16,11 +16,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"服务";
     _bannerView.imageURLStringsGroup = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554786828281&di=adb087e354b74cf42fffb75077e2c757&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F37%2F09%2F97a58PICQ6H_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554786828281&di=adb087e354b74cf42fffb75077e2c757&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F37%2F09%2F97a58PICQ6H_1024.jpg"];
     _bannerView.currentPageDotColor = AppThemeColor;
     _bannerView.pageDotColor = kWhiteColor;
-    // Do any additional setup after loading the view.
+    
+    [self initView];
+}
+
+#pragma mark - init view
+- (void)initView {
+    int count = 6;
+    
+    if (count == 0) {
+        self.fourBgView.hidden = YES;
+    }
+    
+    for (int i = 0; i<7; i++) {
+        UIButton *itemBtn = [self.view viewWithTag:100+i];
+        if (i>=count) {
+            itemBtn.hidden = YES;
+        } else {
+            [itemBtn setTitle:@"企业服务" forState:UIControlStateNormal];
+            [itemBtn setImage:[[UIImage imageNamed:@"driver_service_icon_nearby"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+            //调整图片和文字上下显示
+            itemBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//使图片和文字水平居中显示
+            [itemBtn setTitleEdgeInsets:UIEdgeInsetsMake(itemBtn.imageView.frame.size.height ,-itemBtn.imageView.frame.size.width, 0.0,0.0)];//文字距离上边框的距离增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变
+            [itemBtn setImageEdgeInsets:UIEdgeInsetsMake(-itemBtn.imageView.frame.size.height, 0.0,0.0, -itemBtn.titleLabel.bounds.size.width)];
+            [itemBtn addTarget:self action:@selector(jumpAction:) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+}
+
+#pragma mark - methods
+- (void)jumpAction:(UIButton *)btn {
+    NSInteger index = btn.tag-100;
+    [Utils showToast:[NSString stringWithFormat:@"点击第%ld个",(long)index+1]];
 }
 
 /*

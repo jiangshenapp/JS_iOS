@@ -12,7 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSServiceVC : BaseVC
+
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
+@property (weak, nonatomic) IBOutlet UIView *fourBgView;
 
 @end
 
