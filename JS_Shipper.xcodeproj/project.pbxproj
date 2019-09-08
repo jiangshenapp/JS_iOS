@@ -468,7 +468,6 @@
 		205A90A623175F72004C756E /* HomeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A096482F22B87F6D000FDBE6 /* HomeDataModel.m */; };
 		205A90A723175F72004C756E /* PSTGridLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118F1222DEEA7600A195D1 /* PSTGridLayoutItem.m */; };
 		205A90A823175F72004C756E /* EMMsgTextBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118D4F22DEE95F00A195D1 /* EMMsgTextBubbleView.m */; };
-		205A90A923175F72004C756E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73422248BE420020EA5D /* CZStarView.m */; };
 		205A90AA23175F72004C756E /* EMChatBarRecordAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118D1A22DEE95F00A195D1 /* EMChatBarRecordAudioView.m */; };
 		205A90AB23175F72004C756E /* HmSelectAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751906227D17710032A974 /* HmSelectAdView.m */; };
 		205A90AC23175F72004C756E /* EMEmoticonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118EAA22DEEA7500A195D1 /* EMEmoticonGroup.m */; };
@@ -742,7 +741,6 @@
 		20BD73342248BDC30020EA5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73332248BDC30020EA5D /* main.m */; };
 		20BD73A92248BE440020EA5D /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD733F2248BE420020EA5D /* KeyChainUtil.m */; };
 		20BD73AA2248BE440020EA5D /* CacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73402248BE420020EA5D /* CacheUtil.m */; };
-		20BD73AB2248BE440020EA5D /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73422248BE420020EA5D /* CZStarView.m */; };
 		20BD73AC2248BE440020EA5D /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73452248BE420020EA5D /* Toast.m */; };
 		20BD73AD2248BE440020EA5D /* JHHJCenterBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD734A2248BE420020EA5D /* JHHJCenterBGView.m */; };
 		20BD73AE2248BE440020EA5D /* JHHJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD734C2248BE420020EA5D /* JHHJView.m */; };
@@ -812,6 +810,8 @@
 		20FB0390231E09220015787F /* JSSendCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB038F231E09220015787F /* JSSendCommentVC.m */; };
 		20FB0391231E09220015787F /* JSSendCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB038F231E09220015787F /* JSSendCommentVC.m */; };
 		A00A227822A5FA57002E2E0C /* JSOrderDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00A227722A5FA57002E2E0C /* JSOrderDetailsVC.m */; };
+		A010A0FF2322A018006E6C39 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A010A0FD2322A017006E6C39 /* CZCommentView.m */; };
+		A010A1002322A018006E6C39 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A010A0FD2322A017006E6C39 /* CZCommentView.m */; };
 		A02221D922C799B9006AD29A /* AEFlowLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02221D722C799B9006AD29A /* AEFlowLayoutView.m */; };
 		A02221DC22C79A09006AD29A /* AEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A02221DA22C79A09006AD29A /* AEButton.m */; };
 		A022CCD223191F5E00E3EDD5 /* province_data.xml in Resources */ = {isa = PBXBuildFile; fileRef = A022CCC823191F5E00E3EDD5 /* province_data.xml */; };
@@ -1422,8 +1422,6 @@
 		20BD733E2248BE420020EA5D /* CacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheUtil.h; sourceTree = "<group>"; };
 		20BD733F2248BE420020EA5D /* KeyChainUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainUtil.m; sourceTree = "<group>"; };
 		20BD73402248BE420020EA5D /* CacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheUtil.m; sourceTree = "<group>"; };
-		20BD73422248BE420020EA5D /* CZStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZStarView.m; sourceTree = "<group>"; };
-		20BD73432248BE420020EA5D /* CZStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZStarView.h; sourceTree = "<group>"; };
 		20BD73452248BE420020EA5D /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
 		20BD73462248BE420020EA5D /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		20BD73492248BE420020EA5D /* JHHJView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHJView.h; sourceTree = "<group>"; };
@@ -1543,6 +1541,8 @@
 		9B67392921C6C16FAB28EC6A /* Pods-JS_Shipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.debug.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.debug.xcconfig"; sourceTree = "<group>"; };
 		A00A227622A5FA57002E2E0C /* JSOrderDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSOrderDetailsVC.h; sourceTree = "<group>"; };
 		A00A227722A5FA57002E2E0C /* JSOrderDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSOrderDetailsVC.m; sourceTree = "<group>"; };
+		A010A0FD2322A017006E6C39 /* CZCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZCommentView.m; sourceTree = "<group>"; };
+		A010A0FE2322A018006E6C39 /* CZCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZCommentView.h; sourceTree = "<group>"; };
 		A02221D722C799B9006AD29A /* AEFlowLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFlowLayoutView.m; sourceTree = "<group>"; };
 		A02221D822C799B9006AD29A /* AEFlowLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEFlowLayoutView.h; sourceTree = "<group>"; };
 		A02221DA22C79A09006AD29A /* AEButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEButton.m; sourceTree = "<group>"; };
@@ -2760,7 +2760,6 @@
 				20FB0385231D00090015787F /* YYStarView */,
 				20914FE022B8C734005B4A4E /* LocationTransform */,
 				20BD733C2248BE420020EA5D /* Cache */,
-				20BD73412248BE420020EA5D /* StarView */,
 				20BD73442248BE420020EA5D /* Toast */,
 				A02221D622C799B9006AD29A /* FlowLayout(仿安卓流式布局) */,
 				20BD73472248BE420020EA5D /* Indicator(指示器) */,
@@ -2782,15 +2781,6 @@
 				20BD733F2248BE420020EA5D /* KeyChainUtil.m */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		20BD73412248BE420020EA5D /* StarView */ = {
-			isa = PBXGroup;
-			children = (
-				20BD73432248BE420020EA5D /* CZStarView.h */,
-				20BD73422248BE420020EA5D /* CZStarView.m */,
-			);
-			path = StarView;
 			sourceTree = "<group>";
 		};
 		20BD73442248BE420020EA5D /* Toast */ = {
@@ -2877,16 +2867,18 @@
 		20BD73652248BE420020EA5D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				201040BB229E7C6A00B7B258 /* ZHPickView.h */,
-				201040BC229E7C6A00B7B258 /* ZHPickView.m */,
-				20BD73692248BE420020EA5D /* CZUpdateView.h */,
-				20BD73672248BE420020EA5D /* CZUpdateView.m */,
+				A010A0FE2322A018006E6C39 /* CZCommentView.h */,
+				A010A0FD2322A017006E6C39 /* CZCommentView.m */,
 				20BD736B2248BE420020EA5D /* CZNotDataView.h */,
 				20BD73682248BE420020EA5D /* CZNotDataView.m */,
 				20BD736A2248BE420020EA5D /* CZNotNetAvailableVC.h */,
 				20BD73662248BE420020EA5D /* CZNotNetAvailableVC.m */,
+				20BD73692248BE420020EA5D /* CZUpdateView.h */,
+				20BD73672248BE420020EA5D /* CZUpdateView.m */,
 				20A83ED3229CE01E001304A8 /* MyCustomButton.h */,
 				20A83ED4229CE01E001304A8 /* MyCustomButton.m */,
+				201040BB229E7C6A00B7B258 /* ZHPickView.h */,
+				201040BC229E7C6A00B7B258 /* ZHPickView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4105,6 +4097,7 @@
 				205A909B23175F72004C756E /* DACircularProgressView.m in Sources */,
 				205A909C23175F72004C756E /* EMGlobalVariables.m in Sources */,
 				20815E8023176C8900E24C75 /* JSBillDetailsVC.m in Sources */,
+				A010A1002322A018006E6C39 /* CZCommentView.m in Sources */,
 				205A909D23175F72004C756E /* JSLineDetaileVC.m in Sources */,
 				205A909E23175F72004C756E /* XLGInternalTestVC.m in Sources */,
 				205A909F23175F72004C756E /* EMDateHelper.m in Sources */,
@@ -4117,7 +4110,6 @@
 				A022CCD723191F5E00E3EDD5 /* AddressModel.m in Sources */,
 				205A90A723175F72004C756E /* PSTGridLayoutItem.m in Sources */,
 				205A90A823175F72004C756E /* EMMsgTextBubbleView.m in Sources */,
-				205A90A923175F72004C756E /* CZStarView.m in Sources */,
 				A022CCD523191F5E00E3EDD5 /* MOFSPickerManager.m in Sources */,
 				205A90AA23175F72004C756E /* EMChatBarRecordAudioView.m in Sources */,
 				205A90AB23175F72004C756E /* HmSelectAdView.m in Sources */,
@@ -4243,6 +4235,7 @@
 				204E5299227068E600DE65A8 /* JSFeedBackVC.m in Sources */,
 				20FB0390231E09220015787F /* JSSendCommentVC.m in Sources */,
 				20118E5222DEE96000A195D1 /* EMImageBrowser.m in Sources */,
+				A010A0FF2322A018006E6C39 /* CZCommentView.m in Sources */,
 				207D1443227153E300594520 /* JSDeliverConfirmVC.m in Sources */,
 				A096484F22B8BDB7000FDBE6 /* JSMyGardenVC.m in Sources */,
 				20118E2422DEE96000A195D1 /* EMMsgAudioBubbleView.m in Sources */,
@@ -4336,7 +4329,6 @@
 				A096483022B87F6D000FDBE6 /* HomeDataModel.m in Sources */,
 				20118F7A22DEEA7600A195D1 /* PSTGridLayoutItem.m in Sources */,
 				20118E2822DEE96000A195D1 /* EMMsgTextBubbleView.m in Sources */,
-				20BD73AB2248BE440020EA5D /* CZStarView.m in Sources */,
 				20118DFF22DEE95F00A195D1 /* EMChatBarRecordAudioView.m in Sources */,
 				A075190D227D17710032A974 /* HmSelectAdView.m in Sources */,
 				20118F4822DEEA7600A195D1 /* EMEmoticonGroup.m in Sources */,
@@ -4425,8 +4417,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K3A6XD8P7R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = P8463X2LVX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4453,7 +4445,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.transporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = TransporterDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -4463,9 +4455,9 @@
 			baseConfigurationReference = 3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K3A6XD8P7R;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = P8463X2LVX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4492,7 +4484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.transporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = TransporterDis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -4617,8 +4609,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K3A6XD8P7R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = P8463X2LVX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4645,7 +4637,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.shipper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ShipperDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -4655,9 +4647,9 @@
 			baseConfigurationReference = 3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K3A6XD8P7R;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = P8463X2LVX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4684,7 +4676,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.shipper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ShipperDis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

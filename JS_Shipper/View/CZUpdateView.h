@@ -13,7 +13,6 @@ typedef NS_ENUM(NSInteger, UpdateType) {
     UpdateTypeForce,        //默认升级
 };
 
-
 @protocol UpdateViewDelegate <NSObject>
 
 - (void)updateRejectBtnClicked;

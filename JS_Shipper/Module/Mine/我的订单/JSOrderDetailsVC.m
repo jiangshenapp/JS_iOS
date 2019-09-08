@@ -11,11 +11,14 @@
 #import "JSPayVC.h"
 #import "JSChangeOrderDetailVC.h"
 #import "JSDeliverConfirmVC.h"
+#import "CZCommentView.h"
 
 @interface JSOrderDetailsVC ()
 
 /** 修改按钮 */
 @property (nonatomic,retain) UIButton *changeBtn;
+/** 评价视图 */
+@property (nonatomic,retain) CZCommentView *commentView;
 
 @end
 
@@ -295,7 +298,20 @@
 #pragma mark - 评价
 /** 评价 */
 - (void)commentOrder {
-    [Utils showToast:@"功能暂未开通，敬请期待"];
+    _commentView = [[CZCommentView alloc] initWithFrame:CGRectZero];;
+    [self.view addSubview:_commentView];
+    [_commentView showView];
+    __weak typeof(self) weakSelf = self;
+    _commentView.submitBlock = ^(NSString *score) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:score,@"score", nil];
+        [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@/%@",URL_OrderComment,weakSelf.model.ID] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+            if (status == Request_Success) {
+                [Utils showToast:@"感谢您的评价！"];
+                [weakSelf.commentView hiddenView];
+                [weakSelf.navigationController popToRootViewControllerAnimated:NO];
+            }
+        }];
+    };
 }
 
 #pragma mark - 确认收货
@@ -341,6 +357,10 @@
 //    [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)commentImage1Btn:(id)sender {
+    
+}
+
 /*
  #pragma mark - Navigation
  
@@ -351,6 +371,4 @@
  }
  */
 
-- (IBAction)commentImage1Btn:(id)sender {
-}
 @end

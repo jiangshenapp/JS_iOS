@@ -92,6 +92,7 @@ NSString *PIC_URL(void);
 #define URL_CancelOrderDetail @"/app/order/cancel"//取消订单
 #define URL_ConfirmOrder @"/app/order/confirm"//确认收货
 #define URL_ConfirmOrderReceipt @"/app/order/receipt"//确认收到回执
+#define URL_OrderComment @"/app/order/score"//订单评价
 #define URL_GetOrderDetail @"/app/order/get"//订单详情
 #define URL_OrdeList @"/app/order/list"//我的运单
 #define URL_EditOrderDetail @"/app/order/edit" //修改订单
