@@ -46,7 +46,6 @@
 }
 
 - (void)createUI {
-    self.starView.starScore = 4;
     self.starView.starSize = CGSizeMake(14, 14);
     self.signInBtn.borderColor = AppThemeColor;
     self.signInBtn.borderWidth = 1;
@@ -120,6 +119,7 @@
             [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.avatar] placeholderImage:[UIImage imageNamed:@"personalcenter_driver_icon_head_land"]];
             self.phoneLab.text = userInfo.mobile;
             self.nameLab.text = userInfo.nickName;
+            self.starView.starScore = userInfo.score;
            
             //失败》已审核〉审核中》未提交
             if ([[UserInfo share].driverVerified integerValue] == 3

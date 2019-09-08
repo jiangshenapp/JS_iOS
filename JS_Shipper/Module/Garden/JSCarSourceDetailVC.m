@@ -28,8 +28,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"车源详情";
-    self.starView.starScore = 4;
+    
     [self refreshUI];
     [self getData];
 }
@@ -50,6 +51,7 @@
 - (void)refreshUI {
     _startAddressLab.text = self.dataModel.startAddressCodeName;
     _endAddressLab.text = self.dataModel.arriveAddressCodeName;
+    _starView.starScore = self.dataModel.score;
     _nameLab.text = self.dataModel.driverName;
     _carNumLab.text = self.dataModel.cphm;
     _carTypeLab.text = self.dataModel.carModelName;

@@ -56,6 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *companyType;
 /** YES、展开 NO、隐藏 */
 @property (nonatomic,assign) BOOL showFlag;
+/** 司机评分 */
+@property (nonatomic,assign) NSInteger score;
 
 @end
 

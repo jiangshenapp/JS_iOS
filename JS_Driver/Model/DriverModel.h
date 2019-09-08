@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString              *driverPhone;
 /** 头像 */
 @property (nonatomic, copy) NSString              *avatar;
+/** 司机评分 */
+@property (nonatomic, assign) NSInteger           score;
 
 @end
 

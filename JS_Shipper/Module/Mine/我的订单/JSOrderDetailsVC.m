@@ -68,6 +68,7 @@
     [self.nameLab sizeToFit];
     self.nameLab.height = 20;
     self.starView.left = self.nameLab.right+5;
+    self.starView.starScore = self.model.score;
     self.introduceLab.text = self.model.driverPhone;
     self.orderNoLab.text = [NSString stringWithFormat:@"订单编号：%@",self.model.orderNo];
     self.orderStatusLab.text = self.model.stateNameConsignor;
