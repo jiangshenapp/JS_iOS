@@ -9,20 +9,26 @@
 #import "JSCommunityVC.h"
 #import "JSSelectCityVC.h"
 #import "JSTieziListVC.h"
-
+#import "JSCircleContentVC.h"
 
 @interface JSCommunityVC ()
 {
-    BMKGeoCodeSearch *geocodesearch;
+    
 }
+/** 展现端，1货主APP,2司机APP */
+@property (nonatomic,copy) NSString *showSide;
 /** 导航栏按钮 */
 @property (nonatomic,retain) UIButton *leftNavbarBtn;
 /** 定位管理 */
 @property (nonatomic,retain) BMKLocationManager *locationService;
 /** 用户当前位置 */
 @property (nonatomic,retain) MKUserLocation *myUserLoc;
-/** 反地理编码 */
-@property (nonatomic,retain) BMKReverseGeoCodeSearchResult *placemark;
+/** <#object#> */
+@property (nonatomic,retain) BMKGeoCodeSearch *geocodesearch;;
+/** 城市编码 */
+@property (nonatomic,copy) NSString *cityCode;
+/** <#object#> */
+@property (nonatomic,retain) NSMutableArray <JSCommunityModel *>*dataSource;
 @end
 
 @implementation JSCommunityVC
@@ -32,33 +38,37 @@
     [super viewWillAppear:animated];
 //    [locationService startUserLocationService];
     _locationService.delegate=self;
-    geocodesearch.delegate = self;
+    _geocodesearch.delegate = self;
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
 //    [locationService stopUserLocationService];
     _locationService.delegate=nil;
-    geocodesearch.delegate = nil;
+    _geocodesearch.delegate = nil;
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"社区";
     _leftNavbarBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
     [_leftNavbarBtn setTitle:@"" forState:UIControlStateNormal];
     [_leftNavbarBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
     _leftNavbarBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [_leftNavbarBtn addTarget:self action:@selector(pushCity) forControlEvents:UIControlEventTouchUpInside];
-    self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_leftNavbarBtn];
-     geocodesearch.delegate = self;
-     [self.locationService startUpdatingLocation];
+    self.navItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_leftNavbarBtn];
     
-    
-    NSDictionary *locDic = [[NSUserDefaults standardUserDefaults]objectForKey:@"loc"];
-//    _currentLoc = CLLocationCoordinate2DMake([locDic[@"lat"] floatValue], [locDic[@"lng"] floatValue]);
+    [self initData];
+}
+
+- (void)initData {
+    _showSide = AppChannel;
+    _dataSource = [NSMutableArray array];
+    _cityCode = @"";
+    _geocodesearch = [[BMKGeoCodeSearch alloc]init];
+    _geocodesearch.delegate = self;
+    [self.locationService startUpdatingLocation];
 }
 
 - (void)pushCity {
@@ -67,24 +77,44 @@
     vc.getSelectDic = ^(NSDictionary * _Nonnull dic) {
         NSLog(@"%@",dic);//code 
         [weakSelf.leftNavbarBtn setTitle:dic[@"address"] forState:UIControlStateNormal];
+        weakSelf.cityCode = dic[@"code"];
+        [weakSelf getNetData];
     };
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)getNetData {
+    __weak typeof(self) weakSelf = self;
+    NSDictionary *dic = [NSDictionary dictionary];
+    _cityCode = @"330200";
+    NSString *url = [NSString stringWithFormat:@"%@?city=%@&showSide=%@",URL_CircleAll,_cityCode,_showSide];
+    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
+            weakSelf.dataSource = [JSCommunityModel mj_objectArrayWithKeyValuesArray:responseData];
+            [weakSelf.baseTabView reloadData];
+        }
+    }];
 }
 
 
 #pragma mark - UITableView 代理
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CircleListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CircleTabCell"];
+    JSCommunityModel *model = _dataSource[indexPath.row];
+    cell.circleNameLab.text = model.name;
+    [cell.circleIconImView sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:DefaultImage];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *vc = [Utils getViewController:@"Community" WithVCName:@"JSCircleContentVC"];
+    JSCommunityModel *model = _dataSource[indexPath.row];
+    JSCircleContentVC *vc = (JSCircleContentVC *)[Utils getViewController:@"Community" WithVCName:@"JSCircleContentVC"];
+    vc.circleId = model.ID;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -125,37 +155,16 @@
 - (void)BMKLocationManager:(BMKLocationManager *)manager didUpdateLocation:(BMKLocation *)location orError:(NSError *)error {
     if (location.location.coordinate.latitude!=0) {
         [self.locationService stopUpdatingLocation];
-
-        
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder reverseGeocodeLocation:location.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-            if (placemarks.count > 0) {
-                for (CLPlacemark *placemark in placemarks) {
-                    NSLog(@"name=%@, locality=%@, country=%@  %@", placemark.name, placemark.locality, placemark.country,placemark.postalCode);
-                }
-
-            }
-        }];
-        
-        
+        __weak typeof(self) weakSelf = self;
         // 显示所有信息
         BMKReverseGeoCodeSearchOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeSearchOption alloc]init];
-        
         reverseGeocodeSearchOption.isLatestAdmin = YES;
         reverseGeocodeSearchOption.location = location.location.coordinate;
         NSLog(@"%f",reverseGeocodeSearchOption.location.latitude);
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
-//        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
+        });
       }
-}
-
--(void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error {
-    
-}
-
-- (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error {
-    
 }
 
 /**
@@ -164,22 +173,14 @@
  *@param result 搜索结果
  *@param error 错误号，@see BMKSearchErrorCode
  */
-//- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error {
-//    NSLog(@"%@    %@   %@    %@    ",result.addressDetail.streetName,result.addressDetail.streetNumber,result.addressDetail.streetNumber,result.addressDetail.distance);
-//    if (error==0&&result!=nil) {
-//        NSString *businessCircle = result.businessCircle;
-//        if (businessCircle.length==0) {
-//            if (result.poiList.count) {
-//                BMKPoiInfo *info = [result.poiList firstObject];
-//                businessCircle = info.name;
-//            }
-//            if (businessCircle.length==0) {
-//                businessCircle = result.address;
-//            }
-//        }
-//        [_leftNavbarBtn setTitle:result.addressDetail.city forState:UIControlStateNormal];
-//    }
-//}
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error {
+    NSLog(@"%@    %@   %@    %@    ",result.addressDetail.streetName,result.addressDetail.streetNumber,result.addressDetail.streetNumber,result.addressDetail.distance);
+    if (error==0&&result!=nil) {
+        _cityCode = result.addressDetail.adCode;
+        [_leftNavbarBtn setTitle:result.addressDetail.city forState:UIControlStateNormal];
+        [self getNetData];
+    }
+}
 
 
 #pragma mark - Navigation

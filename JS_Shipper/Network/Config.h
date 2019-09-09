@@ -97,6 +97,21 @@ NSString *PIC_URL(void);
 #define URL_OrdeList @"/app/order/list"//我的运单
 #define URL_EditOrderDetail @"/app/order/edit" //修改订单
 
+//圈子
+#define URL_CircleAll @"/app/circle/all"//所有圈子"
+#define URL_CircleApply @"/app/circle/apply"//申请加入
+#define URL_CircleAuditApply @"/app/circle/auditApply"//入圈审核"
+#define URL_CircleDeleteSubscriber @"/app/circle/deleteSubscriber"//删除成员"
+#define URL_CircleList @"/app/circle/list"//我的圈子
+#define URL_CircleMemberList @"/app/circle/memberList"//圈子成员列表"
+
+//帖子
+#define URL_PostAdd @"/app/post/addPost"//发帖"
+#define URL_PostComment @"/app/post/comment"//评论"
+#define URL_PostCommentList @"/app/post/commentList"//评论列表
+#define URL_PostLike @"/app/post/like"//点赞"
+#define URL_PostList @"/app/post/list"//帖子列表
+
 #pragma mark - ---------------H5地址---------------
 
 NSString *h5Url(void);
