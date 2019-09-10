@@ -18,6 +18,7 @@
 @interface JSCircleContentVC ()
 {
     NSString *subjectStr;
+    MyCustomButton *lastBtn;
 }
 /** 数据源 */
 @property (nonatomic,retain) NSMutableArray <JSPostListModel *>*dataSource;
@@ -49,13 +50,13 @@
     for (NSInteger index = 0; index<allSub.count; index++) {
         MyCustomButton *btn = [[MyCustomButton alloc]initWithFrame:CGRectMake(maxRight, 0, viewW, _titleScrollVew.height)];
         btn.cornerRadius = 5;
-//        btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [btn setTitle:allSub[index] forState:UIControlStateNormal];
         NSInteger tempIndex = index%subjectImgName.count;
         [btn setImage:[UIImage imageNamed:subjectImgName[tempIndex]] forState:UIControlStateNormal];
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
         btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
         btn.backgroundColor = [UIColor whiteColor];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
         btn.index = index;
         [btn addTarget:self action:@selector(selectSubject:) forControlEvents:UIControlEventTouchUpInside];
         [_titleScrollVew addSubview:btn];
@@ -87,6 +88,16 @@
 }
 
 - (void)selectSubject:(MyCustomButton *)sender {
+    if (sender.selected) {
+        return;
+    }
+    sender.selected = YES;
+    sender.borderColor = AppThemeColor;
+    if (lastBtn!=nil) {
+        lastBtn.borderColor = [UIColor clearColor];
+        lastBtn.selected = NO;
+    }
+    lastBtn = sender;
     if (sender.index==0) {
         subjectStr = @"";
     }

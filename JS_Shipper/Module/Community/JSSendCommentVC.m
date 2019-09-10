@@ -52,7 +52,6 @@
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     NSString *url = [NSString stringWithFormat:@"%@?postId=%@&comment=%@",URL_PostComment,_postId,content];
-    url = [url urlEncoding];
     [dic setObject:content forKey:@"comment"];
     [dic setObject:_postId forKey:@"postId"];
     [[NetworkManager sharedManager] postJSON:URL_PostComment parameters:dic imageDataArr:nil imageName:@"" completion:^(id responseData, RequestState status, NSError *error) {

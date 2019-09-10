@@ -40,7 +40,7 @@ static NetworkManager *_manager = nil;
     if (![name containsString:@"http"]) {
         name = [NSString stringWithFormat:@"%@%@",ROOT_URL(),name];
     }
-    
+    name = [name urlEncoding];
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     NSMutableDictionary *postDic = [NSMutableDictionary dictionaryWithDictionary:parameters];
     if (![NSString isEmpty:[UserInfo share].token]) {
