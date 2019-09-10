@@ -16,4 +16,10 @@
 @property (nonatomic, assign) UInt64 code;
 @property (nonatomic, copy) NSString *msg;
 
+/**  */
+@property (nonatomic,copy) NSString *avatar;
+
+/**  */
+@property (nonatomic,copy) NSString *image;
+
 @end

@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSSearchCircleVC : BaseVC
+/** 城市id */
+@property (nonatomic,copy) NSString *cityID;
 @property (weak, nonatomic) IBOutlet UITextField *searchTF;
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
 

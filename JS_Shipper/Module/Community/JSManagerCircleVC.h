@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSManagerCircleVC : BaseVC
-
+/** 圈子ID */
+@property (nonatomic,copy) NSString *circleID;
 @end
 
 @interface ManagerCircleTabCell : UITableViewCell
@@ -19,6 +20,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *contentLab;
 
+@end
+
+@interface CircleMemberModel : BaseItem
+/** <#object#> */
+@property (nonatomic,copy) NSString *circleId;
+/** <#object#> */
+@property (nonatomic,copy) NSString *ID;
+/** <#object#> */
+@property (nonatomic,copy) NSString *nickName;
+/** 状态，0待审核，1通过，2拒绝 */
+@property (nonatomic,copy) NSString *status;
+/** 会员id */
+@property (nonatomic,copy) NSString *subscriberId;
 @end
 
 NS_ASSUME_NONNULL_END

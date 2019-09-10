@@ -44,11 +44,11 @@ static NSUserDefaults *_defaults = nil;
     return [CacheUtil getCacherWithKey:@"token"];
 }
 
-- (NSString *)avatar {
-    if (![_avatar containsString:@"http"]) {
-        _avatar = [NSString stringWithFormat:@"%@%@",PIC_URL(),_avatar];
-    }
-    return _avatar;
-}
+//- (NSString *)avatar {
+//    if (![_avatar containsString:@"http"]) {
+//        _avatar = [NSString stringWithFormat:@"%@%@",PIC_URL(),_avatar];
+//    }
+//    return _avatar;
+//}
 
 @end

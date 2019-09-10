@@ -26,7 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** object */
 @property (nonatomic,copy) NSString *content;
-
+/** 是否已经点赞 */
+@property (nonatomic,copy) NSString *likeFlag;
 /** object */
 @property (nonatomic,copy) NSString *author;
 
@@ -42,11 +43,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *auditRemark;
 /** <#object#> */
 @property (nonatomic,copy) NSString *nickName;
-/** <#object#> */
-@property (nonatomic,copy) NSString *avatar;
-
-/** object */
-@property (nonatomic,copy) NSString *image;
+///** <#object#> */
+//@property (nonatomic,copy) NSString *avatar;
+//
+///** object */
+//@property (nonatomic,copy) NSString *image;
 
 
 /** object */

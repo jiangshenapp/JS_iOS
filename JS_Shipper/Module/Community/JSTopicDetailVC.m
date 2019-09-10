@@ -12,14 +12,29 @@
 @interface JSTopicDetailVC ()<UITableViewDelegate,UITableViewDataSource>
 /** 评论数据源 */
 @property (nonatomic,retain) NSMutableArray <CommentListData *>*commentDataSource;
+
+@property (weak, nonatomic) IBOutlet UIImageView *circleImgView;
+@property (weak, nonatomic) IBOutlet UILabel *circleNameLab;
+@property (weak, nonatomic) IBOutlet UITableView *mainTabView;
+@property (weak, nonatomic) IBOutlet UILabel *commentLab;
+@property (weak, nonatomic) IBOutlet UILabel *praiseNumLab;
+@property (weak, nonatomic) IBOutlet UIButton *likeBtn;
+//关注
+- (IBAction)attentionActionClick:(id)sender;
+//点赞
+- (IBAction)clickLikeAction:(UIButton *)sender;
 @end
 
 @implementation JSTopicDetailVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"详情";
     _praiseNumLab.text = _dataModel.likeCount;
     _commentLab.text = _dataModel.commentCount;
+    if ([_dataModel.likeFlag integerValue]==1) {
+        _likeBtn.selected = YES;
+    }
     _commentDataSource = [NSMutableArray array];
     [self getCommentData];
     // Do any additional setup after loading the view.
@@ -33,6 +48,7 @@
         if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
             [weakSelf.commentDataSource removeAllObjects];
             [weakSelf.commentDataSource addObjectsFromArray: [CommentListData mj_objectArrayWithKeyValuesArray:responseData]];
+            weakSelf.commentLab.text = [NSString stringWithFormat:@"%ld",weakSelf.commentDataSource.count];
             [weakSelf.mainTabView reloadData];
         }
     }];
@@ -70,13 +86,22 @@
         CommentListData *model = _commentDataSource[indexPath.row];
         cell.commentNameLab.text = model.nickName;
         cell.timeLab.text = [NSString stringWithFormat:@"%@发布",[Utils getTimeStrToCurrentDateWith:model.createTime]];
-//        [cell.headImgView sd_setImageWithURL:[NSURL URLWithString:model.avatar] placeholderImage:DefaultImage];
+        [cell.commentHeadImgView sd_setImageWithURL:[NSURL URLWithString:model.avatar] placeholderImage:DefaultImage];
         cell.commentContentLab.text = model.comment;
     }
     return cell;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section==1) {
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, autoScaleW(44))];
+        view.backgroundColor = [UIColor whiteColor];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(18, 0, view.width-36, view.height)];
+        label.text = [NSString stringWithFormat:@"全部评论(%ld)",_commentDataSource.count];
+        label.font = [UIFont systemFontOfSize:14];
+        [view addSubview:label];
+        return view;
+    }
     return [[UIView alloc]init];
 }
 
@@ -85,6 +110,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section==1) {
+        return autoScaleW(44);
+    }
     return 1;
 }
 
@@ -110,7 +138,30 @@
     }
 }
 
-- (IBAction)followBtnClickAction:(UIButton *)sender {
+- (IBAction)attentionActionClick:(id)sender {
+}
+
+- (IBAction)clickLikeAction:(UIButton *)sender {
+    if (sender.selected) {
+        return;
+    }
+    __weak typeof(self) weakSelf = self;
+    NSDictionary *dic = [NSDictionary dictionary];
+    NSString *url = [NSString stringWithFormat:@"%@?postId=%@",URL_PostLike,_dataModel.ID];
+    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status==Request_Success) {
+            weakSelf.praiseNumLab.text = [NSString stringWithFormat:@"%ld",[weakSelf.dataModel.likeCount integerValue]+1];
+            sender.selected = YES;
+            // 0.2 表示动画时长为0.2秒
+            [UIView animateWithDuration:0.1 animations:^{
+                sender.imageView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.1 animations:^{
+                    sender.imageView.transform = CGAffineTransformIdentity;
+                }];
+            }];
+        }
+    }];
 }
 @end
 

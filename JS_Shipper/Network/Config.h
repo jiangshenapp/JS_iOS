@@ -102,7 +102,7 @@ NSString *PIC_URL(void);
 #define URL_CircleApply @"/app/circle/apply"//申请加入
 #define URL_CircleAuditApply @"/app/circle/auditApply"//入圈审核"
 #define URL_CircleDeleteSubscriber @"/app/circle/deleteSubscriber"//删除成员"
-#define URL_CircleList @"/app/circle/list"//我的圈子
+#define URL_CircleMyList @"/app/circle/list"//我的圈子
 #define URL_CircleMemberList @"/app/circle/memberList"//圈子成员列表"
 
 //帖子

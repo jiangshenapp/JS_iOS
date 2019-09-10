@@ -10,6 +10,10 @@
 #import "JSPostListModel.h"
 #import "JSSendTopicVC.h"
 #import "JSTopicDetailVC.h"
+#import "JSManagerCircleVC.h"
+#import "MyCustomButton.h"
+
+#define PageCount 3
 
 @interface JSCircleContentVC ()
 /** 数据源 */
@@ -20,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"XXX的圈子";
+    self.title = _dataModel.name;
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
     [rightBtn setTitle:@"管理" forState:UIControlStateNormal];
     [rightBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
@@ -28,6 +32,33 @@
     [rightBtn addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
     self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     [self getNetData];
+    [self initTopicListView];
+}
+
+- (void)initTopicListView {
+    CGFloat leftSpace = 12;
+    CGFloat maxRight = leftSpace;;
+    CGFloat viewW = WIDTH/PageCount-leftSpace;
+    NSArray *subjectArr = [_dataModel.subjects componentsSeparatedByString:@","];
+    NSArray *subjectImgName = @[@"social_circle_icon_blue",@"social_circle_icon_red",@"social_circle_icon_green",@"social_circle_icon_yellow"];
+    for (NSInteger index = 0; index<subjectArr.count; index++) {
+        MyCustomButton *btn = [[MyCustomButton alloc]initWithFrame:CGRectMake(maxRight, 0, viewW, _titleScrollVew.height)];
+        btn.cornerRadius = 5;
+//        btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [btn setTitle:subjectArr[index] forState:UIControlStateNormal];
+        NSInteger tempIndex = index%subjectImgName.count;
+        [btn setImage:[UIImage imageNamed:subjectImgName[tempIndex]] forState:UIControlStateNormal];
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
+        btn.titleEdgeInsets = UIEdgeInsetsMake(5, 0, 0, 0);
+        btn.backgroundColor = [UIColor whiteColor];
+        [_titleScrollVew addSubview:btn];
+        btn.borderColor = [UIColor clearColor];
+        if (index==0) {
+            btn.borderColor = AppThemeColor;
+        }
+        maxRight = btn.right+leftSpace;
+    }
+    _titleScrollVew.contentSize = CGSizeMake(maxRight, 0);
 }
 
 - (void)getNetData {
@@ -43,7 +74,8 @@
 }
 
 - (void)pushVC {
-    UIViewController *vc = [Utils getViewController:@"Community" WithVCName:@"JSManagerCircleVC"];
+    JSManagerCircleVC *vc = (JSManagerCircleVC *)[Utils getViewController:@"Community" WithVCName:@"JSManagerCircleVC"];
+    vc.circleID = _circleId;
     [self.navigationController pushViewController:vc animated:YES];}
 
 #pragma mark - UITableView 代理
@@ -61,6 +93,7 @@
     cell.contentLab.text = model.content;
     cell.nameLab.text = model.nickName;
     [cell.headImgView sd_setImageWithURL:[NSURL URLWithString:model.avatar] placeholderImage:DefaultImage];
+    cell.likeBtn.selected = [model.likeFlag boolValue];
     cell.tag1Lab.hidden = YES;
     cell.tag2Lab.hidden = YES;
     if ([model.star boolValue]) {

@@ -10,11 +10,11 @@
 
 @implementation JSCommunityModel
 
-- (NSString *)image {
-    if (![_image containsString:@"http"]) {
-        _image = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image];
-    }
-    return _image;
-}
+//- (NSString *)image {
+//    if (![_image containsString:@"http"]) {
+//        _image = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image];
+//    }
+//    return _image;
+//}
 
 @end

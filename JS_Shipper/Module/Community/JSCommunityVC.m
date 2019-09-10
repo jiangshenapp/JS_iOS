@@ -10,6 +10,7 @@
 #import "JSSelectCityVC.h"
 #import "JSTieziListVC.h"
 #import "JSCircleContentVC.h"
+#import "JSSearchCircleVC.h"
 
 @interface JSCommunityVC ()
 {
@@ -87,8 +88,8 @@
     __weak typeof(self) weakSelf = self;
     NSDictionary *dic = [NSDictionary dictionary];
     _cityCode = @"330200";
-    NSString *url = [NSString stringWithFormat:@"%@?city=%@&showSide=%@",URL_CircleAll,_cityCode,_showSide];
-    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+//    NSString *url = [NSString stringWithFormat:@"%@?city=%@&showSide=%@",URL_CircleList,_cityCode,_showSide];
+    [[NetworkManager sharedManager] postJSON:URL_CircleMyList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
             weakSelf.dataSource = [JSCommunityModel mj_objectArrayWithKeyValuesArray:responseData];
             [weakSelf.baseTabView reloadData];
@@ -115,6 +116,7 @@
     JSCommunityModel *model = _dataSource[indexPath.row];
     JSCircleContentVC *vc = (JSCircleContentVC *)[Utils getViewController:@"Community" WithVCName:@"JSCircleContentVC"];
     vc.circleId = model.ID;
+    vc.dataModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -196,6 +198,10 @@
     else if ([segue.identifier isEqualToString:@"collect"]) {
         JSTieziListVC *vc = segue.destinationViewController;
         vc.type = 1;
+    }
+    else if ([segue.identifier isEqualToString:@"searchCircle"]) {
+        JSSearchCircleVC *searchVC = segue.destinationViewController;
+        searchVC.cityID = _cityCode;
     }
 }
 

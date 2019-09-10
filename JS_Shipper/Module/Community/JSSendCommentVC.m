@@ -50,10 +50,12 @@
     }
     
     __weak typeof(self) weakSelf = self;
-    NSDictionary *dic = [NSDictionary dictionary];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     NSString *url = [NSString stringWithFormat:@"%@?postId=%@&comment=%@",URL_PostComment,_postId,content];
     url = [url urlEncoding];
-    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+    [dic setObject:content forKey:@"comment"];
+    [dic setObject:_postId forKey:@"postId"];
+    [[NetworkManager sharedManager] postJSON:URL_PostComment parameters:dic imageDataArr:nil imageName:@"" completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success) {
             [Utils showToast:@"评论成功"];
             [weakSelf backAction:nil];
@@ -62,5 +64,16 @@
             }
         }
     }];
+
+        
+//    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+//        if (status==Request_Success) {
+//            [Utils showToast:@"评论成功"];
+//            [weakSelf backAction:nil];
+//            if (weakSelf.doneBlock) {
+//                weakSelf.doneBlock();
+//            }
+//        }
+//    }];
 }
 @end

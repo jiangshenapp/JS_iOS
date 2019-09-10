@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JSCommunityModel : BaseItem
 /** <#object#> */
 @property (nonatomic,copy) NSString *admin;
-/** object */
+/** 0待审核，1通过，2拒绝 */
 @property (nonatomic,copy) NSString *applyStatus;
 /** <#object#> */
 @property (nonatomic,copy) NSString *city;
@@ -29,8 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *stopWord;
 /** <#object#> */
 @property (nonatomic,copy) NSString *subjects;
-/** <#object#> */
-@property (nonatomic,copy) NSString *image;
+///** <#object#> */
+//@property (nonatomic,copy) NSString *image;
+/** 0未申请  1已申请 */
+//@property (nonatomic,copy) NSString *applyStatus;
 @end
 
 NS_ASSUME_NONNULL_END

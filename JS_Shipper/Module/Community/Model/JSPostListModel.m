@@ -9,17 +9,5 @@
 #import "JSPostListModel.h"
 
 @implementation JSPostListModel
--(NSString *)avatar {
-    if (![_avatar containsString:@"http"]) {
-        _avatar = [NSString stringWithFormat:@"%@%@",PIC_URL(),_avatar];
-    }
-    return _avatar;
-}
 
--(NSString *)image {
-    if (![_image containsString:@"http"]&&_image.length>0) {
-        _image = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image];
-    }
-    return _image;
-}
 @end
