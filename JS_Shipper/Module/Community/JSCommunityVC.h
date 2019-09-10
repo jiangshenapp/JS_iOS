@@ -8,6 +8,7 @@
 
 #import "BaseVC.h"
 #import "CircleListTabCell.h"
+#import "JSCommunityModel.h"
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BMKLocationKit/BMKLocationManager.h>
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>

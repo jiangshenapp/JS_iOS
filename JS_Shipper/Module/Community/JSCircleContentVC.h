@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JSCircleContentVC : BaseVC
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScrollVew;
-
+/** 圈子id */
+@property (nonatomic,copy) NSString *circleId;
 @end
 
 @interface CircleContentTabCell : UITableViewCell

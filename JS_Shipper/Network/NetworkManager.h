@@ -58,4 +58,6 @@ typedef void(^RequestCompletion)(id responseData,RequestState status,NSError *er
        imageName:(NSString *)imageName
       completion:(RequestCompletion)completion;
 
+
+
 @end

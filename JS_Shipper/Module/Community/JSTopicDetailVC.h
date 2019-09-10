@@ -7,10 +7,13 @@
 //
 
 #import "BaseVC.h"
+#import "JSPostListModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSTopicDetailVC : BaseVC
+/** <#object#> */
+@property (nonatomic,retain) JSPostListModel *dataModel;
 @property (weak, nonatomic) IBOutlet UIImageView *circleImgView;
 @property (weak, nonatomic) IBOutlet UILabel *circleNameLab;
 
@@ -24,7 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface TopicDetailTabCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+@property (weak, nonatomic) IBOutlet UIImageView *headImgView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
 @property (weak, nonatomic) IBOutlet UILabel *contentLab;
 @property (weak, nonatomic) IBOutlet UIImageView *contentImgView;
@@ -32,9 +36,25 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *commentHeadImgView;
 @property (weak, nonatomic) IBOutlet UILabel *commentNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *commentContentLab;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentImgH;
 
+@end
 
-
+@interface CommentListData : BaseItem
+/** <#object#> */
+@property (nonatomic,copy) NSString *comment;
+/** 评论人*/
+@property (nonatomic,copy) NSString *createBy;
+/** 帖子ID */
+@property (nonatomic,copy) NSString *postId;
+/** <#object#> */
+@property (nonatomic,copy) NSString *ID;
+/** <#object#> */
+@property (nonatomic,copy) NSString *createTime;
+/** <#object#> */
+@property (nonatomic,copy) NSString *delFlag;
+/** <#object#> */
+@property (nonatomic,copy) NSString *nickName;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -271,6 +271,11 @@
 		2012E5B322B33904001F8001 /* JSLineDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B222B33904001F8001 /* JSLineDetaileVC.m */; };
 		2012E5B622B33941001F8001 /* JSCityDeliveryDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B522B33941001F8001 /* JSCityDeliveryDetaileVC.m */; };
 		2012E5B922B37643001F8001 /* JSHomeDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B822B37643001F8001 /* JSHomeDetaileVC.m */; };
+		201883FD2325EC6700CF780B /* JSCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FC2325EC6700CF780B /* JSCommunityModel.m */; };
+		201884002325EF2300CF780B /* JSPostListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FF2325EF2300CF780B /* JSPostListModel.m */; };
+		2018840823263D1000CF780B /* NSString+NOEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018840723263D1000CF780B /* NSString+NOEmoji.m */; };
+		2018840B2326430B00CF780B /* RequestURLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018840A2326430B00CF780B /* RequestURLUtil.m */; };
+		2018840C232643C500CF780B /* RequestURLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018840A2326430B00CF780B /* RequestURLUtil.m */; };
 		203B4E2A231F5D0200A288CC /* JSTieziListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B4E29231F5D0200A288CC /* JSTieziListVC.m */; };
 		203C1982225AE02000AB5970 /* JSCarSourceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C1981225AE02000AB5970 /* JSCarSourceDetailVC.m */; };
 		203C30292320D5D20007FC53 /* JSParkAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C30282320D5D20007FC53 /* JSParkAddressVC.m */; };
@@ -1292,6 +1297,14 @@
 		2012E5B522B33941001F8001 /* JSCityDeliveryDetaileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCityDeliveryDetaileVC.m; sourceTree = "<group>"; };
 		2012E5B722B37643001F8001 /* JSHomeDetaileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSHomeDetaileVC.h; sourceTree = "<group>"; };
 		2012E5B822B37643001F8001 /* JSHomeDetaileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSHomeDetaileVC.m; sourceTree = "<group>"; };
+		201883FB2325EC6700CF780B /* JSCommunityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCommunityModel.h; sourceTree = "<group>"; };
+		201883FC2325EC6700CF780B /* JSCommunityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCommunityModel.m; sourceTree = "<group>"; };
+		201883FE2325EF2300CF780B /* JSPostListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSPostListModel.h; sourceTree = "<group>"; };
+		201883FF2325EF2300CF780B /* JSPostListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPostListModel.m; sourceTree = "<group>"; };
+		2018840623263D1000CF780B /* NSString+NOEmoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NOEmoji.h"; sourceTree = "<group>"; };
+		2018840723263D1000CF780B /* NSString+NOEmoji.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NOEmoji.m"; sourceTree = "<group>"; };
+		201884092326430B00CF780B /* RequestURLUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestURLUtil.h; sourceTree = "<group>"; };
+		2018840A2326430B00CF780B /* RequestURLUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestURLUtil.m; sourceTree = "<group>"; };
 		203B4E28231F5D0200A288CC /* JSTieziListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTieziListVC.h; sourceTree = "<group>"; };
 		203B4E29231F5D0200A288CC /* JSTieziListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTieziListVC.m; sourceTree = "<group>"; };
 		203C1980225AE02000AB5970 /* JSCarSourceDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCarSourceDetailVC.h; sourceTree = "<group>"; };
@@ -2454,6 +2467,17 @@
 			path = HyphenateSDK;
 			sourceTree = "<group>";
 		};
+		201883FA2325EC5000CF780B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				201883FB2325EC6700CF780B /* JSCommunityModel.h */,
+				201883FC2325EC6700CF780B /* JSCommunityModel.m */,
+				201883FE2325EF2300CF780B /* JSPostListModel.h */,
+				201883FF2325EF2300CF780B /* JSPostListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		202D3FDF226B0D91001B3353 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2757,6 +2781,8 @@
 				A0E9270422852C9C00D07C58 /* AEFilePath.m */,
 				209B6ACB2272DCCE0060F509 /* MKMapView+ZoomLevel.h */,
 				209B6ACA2272DCCE0060F509 /* MKMapView+ZoomLevel.m */,
+				2018840623263D1000CF780B /* NSString+NOEmoji.h */,
+				2018840723263D1000CF780B /* NSString+NOEmoji.m */,
 				20FB0385231D00090015787F /* YYStarView */,
 				20914FE022B8C734005B4A4E /* LocationTransform */,
 				20BD733C2248BE420020EA5D /* Cache */,
@@ -2860,6 +2886,8 @@
 				20BD735F2248BE420020EA5D /* NetworkUtil.m */,
 				20BD73612248BE420020EA5D /* NetworkManager.h */,
 				20BD73642248BE420020EA5D /* NetworkManager.m */,
+				201884092326430B00CF780B /* RequestURLUtil.h */,
+				2018840A2326430B00CF780B /* RequestURLUtil.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2961,6 +2989,7 @@
 				20E41987231E3AD7001E89C7 /* JSManagerCircleVC.m */,
 				203B4E28231F5D0200A288CC /* JSTieziListVC.h */,
 				203B4E29231F5D0200A288CC /* JSTieziListVC.m */,
+				201883FA2325EC5000CF780B /* Model */,
 				20FB037E231CEC240015787F /* View */,
 			);
 			path = Community;
@@ -4104,6 +4133,7 @@
 				205A90A123175F72004C756E /* EMGroupsViewController.m in Sources */,
 				20815E8C23176C8A00E24C75 /* JSOrderDistributionVC.m in Sources */,
 				205A90A323175F72004C756E /* WKDelegateController.m in Sources */,
+				2018840C232643C500CF780B /* RequestURLUtil.m in Sources */,
 				205A90A423175F72004C756E /* EMInviteFriendViewController.m in Sources */,
 				205A90A523175F72004C756E /* EMGroupAdminsViewController.m in Sources */,
 				205A90A623175F72004C756E /* HomeDataModel.m in Sources */,
@@ -4183,10 +4213,12 @@
 				20118E5422DEE96000A195D1 /* EMMsgTranspondViewController.m in Sources */,
 				A096484622B881AD000FDBE6 /* FilterButton.m in Sources */,
 				20118E2222DEE96000A195D1 /* EMMsgRecallBubbleView.m in Sources */,
+				2018840823263D1000CF780B /* NSString+NOEmoji.m in Sources */,
 				20BD73342248BDC30020EA5D /* main.m in Sources */,
 				20118DFB22DEE95F00A195D1 /* EMChatBarEmoticonView.m in Sources */,
 				20118E2122DEE96000A195D1 /* EMMessageTimeCell.m in Sources */,
 				201040BA229E662900B7B258 /* AddressInfoModel.m in Sources */,
+				201884002325EF2300CF780B /* JSPostListModel.m in Sources */,
 				20BD73262248BDC20020EA5D /* AppDelegate.m in Sources */,
 				20BD73C12248BE440020EA5D /* JSMineVC.m in Sources */,
 				20118E7C22DEE96000A195D1 /* EMGroupMembersViewController.m in Sources */,
@@ -4250,6 +4282,7 @@
 				20118F9022DEEA7600A195D1 /* EMRealtimeSearch.m in Sources */,
 				A00A227822A5FA57002E2E0C /* JSOrderDetailsVC.m in Sources */,
 				A096484322B8815D000FDBE6 /* BaseCustomView.m in Sources */,
+				201883FD2325EC6700CF780B /* JSCommunityModel.m in Sources */,
 				20118E7122DEE96000A195D1 /* EMChatroomAdminsViewController.m in Sources */,
 				20A8C22622DEB35F008E10EB /* CustomEaseUtils.m in Sources */,
 				A096484022B8815D000FDBE6 /* SortView.m in Sources */,
@@ -4276,6 +4309,7 @@
 				20BD73B92248BE440020EA5D /* CZNotNetAvailableVC.m in Sources */,
 				20BD73BC2248BE440020EA5D /* Reachability.m in Sources */,
 				20118F7622DEEA7600A195D1 /* PSTCollectionViewItemKey.m in Sources */,
+				2018840B2326430B00CF780B /* RequestURLUtil.m in Sources */,
 				20118E2022DEE96000A195D1 /* EMMessageStatusView.m in Sources */,
 				A075190A227D17710032A974 /* UIView+Extension.m in Sources */,
 				20BD73AE2248BE440020EA5D /* JHHJView.m in Sources */,

@@ -21,15 +21,8 @@
     [super viewDidLoad];
     self.navBar.hidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.hidden = YES;
     // Do any additional setup after loading the view.
 }
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
-
 /*
 #pragma mark - Navigation
 
@@ -45,6 +38,29 @@
 }
 
 - (IBAction)sendAction:(UIButton *)sender {
-    [self backAction:nil];
+    NSString *content = _commentTV.text;
+    content = [content noEmoji];
+    if (content.length==0) {
+        if (_commentTV.text.length>0) {
+            [Utils showToast:@"请输入合法字符串"];
+            return;
+        }
+        [Utils showToast:@"请填写内容"];
+        return;
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    NSDictionary *dic = [NSDictionary dictionary];
+    NSString *url = [NSString stringWithFormat:@"%@?postId=%@&comment=%@",URL_PostComment,_postId,content];
+    url = [url urlEncoding];
+    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status==Request_Success) {
+            [Utils showToast:@"评论成功"];
+            [weakSelf backAction:nil];
+            if (weakSelf.doneBlock) {
+                weakSelf.doneBlock();
+            }
+        }
+    }];
 }
 @end

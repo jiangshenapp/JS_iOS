@@ -7,11 +7,15 @@
 //
 
 #import "BaseVC.h"
+#import "NSString+NOEmoji.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSSendCommentVC : BaseVC
-
+/** <#object#> */
+@property (nonatomic,copy) NSString *postId;
+/** <#object#> */
+@property (nonatomic,copy)  dispatch_block_t doneBlock;
 @end
 
 NS_ASSUME_NONNULL_END
