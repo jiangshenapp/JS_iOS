@@ -16,6 +16,9 @@
 #define PageCount 3
 
 @interface JSCircleContentVC ()
+{
+    NSString *subjectStr;
+}
 /** 数据源 */
 @property (nonatomic,retain) NSMutableArray <JSPostListModel *>*dataSource;
 @end
@@ -31,6 +34,7 @@
     rightBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [rightBtn addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
     self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    subjectStr = @"";
     [self getNetData];
     [self initTopicListView];
 }
@@ -39,18 +43,21 @@
     CGFloat leftSpace = 12;
     CGFloat maxRight = leftSpace;;
     CGFloat viewW = WIDTH/PageCount-leftSpace;
-    NSArray *subjectArr = [_dataModel.subjects componentsSeparatedByString:@","];
+    NSMutableArray *allSub = [NSMutableArray arrayWithArray:@[@"全部"]];
+    [allSub addObjectsFromArray:[_dataModel.subjects componentsSeparatedByString:@","]];
     NSArray *subjectImgName = @[@"social_circle_icon_blue",@"social_circle_icon_red",@"social_circle_icon_green",@"social_circle_icon_yellow"];
-    for (NSInteger index = 0; index<subjectArr.count; index++) {
+    for (NSInteger index = 0; index<allSub.count; index++) {
         MyCustomButton *btn = [[MyCustomButton alloc]initWithFrame:CGRectMake(maxRight, 0, viewW, _titleScrollVew.height)];
         btn.cornerRadius = 5;
 //        btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [btn setTitle:subjectArr[index] forState:UIControlStateNormal];
+        [btn setTitle:allSub[index] forState:UIControlStateNormal];
         NSInteger tempIndex = index%subjectImgName.count;
         [btn setImage:[UIImage imageNamed:subjectImgName[tempIndex]] forState:UIControlStateNormal];
-        btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
-        btn.titleEdgeInsets = UIEdgeInsetsMake(5, 0, 0, 0);
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
         btn.backgroundColor = [UIColor whiteColor];
+        btn.index = index;
+        [btn addTarget:self action:@selector(selectSubject:) forControlEvents:UIControlEventTouchUpInside];
         [_titleScrollVew addSubview:btn];
         btn.borderColor = [UIColor clearColor];
         if (index==0) {
@@ -64,7 +71,7 @@
 - (void)getNetData {
     __weak typeof(self) weakSelf = self;
     NSDictionary *dic = [NSDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@?circleId=%@",URL_PostList,_circleId];
+    NSString *url = [NSString stringWithFormat:@"%@?circleId=%@&subject=%@",URL_PostList,_circleId,subjectStr];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
             weakSelf.dataSource = [JSPostListModel mj_objectArrayWithKeyValuesArray:responseData];
@@ -76,7 +83,18 @@
 - (void)pushVC {
     JSManagerCircleVC *vc = (JSManagerCircleVC *)[Utils getViewController:@"Community" WithVCName:@"JSManagerCircleVC"];
     vc.circleID = _circleId;
-    [self.navigationController pushViewController:vc animated:YES];}
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)selectSubject:(MyCustomButton *)sender {
+    if (sender.index==0) {
+        subjectStr = @"";
+    }
+    else {
+        subjectStr = sender.currentTitle;
+    }
+    [self getNetData];
+}
 
 #pragma mark - UITableView 代理
 
