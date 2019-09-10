@@ -1,7 +1,7 @@
 //
 //  Config.h
 //  Chaozhi
-//  Notes：接口地址【文档：http://47.96.122.74:9999/swagger-ui.html】
+//  Notes：接口地址【文档：http://47.96.122.74:9999/swagger-ui.html?urls.primaryName=logistic-biz】
 //
 //  Created by Jason_hzb on 2018/5/29.
 //  Copyright © 2018年 小灵狗出行. All rights reserved.
