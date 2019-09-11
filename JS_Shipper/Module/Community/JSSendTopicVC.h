@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JSSendTopicVC : BaseVC
 /** 圈子id */
 @property (nonatomic,copy) NSString *circleId;
+/** <#object#> */
+@property (nonatomic,retain) NSArray *subjectArr;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -732,6 +732,19 @@
 		20815EA5231771BE00E24C75 /* DriverConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815EA4231771BE00E24C75 /* DriverConfig.m */; };
 		20815EC0231776F900E24C75 /* AuthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815EBF231776F900E24C75 /* AuthInfo.m */; };
 		20815EC12317776100E24C75 /* SortView.m in Sources */ = {isa = PBXBuildFile; fileRef = A096483722B8815C000FDBE6 /* SortView.m */; };
+		208F89672328921C00918888 /* JSCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FC2325EC6700CF780B /* JSCommunityModel.m */; };
+		208F8968232892D300918888 /* JSPostListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FF2325EF2300CF780B /* JSPostListModel.m */; };
+		208F8969232892EE00918888 /* JSSendTopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E41984231E1587001E89C7 /* JSSendTopicVC.m */; };
+		208F896A232893EC00918888 /* NSString+NOEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018840723263D1000CF780B /* NSString+NOEmoji.m */; };
+		208F896B23289E2A00918888 /* JSTieziListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B4E29231F5D0200A288CC /* JSTieziListVC.m */; };
+		208F896E23289F5B00918888 /* JSMyTieZiListSwitchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F896D23289F5B00918888 /* JSMyTieZiListSwitchVC.m */; };
+		208F896F23289F5B00918888 /* JSMyTieZiListSwitchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F896D23289F5B00918888 /* JSMyTieZiListSwitchVC.m */; };
+		208F897723289FE500918888 /* YPTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F897423289FE500918888 /* YPTabItem.m */; };
+		208F897823289FE500918888 /* YPTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F897423289FE500918888 /* YPTabItem.m */; };
+		208F897923289FE500918888 /* YPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F897523289FE500918888 /* YPTabBarController.m */; };
+		208F897A23289FE500918888 /* YPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F897523289FE500918888 /* YPTabBarController.m */; };
+		208F897B23289FE500918888 /* YPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F897623289FE500918888 /* YPTabBar.m */; };
+		208F897C23289FE500918888 /* YPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F897623289FE500918888 /* YPTabBar.m */; };
 		20914FDF22B8C6E7005B4A4E /* XLGMapNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20914FDE22B8C6E7005B4A4E /* XLGMapNavVC.m */; };
 		20914FE322B8C734005B4A4E /* LocationTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 20914FE222B8C734005B4A4E /* LocationTransform.m */; };
 		209B6ACC2272DCCF0060F509 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 209B6ACA2272DCCE0060F509 /* MKMapView+ZoomLevel.m */; };
@@ -740,6 +753,8 @@
 		209D7DEF224C617D00409EA2 /* JSAllOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 209D7DEE224C617D00409EA2 /* JSAllOrderVC.m */; };
 		20A83ED5229CE01E001304A8 /* MyCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A83ED4229CE01E001304A8 /* MyCustomButton.m */; };
 		20A8C22622DEB35F008E10EB /* CustomEaseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A8C22522DEB35F008E10EB /* CustomEaseUtils.m */; };
+		20AF58592328E1A400B6FAF9 /* ZYLPreViewImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF58582328E1A300B6FAF9 /* ZYLPreViewImageTool.m */; };
+		20AF585A2328E1A400B6FAF9 /* ZYLPreViewImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF58582328E1A300B6FAF9 /* ZYLPreViewImageTool.m */; };
 		20BD73262248BDC20020EA5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73252248BDC20020EA5D /* AppDelegate.m */; };
 		20BD732E2248BDC30020EA5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20BD732D2248BDC30020EA5D /* Assets.xcassets */; };
 		20BD73312248BDC30020EA5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BD732F2248BDC30020EA5D /* LaunchScreen.storyboard */; };
@@ -1407,6 +1422,14 @@
 		20815EA72317735A00E24C75 /* Public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		20815EBE231776F900E24C75 /* AuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthInfo.h; sourceTree = "<group>"; };
 		20815EBF231776F900E24C75 /* AuthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthInfo.m; sourceTree = "<group>"; };
+		208F896C23289F5B00918888 /* JSMyTieZiListSwitchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyTieZiListSwitchVC.h; sourceTree = "<group>"; };
+		208F896D23289F5B00918888 /* JSMyTieZiListSwitchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyTieZiListSwitchVC.m; sourceTree = "<group>"; };
+		208F897123289FE500918888 /* YPTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTabItem.h; sourceTree = "<group>"; };
+		208F897223289FE500918888 /* YPTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTabBar.h; sourceTree = "<group>"; };
+		208F897323289FE500918888 /* YPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTabBarController.h; sourceTree = "<group>"; };
+		208F897423289FE500918888 /* YPTabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTabItem.m; sourceTree = "<group>"; };
+		208F897523289FE500918888 /* YPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTabBarController.m; sourceTree = "<group>"; };
+		208F897623289FE500918888 /* YPTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTabBar.m; sourceTree = "<group>"; };
 		20914FDD22B8C6E6005B4A4E /* XLGMapNavVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGMapNavVC.h; sourceTree = "<group>"; };
 		20914FDE22B8C6E7005B4A4E /* XLGMapNavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGMapNavVC.m; sourceTree = "<group>"; };
 		20914FE122B8C734005B4A4E /* LocationTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTransform.h; sourceTree = "<group>"; };
@@ -1423,6 +1446,8 @@
 		20A83ED4229CE01E001304A8 /* MyCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCustomButton.m; sourceTree = "<group>"; };
 		20A8C22422DEB35F008E10EB /* CustomEaseUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomEaseUtils.h; sourceTree = "<group>"; };
 		20A8C22522DEB35F008E10EB /* CustomEaseUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomEaseUtils.m; sourceTree = "<group>"; };
+		20AF58582328E1A300B6FAF9 /* ZYLPreViewImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLPreViewImageTool.m; sourceTree = "<group>"; };
+		20AF585B2328E1AD00B6FAF9 /* ZYLPreViewImageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYLPreViewImageTool.h; sourceTree = "<group>"; };
 		20BD73212248BDC20020EA5D /* JS_Shipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JS_Shipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BD73242248BDC20020EA5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20BD73252248BDC20020EA5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2696,6 +2721,19 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		208F897023289FE500918888 /* YPTabBarController(订单切换卡) */ = {
+			isa = PBXGroup;
+			children = (
+				208F897123289FE500918888 /* YPTabItem.h */,
+				208F897223289FE500918888 /* YPTabBar.h */,
+				208F897323289FE500918888 /* YPTabBarController.h */,
+				208F897423289FE500918888 /* YPTabItem.m */,
+				208F897523289FE500918888 /* YPTabBarController.m */,
+				208F897623289FE500918888 /* YPTabBar.m */,
+			);
+			path = "YPTabBarController(订单切换卡)";
+			sourceTree = "<group>";
+		};
 		20914FE022B8C734005B4A4E /* LocationTransform */ = {
 			isa = PBXGroup;
 			children = (
@@ -2907,6 +2945,8 @@
 				20A83ED4229CE01E001304A8 /* MyCustomButton.m */,
 				201040BB229E7C6A00B7B258 /* ZHPickView.h */,
 				201040BC229E7C6A00B7B258 /* ZHPickView.m */,
+				20AF585B2328E1AD00B6FAF9 /* ZYLPreViewImageTool.h */,
+				20AF58582328E1A300B6FAF9 /* ZYLPreViewImageTool.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2914,6 +2954,7 @@
 		20BD736C2248BE430020EA5D /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				208F897023289FE500918888 /* YPTabBarController(订单切换卡) */,
 				200515CC22DDCE3F0061AE4A /* EaseUI */,
 				203D7F8F229BD16E00A3D847 /* BaiduMap */,
 				20BD736D2248BE430020EA5D /* Reachability */,
@@ -2989,6 +3030,8 @@
 				20E41987231E3AD7001E89C7 /* JSManagerCircleVC.m */,
 				203B4E28231F5D0200A288CC /* JSTieziListVC.h */,
 				203B4E29231F5D0200A288CC /* JSTieziListVC.m */,
+				208F896C23289F5B00918888 /* JSMyTieZiListSwitchVC.h */,
+				208F896D23289F5B00918888 /* JSMyTieZiListSwitchVC.m */,
 				201883FA2325EC5000CF780B /* Model */,
 				20FB037E231CEC240015787F /* View */,
 			);
@@ -3928,6 +3971,7 @@
 				205A8FEF23175F72004C756E /* PSTCollectionViewCell.m in Sources */,
 				20FB037F231CF32E0015787F /* JSCircleContentVC.m in Sources */,
 				205A8FF023175F72004C756E /* JSConfirmAddressMapVC.m in Sources */,
+				20AF585A2328E1A400B6FAF9 /* ZYLPreViewImageTool.m in Sources */,
 				205A8FF123175F72004C756E /* AEIndicator.m in Sources */,
 				205A8FF223175F72004C756E /* XLGMapNavVC.m in Sources */,
 				205A8FF323175F72004C756E /* EMChatBarItem.m in Sources */,
@@ -3971,6 +4015,7 @@
 				205A901623175F72004C756E /* JSAboutVC.m in Sources */,
 				205A901723175F72004C756E /* PSTGridLayoutSection.m in Sources */,
 				20815E8E23176C8A00E24C75 /* JSOrderDetailMapVC.m in Sources */,
+				208F896F23289F5B00918888 /* JSMyTieZiListSwitchVC.m in Sources */,
 				20815E7D23176C8900E24C75 /* JSWithdrawalMoneyVC.m in Sources */,
 				205A901823175F72004C756E /* JSGardenTabCell.m in Sources */,
 				205A901923175F72004C756E /* EMSearchResultController.m in Sources */,
@@ -4052,6 +4097,7 @@
 				205A905823175F72004C756E /* RegularPhoneTF.m in Sources */,
 				205A905923175F72004C756E /* EMRealtimeSearch.m in Sources */,
 				205A905B23175F72004C756E /* BaseCustomView.m in Sources */,
+				208F897823289FE500918888 /* YPTabItem.m in Sources */,
 				20815E8723176C8A00E24C75 /* JSMyCarVC.m in Sources */,
 				205A905C23175F72004C756E /* EMChatroomAdminsViewController.m in Sources */,
 				205A905D23175F72004C756E /* CustomEaseUtils.m in Sources */,
@@ -4064,15 +4110,19 @@
 				20FB0380231CF3300015787F /* JSSearchCircleVC.m in Sources */,
 				205A906523175F72004C756E /* FilterCustomView.m in Sources */,
 				205A906623175F72004C756E /* CityCustomView.m in Sources */,
+				208F896A232893EC00918888 /* NSString+NOEmoji.m in Sources */,
 				205A906723175F72004C756E /* TradeRecordModel.m in Sources */,
+				208F8969232892EE00918888 /* JSSendTopicVC.m in Sources */,
 				20815E8D23176C8A00E24C75 /* JSAllOrderVC.m in Sources */,
 				205A906823175F72004C756E /* amrFileCodec.mm in Sources */,
 				205A906923175F72004C756E /* NetworkUtil.m in Sources */,
 				205A906A23175F72004C756E /* EMConversationHelper.m in Sources */,
+				208F896B23289E2A00918888 /* JSTieziListVC.m in Sources */,
 				205A906B23175F72004C756E /* RecordsModel.m in Sources */,
 				205A906C23175F72004C756E /* EaseEmotionEscape.m in Sources */,
 				205A906D23175F72004C756E /* AEButton.m in Sources */,
 				205A906F23175F72004C756E /* EMAvatarNameCell.m in Sources */,
+				208F8968232892D300918888 /* JSPostListModel.m in Sources */,
 				205A907023175F72004C756E /* UserInfo.m in Sources */,
 				A022CCD423191F5E00E3EDD5 /* MOFSToolView.m in Sources */,
 				20815E9C23176D9700E24C75 /* CarModel.m in Sources */,
@@ -4080,6 +4130,7 @@
 				205A907223175F72004C756E /* XLGChangeServerVC.m in Sources */,
 				205A907323175F72004C756E /* CZNotNetAvailableVC.m in Sources */,
 				205A907423175F72004C756E /* Reachability.m in Sources */,
+				208F897A23289FE500918888 /* YPTabBarController.m in Sources */,
 				20815E7E23176C8900E24C75 /* JSMyWalletVC.m in Sources */,
 				205A907523175F72004C756E /* PSTCollectionViewItemKey.m in Sources */,
 				205A907623175F72004C756E /* EMMessageStatusView.m in Sources */,
@@ -4097,6 +4148,7 @@
 				205A908223175F72004C756E /* BaseNavBar.m in Sources */,
 				205A908423175F72004C756E /* MWCaptionView.m in Sources */,
 				205A908523175F72004C756E /* EMMessageCell.m in Sources */,
+				208F897C23289FE500918888 /* YPTabBar.m in Sources */,
 				20815E8123176C8900E24C75 /* JSRechargeDepositVC.m in Sources */,
 				20815E8623176C8A00E24C75 /* JSAddCarVC.m in Sources */,
 				205A908823175F72004C756E /* EMSearchBar.m in Sources */,
@@ -4110,6 +4162,7 @@
 				205A908F23175F72004C756E /* MWPhotoBrowser.m in Sources */,
 				205A909123175F72004C756E /* PSTCollectionViewFlowLayout.m in Sources */,
 				20815EA023176E6200E24C75 /* JSGardenVC.m in Sources */,
+				208F89672328921C00918888 /* JSCommunityModel.m in Sources */,
 				205A909223175F72004C756E /* EMLocationViewController.m in Sources */,
 				205A909323175F72004C756E /* JSResetPswVC.m in Sources */,
 				205A909423175F72004C756E /* CZNotDataView.m in Sources */,
@@ -4189,6 +4242,7 @@
 				A0E9270522852C9C00D07C58 /* AEFilePath.m in Sources */,
 				20118F6C22DEEA7600A195D1 /* MWGridCell.m in Sources */,
 				20118E6722DEE96000A195D1 /* EMCreateChatroomViewController.m in Sources */,
+				20AF58592328E1A400B6FAF9 /* ZYLPreViewImageTool.m in Sources */,
 				20118E6D22DEE96000A195D1 /* EMChatroomOwnerViewController.m in Sources */,
 				20118F6922DEEA7600A195D1 /* MWPhoto.m in Sources */,
 				20118F6622DEEA7600A195D1 /* MWZoomingScrollView.m in Sources */,
@@ -4200,6 +4254,7 @@
 				A0F9CC7722AF366600161945 /* AccountInfo.m in Sources */,
 				20BD73B12248BE440020EA5D /* Utils.m in Sources */,
 				20118E6822DEE96000A195D1 /* EMChatroomsViewController.m in Sources */,
+				208F897923289FE500918888 /* YPTabBarController.m in Sources */,
 				20118F7122DEEA7600A195D1 /* PSTGridLayoutInfo.m in Sources */,
 				209B6AD22273097A0060F509 /* JSEditAddressVC.m in Sources */,
 				20118E2922DEE96000A195D1 /* EMMessageBubbleView.m in Sources */,
@@ -4308,6 +4363,7 @@
 				20BD73CF2248BE440020EA5D /* XLGChangeServerVC.m in Sources */,
 				20BD73B92248BE440020EA5D /* CZNotNetAvailableVC.m in Sources */,
 				20BD73BC2248BE440020EA5D /* Reachability.m in Sources */,
+				208F897B23289FE500918888 /* YPTabBar.m in Sources */,
 				20118F7622DEEA7600A195D1 /* PSTCollectionViewItemKey.m in Sources */,
 				2018840B2326430B00CF780B /* RequestURLUtil.m in Sources */,
 				20118E2022DEE96000A195D1 /* EMMessageStatusView.m in Sources */,
@@ -4333,6 +4389,7 @@
 				20118E7A22DEE96000A195D1 /* EMJoinGroupViewController.m in Sources */,
 				20BD74152248C5B70020EA5D /* JSCodeLoginVC.m in Sources */,
 				20118E8022DEE96000A195D1 /* EMGroupOwnerViewController.m in Sources */,
+				208F897723289FE500918888 /* YPTabItem.m in Sources */,
 				20118E5622DEE96000A195D1 /* EMConversationCell.m in Sources */,
 				20BD73CD2248BE440020EA5D /* XLGChangeServerCell.m in Sources */,
 				A02221D922C799B9006AD29A /* AEFlowLayoutView.m in Sources */,
@@ -4341,6 +4398,7 @@
 				20118F6F22DEEA7600A195D1 /* PSTCollectionViewFlowLayout.m in Sources */,
 				20118E4922DEE96000A195D1 /* EMLocationViewController.m in Sources */,
 				20BD741B2248C8230020EA5D /* JSResetPswVC.m in Sources */,
+				208F896E23289F5B00918888 /* JSMyTieZiListSwitchVC.m in Sources */,
 				20E41985231E1587001E89C7 /* JSSendTopicVC.m in Sources */,
 				20BD73BB2248BE440020EA5D /* CZNotDataView.m in Sources */,
 				A096484C22B88260000FDBE6 /* CityDeliveryTabCell.m in Sources */,

@@ -84,17 +84,18 @@
 - (void)applyAction:(UIButton *)sender {
     NSIndexPath *indexPath = [self.baseTabView indexPathForCell:(UITableViewCell *)sender.superview.superview];
     JSCommunityModel *model = _dataSource[indexPath.row];
-    if ([model.applyStatus integerValue]!=0) {
-        return;
+    if (model.applyStatus.length==0||[model.applyStatus integerValue]==3) {
+            __weak typeof(self) weakSelf = self;
+        NSDictionary *dic = [NSDictionary dictionary];
+        NSString *url = [NSString stringWithFormat:@"%@?circleId=%@",URL_CircleApply,model.ID];
+        [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+            if (status==Request_Success) {
+                [Utils showToast:@"申请成功"];
+                [weakSelf getNetData];
+            }
+        }];
+
     }
-//    __weak typeof(self) weakSelf = self;
-    NSDictionary *dic = [NSDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@?circleId=%@",URL_CircleApply,model.ID];
-    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
-        if (status==Request_Success) {
-            [Utils showToast:@"申请成功"];
-        }
-    }];
 
 }
 

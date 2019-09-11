@@ -11,6 +11,7 @@
 #import "JSTieziListVC.h"
 #import "JSCircleContentVC.h"
 #import "JSSearchCircleVC.h"
+#import "JSMyTieZiListSwitchVC.h"
 
 @interface JSCommunityVC ()
 {
@@ -28,8 +29,10 @@
 @property (nonatomic,retain) BMKGeoCodeSearch *geocodesearch;;
 /** 城市编码 */
 @property (nonatomic,copy) NSString *cityCode;
+@property (weak, nonatomic) IBOutlet UILabel *commentCountLab;
 /** <#object#> */
 @property (nonatomic,retain) NSMutableArray <JSCommunityModel *>*dataSource;
+- (IBAction)titleBtnActionClick:(UIButton *)sender;
 @end
 
 @implementation JSCommunityVC
@@ -40,6 +43,7 @@
 //    [locationService startUserLocationService];
     _locationService.delegate=self;
     _geocodesearch.delegate = self;
+    [self getNetData];
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -191,19 +195,24 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"comment"]) {
-        JSTieziListVC *vc = segue.destinationViewController;
-        vc.type = 2;
-    }
-    else if ([segue.identifier isEqualToString:@"collect"]) {
-        JSTieziListVC *vc = segue.destinationViewController;
-        vc.type = 1;
-    }
-    else if ([segue.identifier isEqualToString:@"searchCircle"]) {
-        JSSearchCircleVC *searchVC = segue.destinationViewController;
-        searchVC.cityID = _cityCode;
-    }
+//    if ([segue.identifier isEqualToString:@"comment"]) {
+//        JSTieziListVC *vc = segue.destinationViewController;
+//        vc.type = 2;
+//    }
+//    else if ([segue.identifier isEqualToString:@"collect"]) {
+//        JSTieziListVC *vc = segue.destinationViewController;
+//        vc.type = 1;
+//    }
+//    else if ([segue.identifier isEqualToString:@"searchCircle"]) {
+//        JSSearchCircleVC *searchVC = segue.destinationViewController;
+//        searchVC.cityID = _cityCode;
+//    }
 }
 
 
+- (IBAction)titleBtnActionClick:(UIButton *)sender {
+    JSMyTieZiListSwitchVC *v2c = [[JSMyTieZiListSwitchVC alloc]init];
+    v2c.type = sender.tag - 100;
+    [self.navigationController pushViewController:v2c animated:YES];
+}
 @end

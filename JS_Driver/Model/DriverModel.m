@@ -10,9 +10,4 @@
 
 @implementation DriverModel
 
-- (NSString *)avatar {
-    _avatar = [NSString stringWithFormat:@"%@%@",PIC_URL(),_avatar];
-    return _avatar;
-}
-
 @end

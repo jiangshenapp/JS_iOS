@@ -45,8 +45,9 @@
     ManagerCircleTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ManagerCircleTabCell"];
     CircleMemberModel *model = _dataSource[indexPath.row];
     cell.nameLab.text = model.nickName;
+    [cell.headImgView sd_setImageWithURL:[NSURL URLWithString:model.avatar] placeholderImage:DefaultImage];
     cell.contentLab.text = @"";
-    if (model.status==0) {
+    if ([model.status integerValue]==0) {
         cell.contentLab.text = @"(待审核)";
     }
     return cell;

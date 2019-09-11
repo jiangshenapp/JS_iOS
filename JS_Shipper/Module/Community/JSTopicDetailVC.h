@@ -22,12 +22,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
 @property (weak, nonatomic) IBOutlet UILabel *contentLab;
-@property (weak, nonatomic) IBOutlet UIImageView *contentImgView;
+//@property (weak, nonatomic) IBOutlet UIImageView *contentImgView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *commentHeadImgView;
 @property (weak, nonatomic) IBOutlet UILabel *commentNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *commentContentLab;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentImgH;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentImgH;
+@property (weak, nonatomic) IBOutlet UIButton *contentImgBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentImgW;
 
 @end
 

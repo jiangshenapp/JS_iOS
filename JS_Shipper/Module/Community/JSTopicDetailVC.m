@@ -8,13 +8,15 @@
 
 #import "JSTopicDetailVC.h"
 #import "JSSendCommentVC.h"
+#import <UIButton+WebCache.h>
+#import "ZYLPreViewImageTool.h"
 
 @interface JSTopicDetailVC ()<UITableViewDelegate,UITableViewDataSource>
 /** 评论数据源 */
 @property (nonatomic,retain) NSMutableArray <CommentListData *>*commentDataSource;
 
 @property (weak, nonatomic) IBOutlet UIImageView *circleImgView;
-@property (weak, nonatomic) IBOutlet UILabel *circleNameLab;
+@property (weak, nonatomic) IBOutlet UILabel *subjectNameLab;
 @property (weak, nonatomic) IBOutlet UITableView *mainTabView;
 @property (weak, nonatomic) IBOutlet UILabel *commentLab;
 @property (weak, nonatomic) IBOutlet UILabel *praiseNumLab;
@@ -32,6 +34,7 @@
     self.title = @"详情";
     _praiseNumLab.text = _dataModel.likeCount;
     _commentLab.text = _dataModel.commentCount;
+    _subjectNameLab.text = _dataModel.subject;
     if ([_dataModel.likeFlag integerValue]==1) {
         _likeBtn.selected = YES;
     }
@@ -74,11 +77,17 @@
         cell.contentLab.text = _dataModel.content;
         cell.nameLab.text = _dataModel.nickName;
         [cell.headImgView sd_setImageWithURL:[NSURL URLWithString:_dataModel.avatar] placeholderImage:DefaultImage];
+//        _dataModel.image = @"";
+        cell.contentImgBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
         if (_dataModel.image.length==0) {
-            cell.contentImgH.constant = 0;
+            cell.contentImgW.constant = 0;
         }
         else {
-            [cell.contentImgView sd_setImageWithURL:[NSURL URLWithString:_dataModel.image] placeholderImage:DefaultImage];
+            [cell.contentImgBtn sd_setImageWithURL:[NSURL URLWithString:_dataModel.image] forState:UIControlStateNormal placeholderImage:DefaultImage];
+            [cell.contentImgBtn addTarget:self action:@selector(showMaxImage:) forControlEvents:UIControlEventTouchUpInside];
+//            [cell.contentImgView sd_setImageWithURL: placeholderImage:DefaultImage];
+//            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showMaxImage:)];
+//            [cell.contentImgView addGestureRecognizer:tap];
         }
     }
     else if (indexPath.section==1) {
@@ -118,6 +127,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 10;
+}
+
+- (void)showMaxImage:(UIButton *)sender {
+ ZYLPreViewImageTool *tool =   [[ZYLPreViewImageTool alloc]initWithFrame:self.view.bounds andData:@[_dataModel.image] tag:0 andIsUrl:YES];
+    [[UIApplication sharedApplication].keyWindow addSubview:tool];
+
 }
 
 /*

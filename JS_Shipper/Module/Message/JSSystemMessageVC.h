@@ -21,4 +21,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface SysMessageModel : BaseItem
+/** <#object#> */
+@property (nonatomic,copy) NSString *isRead;
+/** <#object#> */
+@property (nonatomic,copy) NSString *content;
+/** <#object#> */
+@property (nonatomic,copy) NSString *publishTime;
+/** <#object#> */
+@property (nonatomic,copy) NSString *ID;
+/** <#object#> */
+@property (nonatomic,copy) NSString *createBy;
+/** <#object#> */
+@property (nonatomic,copy) NSString *title;
+/** <#object#> */
+@property (nonatomic,copy) NSString *image;
+/** <#object#> */
+@property (nonatomic,copy) NSString *type;
+/** <#object#> */
+@property (nonatomic,copy) NSString *createTime;
+@end
+
 NS_ASSUME_NONNULL_END

@@ -112,6 +112,10 @@ NSString *PIC_URL(void);
 #define URL_PostLike @"/app/post/like"//点赞"
 #define URL_PostList @"/app/post/list"//帖子列表
 
+
+//系统消息列表
+#define URL_MessageList @"/app/message/page"//消息列表"
+
 #pragma mark - ---------------H5地址---------------
 
 NSString *h5Url(void);

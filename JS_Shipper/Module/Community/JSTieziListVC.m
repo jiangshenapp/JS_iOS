@@ -16,7 +16,6 @@
 /** 数据源1 */
 @property (nonatomic,retain) NSMutableArray *dataSource3;
 
-- (IBAction)titleBtnAction:(UIButton *)sender;
 @end
 
 @implementation JSTieziListVC
@@ -24,10 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"帖子列表";
+    NSLog(@"%@",_type);
+    self.navBar.hidden = YES;
     _dataSource1 = [NSMutableArray array];
     _dataSource2 = [NSMutableArray array];
     _dataSource3 = [NSMutableArray array];
-    [self titleBtnAction:[self.view viewWithTag:100+_type]];
     // Do any additional setup after loading the view.
 }
 
@@ -56,17 +56,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)titleBtnAction:(UIButton *)sender {
-    if (sender.selected) {
-        return;
-    }
-    sender.selected = YES;
-    for (NSInteger tag = 100; tag <103; tag++) {
-        UIButton *tempBtn = [sender.superview viewWithTag:tag];
-        if (![sender isEqual:tempBtn]) {
-            tempBtn.selected = NO;
-        }
-    }
-}
 @end

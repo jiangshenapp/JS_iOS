@@ -19,6 +19,7 @@
 {
     NSString *subjectStr;
     MyCustomButton *lastBtn;
+    NSArray *subjectArr;;
 }
 /** 数据源 */
 @property (nonatomic,retain) NSMutableArray <JSPostListModel *>*dataSource;
@@ -44,12 +45,13 @@
     CGFloat leftSpace = 12;
     CGFloat maxRight = leftSpace;;
     CGFloat viewW = WIDTH/PageCount-leftSpace;
+    subjectArr = [_dataModel.subjects componentsSeparatedByString:@","];
     NSMutableArray *allSub = [NSMutableArray arrayWithArray:@[@"全部"]];
-    [allSub addObjectsFromArray:[_dataModel.subjects componentsSeparatedByString:@","]];
+    [allSub addObjectsFromArray:subjectArr];
     NSArray *subjectImgName = @[@"social_circle_icon_blue",@"social_circle_icon_red",@"social_circle_icon_green",@"social_circle_icon_yellow"];
     for (NSInteger index = 0; index<allSub.count; index++) {
         MyCustomButton *btn = [[MyCustomButton alloc]initWithFrame:CGRectMake(maxRight, 0, viewW, _titleScrollVew.height)];
-        btn.cornerRadius = 5;
+        btn.cornerRadius = 2;
         [btn setTitle:allSub[index] forState:UIControlStateNormal];
         NSInteger tempIndex = index%subjectImgName.count;
         [btn setImage:[UIImage imageNamed:subjectImgName[tempIndex]] forState:UIControlStateNormal];
@@ -84,6 +86,7 @@
 - (void)pushVC {
     JSManagerCircleVC *vc = (JSManagerCircleVC *)[Utils getViewController:@"Community" WithVCName:@"JSManagerCircleVC"];
     vc.circleID = _circleId;
+    vc.title = self.title;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -152,6 +155,7 @@
     if ([segue.destinationViewController isKindOfClass:[JSSendTopicVC class]]) {
         JSSendTopicVC *vc = segue.destinationViewController;
         vc.circleId = _circleId;
+        vc.subjectArr = [NSArray arrayWithArray:subjectArr];
     }
 }
 

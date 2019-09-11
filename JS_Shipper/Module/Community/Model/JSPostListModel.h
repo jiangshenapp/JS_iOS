@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *createTime;
 /** object */
 @property (nonatomic,copy) NSString *ID;
-/** object */
+/** 话题名字 */
 @property (nonatomic,copy) NSString *subject;
 
 /** object */

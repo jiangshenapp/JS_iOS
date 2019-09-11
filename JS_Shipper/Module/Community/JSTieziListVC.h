@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JSTieziListVC : BaseVC
 /** 类型 0 发布 1点赞 2 评论 */
-@property (nonatomic,assign) NSInteger type;
+@property (nonatomic,copy) NSString *type;
 @end
 
 NS_ASSUME_NONNULL_END
