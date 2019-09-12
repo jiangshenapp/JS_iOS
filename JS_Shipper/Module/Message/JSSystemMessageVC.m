@@ -7,6 +7,7 @@
 //
 
 #import "JSSystemMessageVC.h"
+#import "JSSysMsgDetailVC.h"
 
 @interface JSSystemMessageVC ()<UITableViewDelegate,UITableViewDataSource>
 /** 分页 */
@@ -20,16 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"系统消息";
-    self.baseTabView.delegate = self;
-    self.baseTabView.dataSource = self;
+    self.view.backgroundColor = PageColor;
+    self.mainTabView.delegate = self;
+    self.mainTabView.dataSource = self;
     _dataSource = [NSMutableArray array];
     __weak typeof(self) weakSelf = self;
-    self.baseTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.page = 1;
-        [weakSelf.baseTabView setContentOffset:CGPointMake(0, 0)];
         [weakSelf getData];
     }];
-    [self addTabMJ_FootView];
+//    [self addTabMJ_FootView];
     [self getData];
     // Do any additional setup after loading the view.
 }
@@ -52,34 +53,45 @@
             [weakSelf.dataSource addObjectsFromArray:tempArr];
             weakSelf.page++;
         }
-        if ([weakSelf.baseTabView.mj_footer isRefreshing]) {
-            [weakSelf.baseTabView.mj_footer endRefreshing];
+        if ([weakSelf.mainTabView.mj_footer isRefreshing]) {
+            [weakSelf.mainTabView.mj_footer endRefreshing];
         }
-        if ([weakSelf.baseTabView.mj_header isRefreshing]) {
-            [weakSelf.baseTabView.mj_header endRefreshing];
+        if ([weakSelf.mainTabView.mj_header isRefreshing]) {
+            [weakSelf.mainTabView.mj_header endRefreshing];
         }
         if (weakSelf.dataSource.count==[responseData[@"total"] integerValue]) {
-            weakSelf.baseTabView.mj_footer = nil;
+            weakSelf.mainTabView.mj_footer = nil;
         }
         else {
             [weakSelf addTabMJ_FootView];
         }
         [weakSelf hiddenNoDataView:weakSelf.dataSource.count];
-        [weakSelf.baseTabView reloadData];
+        [weakSelf.mainTabView reloadData];
     }];
 }
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return _dataSource.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataSource.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SysMessageTabcell *cell = [tableView dequeueReusableCellWithIdentifier:@"SysMessageTabcell"];
+    SysMessageModel *model = _dataSource[indexPath.section];
+    cell.titleLab.text = model.title;
+    cell.contentLab.text = model.content;
+    cell.readLab.text = [model.isRead boolValue]?@"已读":@"未读";
+    cell.imgH.constant = model.image.length==0?0:140;
+    if ([model.isRead boolValue]) {
+        cell.readLab.backgroundColor = [UIColor lightGrayColor];
+    }
+    else {
+        cell.readLab.backgroundColor = RGBValue(0xFF3300);
+    }
     return cell;
 }
 
@@ -87,7 +99,8 @@
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
     view.backgroundColor = [UIColor clearColor];
     UILabel *timelab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, view.width, view.height)];
-    timelab.text = @"02-28 13:03";
+    SysMessageModel *model = _dataSource[section];
+    timelab.text = model.createTime;
     timelab.textAlignment = NSTextAlignmentCenter;
     timelab.textColor= RGBValue(0xB4B4B4);
     timelab.font = [UIFont systemFontOfSize:12];
@@ -102,6 +115,13 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SysMessageModel *model = _dataSource[indexPath.section];
+    JSSysMsgDetailVC *vc = [Utils getViewController:@"Message" WithVCName:@"JSSysMsgDetailVC"];
+    vc.msgID = model.ID;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

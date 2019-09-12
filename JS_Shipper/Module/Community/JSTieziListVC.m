@@ -7,15 +7,12 @@
 //
 
 #import "JSTieziListVC.h"
+#import "JSTopicDetailVC.h"
+#import "PostListTabCell.h"
 
 @interface JSTieziListVC ()
-/** 数据源1 */
-@property (nonatomic,retain) NSMutableArray *dataSource1;
-/** 数据源1 */
-@property (nonatomic,retain) NSMutableArray *dataSource2;
-/** 数据源1 */
-@property (nonatomic,retain) NSMutableArray *dataSource3;
-
+/** 数据源 */
+@property (nonatomic,retain) NSMutableArray <JSPostListModel *>*dataSource;
 @end
 
 @implementation JSTieziListVC
@@ -25,27 +22,73 @@
     self.title = @"帖子列表";
     NSLog(@"%@",_type);
     self.navBar.hidden = YES;
-    _dataSource1 = [NSMutableArray array];
-    _dataSource2 = [NSMutableArray array];
-    _dataSource3 = [NSMutableArray array];
+    _dataSource = [NSMutableArray array];
+
+    __weak typeof(self) weakSelf = self;
+    self.baseTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        weakSelf.page = 1;
+        [weakSelf getData];
+    }];
+    [self.baseTabView.mj_header beginRefreshing];
+//    [self addTabMJ_FootView];
     // Do any additional setup after loading the view.
 }
 
-#pragma mark - UITableView 代理
+- (void)getData {
+    __weak typeof(self) weakSelf = self;
+    NSDictionary *dic = [NSDictionary dictionary];
+    BOOL commentFlag=NO ;
+    BOOL likeFlag=NO;
+    BOOL myFlag=NO;
+    if ([_type integerValue]==0) {
+        commentFlag = NO;
+        likeFlag = NO;
+        myFlag = YES;
+    }
+    else if ([_type integerValue]==1) {
+        commentFlag = NO;
+        likeFlag = YES;
+        myFlag = NO;
+    }
+    else if ([_type integerValue]==2) {
+        commentFlag = YES;
+        likeFlag = NO;
+        myFlag = NO;
+    }
+    
+    NSString *url = [NSString stringWithFormat:@"%@?circleId=&subject=&likeFlag=%d&commentFlag=%d&myFlag=%d",URL_PostList,likeFlag,commentFlag,myFlag];
+    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
+            weakSelf.dataSource = [JSPostListModel mj_objectArrayWithKeyValuesArray:responseData];
+            [weakSelf.baseTabView reloadData];
+            if ([weakSelf.baseTabView.mj_header isRefreshing]) {
+                [weakSelf.baseTabView.mj_header endRefreshing];
+            }
+            [weakSelf hiddenNoDataView:weakSelf.dataSource.count];
+        }
+    }];
+}
 
+
+#pragma mark - UITableView 代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CircleContentTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tieziListCell"];
+    PostListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tieziListCell"];
+    JSPostListModel *model = _dataSource[indexPath.row];
+    cell.dataModel = model;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *vc = [Utils getViewController:@"Community" WithVCName:@"JSTopicDetailVC"];
+    JSPostListModel *model = _dataSource[indexPath.row];
+    JSTopicDetailVC *vc = (JSTopicDetailVC *)[Utils getViewController:@"Community" WithVCName:@"JSTopicDetailVC"];
+    vc.dataModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 /*
 #pragma mark - Navigation

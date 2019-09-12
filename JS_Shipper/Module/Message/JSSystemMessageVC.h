@@ -11,13 +11,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSSystemMessageVC : BaseVC
+@property (weak, nonatomic) IBOutlet UITableView *mainTabView;
 
 @end
 
 @interface SysMessageTabcell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *msgImgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
-@property (weak, nonatomic) IBOutlet UIView *contentLab;
+@property (weak, nonatomic) IBOutlet UILabel *contentLab;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgH;
+@property (weak, nonatomic) IBOutlet UILabel *readLab;
 
 @end
 
@@ -34,8 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *createBy;
 /** <#object#> */
 @property (nonatomic,copy) NSString *title;
-/** <#object#> */
-@property (nonatomic,copy) NSString *image;
 /** <#object#> */
 @property (nonatomic,copy) NSString *type;
 /** <#object#> */

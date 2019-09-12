@@ -276,6 +276,11 @@
 		2018840823263D1000CF780B /* NSString+NOEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018840723263D1000CF780B /* NSString+NOEmoji.m */; };
 		2018840B2326430B00CF780B /* RequestURLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018840A2326430B00CF780B /* RequestURLUtil.m */; };
 		2018840C232643C500CF780B /* RequestURLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018840A2326430B00CF780B /* RequestURLUtil.m */; };
+		201C7E762329E65F0078C6DE /* PostListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 208684B12329E5660066EDB5 /* PostListTabCell.m */; };
+		201C7E792329E9430078C6DE /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 201C7E772329E9420078C6DE /* UITextView+Placeholder.m */; };
+		201C7E7A2329E9430078C6DE /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 201C7E772329E9420078C6DE /* UITextView+Placeholder.m */; };
+		201C7E7D232A1C5F0078C6DE /* JSSysMsgDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 201C7E7C232A1C5F0078C6DE /* JSSysMsgDetailVC.m */; };
+		201C7E7E232A1FAA0078C6DE /* JSSysMsgDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 201C7E7C232A1C5F0078C6DE /* JSSysMsgDetailVC.m */; };
 		203B4E2A231F5D0200A288CC /* JSTieziListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B4E29231F5D0200A288CC /* JSTieziListVC.m */; };
 		203C1982225AE02000AB5970 /* JSCarSourceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C1981225AE02000AB5970 /* JSCarSourceDetailVC.m */; };
 		203C30292320D5D20007FC53 /* JSParkAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C30282320D5D20007FC53 /* JSParkAddressVC.m */; };
@@ -732,6 +737,7 @@
 		20815EA5231771BE00E24C75 /* DriverConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815EA4231771BE00E24C75 /* DriverConfig.m */; };
 		20815EC0231776F900E24C75 /* AuthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815EBF231776F900E24C75 /* AuthInfo.m */; };
 		20815EC12317776100E24C75 /* SortView.m in Sources */ = {isa = PBXBuildFile; fileRef = A096483722B8815C000FDBE6 /* SortView.m */; };
+		208684B22329E5660066EDB5 /* PostListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 208684B12329E5660066EDB5 /* PostListTabCell.m */; };
 		208F89672328921C00918888 /* JSCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FC2325EC6700CF780B /* JSCommunityModel.m */; };
 		208F8968232892D300918888 /* JSPostListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FF2325EF2300CF780B /* JSPostListModel.m */; };
 		208F8969232892EE00918888 /* JSSendTopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E41984231E1587001E89C7 /* JSSendTopicVC.m */; };
@@ -1320,6 +1326,10 @@
 		2018840723263D1000CF780B /* NSString+NOEmoji.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NOEmoji.m"; sourceTree = "<group>"; };
 		201884092326430B00CF780B /* RequestURLUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestURLUtil.h; sourceTree = "<group>"; };
 		2018840A2326430B00CF780B /* RequestURLUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestURLUtil.m; sourceTree = "<group>"; };
+		201C7E772329E9420078C6DE /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		201C7E782329E9420078C6DE /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		201C7E7B232A1C5F0078C6DE /* JSSysMsgDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSysMsgDetailVC.h; sourceTree = "<group>"; };
+		201C7E7C232A1C5F0078C6DE /* JSSysMsgDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSysMsgDetailVC.m; sourceTree = "<group>"; };
 		203B4E28231F5D0200A288CC /* JSTieziListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTieziListVC.h; sourceTree = "<group>"; };
 		203B4E29231F5D0200A288CC /* JSTieziListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTieziListVC.m; sourceTree = "<group>"; };
 		203C1980225AE02000AB5970 /* JSCarSourceDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCarSourceDetailVC.h; sourceTree = "<group>"; };
@@ -1422,6 +1432,8 @@
 		20815EA72317735A00E24C75 /* Public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		20815EBE231776F900E24C75 /* AuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthInfo.h; sourceTree = "<group>"; };
 		20815EBF231776F900E24C75 /* AuthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthInfo.m; sourceTree = "<group>"; };
+		208684B02329E5660066EDB5 /* PostListTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostListTabCell.h; sourceTree = "<group>"; };
+		208684B12329E5660066EDB5 /* PostListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostListTabCell.m; sourceTree = "<group>"; };
 		208F896C23289F5B00918888 /* JSMyTieZiListSwitchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyTieZiListSwitchVC.h; sourceTree = "<group>"; };
 		208F896D23289F5B00918888 /* JSMyTieZiListSwitchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyTieZiListSwitchVC.m; sourceTree = "<group>"; };
 		208F897123289FE500918888 /* YPTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTabItem.h; sourceTree = "<group>"; };
@@ -2821,6 +2833,8 @@
 				209B6ACA2272DCCE0060F509 /* MKMapView+ZoomLevel.m */,
 				2018840623263D1000CF780B /* NSString+NOEmoji.h */,
 				2018840723263D1000CF780B /* NSString+NOEmoji.m */,
+				201C7E782329E9420078C6DE /* UITextView+Placeholder.h */,
+				201C7E772329E9420078C6DE /* UITextView+Placeholder.m */,
 				20FB0385231D00090015787F /* YYStarView */,
 				20914FE022B8C734005B4A4E /* LocationTransform */,
 				20BD733C2248BE420020EA5D /* Cache */,
@@ -3066,6 +3080,8 @@
 				20BD737C2248BE430020EA5D /* JSHomeMessageVC.m */,
 				2055C10F225C3B4D000E13C3 /* JSSystemMessageVC.h */,
 				2055C110225C3B4D000E13C3 /* JSSystemMessageVC.m */,
+				201C7E7B232A1C5F0078C6DE /* JSSysMsgDetailVC.h */,
+				201C7E7C232A1C5F0078C6DE /* JSSysMsgDetailVC.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -3214,6 +3230,8 @@
 			children = (
 				20FB037B231CEBB60015787F /* CircleListTabCell.h */,
 				20FB037C231CEBB60015787F /* CircleListTabCell.m */,
+				208684B02329E5660066EDB5 /* PostListTabCell.h */,
+				208684B12329E5660066EDB5 /* PostListTabCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3995,6 +4013,7 @@
 				205A900423175F72004C756E /* AEFilePath.m in Sources */,
 				205A900523175F72004C756E /* MWGridCell.m in Sources */,
 				205A900623175F72004C756E /* EMCreateChatroomViewController.m in Sources */,
+				201C7E7A2329E9430078C6DE /* UITextView+Placeholder.m in Sources */,
 				20815EA5231771BE00E24C75 /* DriverConfig.m in Sources */,
 				205A900723175F72004C756E /* EMChatroomOwnerViewController.m in Sources */,
 				205A900823175F72004C756E /* MWPhoto.m in Sources */,
@@ -4106,6 +4125,7 @@
 				205A906123175F72004C756E /* UIImage+MWPhotoBrowser.m in Sources */,
 				205A906223175F72004C756E /* JHHJAnimation.m in Sources */,
 				205A906323175F72004C756E /* ListOrderModel.m in Sources */,
+				201C7E762329E65F0078C6DE /* PostListTabCell.m in Sources */,
 				205A906423175F72004C756E /* NetworkManager.m in Sources */,
 				20FB0380231CF3300015787F /* JSSearchCircleVC.m in Sources */,
 				205A906523175F72004C756E /* FilterCustomView.m in Sources */,
@@ -4179,6 +4199,7 @@
 				205A909B23175F72004C756E /* DACircularProgressView.m in Sources */,
 				205A909C23175F72004C756E /* EMGlobalVariables.m in Sources */,
 				20815E8023176C8900E24C75 /* JSBillDetailsVC.m in Sources */,
+				201C7E7E232A1FAA0078C6DE /* JSSysMsgDetailVC.m in Sources */,
 				A010A1002322A018006E6C39 /* CZCommentView.m in Sources */,
 				205A909D23175F72004C756E /* JSLineDetaileVC.m in Sources */,
 				205A909E23175F72004C756E /* XLGInternalTestVC.m in Sources */,
@@ -4240,6 +4261,7 @@
 				20118F4422DEEA7600A195D1 /* UIViewController+HUD.m in Sources */,
 				20BD73AA2248BE440020EA5D /* CacheUtil.m in Sources */,
 				A0E9270522852C9C00D07C58 /* AEFilePath.m in Sources */,
+				201C7E792329E9430078C6DE /* UITextView+Placeholder.m in Sources */,
 				20118F6C22DEEA7600A195D1 /* MWGridCell.m in Sources */,
 				20118E6722DEE96000A195D1 /* EMCreateChatroomViewController.m in Sources */,
 				20AF58592328E1A400B6FAF9 /* ZYLPreViewImageTool.m in Sources */,
@@ -4310,7 +4332,9 @@
 				20118E5122DEE96000A195D1 /* EMAtGroupMembersViewController.m in Sources */,
 				20118F7F22DEEA7600A195D1 /* EMRefreshTableViewController.m in Sources */,
 				20118F8022DEEA7600A195D1 /* EMRefreshViewController.m in Sources */,
+				201C7E7D232A1C5F0078C6DE /* JSSysMsgDetailVC.m in Sources */,
 				203D8EF9224DFDE10066333A /* JSMyInfoVC.m in Sources */,
+				208684B22329E5660066EDB5 /* PostListTabCell.m in Sources */,
 				20118F7B22DEEA7600A195D1 /* SDWebImageDecoder.m in Sources */,
 				20CDDAFE22C0CB0D005432F3 /* JSSelectGoodsNameVC.m in Sources */,
 				20118F8122DEEA7600A195D1 /* EMTextFieldViewController.m in Sources */,

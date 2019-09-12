@@ -15,6 +15,7 @@
 /** 评论数据源 */
 @property (nonatomic,retain) NSMutableArray <CommentListData *>*commentDataSource;
 
+@property (weak, nonatomic) IBOutlet UIButton *attentionBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *circleImgView;
 @property (weak, nonatomic) IBOutlet UILabel *subjectNameLab;
 @property (weak, nonatomic) IBOutlet UITableView *mainTabView;
@@ -35,12 +36,25 @@
     _praiseNumLab.text = _dataModel.likeCount;
     _commentLab.text = _dataModel.commentCount;
     _subjectNameLab.text = _dataModel.subject;
-    if ([_dataModel.likeFlag integerValue]==1) {
-        _likeBtn.selected = YES;
-    }
+    self.likeBtn.selected = [_dataModel.likeFlag boolValue];
     _commentDataSource = [NSMutableArray array];
     [self getCommentData];
+    [self getLikeSubject];
     // Do any additional setup after loading the view.
+}
+
+-(void)getLikeSubject {
+    __weak typeof(self) weakSelf = self;
+    NSDictionary *dic = [NSDictionary dictionary];
+    NSString *url = [NSString stringWithFormat:@"%@?subject=%@",URL_CircleLikeSubject,_dataModel.subject];
+    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status==Request_Success) {
+            weakSelf.attentionBtn.selected = [responseData boolValue];
+            if (weakSelf.attentionBtn.selected) {
+                weakSelf.attentionBtn.backgroundColor = [UIColor lightGrayColor];
+            }
+        }
+    }];
 }
 
 - (void)getCommentData {
@@ -153,7 +167,11 @@
     }
 }
 
-- (IBAction)attentionActionClick:(id)sender {
+- (IBAction)attentionActionClick:(UIButton *)sender {
+    if (sender.selected) {
+        return;
+    }
+    [self getLikeSubject];
 }
 
 - (IBAction)clickLikeAction:(UIButton *)sender {

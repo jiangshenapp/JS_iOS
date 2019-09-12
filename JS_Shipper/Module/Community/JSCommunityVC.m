@@ -58,9 +58,10 @@
     [super viewDidLoad];
     self.title = @"社区";
     _leftNavbarBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
-    [_leftNavbarBtn setTitle:@"" forState:UIControlStateNormal];
+//    [_leftNavbarBtn setTitle:@"" forState:UIControlStateNormal];
     [_leftNavbarBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
     _leftNavbarBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [_leftNavbarBtn setImage:[UIImage imageNamed:@"app_more_city_arrow_black"] forState:UIControlStateNormal];
     [_leftNavbarBtn addTarget:self action:@selector(pushCity) forControlEvents:UIControlEventTouchUpInside];
     self.navItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_leftNavbarBtn];
     
@@ -81,7 +82,7 @@
     JSSelectCityVC *vc = (JSSelectCityVC *)[Utils getViewController:@"DeliverGoods" WithVCName:@"JSSelectCityVC"];
     vc.getSelectDic = ^(NSDictionary * _Nonnull dic) {
         NSLog(@"%@",dic);//code 
-        [weakSelf.leftNavbarBtn setTitle:dic[@"address"] forState:UIControlStateNormal];
+        [weakSelf setCityName:dic[@"address"]];
         weakSelf.cityCode = dic[@"code"];
         [weakSelf getNetData];
     };
@@ -183,9 +184,19 @@
     NSLog(@"%@    %@   %@    %@    ",result.addressDetail.streetName,result.addressDetail.streetNumber,result.addressDetail.streetNumber,result.addressDetail.distance);
     if (error==0&&result!=nil) {
         _cityCode = result.addressDetail.adCode;
-        [_leftNavbarBtn setTitle:result.addressDetail.city forState:UIControlStateNormal];
+        [self setCityName:result.addressDetail.city];
         [self getNetData];
     }
+}
+
+- (void)setCityName:(NSString *)cityName {
+    [_leftNavbarBtn setTitle:cityName forState:UIControlStateNormal];
+    CGFloat padding = 5;
+    CGRect titleRect = self.leftNavbarBtn.titleLabel.frame;
+    CGRect imageRect = self.leftNavbarBtn.imageView.frame;
+    _leftNavbarBtn.imageEdgeInsets=UIEdgeInsetsMake(0, titleRect.size.width+padding,0, -titleRect.size.width-padding);
+    _leftNavbarBtn.titleEdgeInsets=UIEdgeInsetsMake(0, -imageRect.size.width,0, imageRect.size.width);
+    
 }
 
 
@@ -193,20 +204,10 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-//    if ([segue.identifier isEqualToString:@"comment"]) {
-//        JSTieziListVC *vc = segue.destinationViewController;
-//        vc.type = 2;
-//    }
-//    else if ([segue.identifier isEqualToString:@"collect"]) {
-//        JSTieziListVC *vc = segue.destinationViewController;
-//        vc.type = 1;
-//    }
-//    else if ([segue.identifier isEqualToString:@"searchCircle"]) {
-//        JSSearchCircleVC *searchVC = segue.destinationViewController;
-//        searchVC.cityID = _cityCode;
-//    }
+     if ([segue.identifier isEqualToString:@"searchCircle"]) {
+        JSSearchCircleVC *searchVC = segue.destinationViewController;
+        searchVC.cityID = _cityCode;
+    }
 }
 
 

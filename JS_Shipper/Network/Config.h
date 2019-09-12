@@ -104,6 +104,7 @@ NSString *PIC_URL(void);
 #define URL_CircleDeleteSubscriber @"/app/circle/deleteSubscriber"//删除成员"
 #define URL_CircleMyList @"/app/circle/list"//我的圈子
 #define URL_CircleMemberList @"/app/circle/memberList"//圈子成员列表"
+#define URL_CircleLikeSubject @"/app/circle/likeSubject"//关注话题"
 
 //帖子
 #define URL_PostAdd @"/app/post/addPost"//发帖"
@@ -115,6 +116,7 @@ NSString *PIC_URL(void);
 
 //系统消息列表
 #define URL_MessageList @"/app/message/page"//消息列表"
+#define URL_MessageDetail @"/app/message"//消息详情"
 
 #pragma mark - ---------------H5地址---------------
 

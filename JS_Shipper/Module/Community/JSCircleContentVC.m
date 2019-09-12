@@ -64,7 +64,9 @@
         [_titleScrollVew addSubview:btn];
         btn.borderColor = [UIColor clearColor];
         if (index==0) {
+            btn.selected = YES;
             btn.borderColor = AppThemeColor;
+            lastBtn = btn;
         }
         maxRight = btn.right+leftSpace;
     }
@@ -74,7 +76,7 @@
 - (void)getNetData {
     __weak typeof(self) weakSelf = self;
     NSDictionary *dic = [NSDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@?circleId=%@&subject=%@",URL_PostList,_circleId,subjectStr];
+    NSString *url = [NSString stringWithFormat:@"%@?circleId=%@&subject=%@&likeFlag=0&commentFlag=0&myFlag=0",URL_PostList,_circleId,subjectStr];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
             weakSelf.dataSource = [JSPostListModel mj_objectArrayWithKeyValuesArray:responseData];
@@ -117,25 +119,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CircleContentTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CircleContentTabCell"];
+    PostListTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CircleContentTabCell"];
     JSPostListModel *model = _dataSource[indexPath.row];
-    cell.timeLab.text = [NSString stringWithFormat:@"%@发布",[Utils getTimeStrToCurrentDateWith:model.createTime]];
-    cell.zanNumberLab.text = model.likeCount;
-    cell.commentNumLab.text = model.commentCount;
-    cell.contentLab.text = model.content;
-    cell.nameLab.text = model.nickName;
-    [cell.headImgView sd_setImageWithURL:[NSURL URLWithString:model.avatar] placeholderImage:DefaultImage];
-    cell.likeBtn.selected = [model.likeFlag boolValue];
-    cell.tag1Lab.hidden = YES;
-    cell.tag2Lab.hidden = YES;
-    if ([model.star boolValue]) {
-        cell.tag1Lab.hidden = NO;
-        cell.tag1Lab.text = @"精品";
-    }
-    if ([model.type boolValue]) {
-        cell.tag2Lab.hidden = NO;
-        cell.tag2Lab.text = @"官方";
-    }
+    cell.dataModel = model;
     return cell;
 }
 
@@ -162,8 +148,3 @@
 
 @end
 
-
-@implementation CircleContentTabCell
-
-
-@end
