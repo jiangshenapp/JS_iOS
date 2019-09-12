@@ -47,6 +47,7 @@
     SysMsgDetailTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SysMsgDetailTabCell"];
     cell.titleLab.text = _dataModel.title;
     cell.contendLab.text = _dataModel.content;
+    cell.timeLab.text = _dataModel.createTime;
     cell.imgH.constant = _dataModel.image.length==0?0:140;
     if (_dataModel.image.length==0) {
         cell.imgH.constant = 0;
