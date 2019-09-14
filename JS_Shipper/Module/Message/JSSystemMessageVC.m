@@ -37,7 +37,6 @@
 
 - (void)getData {
     NSString *type = [AppChannel isEqualToString:@"1"]?@"3":@"2";
-    type = @"1";
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     NSString *url = [NSString stringWithFormat:@"%@/%@?current=%ld&size=%@",URL_MessageList,type,_page,PageSize];
@@ -70,8 +69,7 @@
     }];
 }
 
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return _dataSource.count;
 }
 
