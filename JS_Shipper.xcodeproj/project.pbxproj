@@ -903,6 +903,8 @@
 		A096484922B8824B000FDBE6 /* JSGardenTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A096484822B8824B000FDBE6 /* JSGardenTabCell.m */; };
 		A096484C22B88260000FDBE6 /* CityDeliveryTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A096484B22B88260000FDBE6 /* CityDeliveryTabCell.m */; };
 		A096484F22B8BDB7000FDBE6 /* JSMyGardenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A096484E22B8BDB7000FDBE6 /* JSMyGardenVC.m */; };
+		A0C98849232D2440000FAD71 /* ServiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C98848232D2440000FAD71 /* ServiceModel.m */; };
+		A0C9884A232D2440000FAD71 /* ServiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C98848232D2440000FAD71 /* ServiceModel.m */; };
 		A0E9270522852C9C00D07C58 /* AEFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E9270422852C9C00D07C58 /* AEFilePath.m */; };
 		A0F9CC7722AF366600161945 /* AccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F9CC7522AF366600161945 /* AccountInfo.m */; };
 		C2906EBDB1A940D92FBD8960 /* libPods-JS_Shipper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F289B1DBC4F7E18335BF54E1 /* libPods-JS_Shipper.a */; };
@@ -1685,6 +1687,8 @@
 		A096484B22B88260000FDBE6 /* CityDeliveryTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityDeliveryTabCell.m; sourceTree = "<group>"; };
 		A096484D22B8BDB7000FDBE6 /* JSMyGardenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyGardenVC.h; sourceTree = "<group>"; };
 		A096484E22B8BDB7000FDBE6 /* JSMyGardenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyGardenVC.m; sourceTree = "<group>"; };
+		A0C98847232D2440000FAD71 /* ServiceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceModel.h; sourceTree = "<group>"; };
+		A0C98848232D2440000FAD71 /* ServiceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceModel.m; sourceTree = "<group>"; };
 		A0E9270322852C9C00D07C58 /* AEFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEFilePath.h; sourceTree = "<group>"; };
 		A0E9270422852C9C00D07C58 /* AEFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFilePath.m; sourceTree = "<group>"; };
 		A0F9CC7522AF366600161945 /* AccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfo.m; sourceTree = "<group>"; };
@@ -3008,6 +3012,8 @@
 				A0346BBA22A8A48B00E5BAED /* PayRouteModel.m */,
 				A0346BF022A95AD900E5BAED /* TradeRecordModel.h */,
 				A0346BF122A95AD900E5BAED /* TradeRecordModel.m */,
+				A0C98847232D2440000FAD71 /* ServiceModel.h */,
+				A0C98848232D2440000FAD71 /* ServiceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4209,6 +4215,7 @@
 				205A90A323175F72004C756E /* WKDelegateController.m in Sources */,
 				2018840C232643C500CF780B /* RequestURLUtil.m in Sources */,
 				205A90A423175F72004C756E /* EMInviteFriendViewController.m in Sources */,
+				A0C9884A232D2440000FAD71 /* ServiceModel.m in Sources */,
 				205A90A523175F72004C756E /* EMGroupAdminsViewController.m in Sources */,
 				205A90A623175F72004C756E /* HomeDataModel.m in Sources */,
 				A022CCD723191F5E00E3EDD5 /* AddressModel.m in Sources */,
@@ -4369,6 +4376,7 @@
 				20BD73AC2248BE440020EA5D /* Toast.m in Sources */,
 				20118F6722DEEA7600A195D1 /* UIImage+MWPhotoBrowser.m in Sources */,
 				20815E9223176CC000E24C75 /* BaseVC.m in Sources */,
+				A0C98849232D2440000FAD71 /* ServiceModel.m in Sources */,
 				20BD73AF2248BE440020EA5D /* JHHJAnimation.m in Sources */,
 				204AFAAF22A4CCCB0077D8C0 /* ListOrderModel.m in Sources */,
 				20BD73B82248BE440020EA5D /* NetworkManager.m in Sources */,

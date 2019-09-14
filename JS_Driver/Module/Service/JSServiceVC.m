@@ -7,8 +7,12 @@
 //
 
 #import "JSServiceVC.h"
+#import "ServiceModel.h"
 
 @interface JSServiceVC ()
+
+/** 服务数组 */
+@property (nonatomic,retain) NSArray *serviceArr;
 
 @end
 
@@ -22,12 +26,21 @@
     _bannerView.currentPageDotColor = AppThemeColor;
     _bannerView.pageDotColor = kWhiteColor;
     
-    [self initView];
+    [self getData];
+}
+
+#pragma mark - get data
+- (void)getData {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_GetSysServiceList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        self.serviceArr = [ServiceModel mj_objectArrayWithKeyValuesArray:responseData];
+        [self initView];
+    }];
 }
 
 #pragma mark - init view
 - (void)initView {
-    int count = 6;
+    int count = (int)self.serviceArr.count;
     
     if (count == 0) {
         self.fourBgView.hidden = YES;
@@ -38,8 +51,10 @@
         if (i>=count) {
             itemBtn.hidden = YES;
         } else {
-            [itemBtn setTitle:@"企业服务" forState:UIControlStateNormal];
-            [itemBtn setImage:[[UIImage imageNamed:@"driver_service_icon_nearby"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+            ServiceModel *model = self.serviceArr[i];
+            [itemBtn setTitle:model.title forState:UIControlStateNormal];
+            [itemBtn sd_setImageWithURL:[NSURL URLWithString:model.icon] forState:UIControlStateNormal];
+//            [itemBtn setImage:[[UIImage imageNamed:@"driver_service_icon_nearby"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
             //调整图片和文字上下显示
             itemBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//使图片和文字水平居中显示
             [itemBtn setTitleEdgeInsets:UIEdgeInsetsMake(itemBtn.imageView.frame.size.height ,-itemBtn.imageView.frame.size.width, 0.0,0.0)];//文字距离上边框的距离增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变
@@ -52,7 +67,8 @@
 #pragma mark - methods
 - (void)jumpAction:(UIButton *)btn {
     NSInteger index = btn.tag-100;
-    [Utils showToast:[NSString stringWithFormat:@"点击第%ld个",(long)index+1]];
+    ServiceModel *model = self.serviceArr[index];
+    [BaseWebVC showWithContro:self withUrlStr:model.url withTitle:model.title isPresent:NO];
 }
 
 /*

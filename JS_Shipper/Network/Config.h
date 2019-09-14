@@ -97,7 +97,8 @@ NSString *PIC_URL(void);
 #define URL_OrdeList @"/app/order/list"//我的运单
 #define URL_EditOrderDetail @"/app/order/edit" //修改订单
 
-//圈子
+#pragma mark - 圈子相关接口
+
 #define URL_CircleAll @"/app/circle/all"//所有圈子"
 #define URL_CircleApply @"/app/circle/apply"//申请加入
 #define URL_CircleAuditApply @"/app/circle/auditApply"//入圈审核"
@@ -106,17 +107,22 @@ NSString *PIC_URL(void);
 #define URL_CircleMemberList @"/app/circle/memberList"//圈子成员列表"
 #define URL_CircleLikeSubject @"/app/circle/likeSubject"//关注话题"
 
-//帖子
+#pragma mark - 帖子相关接口
+
 #define URL_PostAdd @"/app/post/addPost"//发帖"
 #define URL_PostComment @"/app/post/comment"//评论"
 #define URL_PostCommentList @"/app/post/commentList"//评论列表
 #define URL_PostLike @"/app/post/like"//点赞"
 #define URL_PostList @"/app/post/list"//帖子列表
 
+#pragma mark - 系统消息、banner相关接口
 
-//系统消息列表
 #define URL_MessageList @"/app/message/page"//消息列表"
 #define URL_MessageDetail @"/app/message"//消息详情"
+#define URL_GetSysServiceBanner @"/app/sys/getSysServiceBanner"//获取系统服务Banner
+#define URL_GetSysServiceList @"/app/sys/getSysServiceList"//获取系统服务
+#define URL_GetBannerList @"/app/banner/list"//根据类型获取banner type 1服务页广告、2发货页广告、3启动页广告
+#define URL_Feedback @"/app/feedback"//新增意见反馈
 
 #pragma mark - ---------------H5地址---------------
 
