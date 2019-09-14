@@ -20,9 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"详情";
+    self.title = @"消息详情";
     [self getData];
-    // Do any additional setup after loading the view.
 }
 
 - (void)getData {
@@ -47,17 +46,18 @@
     SysMsgDetailTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SysMsgDetailTabCell"];
     cell.titleLab.text = _dataModel.title;
     cell.contendLab.text = _dataModel.content;
-    cell.timeLab.text = _dataModel.createTime;
-    cell.imgH.constant = _dataModel.image.length==0?0:140;
+    cell.timeLab.text = _dataModel.publishTime;
     if (_dataModel.image.length==0) {
         cell.imgH.constant = 0;
+        cell.contentTopH = 0;
     }
     else {
-    [cell.imgBtn sd_setImageWithURL:[NSURL URLWithString:_dataModel.image] forState:UIControlStateNormal placeholderImage:DefaultImage];
+        cell.imgH.constant = 200;
+        cell.contentTopH.constant = 10;
+        [cell.imgBtn sd_setImageWithURL:[NSURL URLWithString:_dataModel.image] forState:UIControlStateNormal placeholderImage:DefaultImage];
     }
     return cell;
 }
-
 
 /*
 #pragma mark - Navigation

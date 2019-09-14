@@ -85,10 +85,12 @@
     cell.readLab.text = [model.isRead boolValue]?@"已读":@"未读";
     cell.imgH.constant = model.image.length==0?0:140;
     if ([model.isRead boolValue]) {
-        cell.readLab.backgroundColor = [UIColor lightGrayColor];
+        cell.readLab.backgroundColor = RGBValue(0xF5F5F5);
+        cell.readLab.textColor = RGBValue(0xB4B4B4);
     }
     else {
-        cell.readLab.backgroundColor = RGBValue(0xFF3300);
+        cell.readLab.backgroundColor = RGBValue(0xD0021B);
+        cell.readLab.textColor = RGBValue(0xFFFFFF);
     }
     return cell;
 }
@@ -98,7 +100,7 @@
     view.backgroundColor = [UIColor clearColor];
     UILabel *timelab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, view.width, view.height)];
     SysMessageModel *model = _dataSource[section];
-    timelab.text = model.createTime;
+    timelab.text = model.publishTime;
     timelab.textAlignment = NSTextAlignmentCenter;
     timelab.textColor= RGBValue(0xB4B4B4);
     timelab.font = [UIFont systemFontOfSize:12];
@@ -107,17 +109,17 @@
     return view;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 1;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SysMessageModel *model = _dataSource[indexPath.section];
-    JSSysMsgDetailVC *vc = [Utils getViewController:@"Message" WithVCName:@"JSSysMsgDetailVC"];
+    JSSysMsgDetailVC *vc = (JSSysMsgDetailVC *)[Utils getViewController:@"Message" WithVCName:@"JSSysMsgDetailVC"];
     vc.msgID = model.ID;
     [self.navigationController pushViewController:vc animated:YES];
 }
