@@ -10,8 +10,9 @@
 #import <BaiduMapAPI_Utils/BMKGeometry.h>
 #import "FilterCustomView.h"
 #import "JSDeliverConfirmVC.h"
+#import "BannerModel.h"
 
-@interface JSDeliverGoodsVC ()
+@interface JSDeliverGoodsVC ()<SDCycleScrollViewDelegate>
 /** 起止点 */
 @property (nonatomic,retain) AddressInfoModel *info1;
 /** 终止点 */
@@ -28,6 +29,8 @@
 @property (nonatomic,retain) NSDictionary *carModelDic;
 /** 点击类型  1车长 2车型 */
 @property (nonatomic,assign) NSInteger touchType;
+/** banner数组 */
+@property (nonatomic,retain) NSMutableArray *bannerArr;
 
 @end
 
@@ -44,13 +47,14 @@
     
     self.title = @"发货";
     
+    [self getSysServiceBanner];
     [self getCarLengthInfo];
     [self getCarModelInfo];
 }
 
 - (void)setupView {
     _touchType = 0;
-    _bannerView.imageURLStringsGroup = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554786828281&di=adb087e354b74cf42fffb75077e2c757&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F37%2F09%2F97a58PICQ6H_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554786828281&di=adb087e354b74cf42fffb75077e2c757&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F37%2F09%2F97a58PICQ6H_1024.jpg"];
+    _bannerView.delegate = self;
     _bannerView.currentPageDotColor = AppThemeColor;
     _bannerView.pageDotColor = kWhiteColor;
     
@@ -88,7 +92,21 @@
     };
 }
 
-#pragma mark - 车长
+#pragma mark - get data
+
+/** 获取系统服务banner */
+- (void)getSysServiceBanner {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"2",@"type", nil];
+    [[NetworkManager sharedManager] postJSON:URL_GetBannerList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        self.bannerArr = [BannerModel mj_objectArrayWithKeyValuesArray:responseData];
+        NSMutableArray *imageArr = [NSMutableArray array];
+        for (BannerModel *model in self.bannerArr) {
+            [imageArr addObject:model.bannerImage];
+        }
+        self.bannerView.imageURLStringsGroup = imageArr;
+    }];
+}
+
 /** 车长 */
 - (void)getCarLengthInfo {
     __weak typeof(self) weakSelf = self;
@@ -104,7 +122,6 @@
     }];
 }
 
-#pragma mark - 车型
 /** 车型 */
 - (void)getCarModelInfo {
     __weak typeof(self) weakSelf = self;
@@ -118,6 +135,12 @@
             }
         }
     }];
+}
+
+#pragma mark - SDCycleScrollViewDelegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    BannerModel *model = self.bannerArr[index];
+    [BaseWebVC showWithContro:self withUrlStr:model.url withTitle:model.title isPresent:NO];
 }
 
 #pragma mark - Navigation

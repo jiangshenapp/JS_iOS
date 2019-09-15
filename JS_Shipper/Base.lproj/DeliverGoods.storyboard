@@ -28,14 +28,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTG-MM-b7r" customClass="SDCycleScrollView">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTG-MM-b7r" customClass="SDCycleScrollView">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" id="bve-VO-HTt"/>
+                                                <constraint firstAttribute="height" constant="140" id="bve-VO-HTt"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0PP-M9-tff">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0PP-M9-tff">
                                             <rect key="frame" x="8" y="150" width="359" height="150"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76V-Al-q8r">
@@ -85,7 +85,7 @@
                                                 <constraint firstAttribute="height" constant="150" id="2gX-dz-tb2"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfX-3e-CdE">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfX-3e-CdE">
                                             <rect key="frame" x="8" y="310" width="359" height="89"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-Zu-Cqw">
@@ -156,7 +156,7 @@
                                                 <constraint firstAttribute="height" constant="89" id="1Lc-JQ-Pai"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyF-6o-QuD">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyF-6o-QuD">
                                             <rect key="frame" x="8" y="430" width="359" height="44"/>
                                             <color key="backgroundColor" red="0.92549019610000005" green="0.65490196079999996" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>

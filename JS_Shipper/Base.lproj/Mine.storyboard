@@ -456,7 +456,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owH-QQ-DTE">
-                                        <rect key="frame" x="0.0" y="130" width="375" height="462"/>
+                                        <rect key="frame" x="0.0" y="130" width="375" height="452"/>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttx-JI-MGC">
@@ -882,7 +882,7 @@
                                     <constraint firstAttribute="trailing" secondItem="N3j-M6-Amv" secondAttribute="trailing" id="TQG-U8-mk5"/>
                                     <constraint firstItem="Ttx-JI-MGC" firstAttribute="leading" secondItem="UgK-Vi-g5c" secondAttribute="leading" constant="20" id="Xqg-rP-J0e"/>
                                     <constraint firstAttribute="trailing" secondItem="wJU-iy-Qhx" secondAttribute="trailing" id="ZJ5-1W-MFQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="wJU-iy-Qhx" secondAttribute="bottom" constant="10" id="dHH-dw-Ml9"/>
+                                    <constraint firstAttribute="bottom" secondItem="wJU-iy-Qhx" secondAttribute="bottom" id="dHH-dw-Ml9"/>
                                     <constraint firstAttribute="trailing" secondItem="Ttx-JI-MGC" secondAttribute="trailing" id="dOI-Tt-2yv"/>
                                     <constraint firstItem="N3j-M6-Amv" firstAttribute="leading" secondItem="UgK-Vi-g5c" secondAttribute="leading" id="di7-QZ-DKa"/>
                                     <constraint firstItem="owH-QQ-DTE" firstAttribute="leading" secondItem="UgK-Vi-g5c" secondAttribute="leading" id="ejy-o6-6u4"/>
