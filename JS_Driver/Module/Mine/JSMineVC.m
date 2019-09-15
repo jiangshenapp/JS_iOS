@@ -10,15 +10,23 @@
 #import "JSAllOrderVC.h"
 #import "AccountInfo.h"
 #import "JSMyWalletVC.h"
+#import "ServiceModel.h"
+#import "CustomEaseUtils.h"
 
 #define LineCount 3
 
 @interface JSMineVC ()
 {
-    NSArray *iconArr;
-    NSArray *menuTileArr;
     CGFloat menuBtnH;
 }
+
+/** 图片数组 */
+@property (nonatomic,retain) NSMutableArray *iconArr;
+/** 标题数组 */
+@property (nonatomic,retain) NSMutableArray *menuTileArr;
+/** 服务数组 */
+@property (nonatomic,retain) NSMutableArray *serviceArr;
+
 @end
 
 @implementation JSMineVC
@@ -34,15 +42,23 @@
     
     self.navBar.hidden = YES;
     
-//    [self getData];
-//
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getData) name:kLoginSuccNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getData) name:kUserInfoChangeNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getData) name:kChangeMoneyNotification object:nil];
+    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_cars",@"personalcenter_icon_driver",@"personalcenter_icon_route",@"personalcenter_icon_service", nil];
+    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的车辆",@"我的司机",@"我的路线",@"我的客服", nil];
     
-    iconArr = @[@"personalcenter_icon_cars",@"personalcenter_icon_driver",@"personalcenter_icon_route",@"personalcenter_icon_service",@"personalcenter_icon_invoice",@"personalcenter_icon_collection"];
-    menuTileArr = @[@"我的车辆",@"我的司机",@"我的路线",@"我的客服",@"我的发票",@"推广达人"];
-    [self createUI];
+    [self getSysServiceList]; //获取系统服务列表
+}
+
+/** 获取系统服务列表 */
+- (void)getSysServiceList {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_GetSysServiceList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        self.serviceArr = [ServiceModel mj_objectArrayWithKeyValuesArray:responseData];
+        for (ServiceModel *model in self.serviceArr) {
+            [self.iconArr addObject:model.icon];
+            [self.menuTileArr addObject:model.title];
+        }
+        [self createUI];
+    }];
 }
 
 - (void)createUI {
@@ -51,18 +67,19 @@
     self.signInBtn.borderWidth = 1;
     self.signInBtn.cornerRadius = 2;
     menuBtnH = (WIDTH-2)/LineCount;
-    NSInteger line = menuTileArr.count%LineCount==0?(menuTileArr.count/LineCount):(menuTileArr.count/LineCount+1);
+    NSInteger line = self.menuTileArr.count%LineCount==0?(self.menuTileArr.count/LineCount):(self.menuTileArr.count/LineCount+1);
     _bottomViewH.constant = menuBtnH*line;
     NSInteger index = 0;
     for (NSInteger j = 0; j<line; j++) {
         for (NSInteger i = 0; i < LineCount; i++) {
             NSString *title  = @"";
             NSString *imgName = @"";
-            if (index<menuTileArr.count) {
-                title = menuTileArr[index];
-                imgName = iconArr[index];
+            if (index<self.menuTileArr.count) {
+                title = self.menuTileArr[index];
+                imgName = self.iconArr[index];
             }
             UIButton *sender = [self createMenuButton:title andIconName:imgName];
+            sender.tag = 1000+index;
             sender.frame = CGRectMake(i*(menuBtnH+1), j*(menuBtnH+1), menuBtnH, menuBtnH);
             [_bottomVIew addSubview:sender];
             [sender addTarget:self action:@selector(showAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -76,17 +93,22 @@
         return;
     }
     NSString *vcName = @"";
-    if ([sender.currentTitle isEqualToString:@"我的司机"]) {
-        vcName = @"JSMyDriverVC";
-    }
-    else if ([sender.currentTitle isEqualToString:@"我的车辆"]) {
+    if ([sender.currentTitle isEqualToString:@"我的车辆"]) {
         vcName = @"JSMyCarVC";
+    }
+    else if ([sender.currentTitle isEqualToString:@"我的司机"]) {
+        vcName = @"JSMyDriverVC";
     }
     else if ([sender.currentTitle isEqualToString:@"我的路线"]) {
         vcName = @"JSMyRouteVC";
     }
-    else {
-        [Utils showToast:@"该功能暂未开通，敬请期待"];
+    else if ([sender.currentTitle isEqualToString:@"我的客服"]) {
+        [CustomEaseUtils EaseChatConversationID:OnlineCustomerEaseMobKey];
+    }
+    else { //系统服务配置
+        NSInteger index = sender.tag-1000-4;
+        ServiceModel *model = self.serviceArr[index];
+        [BaseWebVC showWithContro:self withUrlStr:model.url withTitle:model.title isPresent:NO];
     }
     if (vcName.length>0) {
         UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:vcName];
@@ -179,9 +201,6 @@
     else  if ([segue.identifier isEqualToString:@"allOrder"]) {
         orderVc.typeFlage = 0;
     }
-    
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
 - (UIButton *)createMenuButton:(NSString *)title andIconName:(NSString *)iconName {
@@ -189,7 +208,11 @@
     sender.backgroundColor = [UIColor whiteColor];
     if (iconName.length>0) {
         UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake((sender.width-20)/2.0, sender.height/2.0-20, 20, 20)];
-        img.image = [UIImage imageNamed:iconName];
+        if ([iconName containsString:@"http"]) {
+            [img sd_setImageWithURL:[NSURL URLWithString:iconName]];
+        } else {
+            img.image = [UIImage imageNamed:iconName];
+        }
         [sender addSubview:img];
     }
     sender.titleLabel.font = JSFontMin(12);
@@ -207,26 +230,6 @@
     }
     JSMyWalletVC *vc = (JSMyWalletVC *)[Utils getViewController:@"Mine" WithVCName:@"JSMyWalletVC"];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-/** 我的圈子 */
-- (IBAction)quanziAction:(id)sender {
-    [Utils showToast:@"功能暂未开通，敬请期待"];
-}
-
-/** 我的社区 */
-- (IBAction)shequAction:(id)sender {
-    [Utils showToast:@"功能暂未开通，敬请期待"];
-}
-
-/** 我的帖子 */
-- (IBAction)tieziAction:(id)sender {
-    [Utils showToast:@"功能暂未开通，敬请期待"];
-}
-
-/** 我的草稿箱 */
-- (IBAction)caogaoxiangAction:(id)sender {
-    [Utils showToast:@"功能暂未开通，敬请期待"];
 }
 
 @end
