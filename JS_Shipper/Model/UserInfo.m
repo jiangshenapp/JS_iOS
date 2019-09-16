@@ -27,6 +27,13 @@ static NSUserDefaults *_defaults = nil;
     return _userInfo;
 }
 
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    if([key isEqualToString:@"id"]){
+        self.ID = value;
+    }
+}
+
 - (void)setUserInfo:(NSMutableDictionary *)userDic {
     if (userDic.allKeys.count==0) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"UserInfo"];

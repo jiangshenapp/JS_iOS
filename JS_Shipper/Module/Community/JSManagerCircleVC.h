@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JSManagerCircleVC : BaseVC
 /** 圈子ID */
 @property (nonatomic,copy) NSString *circleID;
+/** 是否是管理员 */
+@property (nonatomic,copy) NSString *admin;
+- (IBAction)deleteAction:(UIButton *)sender;
 @end
 
 @interface ManagerCircleTabCell : UITableViewCell

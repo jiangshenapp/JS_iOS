@@ -9,7 +9,11 @@
 #import "JSManagerCircleVC.h"
 
 @interface JSManagerCircleVC ()
-@property (nonatomic,retain) NSMutableArray <CircleMemberModel *>*dataSource;
+{
+}
+/** 我的用户ID */
+@property (nonatomic,copy) NSString *myUserID;
+@property (nonatomic,retain) NSArray <CircleMemberModel *>*dataSource;
 @end
 
 @implementation JSManagerCircleVC
@@ -28,6 +32,13 @@
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
             weakSelf.dataSource = [CircleMemberModel mj_objectArrayWithKeyValuesArray:responseData];
+            if (weakSelf.admin.length==0) {
+                NSString *preStr = [NSString stringWithFormat:@"status = '1'"];
+                //定义谓词对象,谓词对象中包含了过滤条件
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:preStr];
+                weakSelf.dataSource = [weakSelf.dataSource filteredArrayUsingPredicate:predicate];
+            }
+            
             [weakSelf.baseTabView reloadData];
         }
     }];
@@ -54,6 +65,9 @@
 }
 
 - (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_admin.length==0) {
+        return @[];
+    }
     CircleMemberModel *model = _dataSource[indexPath.row];
     __weak typeof(self) weakself = self;
     
@@ -86,21 +100,29 @@
     else if ([model.status integerValue]==0) {
         return @[agreeAction,refuseAction];
     }
-    return @[];
     return @[deleteAction,agreeAction,refuseAction];
 }
 
 
 - (void)deleteMember:(NSString *)memberID {
+    
     __weak typeof(self) weakSelf = self;
-    NSDictionary *dic = [NSDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@?id=%@",URL_CircleDeleteSubscriber,memberID];
-    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
-        if (status==Request_Success) {
-            [Utils showToast:@"操作成功"];
-            [weakSelf getNetData];
-        }
-    }];
+    XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提示" content:@"确定要删除吗" leftButtonTitle:@"取消" rightButtonTitle:@"确定"];
+    alert.doneBlock = ^{
+        NSDictionary *dic = [NSDictionary dictionary];
+        NSString *url = [NSString stringWithFormat:@"%@?id=%@",URL_CircleDeleteSubscriber,memberID];
+        [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+            if (status==Request_Success) {
+                [Utils showToast:@"操作成功"];
+                if ([memberID isEqualToString:[UserInfo share].ID]) {//删除自己
+                    [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+                }
+                else {
+                    [weakSelf getNetData];
+                }
+            }
+        }];
+    };
 }
 
 - (void)applyMember:(NSString *)memberID {
@@ -109,7 +131,7 @@
     NSString *url = [NSString stringWithFormat:@"%@?id=%@&status=1",URL_CircleAuditApply,memberID];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success) {
-            [Utils showToast:@"操作成功"];
+            [Utils showToast:@"同意成功"];
             [weakSelf getNetData];
         }
     }];
@@ -121,7 +143,7 @@
     NSString *url = [NSString stringWithFormat:@"%@?id=%@&status=2",URL_CircleAuditApply,memberID];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success) {
-            [Utils showToast:@"操作成功"];
+            [Utils showToast:@"拒绝成功"];
             [weakSelf getNetData];
         }
     }];
@@ -138,6 +160,9 @@
 }
 */
 
+- (IBAction)deleteAction:(UIButton *)sender {
+    [self deleteMember:[UserInfo share].ID];
+}
 @end
 
 @implementation ManagerCircleTabCell

@@ -10,7 +10,6 @@
 #import "BaseTabBarVC.h"
 #import <IQKeyboardManager.h>
 #import "NetworkUtil.h"
-#import <BMKLocationkit/BMKLocationComponent.h>
 #import <BaiduMapAPI_Base/BMKMapManager.h>
 #import <AlipaySDK/AlipaySDK.h>
 #import "WXApi.h"
@@ -19,7 +18,7 @@
 #import "EMNotificationHelper.h"
 
 
-@interface AppDelegate ()<BMKLocationAuthDelegate, WXApiDelegate,UNUserNotificationCenterDelegate>
+@interface AppDelegate ()< WXApiDelegate,UNUserNotificationCenterDelegate>
 @property (nonatomic, strong) BMKMapManager *mapManager; //主引擎类
 
 @end
@@ -165,7 +164,7 @@
 - (void)initMapKey {
     NSLog(@"%@",MapKey);
     // 初始化定位SDK
-    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:MapKey authDelegate:self];
+//    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:MapKey authDelegate:self];
     //要使用百度地图，请先启动BMKMapManager
     _mapManager = [[BMKMapManager alloc] init];
     

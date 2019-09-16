@@ -307,7 +307,6 @@
 		205A8FED23175F72004C756E /* EMMsgVideoBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118D4822DEE95F00A195D1 /* EMMsgVideoBubbleView.m */; };
 		205A8FEE23175F72004C756E /* EMChatroomInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118DB722DEE95F00A195D1 /* EMChatroomInfoViewController.m */; };
 		205A8FEF23175F72004C756E /* PSTCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118F0222DEEA7500A195D1 /* PSTCollectionViewCell.m */; };
-		205A8FF023175F72004C756E /* JSConfirmAddressMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 200E96982271B7F800498E78 /* JSConfirmAddressMapVC.m */; };
 		205A8FF123175F72004C756E /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73502248BE420020EA5D /* AEIndicator.m */; };
 		205A8FF223175F72004C756E /* XLGMapNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20914FDE22B8C6E7005B4A4E /* XLGMapNavVC.m */; };
 		205A8FF323175F72004C756E /* EMChatBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118CEC22DEE95E00A195D1 /* EMChatBarItem.m */; };
@@ -485,8 +484,6 @@
 		205A90B223175F72004C756E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F9B229BD18200A3D847 /* libc++.tbd */; };
 		205A90B423175F72004C756E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F91229BD16E00A3D847 /* libcrypto.a */; };
 		205A90B523175F72004C756E /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; };
-		205A90B623175F72004C756E /* BMKLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F94229BD16E00A3D847 /* BMKLocationKit.framework */; };
-		205A90B723175F72004C756E /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F95229BD16E00A3D847 /* BaiduMapAPI_Base.framework */; };
 		205A90B823175F72004C756E /* libPods-JS_Shipper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F289B1DBC4F7E18335BF54E1 /* libPods-JS_Shipper.a */; };
 		205A90B923175F72004C756E /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; };
 		205A90BA23175F72004C756E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F92229BD16E00A3D847 /* libssl.a */; };
@@ -749,6 +746,7 @@
 		208F897C23289FE500918888 /* YPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F897623289FE500918888 /* YPTabBar.m */; };
 		20914FDF22B8C6E7005B4A4E /* XLGMapNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20914FDE22B8C6E7005B4A4E /* XLGMapNavVC.m */; };
 		20914FE322B8C734005B4A4E /* LocationTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 20914FE222B8C734005B4A4E /* LocationTransform.m */; };
+		20979DFD232F8C120019FE4C /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F95229BD16E00A3D847 /* BaiduMapAPI_Base.framework */; };
 		209B6ACC2272DCCF0060F509 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 209B6ACA2272DCCE0060F509 /* MKMapView+ZoomLevel.m */; };
 		209B6ACF227300850060F509 /* JSSelectCityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 209B6ACE227300850060F509 /* JSSelectCityVC.m */; };
 		209B6AD22273097A0060F509 /* JSEditAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 209B6AD12273097A0060F509 /* JSEditAddressVC.m */; };
@@ -1705,13 +1703,12 @@
 				205A90B223175F72004C756E /* libc++.tbd in Frameworks */,
 				205A90B423175F72004C756E /* libcrypto.a in Frameworks */,
 				205A90B523175F72004C756E /* HyphenateLite.framework in Frameworks */,
-				205A90B623175F72004C756E /* BMKLocationKit.framework in Frameworks */,
-				205A90B723175F72004C756E /* BaiduMapAPI_Base.framework in Frameworks */,
 				205A90B823175F72004C756E /* libPods-JS_Shipper.a in Frameworks */,
 				205A90B923175F72004C756E /* HyphenateLite.framework in Frameworks */,
 				205A90BA23175F72004C756E /* libssl.a in Frameworks */,
 				205A90BC23175F72004C756E /* libopencore-amrwb.a in Frameworks */,
 				205A90BD23175F72004C756E /* libopencore-amrnb.a in Frameworks */,
+				20979DFD232F8C120019FE4C /* BaiduMapAPI_Base.framework in Frameworks */,
 				205A90BE23175F72004C756E /* BaiduMapAPI_Search.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3993,7 +3990,6 @@
 				205A8FEE23175F72004C756E /* EMChatroomInfoViewController.m in Sources */,
 				205A8FEF23175F72004C756E /* PSTCollectionViewCell.m in Sources */,
 				20FB037F231CF32E0015787F /* JSCircleContentVC.m in Sources */,
-				205A8FF023175F72004C756E /* JSConfirmAddressMapVC.m in Sources */,
 				20AF585A2328E1A400B6FAF9 /* ZYLPreViewImageTool.m in Sources */,
 				205A8FF123175F72004C756E /* AEIndicator.m in Sources */,
 				205A8FF223175F72004C756E /* XLGMapNavVC.m in Sources */,

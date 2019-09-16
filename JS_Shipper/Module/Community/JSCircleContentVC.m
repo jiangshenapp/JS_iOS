@@ -88,6 +88,7 @@
 - (void)pushVC {
     JSManagerCircleVC *vc = (JSManagerCircleVC *)[Utils getViewController:@"Community" WithVCName:@"JSManagerCircleVC"];
     vc.circleID = _circleId;
+    vc.admin = _dataModel.admin;
     vc.title = self.title;
     [self.navigationController pushViewController:vc animated:YES];
 }

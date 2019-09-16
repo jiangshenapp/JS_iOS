@@ -15,12 +15,14 @@
 @property (nonatomic,copy) NSString *token; //用户token
 @property (nonatomic,copy) NSString *mobile; //手机号码
 @property (nonatomic,copy) NSString *nickName; //昵称
-@property (nonatomic,copy) NSString *avatar; //头像
+//@property (nonatomic,copy) NSString *avatar; //头像
 @property (nonatomic,assign) NSInteger score; //分数
 @property (nonatomic,copy) NSString *driverVerified; //是否认证司机身份，0未认证，1审核中，2已认证，3认证失败
 @property (nonatomic,copy) NSString *parkVerified; //是否认证园区身份，0未认证，1审核中，2已认证，3认证失败
 @property (nonatomic,copy) NSString *personConsignorVerified; //是否认证个人货主，0未认证，1审核中，2已认证，3认证失败
 @property (nonatomic,copy) NSString *companyConsignorVerified; //是否认证企业货主身份，0未认证，1审核中，2已认证，3认证失败
+/**  */
+@property (nonatomic,copy) NSString *ID;
 
 + (UserInfo *)share;
 

@@ -10,7 +10,7 @@
 #import "JSTopicDetailVC.h"
 #import "PostListTabCell.h"
 
-@interface JSTieziListVC ()
+@interface JSTieziListVC ()<UITableViewDataSource,UITableViewDelegate>
 /** 数据源 */
 @property (nonatomic,retain) NSMutableArray <JSPostListModel *>*dataSource;
 @end
@@ -23,7 +23,8 @@
     NSLog(@"%@",_type);
     self.navBar.hidden = YES;
     _dataSource = [NSMutableArray array];
-
+    self.baseTabView.delegate = self;
+    self.baseTabView.dataSource = self;
     __weak typeof(self) weakSelf = self;
     self.baseTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //        weakSelf.page = 1;

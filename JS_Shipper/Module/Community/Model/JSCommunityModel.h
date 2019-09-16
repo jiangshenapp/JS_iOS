@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** <#object#> */
 @property (nonatomic,copy) NSString *subjects;
 ///** <#object#> */
-//@property (nonatomic,copy) NSString *image;
+//@property (nonatomic,copy) NSString *admin;
 /** 0未申请  1已申请 */
 //@property (nonatomic,copy) NSString *applyStatus;
 @end

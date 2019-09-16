@@ -95,6 +95,7 @@
     _currentLoc = currLocation.coordinate;
     NSDictionary *locDic = @{@"lat":@(_currentLoc.latitude),@"lng":@(_currentLoc.longitude)};
     [[NSUserDefaults standardUserDefaults] setObject:locDic forKey:@"loc"];;
+    [self.baseTabView reloadData];
     NSLog(@"经度=%f 纬度=%f 高度=%f", currLocation.coordinate.latitude, currLocation.coordinate.longitude, currLocation.altitude);
 }
 

@@ -10,6 +10,10 @@
 
 @implementation CircleListTabCell
 
+-(void)setModel:(JSCommunityModel *)model {
+    
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

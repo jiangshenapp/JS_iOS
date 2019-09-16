@@ -9,14 +9,11 @@
 #import "BaseVC.h"
 #import "CircleListTabCell.h"
 #import "JSCommunityModel.h"
-#import <BaiduMapAPI_Search/BMKSearchComponent.h>
-#import <BMKLocationKit/BMKLocationManager.h>
-#import <BaiduMapAPI_Base/BMKBaseComponent.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JSCommunityVC : BaseVC<BMKGeoCodeSearchDelegate,BMKLocationManagerDelegate>
+@interface JSCommunityVC : BaseVC
 
 @end
 
