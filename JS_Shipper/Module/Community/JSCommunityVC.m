@@ -57,6 +57,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"社区";
+    _commentCountLab.hidden = YES;
     _leftNavbarBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
 //    [_leftNavbarBtn setTitle:@"" forState:UIControlStateNormal];
     [_leftNavbarBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
