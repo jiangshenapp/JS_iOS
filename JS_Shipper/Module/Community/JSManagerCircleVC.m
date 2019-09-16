@@ -114,7 +114,7 @@
         [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             if (status==Request_Success) {
                 [Utils showToast:@"操作成功"];
-                if ([memberID isEqualToString:[UserInfo share].ID]) {//删除自己
+                if ([memberID integerValue] == [[UserInfo share].ID integerValue]) {//删除自己
                     [weakSelf.navigationController popToRootViewControllerAnimated:YES];
                 }
                 else {
