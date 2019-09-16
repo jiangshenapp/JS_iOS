@@ -287,7 +287,6 @@
 		203C302B2320EBD10007FC53 /* Shipper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203C302A2320EBD10007FC53 /* Shipper.xcassets */; };
 		203D7F96229BD16E00A3D847 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F91229BD16E00A3D847 /* libcrypto.a */; };
 		203D7F97229BD16E00A3D847 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F92229BD16E00A3D847 /* libssl.a */; };
-		203D7F98229BD16E00A3D847 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F93229BD16E00A3D847 /* BaiduMapAPI_Utils.framework */; };
 		203D7F99229BD16E00A3D847 /* BMKLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F94229BD16E00A3D847 /* BMKLocationKit.framework */; };
 		203D7F9A229BD16E00A3D847 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F95229BD16E00A3D847 /* BaiduMapAPI_Base.framework */; };
 		203D7F9C229BD18200A3D847 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F9B229BD18200A3D847 /* libc++.tbd */; };
@@ -482,10 +481,8 @@
 		205A90AB23175F72004C756E /* HmSelectAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751906227D17710032A974 /* HmSelectAdView.m */; };
 		205A90AC23175F72004C756E /* EMEmoticonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118EAA22DEEA7500A195D1 /* EMEmoticonGroup.m */; };
 		205A90AD23175F72004C756E /* UIViewController+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118F3322DEEA7600A195D1 /* UIViewController+Search.m */; };
-		205A90AE23175F72004C756E /* JSDeliverGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73792248BE430020EA5D /* JSDeliverGoodsVC.m */; };
 		205A90B023175F72004C756E /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 201040BC229E7C6A00B7B258 /* ZHPickView.m */; };
 		205A90B223175F72004C756E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F9B229BD18200A3D847 /* libc++.tbd */; };
-		205A90B323175F72004C756E /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F93229BD16E00A3D847 /* BaiduMapAPI_Utils.framework */; };
 		205A90B423175F72004C756E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F91229BD16E00A3D847 /* libcrypto.a */; };
 		205A90B523175F72004C756E /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; };
 		205A90B623175F72004C756E /* BMKLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F94229BD16E00A3D847 /* BMKLocationKit.framework */; };
@@ -493,7 +490,6 @@
 		205A90B823175F72004C756E /* libPods-JS_Shipper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F289B1DBC4F7E18335BF54E1 /* libPods-JS_Shipper.a */; };
 		205A90B923175F72004C756E /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; };
 		205A90BA23175F72004C756E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F92229BD16E00A3D847 /* libssl.a */; };
-		205A90BB23175F72004C756E /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F9D229BD21100A3D847 /* BaiduMapAPI_Map.framework */; };
 		205A90BC23175F72004C756E /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118ED222DEEA7500A195D1 /* libopencore-amrwb.a */; };
 		205A90BD23175F72004C756E /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118ED322DEEA7500A195D1 /* libopencore-amrnb.a */; };
 		205A90BE23175F72004C756E /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7FA1229BDC6100A3D847 /* BaiduMapAPI_Search.framework */; };
@@ -1707,7 +1703,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				205A90B223175F72004C756E /* libc++.tbd in Frameworks */,
-				205A90B323175F72004C756E /* BaiduMapAPI_Utils.framework in Frameworks */,
 				205A90B423175F72004C756E /* libcrypto.a in Frameworks */,
 				205A90B523175F72004C756E /* HyphenateLite.framework in Frameworks */,
 				205A90B623175F72004C756E /* BMKLocationKit.framework in Frameworks */,
@@ -1715,7 +1710,6 @@
 				205A90B823175F72004C756E /* libPods-JS_Shipper.a in Frameworks */,
 				205A90B923175F72004C756E /* HyphenateLite.framework in Frameworks */,
 				205A90BA23175F72004C756E /* libssl.a in Frameworks */,
-				205A90BB23175F72004C756E /* BaiduMapAPI_Map.framework in Frameworks */,
 				205A90BC23175F72004C756E /* libopencore-amrwb.a in Frameworks */,
 				205A90BD23175F72004C756E /* libopencore-amrnb.a in Frameworks */,
 				205A90BE23175F72004C756E /* BaiduMapAPI_Search.framework in Frameworks */,
@@ -1727,7 +1721,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				203D7F9C229BD18200A3D847 /* libc++.tbd in Frameworks */,
-				203D7F98229BD16E00A3D847 /* BaiduMapAPI_Utils.framework in Frameworks */,
 				203D7F96229BD16E00A3D847 /* libcrypto.a in Frameworks */,
 				20118F9522DEED3D00A195D1 /* HyphenateLite.framework in Frameworks */,
 				203D7F99229BD16E00A3D847 /* BMKLocationKit.framework in Frameworks */,
@@ -4233,7 +4226,6 @@
 				205A90AB23175F72004C756E /* HmSelectAdView.m in Sources */,
 				205A90AC23175F72004C756E /* EMEmoticonGroup.m in Sources */,
 				205A90AD23175F72004C756E /* UIViewController+Search.m in Sources */,
-				205A90AE23175F72004C756E /* JSDeliverGoodsVC.m in Sources */,
 				20815E8423176C8A00E24C75 /* JSAuthenticationVC.m in Sources */,
 				205A90B023175F72004C756E /* ZHPickView.m in Sources */,
 				20815E4223176C4A00E24C75 /* JSServiceVC.m in Sources */,
@@ -4549,8 +4541,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P8463X2LVX;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3A6XD8P7R;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4577,7 +4569,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.transporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = TransporterDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -4587,9 +4579,9 @@
 			baseConfigurationReference = 3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P8463X2LVX;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3A6XD8P7R;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4616,7 +4608,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.transporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = TransporterDis;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -4741,8 +4733,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P8463X2LVX;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3A6XD8P7R;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4769,7 +4761,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.shipper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ShipperDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -4779,9 +4771,9 @@
 			baseConfigurationReference = 3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P8463X2LVX;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3A6XD8P7R;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4808,7 +4800,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.shipper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ShipperDis;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

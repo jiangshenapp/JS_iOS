@@ -169,16 +169,21 @@
     if (!_info1||!_info2) {
         return;
     }
-    BMKMapPoint point1 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(_info1.lat,_info1.lng));
-    BMKMapPoint point2 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(_info2.lat,_info2.lng));
-  float  dist = BMKMetersBetweenMapPoints(point1,point2);
-    if (dist<1000) {
-        _distanceLab.text = [NSString stringWithFormat:@"总里程：%.2fm",dist];
-    }
-    else {
-        dist = dist/1000;
-        _distanceLab.text = [NSString stringWithFormat:@"总里程：%.2fkm",dist];
-    }
+    
+    _distanceLab.text = [NSString stringWithFormat:@"总里程:%@",[Utils distanceBetweenOrderBy:_info1.lat :_info1.lng andOther:_info2.lat  :_info2.lng ]];
+
+    
+//
+//    BMKMapPoint point1 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(_info1.lat,_info1.lng));
+//    BMKMapPoint point2 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(_info2.lat,_info2.lng));
+//  float  dist = BMKMetersBetweenMapPoints(point1,point2);
+//    if (dist<1000) {
+//        _distanceLab.text = [NSString stringWithFormat:@"总里程：%.2fm",dist];
+//    }
+//    else {
+//        dist = dist/1000;
+//        _distanceLab.text = [NSString stringWithFormat:@"总里程：%.2fkm",dist];
+//    }
 }
 
 - (void)showMyOrderAction {
