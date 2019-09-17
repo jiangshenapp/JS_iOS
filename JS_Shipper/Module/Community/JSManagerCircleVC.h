@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 圈子ID */
 @property (nonatomic,copy) NSString *circleID;
 /** 是否是管理员 */
-@property (nonatomic,copy) NSString *admin;
+@property (nonatomic,copy) NSString *adminID;
+/** <#object#> */
+@property (nonatomic,copy) NSString *titleStr;
 - (IBAction)deleteAction:(UIButton *)sender;
 @end
 

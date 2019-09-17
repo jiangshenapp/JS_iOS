@@ -559,7 +559,9 @@
                                             <outlet property="likeBtn" destination="3ln-RZ-c9A" id="UAn-sL-bCG"/>
                                             <outlet property="nameLab" destination="CbV-RZ-bLf" id="47a-g5-UiD"/>
                                             <outlet property="tag1Lab" destination="Idp-Mf-dNm" id="eqg-oS-wQu"/>
+                                            <outlet property="tag1View" destination="Hch-fW-Qqy" id="9qe-jI-eXN"/>
                                             <outlet property="tag2Lab" destination="AfX-YO-eFa" id="Xb9-6j-9lB"/>
+                                            <outlet property="tag2View" destination="XNu-nS-WBV" id="oyH-ko-83R"/>
                                             <outlet property="timeLab" destination="nTG-SD-Y4m" id="tua-ma-s0n"/>
                                             <outlet property="zanNumberLab" destination="XyS-Qd-7pj" id="Ga5-KT-9da"/>
                                         </connections>
@@ -1422,7 +1424,9 @@
                                             <outlet property="likeBtn" destination="aVI-k7-yrf" id="WMb-n7-Hin"/>
                                             <outlet property="nameLab" destination="CAQ-pS-zUI" id="NT7-Hy-wiN"/>
                                             <outlet property="tag1Lab" destination="DKv-dE-3pt" id="0g6-k0-Sts"/>
+                                            <outlet property="tag1View" destination="dfB-la-58T" id="IHN-Nu-paC"/>
                                             <outlet property="tag2Lab" destination="C96-cu-GgR" id="JMT-Gk-zLb"/>
+                                            <outlet property="tag2View" destination="qcS-AT-1li" id="KAS-cC-QJB"/>
                                             <outlet property="timeLab" destination="zl4-ZH-4kl" id="Oqe-Vo-pZK"/>
                                             <outlet property="zanNumberLab" destination="a8R-LD-ptG" id="6UI-ia-BmL"/>
                                         </connections>

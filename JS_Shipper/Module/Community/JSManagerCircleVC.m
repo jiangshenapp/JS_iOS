@@ -11,8 +11,8 @@
 @interface JSManagerCircleVC ()
 {
 }
-/** 我的用户ID */
-@property (nonatomic,copy) NSString *myUserID;
+/** 是否是管理员 */
+@property (nonatomic,assign)  BOOL isAdmin;;
 @property (nonatomic,retain) NSArray <CircleMemberModel *>*dataSource;
 @end
 
@@ -20,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"圈子名称";
+    self.title = self.titleStr;
+    _isAdmin = ([self.adminID integerValue]==[[UserInfo share].userID integerValue]);
     [self getNetData];
     // Do any additional setup after loading the view.
 }
@@ -32,7 +33,7 @@
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
             weakSelf.dataSource = [CircleMemberModel mj_objectArrayWithKeyValuesArray:responseData];
-            if (weakSelf.admin.length==0) {
+            if (!weakSelf.isAdmin) {//不是管理员
                 NSString *preStr = [NSString stringWithFormat:@"status = '1'"];
                 //定义谓词对象,谓词对象中包含了过滤条件
                 NSPredicate *predicate = [NSPredicate predicateWithFormat:preStr];
@@ -65,7 +66,7 @@
 }
 
 - (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_admin.length==0) {
+    if (!_isAdmin) {
         return @[];
     }
     CircleMemberModel *model = _dataSource[indexPath.row];
@@ -114,7 +115,7 @@
         [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             if (status==Request_Success) {
                 [Utils showToast:@"操作成功"];
-                if ([memberID integerValue] == [[UserInfo share].ID integerValue]) {//删除自己
+                if ([memberID integerValue] == [[UserInfo share].userID integerValue]) {//删除自己
                     [weakSelf.navigationController popToRootViewControllerAnimated:YES];
                 }
                 else {
@@ -161,7 +162,7 @@
 */
 
 - (IBAction)deleteAction:(UIButton *)sender {
-    [self deleteMember:[UserInfo share].ID];
+    [self deleteMember:[UserInfo share].userID];
 }
 @end
 

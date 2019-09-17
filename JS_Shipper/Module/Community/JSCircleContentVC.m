@@ -37,6 +37,10 @@
     [rightBtn addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
     self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     subjectStr = @"";
+    __weak typeof(self) weakSelf = self;
+    self.baseTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getNetData];
+    }];
     [self getNetData];
     [self initTopicListView];
 }
@@ -82,14 +86,17 @@
             weakSelf.dataSource = [JSPostListModel mj_objectArrayWithKeyValuesArray:responseData];
             [weakSelf.baseTabView reloadData];
         }
+        if ([weakSelf.baseTabView.mj_header isRefreshing]) {
+            [weakSelf.baseTabView.mj_header endRefreshing];
+        }
     }];
 }
 
 - (void)pushVC {
     JSManagerCircleVC *vc = (JSManagerCircleVC *)[Utils getViewController:@"Community" WithVCName:@"JSManagerCircleVC"];
     vc.circleID = _circleId;
-    vc.admin = _dataModel.admin;
-    vc.title = self.title;
+    vc.adminID = _dataModel.admin;
+    vc.titleStr = self.navItem.title;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
