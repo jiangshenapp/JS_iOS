@@ -435,7 +435,6 @@
 		205A907723175F72004C756E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751902227D17700032A974 /* UIView+Extension.m */; };
 		205A907823175F72004C756E /* JHHJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD734C2248BE420020EA5D /* JHHJView.m */; };
 		205A907923175F72004C756E /* ProgressLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD735C2248BE420020EA5D /* ProgressLoadView.m */; };
-		205A907A23175F72004C756E /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73942248BE440020EA5D /* BaseWebVC.m */; };
 		205A907B23175F72004C756E /* EMDemoOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118EA922DEEA7500A195D1 /* EMDemoOptions.m */; };
 		205A907C23175F72004C756E /* BaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73932248BE440020EA5D /* BaseScrollView.m */; };
 		205A907D23175F72004C756E /* JSHomeDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B822B37643001F8001 /* JSHomeDetaileVC.m */; };
@@ -470,7 +469,6 @@
 		205A909E23175F72004C756E /* XLGInternalTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD739A2248BE440020EA5D /* XLGInternalTestVC.m */; };
 		205A909F23175F72004C756E /* EMDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118F3F22DEEA7600A195D1 /* EMDateHelper.m */; };
 		205A90A123175F72004C756E /* EMGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118DC722DEE95F00A195D1 /* EMGroupsViewController.m */; };
-		205A90A323175F72004C756E /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73872248BE440020EA5D /* WKDelegateController.m */; };
 		205A90A423175F72004C756E /* EMInviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118DA122DEE95F00A195D1 /* EMInviteFriendViewController.m */; };
 		205A90A523175F72004C756E /* EMGroupAdminsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20118DCA22DEE95F00A195D1 /* EMGroupAdminsViewController.m */; };
 		205A90A623175F72004C756E /* HomeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A096482F22B87F6D000FDBE6 /* HomeDataModel.m */; };
@@ -785,12 +783,10 @@
 		20BD73C12248BE440020EA5D /* JSMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD737F2248BE430020EA5D /* JSMineVC.m */; };
 		20BD73C22248BE440020EA5D /* JSGardenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73812248BE430020EA5D /* JSGardenVC.m */; };
 		20BD73C32248BE440020EA5D /* JSPaswdLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73842248BE430020EA5D /* JSPaswdLoginVC.m */; };
-		20BD73C42248BE440020EA5D /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73872248BE440020EA5D /* WKDelegateController.m */; };
 		20BD73C52248BE440020EA5D /* BaseTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD738A2248BE440020EA5D /* BaseTabBarVC.m */; };
 		20BD73C72248BE440020EA5D /* BaseNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73912248BE440020EA5D /* BaseNC.m */; };
 		20BD73C82248BE440020EA5D /* BaseNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73922248BE440020EA5D /* BaseNavBar.m */; };
 		20BD73C92248BE440020EA5D /* BaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73932248BE440020EA5D /* BaseScrollView.m */; };
-		20BD73CA2248BE440020EA5D /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73942248BE440020EA5D /* BaseWebVC.m */; };
 		20BD73CB2248BE440020EA5D /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73992248BE440020EA5D /* XLGInternalDemoVC.m */; };
 		20BD73CC2248BE440020EA5D /* XLGInternalTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD739A2248BE440020EA5D /* XLGInternalTestVC.m */; };
 		20BD73CD2248BE440020EA5D /* XLGChangeServerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD739F2248BE440020EA5D /* XLGChangeServerCell.m */; };
@@ -881,6 +877,12 @@
 		A033F2DD22B61C030051C285 /* JSChangeOrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A033F2DC22B61C030051C285 /* JSChangeOrderDetailVC.m */; };
 		A0346BBB22A8A48B00E5BAED /* PayRouteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0346BBA22A8A48B00E5BAED /* PayRouteModel.m */; };
 		A0346BF222A95AD900E5BAED /* TradeRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0346BF122A95AD900E5BAED /* TradeRecordModel.m */; };
+		A034FDE12330892D0028A7C5 /* JSLauncherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A034FDE02330892D0028A7C5 /* JSLauncherVC.m */; };
+		A034FDE22330892D0028A7C5 /* JSLauncherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A034FDE02330892D0028A7C5 /* JSLauncherVC.m */; };
+		A034FDE82330AC020028A7C5 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A034FDE42330AC020028A7C5 /* WKDelegateController.m */; };
+		A034FDE92330AC020028A7C5 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A034FDE42330AC020028A7C5 /* WKDelegateController.m */; };
+		A034FDF12330ACD20028A7C5 /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A034FDED2330ACD20028A7C5 /* BaseWebVC.m */; };
+		A034FDF22330ACD20028A7C5 /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A034FDED2330ACD20028A7C5 /* BaseWebVC.m */; };
 		A04CB3C3227B1C6E00ED6979 /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A04CB3C1227B1C6E00ED6979 /* BaseItem.m */; };
 		A0751909227D17710032A974 /* Area.txt in Resources */ = {isa = PBXBuildFile; fileRef = A0751901227D176F0032A974 /* Area.txt */; };
 		A075190A227D17710032A974 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751902227D17700032A974 /* UIView+Extension.m */; };
@@ -1517,20 +1519,16 @@
 		20BD73822248BE430020EA5D /* JSGardenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSGardenVC.h; sourceTree = "<group>"; };
 		20BD73842248BE430020EA5D /* JSPaswdLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSPaswdLoginVC.m; sourceTree = "<group>"; };
 		20BD73852248BE430020EA5D /* JSPaswdLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSPaswdLoginVC.h; sourceTree = "<group>"; };
-		20BD73872248BE440020EA5D /* WKDelegateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKDelegateController.m; sourceTree = "<group>"; };
 		20BD73882248BE440020EA5D /* BaseScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScrollView.h; sourceTree = "<group>"; };
 		20BD73892248BE440020EA5D /* BaseNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavBar.h; sourceTree = "<group>"; };
 		20BD738A2248BE440020EA5D /* BaseTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarVC.m; sourceTree = "<group>"; };
 		20BD738B2248BE440020EA5D /* BaseNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNC.h; sourceTree = "<group>"; };
 		20BD738C2248BE440020EA5D /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
-		20BD738D2248BE440020EA5D /* BaseWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebVC.h; sourceTree = "<group>"; };
-		20BD738E2248BE440020EA5D /* WKDelegateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKDelegateController.h; sourceTree = "<group>"; };
 		20BD738F2248BE440020EA5D /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		20BD73902248BE440020EA5D /* BaseTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarVC.h; sourceTree = "<group>"; };
 		20BD73912248BE440020EA5D /* BaseNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNC.m; sourceTree = "<group>"; };
 		20BD73922248BE440020EA5D /* BaseNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavBar.m; sourceTree = "<group>"; };
 		20BD73932248BE440020EA5D /* BaseScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseScrollView.m; sourceTree = "<group>"; };
-		20BD73942248BE440020EA5D /* BaseWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebVC.m; sourceTree = "<group>"; };
 		20BD73982248BE440020EA5D /* XLGInternalDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGInternalDemoVC.h; sourceTree = "<group>"; };
 		20BD73992248BE440020EA5D /* XLGInternalDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGInternalDemoVC.m; sourceTree = "<group>"; };
 		20BD739A2248BE440020EA5D /* XLGInternalTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGInternalTestVC.m; sourceTree = "<group>"; };
@@ -1651,6 +1649,12 @@
 		A0346BBA22A8A48B00E5BAED /* PayRouteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRouteModel.m; sourceTree = "<group>"; };
 		A0346BF022A95AD900E5BAED /* TradeRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeRecordModel.h; sourceTree = "<group>"; };
 		A0346BF122A95AD900E5BAED /* TradeRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeRecordModel.m; sourceTree = "<group>"; };
+		A034FDDF2330892D0028A7C5 /* JSLauncherVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSLauncherVC.h; sourceTree = "<group>"; };
+		A034FDE02330892D0028A7C5 /* JSLauncherVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSLauncherVC.m; sourceTree = "<group>"; };
+		A034FDE42330AC020028A7C5 /* WKDelegateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKDelegateController.m; sourceTree = "<group>"; };
+		A034FDE62330AC020028A7C5 /* WKDelegateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKDelegateController.h; sourceTree = "<group>"; };
+		A034FDED2330ACD20028A7C5 /* BaseWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebVC.m; sourceTree = "<group>"; };
+		A034FDEE2330ACD20028A7C5 /* BaseWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebVC.h; sourceTree = "<group>"; };
 		A04CB3C1227B1C6E00ED6979 /* BaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseItem.m; sourceTree = "<group>"; };
 		A04CB3C2227B1C6E00ED6979 /* BaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseItem.h; sourceTree = "<group>"; };
 		A0751900227D176F0032A974 /* HmAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HmAddressModel.h; sourceTree = "<group>"; };
@@ -3017,6 +3021,8 @@
 		20BD73732248BE430020EA5D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A034FDE32330ABAF0028A7C5 /* H5 */,
+				A034FDDE233088B90028A7C5 /* Guide */,
 				20BD73802248BE430020EA5D /* Garden */,
 				20BD73772248BE430020EA5D /* DeliverGoods */,
 				20BD737A2248BE430020EA5D /* Message */,
@@ -3158,10 +3164,6 @@
 				20BD738A2248BE440020EA5D /* BaseTabBarVC.m */,
 				20BD73882248BE440020EA5D /* BaseScrollView.h */,
 				20BD73932248BE440020EA5D /* BaseScrollView.m */,
-				20BD738D2248BE440020EA5D /* BaseWebVC.h */,
-				20BD73942248BE440020EA5D /* BaseWebVC.m */,
-				20BD738E2248BE440020EA5D /* WKDelegateController.h */,
-				20BD73872248BE440020EA5D /* WKDelegateController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -3343,6 +3345,26 @@
 				A02634E8228C234800C924E2 /* Animation */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A034FDDE233088B90028A7C5 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				A034FDDF2330892D0028A7C5 /* JSLauncherVC.h */,
+				A034FDE02330892D0028A7C5 /* JSLauncherVC.m */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		A034FDE32330ABAF0028A7C5 /* H5 */ = {
+			isa = PBXGroup;
+			children = (
+				A034FDEE2330ACD20028A7C5 /* BaseWebVC.h */,
+				A034FDED2330ACD20028A7C5 /* BaseWebVC.m */,
+				A034FDE62330AC020028A7C5 /* WKDelegateController.h */,
+				A034FDE42330AC020028A7C5 /* WKDelegateController.m */,
+			);
+			path = H5;
 			sourceTree = "<group>";
 		};
 		A07518FF227D16E90032A974 /* AddressSelect */ = {
@@ -4075,6 +4097,7 @@
 				20815E9F23176D9700E24C75 /* RouteModel.m in Sources */,
 				205A903223175F72004C756E /* BaseTabBarVC.m in Sources */,
 				205A903323175F72004C756E /* EMChatroomBlacklistViewController.m in Sources */,
+				A034FDE92330AC020028A7C5 /* WKDelegateController.m in Sources */,
 				205A903423175F72004C756E /* JSForgetPwdVC.m in Sources */,
 				205A903523175F72004C756E /* EMAudioRecordHelper.mm in Sources */,
 				205A903723175F72004C756E /* MWTapDetectingView.m in Sources */,
@@ -4154,12 +4177,12 @@
 				205A907423175F72004C756E /* Reachability.m in Sources */,
 				208F897A23289FE500918888 /* YPTabBarController.m in Sources */,
 				20815E7E23176C8900E24C75 /* JSMyWalletVC.m in Sources */,
+				A034FDF22330ACD20028A7C5 /* BaseWebVC.m in Sources */,
 				205A907523175F72004C756E /* PSTCollectionViewItemKey.m in Sources */,
 				205A907623175F72004C756E /* EMMessageStatusView.m in Sources */,
 				205A907723175F72004C756E /* UIView+Extension.m in Sources */,
 				205A907823175F72004C756E /* JHHJView.m in Sources */,
 				205A907923175F72004C756E /* ProgressLoadView.m in Sources */,
-				205A907A23175F72004C756E /* BaseWebVC.m in Sources */,
 				205A907B23175F72004C756E /* EMDemoOptions.m in Sources */,
 				205A907C23175F72004C756E /* BaseScrollView.m in Sources */,
 				205A907D23175F72004C756E /* JSHomeDetaileVC.m in Sources */,
@@ -4208,9 +4231,9 @@
 				205A909F23175F72004C756E /* EMDateHelper.m in Sources */,
 				205A90A123175F72004C756E /* EMGroupsViewController.m in Sources */,
 				20815E8C23176C8A00E24C75 /* JSOrderDistributionVC.m in Sources */,
-				205A90A323175F72004C756E /* WKDelegateController.m in Sources */,
 				2018840C232643C500CF780B /* RequestURLUtil.m in Sources */,
 				205A90A423175F72004C756E /* EMInviteFriendViewController.m in Sources */,
+				A034FDE22330892D0028A7C5 /* JSLauncherVC.m in Sources */,
 				A0C9884A232D2440000FAD71 /* ServiceModel.m in Sources */,
 				205A90A523175F72004C756E /* EMGroupAdminsViewController.m in Sources */,
 				205A90A623175F72004C756E /* HomeDataModel.m in Sources */,
@@ -4277,6 +4300,7 @@
 				20781E6F224A054F00F0767D /* JSAuthenticationVC.m in Sources */,
 				20118F7722DEEA7600A195D1 /* PSTCollectionView.m in Sources */,
 				A0F9CC7722AF366600161945 /* AccountInfo.m in Sources */,
+				A034FDE82330AC020028A7C5 /* WKDelegateController.m in Sources */,
 				20BD73B12248BE440020EA5D /* Utils.m in Sources */,
 				20118E6822DEE96000A195D1 /* EMChatroomsViewController.m in Sources */,
 				208F897923289FE500918888 /* YPTabBarController.m in Sources */,
@@ -4345,6 +4369,7 @@
 				20118F7922DEEA7600A195D1 /* PSTCollectionViewLayout.m in Sources */,
 				20118E6422DEE96000A195D1 /* EMBlacklistViewController.m in Sources */,
 				20BD73B72248BE440020EA5D /* Config.m in Sources */,
+				A034FDE12330892D0028A7C5 /* JSLauncherVC.m in Sources */,
 				20BD73BA2248BE440020EA5D /* CZUpdateView.m in Sources */,
 				204E5299227068E600DE65A8 /* JSFeedBackVC.m in Sources */,
 				20FB0390231E09220015787F /* JSSendCommentVC.m in Sources */,
@@ -4398,7 +4423,6 @@
 				A075190A227D17710032A974 /* UIView+Extension.m in Sources */,
 				20BD73AE2248BE440020EA5D /* JHHJView.m in Sources */,
 				20BD73B52248BE440020EA5D /* ProgressLoadView.m in Sources */,
-				20BD73CA2248BE440020EA5D /* BaseWebVC.m in Sources */,
 				20118F4722DEEA7600A195D1 /* EMDemoOptions.m in Sources */,
 				20BD73C92248BE440020EA5D /* BaseScrollView.m in Sources */,
 				2012E5B922B37643001F8001 /* JSHomeDetaileVC.m in Sources */,
@@ -4417,6 +4441,7 @@
 				20118E7A22DEE96000A195D1 /* EMJoinGroupViewController.m in Sources */,
 				20BD74152248C5B70020EA5D /* JSCodeLoginVC.m in Sources */,
 				20118E8022DEE96000A195D1 /* EMGroupOwnerViewController.m in Sources */,
+				A034FDF12330ACD20028A7C5 /* BaseWebVC.m in Sources */,
 				208F897723289FE500918888 /* YPTabItem.m in Sources */,
 				20118E5622DEE96000A195D1 /* EMConversationCell.m in Sources */,
 				20BD73CD2248BE440020EA5D /* XLGChangeServerCell.m in Sources */,
@@ -4443,7 +4468,6 @@
 				209D7DEF224C617D00409EA2 /* JSAllOrderVC.m in Sources */,
 				20118E7B22DEE96000A195D1 /* EMGroupsViewController.m in Sources */,
 				20F934E6224B2469008C80DB /* JSBillDetailsVC.m in Sources */,
-				20BD73C42248BE440020EA5D /* WKDelegateController.m in Sources */,
 				20118E6622DEE96000A195D1 /* EMInviteFriendViewController.m in Sources */,
 				20118E7D22DEE96000A195D1 /* EMGroupAdminsViewController.m in Sources */,
 				A096483022B87F6D000FDBE6 /* HomeDataModel.m in Sources */,

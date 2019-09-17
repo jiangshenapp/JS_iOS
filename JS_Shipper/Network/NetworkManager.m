@@ -68,7 +68,8 @@ static NetworkManager *_manager = nil;
                 }
             }
         }
-        else if ([code isEqualToString:@"-1"]) { //用户未登录
+        else if ([code isEqualToString:@"-1"]
+                 && ![name containsString:URL_GetBannerList]) { //用户未登录
             [self reLogin];
         }
         else {

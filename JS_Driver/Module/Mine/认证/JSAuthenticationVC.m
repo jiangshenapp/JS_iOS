@@ -339,7 +339,7 @@
 
 /* 用户协议 */
 - (IBAction)protocalAction:(id)sender {
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",h5Url(),H5_Register] withTitle:@"用户协议" isPresent:NO];
+    [BaseWebVC showWithVC:self withUrlStr:[NSString stringWithFormat:@"%@%@",h5Url(),H5_Register] withTitle:@"用户协议"];
 }
 
 /* 提交审核 */

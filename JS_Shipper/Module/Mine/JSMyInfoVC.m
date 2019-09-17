@@ -184,7 +184,7 @@
 
 /* 隐私政策 */
 - (IBAction)privacyAction:(id)sender {
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",h5Url(),H5_Privacy] withTitle:@"隐私保护指引" isPresent:NO];
+    [BaseWebVC showWithVC:self withUrlStr:[NSString stringWithFormat:@"%@%@",h5Url(),H5_Privacy] withTitle:@"隐私保护指引"];
 }
 
 /* 安全退出 */

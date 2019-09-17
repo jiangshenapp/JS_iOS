@@ -96,7 +96,7 @@
     else { //系统服务配置
         NSInteger index = sender.tag-1000-2;
         ServiceModel *model = self.serviceArr[index];
-        [BaseWebVC showWithContro:self withUrlStr:model.url withTitle:model.title isPresent:NO];
+        [BaseWebVC showWithVC:self withUrlStr:model.url withTitle:model.title];
     }
 }
 

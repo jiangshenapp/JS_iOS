@@ -16,9 +16,8 @@
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) UIProgressView *progressView;
 @property (strong, nonatomic) WKUserContentController *userContentController;
-/** 返回H5弹框 */
-//@property (nonatomic,strong) NSDictionary *alertDic;
 @property (nonatomic,assign) BOOL h5TapBack;
+
 @end
 
 @implementation BaseWebVC
@@ -31,21 +30,27 @@
 }
 
 /** 传入控制器、url、标题 */
-+ (void)showWithContro:(UIViewController *)contro withUrlStr:(NSString *)urlStr withTitle:(NSString *)title isPresent:(BOOL)isPresent {
++ (void)showWithVC:(UIViewController *)vc withUrlStr:(NSString *)urlStr withTitle:(NSString *)title {
     BaseWebVC *webVC = [[BaseWebVC alloc] init];
     if (![urlStr containsString:@"http"]) {
         urlStr = [NSString stringWithFormat:@"%@%@",h5Url(),urlStr];
     }
     webVC.homeUrl = urlStr;
     webVC.webTitle = title;
-    webVC.isPresent = isPresent;
-    
-    if (isPresent==YES) {
-        [contro presentViewController:webVC animated:YES completion:nil];
-    } else {
-        webVC.hidesBottomBarWhenPushed = YES;
-        [contro.navigationController pushViewController:webVC animated:YES];
+    webVC.hidesBottomBarWhenPushed = YES;
+    [vc.navigationController pushViewController:webVC animated:YES];
+}
+
+- (instancetype)initWithTitle:(NSString *)title withUrl:(NSString *)url {
+    self = [super init];
+    if (self) {
+        if (![url containsString:@"http"]) {
+            url = [NSString stringWithFormat:@"%@%@",h5Url(),url];
+        }
+        self.webTitle = title;
+        self.homeUrl = url;
     }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -150,7 +155,7 @@
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
         [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-
+        
         //注册方法
         WKDelegateController *delegateController = [[WKDelegateController alloc]init];
         delegateController.delegate = self;
@@ -171,33 +176,6 @@
     
     NSLog(@"打开web页面个数：%lu",(unsigned long)self.webView.backForwardList.backList.count);
     
-//    if (_alertDic) {
-//        if ([_alertDic[@"type"] isEqualToString:@"alert"]) {
-//            NSString *title = _alertDic[@"title"];
-//            NSString *content = _alertDic[@"content"];
-//            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"" rightButtonTitle:@"确定"];
-//            alert.doneBlock = ^{
-//                [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-//                    NSLog(@"js返回结果%@",result);
-//                }];
-//                self->_alertDic = nil;
-//                [self.navigationController popViewControllerAnimated:YES];
-//            };
-//        }
-//        if ([_alertDic[@"type"] isEqualToString:@"confirm"]) {
-//            NSString *title = _alertDic[@"title"];
-//            NSString *content = _alertDic[@"content"];
-//            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"取消" rightButtonTitle:@"确定"];
-//            alert.doneBlock = ^{
-//                [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-//                    NSLog(@"js返回结果%@",result);
-//                }];
-//                self->_alertDic = nil;
-//                [self.navigationController popViewControllerAnimated:YES];
-//            };
-//        }
-//    }
-    
     if (_h5TapBack == YES) {
         [_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
             NSLog(@"js返回结果%@",result);
@@ -208,14 +186,10 @@
         // 判断网页是否可以后退
         NSInteger webCount = self.webView.backForwardList.backList.count;
         if (webCount<1 || ![self.webView canGoBack]) {
-            if (self.isPresent==YES) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            } else {
-                if ([self.webTitle isEqualToString:@"个人中心"]) {
-                    [[NSNotificationCenter defaultCenter] postNotificationName:kUserInfoChangeNotification object:nil];
-                }
-                [self.navigationController popViewControllerAnimated:YES];
+            if ([self.webTitle isEqualToString:@"个人中心"]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kUserInfoChangeNotification object:nil];
             }
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             if (self.webView.canGoBack) {
                 [self.webView goBack];
@@ -243,7 +217,7 @@
             NSString *title = dic[@"title"];
             NSString *url = dic[@"url"];
             // 跳转新的H5页面
-            [BaseWebVC showWithContro:self withUrlStr:url withTitle:[NSString isEmpty:title]?@"":title isPresent:NO];
+            [BaseWebVC showWithVC:self withUrlStr:url withTitle:[NSString isEmpty:title]?@"":title];
         }
         if ([dic[@"type"] isEqualToString:@"app"]) {
             NSString *to = dic[@"to"];
@@ -259,16 +233,12 @@
     }
     
     if ([message.name isEqualToString:@"close"]) { //关闭当前页面
-        if (self.isPresent==YES) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        } else {
-            [self.navigationController popViewControllerAnimated:YES];
-        }
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
     if ([message.name isEqualToString:@"tapBack"]) { //返回弹窗提示
         _h5TapBack = YES;
-//        _alertDic = message.body;
+        //        _alertDic = message.body;
     }
     
     if ([message.name isEqualToString:@"return"]) { //返回

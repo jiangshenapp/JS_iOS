@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JSLauncherVC.h"
 #import "BaseTabBarVC.h"
 #import <IQKeyboardManager.h>
 #import "NetworkUtil.h"
@@ -45,9 +46,13 @@
     [[UITabBar appearance] setTranslucent:NO];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _tabVC = [[BaseTabBarVC alloc] init];
-    _tabVC.delegate = self;
-    self.window.rootViewController = _tabVC;
+    JSLauncherVC *launcherVC = [[JSLauncherVC alloc] init];
+    launcherVC.doneBlock = ^{
+        self.tabVC = [[BaseTabBarVC alloc] init];
+        self.tabVC.delegate = self;
+        self.window.rootViewController = self.tabVC;
+    };
+    self.window.rootViewController = launcherVC;
     [self.window makeKeyAndVisible];
     
     return YES;

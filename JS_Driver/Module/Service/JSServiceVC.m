@@ -87,13 +87,13 @@
 - (void)jumpAction:(UIButton *)btn {
     NSInteger index = btn.tag-200;
     ServiceModel *model = self.serviceArr[index];
-    [BaseWebVC showWithContro:self withUrlStr:model.url withTitle:model.title isPresent:NO];
+    [BaseWebVC showWithVC:self withUrlStr:model.url withTitle:model.title];
 }
 
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     BannerModel *model = self.bannerArr[index];
-    [BaseWebVC showWithContro:self withUrlStr:model.url withTitle:model.title isPresent:NO];
+    [BaseWebVC showWithVC:self withUrlStr:model.url withTitle:model.title];
 }
 
 //- (void)initView {
