@@ -31,7 +31,8 @@
     [super viewDidLoad];
     self.title = _dataModel.name;
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
-    [rightBtn setTitle:@"管理" forState:UIControlStateNormal];
+    [rightBtn setTitle:@"更多" forState:UIControlStateNormal];
+    rightBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [rightBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
     rightBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [rightBtn addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
@@ -42,6 +43,7 @@
         [weakSelf getNetData];
     }];
     [self getNetData];
+    [self getUserSubjectList];
     [self initTopicListView];
 }
 
@@ -90,6 +92,13 @@
             [weakSelf.baseTabView.mj_header endRefreshing];
         }
     }];
+}
+
+- (void)getUserSubjectList {
+    NSDictionary *dic = [NSDictionary dictionary];
+//    [[NetworkManager sharedManager] postJSON:URL_CircleLikeSubject parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+//        NSLog(@"%@",responseData);
+//    }];
 }
 
 - (void)pushVC {
