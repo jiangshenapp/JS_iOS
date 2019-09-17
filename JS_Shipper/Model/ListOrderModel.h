@@ -68,6 +68,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property  (nonatomic , copy) NSString *jdSubscriberId;
 /** 收货地坐标 */
 @property  (nonatomic , copy) NSString *receivePosition;
+/** 货主端登录手机号 */
+@property  (nonatomic , copy) NSString *consignorMobile;
 /** 发货人手机号 */
 @property  (nonatomic , copy) NSString *sendMobile;
 /** 收货人手机号 */

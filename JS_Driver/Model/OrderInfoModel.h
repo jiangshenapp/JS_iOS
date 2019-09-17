@@ -17,9 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property  (nonatomic , copy) NSString *goodsType;
 /** hzb */
 @property  (nonatomic , copy) NSString *receivePosition;
-/**  */
+/** 货主端登录手机号 */
+@property  (nonatomic , copy) NSString *consignorMobile;
+/** 发货人手机号 */
 @property  (nonatomic , copy) NSString *sendMobile;
-/** 2222222 */
+/** 收货人手机号 */
 @property  (nonatomic , copy) NSString *receiveMobile;
 /** 待接单 */
 @property  (nonatomic , copy) NSString *stateNameDriver;
