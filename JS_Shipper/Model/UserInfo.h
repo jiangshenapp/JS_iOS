@@ -22,7 +22,7 @@
 @property (nonatomic,copy) NSString *personConsignorVerified; //是否认证个人货主，0未认证，1审核中，2已认证，3认证失败
 @property (nonatomic,copy) NSString *companyConsignorVerified; //是否认证企业货主身份，0未认证，1审核中，2已认证，3认证失败
 /**  */
-@property (nonatomic,copy) NSString *ID;
+@property (nonatomic,copy) NSString *userID;
 
 + (UserInfo *)share;
 

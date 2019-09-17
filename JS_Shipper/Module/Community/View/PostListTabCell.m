@@ -29,16 +29,29 @@
     self.nameLab.text = dataModel.nickName;
     [self.headImgView sd_setImageWithURL:[NSURL URLWithString:dataModel.avatar] placeholderImage:DefaultImage];
     self.likeBtn.selected = [dataModel.likeFlag boolValue];
-    self.tag1Lab.hidden = YES;
-    self.tag2Lab.hidden = YES;
-    if ([dataModel.star boolValue]) {
-        self.tag1Lab.hidden = NO;
-        self.tag1Lab.text = @"精品";
+    self.tag1View.hidden = YES;
+    self.tag2View.hidden = YES;
+    NSArray *arr = @[dataModel.star,dataModel.type];
+    NSArray *labelArr = @[self.tag1Lab,self.tag2Lab];
+    NSArray *titleStrArr = @[@"精品",@"官方"];
+    NSInteger count = 0;
+    for (NSInteger index = 0; index < 2; index++) {
+        if ([arr[index] integerValue]==1) {
+            UILabel *label = labelArr[count];
+            label.superview.hidden = NO;
+            label.text = titleStrArr[index];
+            count++;
+        }
     }
-    if ([dataModel.type boolValue]) {
-        self.tag2Lab.hidden = NO;
-        self.tag2Lab.text = @"官方";
-    }
+
+//    if ([dataModel.star boolValue]) {
+//        self.tag1View.hidden = NO;
+//        self.tag1Lab.text = @"精品";
+//    }
+//    if ([dataModel.type boolValue]) {
+//        self.tag2View.hidden = NO;
+//        self.tag2Lab.text = @"官方";
+//    }
 }
 
 @end

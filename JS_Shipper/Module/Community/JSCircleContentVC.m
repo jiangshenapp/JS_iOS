@@ -31,13 +31,19 @@
     [super viewDidLoad];
     self.title = _dataModel.name;
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
-    [rightBtn setTitle:@"管理" forState:UIControlStateNormal];
+    [rightBtn setTitle:@"更多" forState:UIControlStateNormal];
+    rightBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [rightBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
     rightBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [rightBtn addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
     self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     subjectStr = @"";
+    __weak typeof(self) weakSelf = self;
+    self.baseTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getNetData];
+    }];
     [self getNetData];
+    [self getUserSubjectList];
     [self initTopicListView];
 }
 
@@ -82,14 +88,24 @@
             weakSelf.dataSource = [JSPostListModel mj_objectArrayWithKeyValuesArray:responseData];
             [weakSelf.baseTabView reloadData];
         }
+        if ([weakSelf.baseTabView.mj_header isRefreshing]) {
+            [weakSelf.baseTabView.mj_header endRefreshing];
+        }
     }];
+}
+
+- (void)getUserSubjectList {
+    NSDictionary *dic = [NSDictionary dictionary];
+//    [[NetworkManager sharedManager] postJSON:URL_CircleLikeSubject parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+//        NSLog(@"%@",responseData);
+//    }];
 }
 
 - (void)pushVC {
     JSManagerCircleVC *vc = (JSManagerCircleVC *)[Utils getViewController:@"Community" WithVCName:@"JSManagerCircleVC"];
     vc.circleID = _circleId;
-    vc.admin = _dataModel.admin;
-    vc.title = self.title;
+    vc.adminID = _dataModel.admin;
+    vc.titleStr = self.navItem.title;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

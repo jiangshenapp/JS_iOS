@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
 @property (weak, nonatomic) IBOutlet UILabel *commentNumLab;
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
+@property (weak, nonatomic) IBOutlet UIView *tag2View;
+@property (weak, nonatomic) IBOutlet UIView *tag1View;
 /** 数据源 */
 @property (nonatomic,retain) JSPostListModel *dataModel;
 @end
