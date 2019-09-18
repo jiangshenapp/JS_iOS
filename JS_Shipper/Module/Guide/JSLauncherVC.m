@@ -41,8 +41,9 @@
 #pragma mark - get data
 /** 获取启动页广告 */
 - (void)getLauncherAd {
-    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"3",@"type", nil];
-    [[NetworkManager sharedManager] postJSON:URL_GetBannerList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    NSString *urlStr = [NSString stringWithFormat:@"%@/%@",URL_GetBannerList,@"3"];
+    [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             NSMutableArray *bannerArr = [BannerModel mj_objectArrayWithKeyValuesArray:responseData];
             if (bannerArr.count>0) {

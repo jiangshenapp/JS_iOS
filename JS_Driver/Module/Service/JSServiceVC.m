@@ -42,8 +42,9 @@
 
 /** 获取系统服务banner */
 - (void)getSysServiceBanner {
-    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1",@"type", nil];
-    [[NetworkManager sharedManager] postJSON:URL_GetBannerList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    NSString *urlStr = [NSString stringWithFormat:@"%@/%@",URL_GetBannerList,@"1"];
+    [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         self.bannerArr = [BannerModel mj_objectArrayWithKeyValuesArray:responseData];
         NSMutableArray *imageArr = [NSMutableArray array];
         for (BannerModel *model in self.bannerArr) {
