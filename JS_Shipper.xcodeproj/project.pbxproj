@@ -271,6 +271,9 @@
 		2012E5B322B33904001F8001 /* JSLineDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B222B33904001F8001 /* JSLineDetaileVC.m */; };
 		2012E5B622B33941001F8001 /* JSCityDeliveryDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B522B33941001F8001 /* JSCityDeliveryDetaileVC.m */; };
 		2012E5B922B37643001F8001 /* JSHomeDetaileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B822B37643001F8001 /* JSHomeDetaileVC.m */; };
+		2014E2CC2334A0A800B722CF /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F9D229BD21100A3D847 /* BaiduMapAPI_Map.framework */; };
+		2014E2CD2334A17E00B722CF /* JSConfirmAddressMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 200E96982271B7F800498E78 /* JSConfirmAddressMapVC.m */; };
+		2014E2CE2334A1BE00B722CF /* BMKLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F94229BD16E00A3D847 /* BMKLocationKit.framework */; };
 		201883FD2325EC6700CF780B /* JSCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FC2325EC6700CF780B /* JSCommunityModel.m */; };
 		201884002325EF2300CF780B /* JSPostListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FF2325EF2300CF780B /* JSPostListModel.m */; };
 		2018840823263D1000CF780B /* NSString+NOEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018840723263D1000CF780B /* NSString+NOEmoji.m */; };
@@ -1704,11 +1707,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2014E2CC2334A0A800B722CF /* BaiduMapAPI_Map.framework in Frameworks */,
 				205A90B223175F72004C756E /* libc++.tbd in Frameworks */,
 				205A90B423175F72004C756E /* libcrypto.a in Frameworks */,
 				205A90B523175F72004C756E /* HyphenateLite.framework in Frameworks */,
 				205A90B823175F72004C756E /* libPods-JS_Shipper.a in Frameworks */,
 				205A90B923175F72004C756E /* HyphenateLite.framework in Frameworks */,
+				2014E2CE2334A1BE00B722CF /* BMKLocationKit.framework in Frameworks */,
 				205A90BA23175F72004C756E /* libssl.a in Frameworks */,
 				205A90BC23175F72004C756E /* libopencore-amrwb.a in Frameworks */,
 				205A90BD23175F72004C756E /* libopencore-amrnb.a in Frameworks */,
@@ -3634,7 +3639,6 @@
 				205A91912317602B004C756E /* Driver.xcassets in Resources */,
 				205A913F23175F72004C756E /* chat_audio_blue@2x.png in Resources */,
 				A022CCD223191F5E00E3EDD5 /* province_data.xml in Resources */,
-				205A914023175F72004C756E /* mapapi.bundle in Resources */,
 				205A914123175F72004C756E /* icon_013_cover.png in Resources */,
 				205A914223175F72004C756E /* ic_refresh_image_006@2x.png in Resources */,
 				205A914323175F72004C756E /* icon_030_cover.png in Resources */,
@@ -3704,6 +3708,7 @@
 				205A918223175F72004C756E /* chatroom_create@2x.png in Resources */,
 				205A918323175F72004C756E /* ic_refresh_image_009@2x.png in Resources */,
 				205A918423175F72004C756E /* group_join@2x.png in Resources */,
+				205A914023175F72004C756E /* mapapi.bundle in Resources */,
 				205A918523175F72004C756E /* ic_refresh_image_012@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4149,6 +4154,7 @@
 				205A906023175F72004C756E /* Toast.m in Sources */,
 				205A906123175F72004C756E /* UIImage+MWPhotoBrowser.m in Sources */,
 				205A906223175F72004C756E /* JHHJAnimation.m in Sources */,
+				2014E2CD2334A17E00B722CF /* JSConfirmAddressMapVC.m in Sources */,
 				205A906323175F72004C756E /* ListOrderModel.m in Sources */,
 				201C7E762329E65F0078C6DE /* PostListTabCell.m in Sources */,
 				205A906423175F72004C756E /* NetworkManager.m in Sources */,

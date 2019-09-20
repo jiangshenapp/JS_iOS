@@ -51,6 +51,9 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_CompleteDistributionOrder  @"/app/driver/order/completeDistribution"//完成配送"
 #define URL_CommentOrder @"/app/driver/order/comment"//回执评价"
 
+#define URL_ParkSupplement @"/app/park/supplement"//园区信息补充"
+
+
 @end
 
 NS_ASSUME_NONNULL_END

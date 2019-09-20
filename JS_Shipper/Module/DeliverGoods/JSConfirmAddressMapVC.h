@@ -16,7 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSConfirmAddressMapVC : BaseVC
-/** 0发货  1收货 */
+/** 0发货  1收货  2司机的园区地址 */
 @property (nonatomic,assign) NSInteger sourceType;
 /** <#object#> */
 @property (nonatomic,copy) void (^getAddressinfo)(AddressInfoModel *info);
@@ -30,7 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *addressInfoLab;
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UIButton *editGoodsInfoBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *editInfoViewW;
 - (IBAction)getAddressInfoAction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *confrirmBtn;
 
 @end
 

@@ -33,6 +33,22 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *companyType; //机构类型
 @property (nonatomic,copy) NSString *detailAddress; //详细地址
 
+
+/** <#object#> */
+@property (nonatomic,copy) NSString *image1;
+@property (nonatomic,copy) NSString *image2;
+
+@property (nonatomic,copy) NSString *image3;
+@property (nonatomic,copy) NSString *image4;
+/** <#object#> */
+@property (nonatomic,copy) NSString *contactLocation;
+/** <#object#> */
+@property (nonatomic,copy) NSString *contractPhone;
+/** <#object#> */
+@property (nonatomic,copy) NSString *contactName;
+/** <#object#> */
+@property (nonatomic,copy) NSString *contactAddress;
+
 @end
 
 NS_ASSUME_NONNULL_END

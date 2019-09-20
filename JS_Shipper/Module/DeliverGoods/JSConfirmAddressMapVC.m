@@ -57,9 +57,13 @@
 
     if (self.sourceType==1) {
         _dataModel = [NSKeyedUnarchiver unarchiveObjectWithFile:kReceiveAddressArchiver];
-    } else {
+    } else if (self.sourceType==0) {
         _dataModel = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
+    } else if (self.sourceType==2) {
+        [_confrirmBtn setTitle:@"确认地址" forState:UIControlStateNormal];
+        _editInfoViewW.constant = 0;
     }
+    
     if (!_dataModel) {
         _dataModel = [[AddressInfoModel alloc] init];
     }
@@ -282,8 +286,11 @@
     if (_sourceType==1) {
         _searchTF.placeholder = @"选择收货地址";
     }
-    else {
+    else if (_sourceType==0) {
         _searchTF.placeholder = @"选择发货地址";
+    }
+    else if (_sourceType==2) {
+        _searchTF.placeholder = @"选择园区地址";
     }
     _searchTF.delegate = self;
     _searchTF.font = [UIFont systemFontOfSize:14];
@@ -316,6 +323,13 @@
 }
 
 - (IBAction)getAddressInfoAction:(UIButton *)sender {
+    if (_sourceType==2) {//园区地址
+        if (self.getAddressinfo) {
+            self.getAddressinfo(_dataModel);
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        return;
+    }
     if(_dataModel.phone.length==0||_dataModel.name.length==0) {
         if (_sourceType==1) {
             [Utils showToast:@"请填写收货人信息"];

@@ -148,7 +148,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IFX-cF-jCJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="488"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="OSG-7E-WgW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
@@ -385,6 +385,30 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQo-DF-G9g">
+                                <rect key="frame" x="130" y="552" width="115" height="36"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="匠神马帮">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Copyright © 2019</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opk-Rr-Tp2">
                                 <rect key="frame" x="28" y="603" width="319" height="44"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.65490196078431373" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
@@ -406,12 +430,14 @@
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IFX-cF-jCJ" firstAttribute="top" secondItem="jz4-gV-YiF" secondAttribute="bottom" constant="44" id="8h1-uw-TCS"/>
+                            <constraint firstItem="eQo-DF-G9g" firstAttribute="top" secondItem="IFX-cF-jCJ" secondAttribute="bottom" id="Bc4-37-c7z"/>
                             <constraint firstItem="IFX-cF-jCJ" firstAttribute="leading" secondItem="Jvm-2I-vjD" secondAttribute="leading" id="C1H-y0-M7g"/>
                             <constraint firstItem="E9Z-IW-gjg" firstAttribute="top" secondItem="Opk-Rr-Tp2" secondAttribute="bottom" constant="20" id="TEL-RN-dxe"/>
                             <constraint firstAttribute="trailing" secondItem="Opk-Rr-Tp2" secondAttribute="trailing" constant="28" id="Ytu-Tf-w4z"/>
-                            <constraint firstItem="E9Z-IW-gjg" firstAttribute="top" secondItem="IFX-cF-jCJ" secondAttribute="bottom" id="e4z-Jw-h0G"/>
                             <constraint firstItem="Opk-Rr-Tp2" firstAttribute="leading" secondItem="Jvm-2I-vjD" secondAttribute="leading" constant="28" id="kJu-61-5a9"/>
+                            <constraint firstItem="eQo-DF-G9g" firstAttribute="centerX" secondItem="Jvm-2I-vjD" secondAttribute="centerX" id="mWO-gh-3Sw"/>
                             <constraint firstAttribute="trailing" secondItem="IFX-cF-jCJ" secondAttribute="trailing" id="t0E-s1-HBu"/>
+                            <constraint firstItem="Opk-Rr-Tp2" firstAttribute="top" secondItem="eQo-DF-G9g" secondAttribute="bottom" constant="15" id="vGp-De-JRb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kAU-Vz-SSH"/>
@@ -426,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTM-UW-TP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-729" y="38"/>
+            <point key="canvasLocation" x="-730.39999999999998" y="37.331334332833585"/>
         </scene>
         <!--MineVC-->
         <scene sceneID="9f1-Ao-E6v">

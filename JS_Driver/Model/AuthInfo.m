@@ -51,5 +51,45 @@
     }
     return _businessLicenceImage;
 }
+//
+//- (NSString *)image1 {
+//    if (_image1.length==0) {
+//        return @"";
+//    }
+//    if (![_image1 containsString:@"http"]) {
+//        _image1 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image1];
+//    }
+//    return _image1;
+//}
+//
+//- (NSString *)image2 {
+//    if (_image2.length==0) {
+//        return @"";
+//    }
+//    if (![_image2 containsString:@"http"]) {
+//        _image2 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image2];
+//    }
+//    return _image1;
+//}
+//
+//- (NSString *)image3 {
+//    if (_image3.length==0) {
+//        return @"";
+//    }
+//    if (![_image3 containsString:@"http"]) {
+//        _image3 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image3];
+//    }
+//    return _image3;
+//}
+//
+//- (NSString *)image4 {
+//    if (_image4.length==0) {
+//        return @"";
+//    }
+//    if (![_image4 containsString:@"http"]) {
+//        _image4 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image4];
+//    }
+//    return _image4;
+//}
 
 @end

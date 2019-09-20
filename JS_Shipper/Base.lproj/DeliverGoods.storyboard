@@ -1254,7 +1254,9 @@
                         <outlet property="bdMapView" destination="WJ8-pf-Za2" id="TgZ-b6-aY0"/>
                         <outlet property="centerView" destination="pPv-yB-B4K" id="pdc-Sj-8JS"/>
                         <outlet property="ceterAddressLab" destination="1b6-7T-FbM" id="gys-cn-n39"/>
+                        <outlet property="confrirmBtn" destination="FlZ-8e-QhR" id="51u-PE-Xf2"/>
                         <outlet property="editGoodsInfoBtn" destination="qD7-E4-6Wf" id="nxf-90-wCL"/>
+                        <outlet property="editInfoViewW" destination="RIK-fu-xcK" id="Gap-W4-pfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moZ-50-EfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
