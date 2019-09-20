@@ -162,7 +162,15 @@
 */
 
 - (IBAction)deleteAction:(UIButton *)sender {
-    [self deleteMember:[UserInfo share].userID];
+    __weak typeof(self) weakSelf = self;
+    NSDictionary *dic = [NSDictionary dictionary];
+    NSString *url = [NSString stringWithFormat:@"%@?circleId=%@",URL_ExistCircle,_circleID];
+    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status==Request_Success) {
+            [Utils showToast:@"退出成功"];
+            [weakSelf.navigationController popToRootViewControllerAnimated:YES];;
+        }
+    }];
 }
 @end
 

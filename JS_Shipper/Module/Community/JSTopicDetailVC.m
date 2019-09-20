@@ -33,14 +33,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"详情";
-    _praiseNumLab.text = _dataModel.likeCount;
-    _commentLab.text = _dataModel.commentCount;
-    _subjectNameLab.text = _dataModel.subject;
-    self.likeBtn.selected = [_dataModel.likeFlag boolValue];
     _commentDataSource = [NSMutableArray array];
+    [self refrehUI];
+    [self getDetaile];
     [self getCommentData];
     [self getLikeSubject];
+    __weak typeof(self) weakSelf = self;
+    self.mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getDetaile];
+    }];
     // Do any additional setup after loading the view.
+}
+
+- (void)getDetaile {
+    __weak typeof(self) weakSelf = self;
+    NSDictionary *dic = [NSDictionary dictionary];
+    NSString *url = [NSString stringWithFormat:@"%@?postId=%@",URL_PostDetail,_dataModel.ID];
+    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status==Request_Success) {
+            weakSelf.dataModel = [JSPostListModel mj_objectWithKeyValues:responseData];
+            [weakSelf refrehUI];
+        }
+        if ([weakSelf.mainTabView.mj_header isRefreshing]) {
+            [weakSelf.mainTabView.mj_header endRefreshing];
+        }
+    }];
 }
 
 -(void)getLikeSubject {
@@ -53,6 +70,7 @@
             if (weakSelf.attentionBtn.selected) {
                 weakSelf.attentionBtn.backgroundColor = [UIColor lightGrayColor];
             }
+            [weakSelf getDetaile];//获取详情
         }
     }];
 }
@@ -69,6 +87,14 @@
             [weakSelf.mainTabView reloadData];
         }
     }];
+}
+
+- (void)refrehUI {
+    _praiseNumLab.text = _dataModel.likeCount;
+    _commentLab.text = _dataModel.commentCount;
+    _subjectNameLab.text = _dataModel.subject;
+    self.likeBtn.selected = [_dataModel.likeFlag boolValue];
+    [self.mainTabView reloadData];
 }
 
 

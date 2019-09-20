@@ -23,6 +23,7 @@
 @property (nonatomic,copy) NSString *companyConsignorVerified; //是否认证企业货主身份，0未认证，1审核中，2已认证，3认证失败
 /**  */
 @property (nonatomic,copy) NSString *userID;
+@property (nonatomic,copy) NSString *subject;
 
 + (UserInfo *)share;
 

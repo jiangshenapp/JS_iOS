@@ -52,8 +52,9 @@
     CGFloat maxRight = leftSpace;;
     CGFloat viewW = WIDTH/PageCount-leftSpace;
     subjectArr = [_dataModel.subjects componentsSeparatedByString:@","];
+  NSArray *mySubjectArr = [[UserInfo share].subject componentsSeparatedByString:@","];
     NSMutableArray *allSub = [NSMutableArray arrayWithArray:@[@"全部"]];
-    [allSub addObjectsFromArray:subjectArr];
+    [allSub addObjectsFromArray:mySubjectArr];
     NSArray *subjectImgName = @[@"social_circle_icon_blue",@"social_circle_icon_red",@"social_circle_icon_green",@"social_circle_icon_yellow"];
     for (NSInteger index = 0; index<allSub.count; index++) {
         MyCustomButton *btn = [[MyCustomButton alloc]initWithFrame:CGRectMake(maxRight, 0, viewW, _titleScrollVew.height)];
@@ -95,7 +96,7 @@
 }
 
 - (void)getUserSubjectList {
-    NSDictionary *dic = [NSDictionary dictionary];
+//    NSDictionary *dic = [NSDictionary dictionary];
 //    [[NetworkManager sharedManager] postJSON:URL_CircleLikeSubject parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
 //        NSLog(@"%@",responseData);
 //    }];

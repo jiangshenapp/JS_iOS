@@ -106,6 +106,7 @@ NSString *PIC_URL(void);
 #define URL_CircleMyList @"/app/circle/list"//我的圈子
 #define URL_CircleMemberList @"/app/circle/memberList"//圈子成员列表"
 #define URL_CircleLikeSubject @"/app/circle/likeSubject"//关注话题"
+#define URL_ExistCircle @"/app/circle/existCircle"//退出圈子"
 
 #pragma mark - 帖子相关接口
 
@@ -114,6 +115,7 @@ NSString *PIC_URL(void);
 #define URL_PostCommentList @"/app/post/commentList"//评论列表
 #define URL_PostLike @"/app/post/like"//点赞"
 #define URL_PostList @"/app/post/list"//帖子列表
+#define URL_PostDetail @"/app/post/detail"//帖子详情"
 
 #pragma mark - 系统消息、banner相关接口
 

@@ -38,6 +38,12 @@
     self.title = @"社区";
     _commentCountLab.hidden = YES;
     [self initData];
+    
+    __weak typeof(self) weakSelf = self;
+    self.baseTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getNetData];
+    }];
+    
 }
 
 - (void)initData {
@@ -52,6 +58,9 @@
         if (status==Request_Success&&[responseData isKindOfClass:[NSArray class]]) {
             weakSelf.dataSource = [JSCommunityModel mj_objectArrayWithKeyValuesArray:responseData];
             [weakSelf.baseTabView reloadData];
+        }
+        if ([weakSelf.baseTabView.mj_header isRefreshing]) {
+            [weakSelf.baseTabView.mj_header endRefreshing];
         }
     }];
 }
