@@ -21,7 +21,7 @@ source 'https://github.com/CocoaPods/Specs.git'
    pod 'FXToast'
    pod 'JSONModel'
    pod 'AlipaySDK-iOS'
-   pod 'libWeChatSDK'
+#   pod 'libWeChatSDK'
    pod 'XYFModel' #字典转模型, 模型转字典, 模型归档接档
    pod 'MBProgressHUD'
  end

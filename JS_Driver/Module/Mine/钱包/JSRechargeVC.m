@@ -181,7 +181,7 @@
                     req.timeStamp           = stamp.intValue;
                     req.package             = orderDic[@"package"];
                     req.sign                = orderDic[@"sign"];
-                    [WXApi sendReq:req];
+                    [WXApi sendReq:req completion:nil];
                 }
             }
         }];

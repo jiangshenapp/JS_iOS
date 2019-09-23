@@ -17,6 +17,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "CustomEaseUtils.h"
 #import "EMNotificationHelper.h"
+#import "WXApiManager.h"
 
 
 @interface AppDelegate ()< WXApiDelegate,UNUserNotificationCenterDelegate>
@@ -39,9 +40,11 @@
     
     [self initEmData];
 
-    NSString *WechatDescription = @"微信注册";
-    [WXApi registerApp:kWechatKey withDescription:WechatDescription];
-    
+    [WXApi startLogByLevel:WXLogLevelNormal logBlock:^(NSString *log) {
+        NSLog(@"log : %@", log);
+    }];
+    NSString *WechatDescription = kWechatKey;
+    [WXApi registerApp:WechatDescription universalLink:@"https://help.wechat.com/sdksample/"];
     //解决tabbar上移
     [[UITabBar appearance] setTranslucent:NO];
     
@@ -121,6 +124,10 @@
     if([[url absoluteString] rangeOfString:[NSString stringWithFormat:@"%@://pay",kWechatKey]].location == 0) {
         return [WXApi handleOpenURL:url delegate:self];
     }
+//    if([[url absoluteString] rangeOfString:[NSString stringWithFormat:@"%@://platformId=wechat",kWechatKey]].location == 0) {
+        return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+//    }
+    
     
     return YES;
 }

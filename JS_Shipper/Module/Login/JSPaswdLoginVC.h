@@ -12,8 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JSPaswdLoginVC : BaseVC
 
+@property (weak, nonatomic) IBOutlet UIView *loginWXView;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *pswTF;
+- (IBAction)wxLoginAction:(UIButton *)sender;
 
 @end
 

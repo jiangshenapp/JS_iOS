@@ -807,6 +807,22 @@
 		20BD74152248C5B70020EA5D /* JSCodeLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD74142248C5B70020EA5D /* JSCodeLoginVC.m */; };
 		20BD74182248C6D70020EA5D /* JSForgetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD74172248C6D70020EA5D /* JSForgetPwdVC.m */; };
 		20BD741B2248C8230020EA5D /* JSResetPswVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD741A2248C8230020EA5D /* JSResetPswVC.m */; };
+		20C41064233899E600D068DE /* WXApiRequestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C41061233899E600D068DE /* WXApiRequestHandler.mm */; };
+		20C41065233899E600D068DE /* WXApiRequestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C41061233899E600D068DE /* WXApiRequestHandler.mm */; };
+		20C41066233899E600D068DE /* WXApiManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C41063233899E600D068DE /* WXApiManager.mm */; };
+		20C41067233899E600D068DE /* WXApiManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C41063233899E600D068DE /* WXApiManager.mm */; };
+		20C4107523389A9600D068DE /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 20C4107123389A9500D068DE /* README.txt */; };
+		20C4107623389A9600D068DE /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 20C4107123389A9500D068DE /* README.txt */; };
+		20C4107723389A9600D068DE /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C4107223389A9500D068DE /* libWeChatSDK.a */; };
+		20C4107823389A9600D068DE /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C4107223389A9500D068DE /* libWeChatSDK.a */; };
+		20C4108323389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4107B23389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm */; };
+		20C4108423389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4107B23389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm */; };
+		20C4108523389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4107D23389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.mm */; };
+		20C4108623389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4107D23389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.mm */; };
+		20C4108723389BA200D068DE /* WXMediaMessage+messageConstruct.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108123389BA200D068DE /* WXMediaMessage+messageConstruct.mm */; };
+		20C4108823389BA200D068DE /* WXMediaMessage+messageConstruct.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108123389BA200D068DE /* WXMediaMessage+messageConstruct.mm */; };
+		20C4108923389BA200D068DE /* UIAlertView+WX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108223389BA200D068DE /* UIAlertView+WX.mm */; };
+		20C4108A23389BA200D068DE /* UIAlertView+WX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108223389BA200D068DE /* UIAlertView+WX.mm */; };
 		20CDDAFE22C0CB0D005432F3 /* JSSelectGoodsNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CDDAFD22C0CB0D005432F3 /* JSSelectGoodsNameVC.m */; };
 		20DC7D6522BB68BF003CB4FD /* noDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DC7D6422BB68BE003CB4FD /* noDataView.xib */; };
 		20E41985231E1587001E89C7 /* JSSendTopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E41984231E1587001E89C7 /* JSSendTopicVC.m */; };
@@ -1561,6 +1577,24 @@
 		20BD74172248C6D70020EA5D /* JSForgetPwdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSForgetPwdVC.m; sourceTree = "<group>"; };
 		20BD74192248C8230020EA5D /* JSResetPswVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSResetPswVC.h; sourceTree = "<group>"; };
 		20BD741A2248C8230020EA5D /* JSResetPswVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSResetPswVC.m; sourceTree = "<group>"; };
+		20C41060233899E600D068DE /* WXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
+		20C41061233899E600D068DE /* WXApiRequestHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXApiRequestHandler.mm; sourceTree = "<group>"; };
+		20C41062233899E600D068DE /* WXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiRequestHandler.h; sourceTree = "<group>"; };
+		20C41063233899E600D068DE /* WXApiManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXApiManager.mm; sourceTree = "<group>"; };
+		20C4107023389A9500D068DE /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		20C4107123389A9500D068DE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		20C4107223389A9500D068DE /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		20C4107323389A9500D068DE /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		20C4107423389A9600D068DE /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		20C4107A23389BA200D068DE /* WXMediaMessage+messageConstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WXMediaMessage+messageConstruct.h"; sourceTree = "<group>"; };
+		20C4107B23389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.mm"; sourceTree = "<group>"; };
+		20C4107C23389BA200D068DE /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		20C4107D23389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.mm"; sourceTree = "<group>"; };
+		20C4107E23389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
+		20C4107F23389BA200D068DE /* UIAlertView+WX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+WX.h"; sourceTree = "<group>"; };
+		20C4108023389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
+		20C4108123389BA200D068DE /* WXMediaMessage+messageConstruct.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "WXMediaMessage+messageConstruct.mm"; sourceTree = "<group>"; };
+		20C4108223389BA200D068DE /* UIAlertView+WX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertView+WX.mm"; sourceTree = "<group>"; };
 		20CDDAFC22C0CB0D005432F3 /* JSSelectGoodsNameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSelectGoodsNameVC.h; sourceTree = "<group>"; };
 		20CDDAFD22C0CB0D005432F3 /* JSSelectGoodsNameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSelectGoodsNameVC.m; sourceTree = "<group>"; };
 		20DC7D6422BB68BE003CB4FD /* noDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noDataView.xib; sourceTree = "<group>"; };
@@ -1711,6 +1745,7 @@
 				205A90B223175F72004C756E /* libc++.tbd in Frameworks */,
 				205A90B423175F72004C756E /* libcrypto.a in Frameworks */,
 				205A90B523175F72004C756E /* HyphenateLite.framework in Frameworks */,
+				20C4107823389A9600D068DE /* libWeChatSDK.a in Frameworks */,
 				205A90B823175F72004C756E /* libPods-JS_Shipper.a in Frameworks */,
 				205A90B923175F72004C756E /* HyphenateLite.framework in Frameworks */,
 				2014E2CE2334A1BE00B722CF /* BMKLocationKit.framework in Frameworks */,
@@ -1730,6 +1765,7 @@
 				203D7F96229BD16E00A3D847 /* libcrypto.a in Frameworks */,
 				20118F9522DEED3D00A195D1 /* HyphenateLite.framework in Frameworks */,
 				203D7F99229BD16E00A3D847 /* BMKLocationKit.framework in Frameworks */,
+				20C4107723389A9600D068DE /* libWeChatSDK.a in Frameworks */,
 				203D7F9A229BD16E00A3D847 /* BaiduMapAPI_Base.framework in Frameworks */,
 				C2906EBDB1A940D92FBD8960 /* libPods-JS_Shipper.a in Frameworks */,
 				20118F9E22DEF0B900A195D1 /* HyphenateLite.framework in Frameworks */,
@@ -2975,6 +3011,7 @@
 		20BD736C2248BE430020EA5D /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				20C4105F233899E600D068DE /* WeiXin */,
 				208F897023289FE500918888 /* YPTabBarController(订单切换卡) */,
 				200515CC22DDCE3F0061AE4A /* EaseUI */,
 				203D7F8F229BD16E00A3D847 /* BaiduMap */,
@@ -3232,6 +3269,47 @@
 				20BD73A62248BE440020EA5D /* XLGLogVC.m */,
 			);
 			path = "接口日志";
+			sourceTree = "<group>";
+		};
+		20C4105F233899E600D068DE /* WeiXin */ = {
+			isa = PBXGroup;
+			children = (
+				20C4107923389BA200D068DE /* Helper */,
+				20C4106823389A6600D068DE /* SDKExport */,
+				20C41060233899E600D068DE /* WXApiManager.h */,
+				20C41061233899E600D068DE /* WXApiRequestHandler.mm */,
+				20C41062233899E600D068DE /* WXApiRequestHandler.h */,
+				20C41063233899E600D068DE /* WXApiManager.mm */,
+			);
+			path = WeiXin;
+			sourceTree = "<group>";
+		};
+		20C4106823389A6600D068DE /* SDKExport */ = {
+			isa = PBXGroup;
+			children = (
+				20C4107223389A9500D068DE /* libWeChatSDK.a */,
+				20C4107123389A9500D068DE /* README.txt */,
+				20C4107023389A9500D068DE /* WechatAuthSDK.h */,
+				20C4107323389A9500D068DE /* WXApi.h */,
+				20C4107423389A9600D068DE /* WXApiObject.h */,
+			);
+			path = SDKExport;
+			sourceTree = "<group>";
+		};
+		20C4107923389BA200D068DE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				20C4107A23389BA200D068DE /* WXMediaMessage+messageConstruct.h */,
+				20C4107B23389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm */,
+				20C4107C23389BA200D068DE /* Constant.h */,
+				20C4107D23389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.mm */,
+				20C4107E23389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */,
+				20C4107F23389BA200D068DE /* UIAlertView+WX.h */,
+				20C4108023389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */,
+				20C4108123389BA200D068DE /* WXMediaMessage+messageConstruct.mm */,
+				20C4108223389BA200D068DE /* UIAlertView+WX.mm */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		20FB037E231CEC240015787F /* View */ = {
@@ -3645,6 +3723,7 @@
 				205A914423175F72004C756E /* msg_bg_send@3x.png in Resources */,
 				205A914523175F72004C756E /* chatbar_call@2x.png in Resources */,
 				205A914623175F72004C756E /* group_avatar@3x.png in Resources */,
+				20C4107623389A9600D068DE /* README.txt in Resources */,
 				205A914723175F72004C756E /* ic_refresh_image_004@2x.png in Resources */,
 				205A914823175F72004C756E /* icon_027_cover.png in Resources */,
 				205A914923175F72004C756E /* ic_refresh_image_016@2x.png in Resources */,
@@ -3721,6 +3800,7 @@
 				20118E7722DEE96000A195D1 /* file@3x.png in Resources */,
 				20118DDD22DEE95F00A195D1 /* icon_029_cover.png in Resources */,
 				20118F5122DEEA7600A195D1 /* navbar_white@3x.png in Resources */,
+				20C4107523389A9600D068DE /* README.txt in Resources */,
 				20118E0A22DEE95F00A195D1 /* chatbar_face@2x.png in Resources */,
 				20BD73312248BDC30020EA5D /* LaunchScreen.storyboard in Resources */,
 				20118E1922DEE96000A195D1 /* chatbar_map@3x.png in Resources */,
@@ -4021,6 +4101,7 @@
 				205A8FF123175F72004C756E /* AEIndicator.m in Sources */,
 				205A8FF223175F72004C756E /* XLGMapNavVC.m in Sources */,
 				205A8FF323175F72004C756E /* EMChatBarItem.m in Sources */,
+				20C4108423389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm in Sources */,
 				205A8FF423175F72004C756E /* EMMulticastDelegate.m in Sources */,
 				205A8FF523175F72004C756E /* JSCommunityVC.m in Sources */,
 				20815E8323176C8A00E24C75 /* JSMyDriverVC.m in Sources */,
@@ -4060,6 +4141,7 @@
 				205A901423175F72004C756E /* MyCustomButton.m in Sources */,
 				205A901523175F72004C756E /* XLGChangeServerModel.m in Sources */,
 				205A901623175F72004C756E /* JSAboutVC.m in Sources */,
+				20C4108623389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.mm in Sources */,
 				205A901723175F72004C756E /* PSTGridLayoutSection.m in Sources */,
 				20815E8E23176C8A00E24C75 /* JSOrderDetailMapVC.m in Sources */,
 				208F896F23289F5B00918888 /* JSMyTieZiListSwitchVC.m in Sources */,
@@ -4074,6 +4156,7 @@
 				205A901C23175F72004C756E /* FilterButton.m in Sources */,
 				205A901D23175F72004C756E /* EMMsgRecallBubbleView.m in Sources */,
 				205A901E23175F72004C756E /* main.m in Sources */,
+				20C4108A23389BA200D068DE /* UIAlertView+WX.mm in Sources */,
 				205A901F23175F72004C756E /* EMChatBarEmoticonView.m in Sources */,
 				20815E9023176C8A00E24C75 /* JSMyInfoVC.m in Sources */,
 				20815E7A23176C8900E24C75 /* JSMyRouteDetailVC.m in Sources */,
@@ -4139,12 +4222,15 @@
 				205A905423175F72004C756E /* EMTextViewController.m in Sources */,
 				205A905523175F72004C756E /* BaseNC.m in Sources */,
 				205A905623175F72004C756E /* wav.mm in Sources */,
+				20C41067233899E600D068DE /* WXApiManager.mm in Sources */,
 				A022CCD323191F5E00E3EDD5 /* MOFSDatePicker.m in Sources */,
+				20C4108823389BA200D068DE /* WXMediaMessage+messageConstruct.mm in Sources */,
 				20FB0381231CF3330015787F /* CircleListTabCell.m in Sources */,
 				20815E9E23176D9700E24C75 /* OrderInfoModel.m in Sources */,
 				205A905723175F72004C756E /* MKMapView+ZoomLevel.m in Sources */,
 				205A905823175F72004C756E /* RegularPhoneTF.m in Sources */,
 				205A905923175F72004C756E /* EMRealtimeSearch.m in Sources */,
+				20C41065233899E600D068DE /* WXApiRequestHandler.mm in Sources */,
 				205A905B23175F72004C756E /* BaseCustomView.m in Sources */,
 				208F897823289FE500918888 /* YPTabItem.m in Sources */,
 				20815E8723176C8A00E24C75 /* JSMyCarVC.m in Sources */,
@@ -4281,6 +4367,7 @@
 				20118E8122DEE96000A195D1 /* EMGroupSharedFilesViewController.m in Sources */,
 				20118F7222DEEA7600A195D1 /* PSTCollectionViewData.m in Sources */,
 				A0346BBB22A8A48B00E5BAED /* PayRouteModel.m in Sources */,
+				20C41064233899E600D068DE /* WXApiRequestHandler.mm in Sources */,
 				A04CB3C3227B1C6E00ED6979 /* BaseItem.m in Sources */,
 				20118F4222DEEA7600A195D1 /* EMEmojiHelper.m in Sources */,
 				20118E8322DEE96000A195D1 /* EMGroupMutesViewController.m in Sources */,
@@ -4306,6 +4393,7 @@
 				20781E6F224A054F00F0767D /* JSAuthenticationVC.m in Sources */,
 				20118F7722DEEA7600A195D1 /* PSTCollectionView.m in Sources */,
 				A0F9CC7722AF366600161945 /* AccountInfo.m in Sources */,
+				20C4108723389BA200D068DE /* WXMediaMessage+messageConstruct.mm in Sources */,
 				A034FDE82330AC020028A7C5 /* WKDelegateController.m in Sources */,
 				20BD73B12248BE440020EA5D /* Utils.m in Sources */,
 				20118E6822DEE96000A195D1 /* EMChatroomsViewController.m in Sources */,
@@ -4323,6 +4411,7 @@
 				20118E5422DEE96000A195D1 /* EMMsgTranspondViewController.m in Sources */,
 				A096484622B881AD000FDBE6 /* FilterButton.m in Sources */,
 				20118E2222DEE96000A195D1 /* EMMsgRecallBubbleView.m in Sources */,
+				20C4108523389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.mm in Sources */,
 				2018840823263D1000CF780B /* NSString+NOEmoji.m in Sources */,
 				20BD73342248BDC30020EA5D /* main.m in Sources */,
 				20118DFB22DEE95F00A195D1 /* EMChatBarEmoticonView.m in Sources */,
@@ -4351,6 +4440,7 @@
 				20118E6F22DEE96000A195D1 /* EMChatroomBlacklistViewController.m in Sources */,
 				20BD74182248C6D70020EA5D /* JSForgetPwdVC.m in Sources */,
 				20118DFE22DEE95F00A195D1 /* EMAudioRecordHelper.mm in Sources */,
+				20C41066233899E600D068DE /* WXApiManager.mm in Sources */,
 				20F934E0224B18B4008C80DB /* JSRechargeVC.m in Sources */,
 				20118F6A22DEEA7600A195D1 /* MWTapDetectingView.m in Sources */,
 				20118F7822DEEA7600A195D1 /* PSTGridLayoutRow.m in Sources */,
@@ -4360,6 +4450,7 @@
 				20118E4F22DEE96000A195D1 /* EMChatViewController.m in Sources */,
 				20118E2722DEE96000A195D1 /* EMMsgImageBubbleView.m in Sources */,
 				20BD73C32248BE440020EA5D /* JSPaswdLoginVC.m in Sources */,
+				20C4108323389BA200D068DE /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm in Sources */,
 				2012E5B622B33941001F8001 /* JSCityDeliveryDetaileVC.m in Sources */,
 				20BD73C02248BE440020EA5D /* JSHomeMessageVC.m in Sources */,
 				20118E5122DEE96000A195D1 /* EMAtGroupMembersViewController.m in Sources */,
@@ -4396,6 +4487,7 @@
 				A00A227822A5FA57002E2E0C /* JSOrderDetailsVC.m in Sources */,
 				A096484322B8815D000FDBE6 /* BaseCustomView.m in Sources */,
 				201883FD2325EC6700CF780B /* JSCommunityModel.m in Sources */,
+				20C4108923389BA200D068DE /* UIAlertView+WX.mm in Sources */,
 				20118E7122DEE96000A195D1 /* EMChatroomAdminsViewController.m in Sources */,
 				20A8C22622DEB35F008E10EB /* CustomEaseUtils.m in Sources */,
 				A096484022B8815D000FDBE6 /* SortView.m in Sources */,
@@ -4592,6 +4684,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/Class/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/3rdparty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
+					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.transporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4631,6 +4724,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/Class/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/3rdparty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
+					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.transporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4784,6 +4878,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/Class/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/3rdparty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
+					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.shipper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4823,6 +4918,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/Class/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/3rdparty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
+					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.js.shipper;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,16 +8,39 @@
 
 #import "JSPaswdLoginVC.h"
 #import "CustomEaseUtils.h"
+#import "WXApiRequestHandler.h"
+#import "WXApiManager.h"
 
-@interface JSPaswdLoginVC ()<UITextFieldDelegate>
+@interface JSPaswdLoginVC ()<UITextFieldDelegate,WXApiManagerDelegate>
 
 @end
 
 @implementation JSPaswdLoginVC
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _loginWXView.hidden = ![self supportWeixin];
+    [WXApiManager sharedManager].delegate  = self;
+}
+
+- (BOOL)supportWeixin {
+    // 判是否安装微
+    if ([WXApi isWXAppInstalled] ){
+        //判断当前微信的版本是否支持OpenApi
+        if ([WXApi isWXAppSupportApi]) {
+            return YES;
+        }else{
+            NSLog(@"请升级微信至最新版本！");
+            return NO;
+        }
+    }else{
+        return NO;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.backBtn setImage:[UIImage imageNamed:@"app_navigationbar_icon_close_black"] forState:UIControlStateNormal];
     self.phoneTF.text = [CacheUtil getCacherWithKey:@"loginPhone"];
     
@@ -29,6 +52,7 @@
         }
         self.pswTF.text = @"000000";
     }
+    [WXApiManager sharedManager].delegate = self;
 }
 
 #pragma mark - methods
@@ -124,4 +148,18 @@
 }
 */
 
+- (IBAction)wxLoginAction:(UIButton *)sender {
+    [WXApiRequestHandler sendAuthRequestScope: kAuthScope
+                                        State:kAuthState
+                                       OpenID:kAuthOpenID
+                             InViewController:self];
+}
+
+
+#pragma mark - WXApiManagerDelegate
+- (void)managerDidRecvAuthResponse:(SendAuthResp *)response {
+    if (response.code.length>0) {
+        
+    }
+}
 @end

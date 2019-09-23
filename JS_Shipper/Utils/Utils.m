@@ -158,7 +158,8 @@ static Utils *_utils = nil;
                 //跳转到登录页面
                 UIViewController *vc = [Utils getViewController:@"Login" WithVCName:@"JSPaswdLoginVC"];
                 vc.hidesBottomBarWhenPushed = YES;
-                [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+                UIViewController *nc = [self getCurrentVC];;
+                [nc.navigationController pushViewController:vc animated:YES];
             }
         }
         return NO;
