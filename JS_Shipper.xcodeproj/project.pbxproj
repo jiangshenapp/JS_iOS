@@ -823,6 +823,8 @@
 		20C4108823389BA200D068DE /* WXMediaMessage+messageConstruct.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108123389BA200D068DE /* WXMediaMessage+messageConstruct.mm */; };
 		20C4108923389BA200D068DE /* UIAlertView+WX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108223389BA200D068DE /* UIAlertView+WX.mm */; };
 		20C4108A23389BA200D068DE /* UIAlertView+WX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108223389BA200D068DE /* UIAlertView+WX.mm */; };
+		20C4108D2338AD1500D068DE /* JSOtherAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108C2338AD1500D068DE /* JSOtherAccountVC.m */; };
+		20C4108E2338AD1500D068DE /* JSOtherAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C4108C2338AD1500D068DE /* JSOtherAccountVC.m */; };
 		20CDDAFE22C0CB0D005432F3 /* JSSelectGoodsNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CDDAFD22C0CB0D005432F3 /* JSSelectGoodsNameVC.m */; };
 		20DC7D6522BB68BF003CB4FD /* noDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DC7D6422BB68BE003CB4FD /* noDataView.xib */; };
 		20E41985231E1587001E89C7 /* JSSendTopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E41984231E1587001E89C7 /* JSSendTopicVC.m */; };
@@ -1595,6 +1597,8 @@
 		20C4108023389BA200D068DE /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
 		20C4108123389BA200D068DE /* WXMediaMessage+messageConstruct.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "WXMediaMessage+messageConstruct.mm"; sourceTree = "<group>"; };
 		20C4108223389BA200D068DE /* UIAlertView+WX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertView+WX.mm"; sourceTree = "<group>"; };
+		20C4108B2338AD1500D068DE /* JSOtherAccountVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSOtherAccountVC.h; sourceTree = "<group>"; };
+		20C4108C2338AD1500D068DE /* JSOtherAccountVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSOtherAccountVC.m; sourceTree = "<group>"; };
 		20CDDAFC22C0CB0D005432F3 /* JSSelectGoodsNameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSelectGoodsNameVC.h; sourceTree = "<group>"; };
 		20CDDAFD22C0CB0D005432F3 /* JSSelectGoodsNameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSelectGoodsNameVC.m; sourceTree = "<group>"; };
 		20DC7D6422BB68BE003CB4FD /* noDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noDataView.xib; sourceTree = "<group>"; };
@@ -3189,6 +3193,8 @@
 				20BD74172248C6D70020EA5D /* JSForgetPwdVC.m */,
 				20BD74192248C8230020EA5D /* JSResetPswVC.h */,
 				20BD741A2248C8230020EA5D /* JSResetPswVC.m */,
+				20C4108B2338AD1500D068DE /* JSOtherAccountVC.h */,
+				20C4108C2338AD1500D068DE /* JSOtherAccountVC.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -4325,6 +4331,7 @@
 				20815E8C23176C8A00E24C75 /* JSOrderDistributionVC.m in Sources */,
 				2018840C232643C500CF780B /* RequestURLUtil.m in Sources */,
 				205A90A423175F72004C756E /* EMInviteFriendViewController.m in Sources */,
+				20C4108E2338AD1500D068DE /* JSOtherAccountVC.m in Sources */,
 				A034FDE22330892D0028A7C5 /* JSLauncherVC.m in Sources */,
 				A0C9884A232D2440000FAD71 /* ServiceModel.m in Sources */,
 				205A90A523175F72004C756E /* EMGroupAdminsViewController.m in Sources */,
@@ -4436,6 +4443,7 @@
 				20118E1E22DEE96000A195D1 /* EMChatBar.m in Sources */,
 				20FB0377231CE9BE0015787F /* JSSearchCircleVC.m in Sources */,
 				20FB0389231D000A0015787F /* YYStarView.m in Sources */,
+				20C4108D2338AD1500D068DE /* JSOtherAccountVC.m in Sources */,
 				20BD73C52248BE440020EA5D /* BaseTabBarVC.m in Sources */,
 				20118E6F22DEE96000A195D1 /* EMChatroomBlacklistViewController.m in Sources */,
 				20BD74182248C6D70020EA5D /* JSForgetPwdVC.m in Sources */,

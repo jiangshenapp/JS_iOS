@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *authStateLab;
 @property (weak, nonatomic) IBOutlet UILabel *versionLab;
 @property (weak, nonatomic) IBOutlet UILabel *cacheLab;
+- (IBAction)otherAccountClick:(UIButton *)sender;
 
 @end
 

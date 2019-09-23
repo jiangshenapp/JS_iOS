@@ -209,4 +209,7 @@
 }
 */
 
+
+- (IBAction)otherAccountClick:(UIButton *)sender {
+}
 @end

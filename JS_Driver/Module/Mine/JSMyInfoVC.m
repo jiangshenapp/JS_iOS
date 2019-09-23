@@ -191,6 +191,9 @@
 - (IBAction)privacyAction:(id)sender {
     [BaseWebVC showWithVC:self withUrlStr:[NSString stringWithFormat:@"%@%@",h5Url(),H5_Privacy] withTitle:@"隐私保护指引"];
 }
+- (IBAction)otherAccountActionClick:(UIButton *)sender {
+
+}
 
 /* 安全退出 */
 - (IBAction)logoutAction:(id)sender {
