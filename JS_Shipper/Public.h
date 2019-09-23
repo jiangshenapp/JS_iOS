@@ -117,6 +117,9 @@
 // 当前系统语言
 #define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
 
+#define JSAppDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
+
+
 #if TARGET_IPHONE_SIMULATOR //模拟器
 #define IS_SIMULATOR YES
 #elif TARGET_OS_IPHONE      //真机

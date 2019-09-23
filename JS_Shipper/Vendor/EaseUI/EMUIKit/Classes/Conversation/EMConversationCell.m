@@ -170,8 +170,9 @@ static int kConversation_AtAll = 2;
             timeInterval = timeInterval / 1000;
         }
         NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-        [formatter setDateFormat:@"YYYY-MM-dd"];
+        [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
         latestMessageTime = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval]];
+        latestMessageTime = [Utils getTimeStrToCurrentDateWith:latestMessageTime];
     }
     return latestMessageTime;
 }

@@ -29,4 +29,6 @@
 }
 */
 
+- (IBAction)anthWXActionClick:(UIButton *)sender {
+}
 @end

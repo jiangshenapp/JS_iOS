@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSOtherAccountVC : BaseVC
+@property (weak, nonatomic) IBOutlet UILabel *nickNameLab;
+- (IBAction)anthWXActionClick:(UIButton *)sender;
 
 @end
 

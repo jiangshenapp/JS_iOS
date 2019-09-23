@@ -9,9 +9,12 @@
 #import "BaseTabBarVC.h"
 #import "BaseNC.h"
 #import "EMConversationsViewController.h"
+#import "CustomEaseUtils.h"
 
 @interface BaseTabBarVC ()
 @property (nonatomic,assign) NSInteger  indexFlag;　　//记录上一次点击tabbar，使用时，记得先在init或viewDidLoad里 初始化 = 0
+/** <#object#> */
+@property (nonatomic,retain) UILabel *msgRedLab;
 @end
 
 @implementation BaseTabBarVC
@@ -85,6 +88,18 @@
     self.tabBar.opaque = YES;
     
     self.viewControllers = array;
+    CGFloat viewW = WIDTH/array.count;
+    
+    _msgRedLab = [[UILabel alloc]initWithFrame:CGRectMake(viewW*2+(viewW-10)/2+20, 0, 16, 16)];
+    _msgRedLab.backgroundColor = [UIColor redColor];
+    _msgRedLab.textColor = [UIColor whiteColor];
+    _msgRedLab.font = [UIFont systemFontOfSize:10];
+    _msgRedLab.textAlignment = NSTextAlignmentCenter;
+    _msgRedLab.cornerRadius = _msgRedLab.width/2.0;
+    _msgRedLab.adjustsFontSizeToFitWidth=YES;
+    _msgRedLab.minimumScaleFactor=0.5;
+    [self.tabBar addSubview:_msgRedLab];
+    self.msgBadge = [NSString stringWithFormat:@"%ld",[CustomEaseUtils getUnreadCount]];
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
@@ -129,6 +144,19 @@
         
         self.indexFlag = index;
     }
+}
+
+-(void)setMsgBadge:(NSString *)msgBadge {
+    if ([msgBadge integerValue]==0) {
+        _msgRedLab.hidden = YES;
+    }
+    else {
+        _msgRedLab.hidden = NO;
+        if ([msgBadge integerValue]>99) {
+            msgBadge = @"99+";
+        }
+    }
+    _msgRedLab.text = [NSString stringWithFormat:@"%@",msgBadge];
 }
 
 @end

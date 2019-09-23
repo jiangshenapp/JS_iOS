@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseTabBarVC : UITabBarController
-
+/** <#object#> */
+@property (nonatomic,copy) NSString *msgBadge;
 @end
 
 NS_ASSUME_NONNULL_END

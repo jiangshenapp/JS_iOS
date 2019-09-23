@@ -582,5 +582,14 @@ static CustomEaseUtils *helper = nil;
     [[EMClient sharedClient] logout:YES];
 }
 
++ (NSInteger)getUnreadCount {
+    NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
+    NSInteger unreadCount = 0;
+    for (EMConversation *conversation in conversations) {
+        unreadCount += conversation.unreadMessagesCount;
+    }
+    return unreadCount;
+}
+
 
 @end

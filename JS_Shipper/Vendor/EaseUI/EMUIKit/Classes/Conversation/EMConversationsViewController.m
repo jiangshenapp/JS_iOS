@@ -13,6 +13,8 @@
 
 #import "EMConversationCell.h"
 #import "UIViewController+Search.h"
+#import "CustomEaseUtils.h"
+
 
 @interface EMConversationsViewController()<EMChatManagerDelegate, EMGroupManagerDelegate, EMSearchControllerDelegate, EMConversationsDelegate>
 
@@ -157,7 +159,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
+    JSAppDelegate.tabVC.msgBadge = [NSString stringWithFormat:@"%ld",[CustomEaseUtils getUnreadCount]];
     return [self.dataArray count];
 }
 
@@ -238,6 +240,7 @@
     } else {
         self.isNeedReload = YES;
     }
+    JSAppDelegate.tabVC.msgBadge = [NSString stringWithFormat:@"%ld",[CustomEaseUtils getUnreadCount]];
 }
 
 #pragma mark - EMGroupManagerDelegate

@@ -211,5 +211,7 @@
 
 
 - (IBAction)otherAccountClick:(UIButton *)sender {
+    UIViewController *vc = [Utils getViewController:@"Login" WithVCName:@"JSOtherAccountVC"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

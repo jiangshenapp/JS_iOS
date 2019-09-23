@@ -28,6 +28,8 @@ typedef void(^loginFinishBlock)(NSString *aName,EMError *error);
 /** 退出登录 */
 + (void)EaseMobLogout;;
 
++ (NSInteger)getUnreadCount;
+
 @end
 
 NS_ASSUME_NONNULL_END

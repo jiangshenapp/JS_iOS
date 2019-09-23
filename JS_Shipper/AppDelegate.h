@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTabBarVC.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>
 {
 //    EMConnectionState _connectionState;
 }
 /**  */
-@property (nonatomic,retain) UITabBarController *tabVC;
+@property (nonatomic,retain) BaseTabBarVC *tabVC;
 @property (strong, nonatomic) UIWindow *window;
 
 @end

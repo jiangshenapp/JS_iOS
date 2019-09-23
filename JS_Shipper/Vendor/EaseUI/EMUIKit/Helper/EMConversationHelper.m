@@ -23,6 +23,16 @@
     return self;
 }
 
+-(NSString *)name {
+    if ([NSString isEmpty:_name]) {
+        return _emModel.conversationId;
+    }
+    if ([_emModel.conversationId isEqualToString:OnlineCustomerEaseMobKey]) {
+        return @"在线客服";
+    }
+    return _name;
+}
+
 @end
 
 
