@@ -240,7 +240,6 @@
     } else {
         self.isNeedReload = YES;
     }
-    JSAppDelegate.tabVC.msgBadge = [NSString stringWithFormat:@"%ld",[CustomEaseUtils getUnreadCount]];
 }
 
 #pragma mark - EMGroupManagerDelegate
