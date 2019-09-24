@@ -78,35 +78,23 @@
             }
             if (![NSString isEmpty:weakSelf.image1]) {
                 UIButton *sender1 = [weakSelf.view viewWithTag:100];
-                [sender1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL(),authInfo.image1]] forState:UIControlStateNormal placeholderImage:DefaultImage];
+                [sender1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL(),authInfo.image1]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"order_upload_icon_photo"]];
             }
             if (![NSString isEmpty:weakSelf.image2]) {
                 UIButton *sender1 = [weakSelf.view viewWithTag:101];
-                [sender1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL(),authInfo.image2]] forState:UIControlStateNormal placeholderImage:DefaultImage];
+                [sender1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL(),authInfo.image2]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"order_upload_icon_photo"]];
             }
             if (![NSString isEmpty:weakSelf.image3]) {
                 UIButton *sender1 = [weakSelf.view viewWithTag:102];
-                [sender1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL(),authInfo.image3]] forState:UIControlStateNormal placeholderImage:DefaultImage];
+                [sender1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL(),authInfo.image3]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"order_upload_icon_photo"]];
             }
             if (![NSString isEmpty:weakSelf.image4]) {
                 UIButton *sender1 = [weakSelf.view viewWithTag:103];
-                [sender1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL(),authInfo.image4]] forState:UIControlStateNormal placeholderImage:DefaultImage];
+                [sender1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL(),authInfo.image4]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"order_upload_icon_photo"]];
             }
         }
     }];
-    
-    // Do any additional setup after loading the view.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)selectParkAddressAction:(UIButton *)sender {
     __weak typeof(self) weakSelf = self;
@@ -154,6 +142,7 @@
 }
 
 - (IBAction)submitCheckAction:(UIButton *)sender {
+    
     if ([Utils isBlankString:_contactNameTF.text]) {
         [Utils showToast:@"请输入联系人姓名"];
         return;
@@ -189,4 +178,15 @@
         }
     }];
 }
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
 @end
