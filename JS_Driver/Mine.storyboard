@@ -1726,7 +1726,7 @@ Copyright © 2019</string>
                                                             <constraint firstAttribute="width" constant="95" id="wLT-5r-dpi"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-55-Isg">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-55-Isg">
                                                         <rect key="frame" x="275" y="43" width="50" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="kem-i3-h6I"/>
