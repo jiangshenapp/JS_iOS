@@ -11,41 +11,25 @@
 #import "TZImagePickerController.h"
 #import "RequestURLUtil.h"
 #import "AuthInfo.h"
-//#import "uibutton"
 
 @interface JSParkAddressVC ()<TZImagePickerControllerDelegate>
-{
-    
-}
-/** 起止点 */
+
+/** 园区地址 */
 @property (nonatomic,retain) AddressInfoModel *info1;
-/** <#object#> */
-@property (nonatomic,copy) NSString *currentProvince;
-/** <#object#> */
-@property (nonatomic,copy) NSString *currentCity;
-/** <#object#> */
-@property (nonatomic,copy) NSString *currentArea;
-/** <#object#> */
-@property (nonatomic,copy) NSString *currentCode;
-/** <#object#> */
 @property (nonatomic,copy) NSString *image1;
-/** <#object#> */
 @property (nonatomic,copy) NSString *image2;
-/** image */
 @property (nonatomic,copy) NSString *image3;
-/** <#object#> */
 @property (nonatomic,copy) NSString *image4;
 
 @property (weak, nonatomic) IBOutlet UITextField *contactNameTF;
 @property (weak, nonatomic) IBOutlet UITextField *contactPhoneTF;
 @property (weak, nonatomic) IBOutlet UILabel *parkAddressLab;
 @property (weak, nonatomic) IBOutlet UITextField *detailAddressLab;
+
 - (IBAction)selectParkAddressAction:(UIButton *)sender;
 /** 4个选择图片的方法 tag= 100,101,102,103 */
 - (IBAction)selectPhotoAction:(UIButton *)sender;
-
 - (IBAction)submitCheckAction:(UIButton *)sender;
-
 
 @end
 
