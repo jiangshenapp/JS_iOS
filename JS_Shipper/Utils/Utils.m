@@ -159,6 +159,10 @@ static Utils *_utils = nil;
                 UIViewController *vc = [Utils getViewController:@"Login" WithVCName:@"JSPaswdLoginVC"];
                 vc.hidesBottomBarWhenPushed = YES;
                 UIViewController *nc = [self getCurrentVC];;
+                if ([nc isKindOfClass:[UITabBarController class]]) {
+                    UITabBarController *vc = (UITabBarController *)nc;
+                    nc = vc.selectedViewController;
+                }
                 [nc.navigationController pushViewController:vc animated:YES];
             }
         }

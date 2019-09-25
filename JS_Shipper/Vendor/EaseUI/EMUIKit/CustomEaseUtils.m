@@ -9,7 +9,7 @@
 #import "CustomEaseUtils.h"
 
 #import "EMGlobalVariables.h"
-
+#import <AudioToolbox/AudioToolbox.h>
 #import "EMConversationHelper.h"
 //#import "EMNotificationViewController.h"
 #import "EMChatViewController.h"
@@ -163,6 +163,10 @@ static CustomEaseUtils *helper = nil;
 #endif
         }
     }
+    
+    AudioServicesPlaySystemSound(1012);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    JSAppDelegate.tabVC.msgBadge = [NSString stringWithFormat:@"%ld",[CustomEaseUtils getUnreadCount]];
 }
 
 #pragma mark - EMGroupManagerDelegate

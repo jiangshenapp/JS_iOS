@@ -12,6 +12,7 @@
 #import "FilterCustomView.h"
 #import "JSOrderDetailsVC.h"
 #import "JSAllOrderVC.h"
+#import "CustomEaseUtils.h"
 
 @interface JSFindGoodsVC ()<CLLocationManagerDelegate>
 {
@@ -271,34 +272,29 @@
 
 /** 打电话 */
 - (void)callAction:(UIButton *)sender {
-    OrderInfoModel *model = self.dataSource[sender.tag-1000];
-//    if ([Utils isBlankString:phone]) {
-//        [Utils showToast:@"手机号码为空"];
-//    } else {
-//        [Utils call:phone];
-//    }
+    NSIndexPath *indexPath = [self.baseTabView indexPathForCell:sender.superview.superview.superview];
+    OrderInfoModel *model = self.dataSource[indexPath.row];
+    if ([Utils isBlankString:model.consignorMobile]) {
+        [Utils showToast:@"手机号码为空"];
+    } else {
+        [Utils call:model.consignorMobile];
+    }
 }
 
 /** 聊天 */
 - (void)chatAction:(UIButton *)sender {
-//    RecordsModel *model = self.dataSource[sender.tag-2000];
-//    NSString *phone;
-//    if (_pageFlag==0 || _pageFlag==2) {
-//        phone = model.driverPhone;
-//    }
-//    else if (_pageFlag==3) {
-//
-//    }
-//    if ([Utils isBlankString:phone]) {
-//        [Utils showToast:@"手机号码为空"];
-//    }else {
-//        [CustomEaseUtils EaseChatConversationID:phone];
-//    }
+    NSIndexPath *indexPath = [self.baseTabView indexPathForCell:sender.superview.superview.superview];
+    OrderInfoModel *model = self.dataSource[indexPath.row];
+    if ([Utils isBlankString:model.consignorMobile]) {
+        [Utils showToast:@"手机号码为空"];
+    } else {
+        [CustomEaseUtils EaseChatConversationID:model.consignorMobile];
+    }
 }
 
 - (void)showViewAction:(FilterButton *)sender {
     sender.userInteractionEnabled = NO;
-     sender.isSelect = !sender.isSelect;
+    sender.isSelect = !sender.isSelect;
     for (FilterButton *tempBtn in titleBtnArr) {
         NSInteger index = [titleBtnArr indexOfObject:tempBtn];
         BaseCustomView *vv = titleViewArr[index];
