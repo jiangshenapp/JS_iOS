@@ -51,7 +51,7 @@
                 [self.adImgView sd_setImageWithURL:[NSURL URLWithString:self.bannerModel.image]];
                 [self.view addSubview:self.adImgView];
                 [self.view addSubview:self.jumpBtn];
-                [self performSelector:@selector(doneAction) withObject:nil afterDelay:3.0];
+                [self performSelector:@selector(doneAction) withObject:@"adShow" afterDelay:3.0];
             } else {
                 [self doneAction];
             }
@@ -102,6 +102,7 @@
     if (self.doneBlock) {
         self.doneBlock();
     }
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(doneAction) object:@"adShow"];
 }
 
 - (void)adClickAction {

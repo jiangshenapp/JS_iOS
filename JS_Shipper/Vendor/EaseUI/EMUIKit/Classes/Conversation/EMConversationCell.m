@@ -197,6 +197,7 @@ static int kConversation_AtAll = 2;
         self.badgeLabel.value = [NSString stringWithFormat:@" %@ ", @(conversation.unreadMessagesCount)];
         self.badgeLabel.hidden = NO;
     }
+    self.avatarView.layer.cornerRadius = (_avatarView.superview.height-20)/2.0;
 }
 
 @end
