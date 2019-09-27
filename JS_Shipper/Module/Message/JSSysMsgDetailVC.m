@@ -25,8 +25,6 @@
 }
 
 - (void)getData {
-    NSString *type = [AppChannel isEqualToString:@"1"]?@"3":@"2";
-    type = @"1";
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     NSString *url = [NSString stringWithFormat:@"%@/%@",URL_MessageDetail,_msgID];

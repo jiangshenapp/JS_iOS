@@ -82,8 +82,12 @@
         return;
     }
     
+    NSString *appType = @"2"; //司机端
+    if ([AppChannel isEqualToString:@"1"]) { //货主端
+        appType = @"1";
+    }
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                         @"1", @"appType",
+                         appType, @"appType",
                          self.phoneTF.text, @"mobile",
                          self.pswTF.text, @"password",
                          nil];
