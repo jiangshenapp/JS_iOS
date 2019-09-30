@@ -193,6 +193,9 @@
 
 /** 打电话 */
 - (void)callAction:(UIButton *)sender {
+    if (![Utils isVerified]) {
+        return;
+    }
     RecordsModel *model = self.dataSource[sender.tag-1000];
     NSString *phone;
     if (_pageFlag==0 || _pageFlag==2) {
@@ -209,6 +212,9 @@
 
 /** 聊天 */
 - (void)chatAction:(UIButton *)sender {
+    if (![Utils isVerified]) {
+        return;
+    }
     RecordsModel *model = self.dataSource[sender.tag-2000];
     NSString *phone;
     if (_pageFlag==0 || _pageFlag==2) {

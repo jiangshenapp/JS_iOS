@@ -216,6 +216,9 @@
 
 /** 打电话 */
 - (IBAction)callPhone:(id)sender {
+    if (![Utils isVerified]) {
+        return;
+    }
     if ([Utils isBlankString:self.model.driverPhone]) {
         [Utils showToast:@"电话号码是空号"];
         return;
@@ -225,6 +228,9 @@
 
 /** 聊天 */
 - (IBAction)chatAction:(id)sender {
+    if (![Utils isVerified]) {
+        return;
+    }
     if ([Utils isBlankString:self.model.driverPhone]) {
         [Utils showToast:@"电话号码是空号"];
         return;

@@ -99,6 +99,9 @@
 
 /** 打电话 */
 - (void)callAction {
+    if (![Utils isVerified]) {
+        return;
+    }
     if (![Utils isBlankString:self.dataModel.driverPhone]) {
         [Utils call:self.dataModel.driverPhone];
     } else {
@@ -108,6 +111,9 @@
 
 /** 聊天 */
 - (void)chatAction {
+    if (![Utils isVerified]) {
+        return;
+    }
     if (![Utils isBlankString:self.dataModel.driverPhone]) {
         [CustomEaseUtils EaseChatConversationID:self.dataModel.driverPhone];
     } else {

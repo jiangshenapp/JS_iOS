@@ -272,6 +272,9 @@
 
 /** 打电话 */
 - (void)callAction:(UIButton *)sender {
+    if (![Utils isVerified]) {
+        return;
+    }
     NSIndexPath *indexPath = [self.baseTabView indexPathForCell:sender.superview.superview.superview];
     OrderInfoModel *model = self.dataSource[indexPath.row];
     if ([Utils isBlankString:model.consignorMobile]) {
@@ -283,6 +286,9 @@
 
 /** 聊天 */
 - (void)chatAction:(UIButton *)sender {
+    if (![Utils isVerified]) {
+        return;
+    }
     NSIndexPath *indexPath = [self.baseTabView indexPathForCell:sender.superview.superview.superview];
     OrderInfoModel *model = self.dataSource[indexPath.row];
     if ([Utils isBlankString:model.consignorMobile]) {

@@ -188,20 +188,26 @@
 
 /** 打电话 */
 - (IBAction)callPhone:(id)sender {
-    if ([Utils isBlankString:self.model.sendMobile]) {
+    if (![Utils isVerified]) {
+        return;
+    }
+    if ([Utils isBlankString:self.model.consignorMobile]) {
         [Utils showToast:@"电话号码是空号"];
         return;
     }
-    [Utils call:self.model.sendMobile];
+    [Utils call:self.model.consignorMobile];
 }
 
 /** 聊天 */
 - (IBAction)chatAction:(id)sender {
-    if ([Utils isBlankString:self.model.sendMobile]) {
+    if (![Utils isVerified]) {
+        return;
+    }
+    if ([Utils isBlankString:self.model.consignorMobile]) {
         [Utils showToast:@"电话号码是空号"];
         return;
     }
-    [CustomEaseUtils EaseChatConversationID:self.model.sendMobile];
+    [CustomEaseUtils EaseChatConversationID:self.model.consignorMobile];
 }
 
 - (IBAction)bottomLeftBtnAction:(UIButton *)sender {

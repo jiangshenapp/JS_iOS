@@ -92,6 +92,9 @@
 
 /** 打电话 */
 - (void)callAction {
+    if (![Utils isVerified]) {
+        return;
+    }
     if (![Utils isBlankString:self.dataModel.contractPhone]) {
         [Utils call:self.dataModel.contractPhone];
     } else {
@@ -101,6 +104,9 @@
 
 /** 聊天 */
 - (void)chatAction {
+    if (![Utils isVerified]) {
+        return;
+    }
     if (![Utils isBlankString:self.dataModel.contractPhone]) {
         [CustomEaseUtils EaseChatConversationID:self.dataModel.contractPhone];
     } else {
