@@ -157,6 +157,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.destinationViewController isKindOfClass:[JSSendTopicVC class]]) {
+        if (![Utils isVerified]) {
+            return;
+        }
         JSSendTopicVC *vc = segue.destinationViewController;
         vc.circleId = _circleId;
         vc.subjectArr = [NSArray arrayWithArray:subjectArr];
