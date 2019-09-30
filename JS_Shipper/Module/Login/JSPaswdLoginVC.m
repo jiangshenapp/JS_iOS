@@ -142,28 +142,54 @@
     return YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)wxLoginAction:(UIButton *)sender {
     [WXApiRequestHandler sendAuthRequestScope: kAuthScope
                                         State:kAuthState
-                                       OpenID:kAuthOpenID
+                                       OpenID:@""
                              InViewController:self];
 }
 
 
 #pragma mark - WXApiManagerDelegate
 - (void)managerDidRecvAuthResponse:(SendAuthResp *)response {
-    if (response.code.length>0) {
-        
+    NSString *result = [NSString stringWithFormat:@"code:%@,state:%@,errcode:%d", response.code, response.state, response.errCode];
+    NSLog(@"微信授权结果：%@",result)
+    
+    if (response.errCode==0) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                             response.code, @"code",
+                             nil];
+        [[NetworkManager sharedManager] postJSON:URL_WxCodeLogin parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+            
+            if (status == Request_Success) {
+//                [Utils showToast:@"登录成功"];
+//
+//                NSString *token = responseData;
+//                [CacheUtil saveCacher:@"token" withValue:token];
+//                [CacheUtil saveCacher:@"loginPhone" withValue:self.phoneTF.text];
+//                [CustomEaseUtils EaseMobLoginWithUser:self.phoneTF.text completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
+//
+//                }];
+//
+//                [self getUserInfo]; //获取用户信息
+//
+//                [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:@YES];
+//
+//                // 跳转到首页
+//                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+        }];
     }
 }
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
 @end

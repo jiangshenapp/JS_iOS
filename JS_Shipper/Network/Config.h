@@ -124,7 +124,7 @@ NSString *PIC_URL(void);
 #define URL_GetSysServiceBanner @"/app/sys/getSysServiceBanner"//获取系统服务Banner
 #define URL_GetSysServiceList @"/app/sys/getSysServiceList"//获取系统服务
 #define URL_GetBannerList @"/app/banner/list"//根据类型获取banner type 1服务页广告、2发货页广告、3启动页广告
-#define URL_Feedback @"/app/feedback"//新增意见反馈
+#define URL_Feedback @"/app/feedback/save"//新增意见反馈
 
 #pragma mark - ---------------H5地址---------------
 
