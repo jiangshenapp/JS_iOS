@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DriverConfig : NSObject
 
+#pragma mark - APP司机端微信登录
+#define URL_BindingWxInfo @"/app/driverWx/bindingWxInfo" //登录后绑定
+#define URL_RebindingWxInfo @"/app/driverWx/rebindingWxInfo" //微信号已与其他账号绑定，解除原账号绑定，并绑定当前新账号
+#define URL_UnbindingWxInfo @"/app/driverWx/unbindingWxInfo" //登录后解绑
+#define URL_WxCodeLogin @"/app/driverWx/wxCodeLogin" //code登录
+#define URL_WxLogin @"/app/driverWx/wxLogin" //绑定页面短信登录
+
 #define URL_RechargeDriverDeposit @"/app/account/rechargeDriverDeposit"//运力端缴纳保证金
 
 #pragma mark - 我的车辆

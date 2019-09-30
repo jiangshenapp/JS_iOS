@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RequestURLUtil : NSObject
+
 + (void)postImageWithData:(UIImage *)image result:(void(^)(NSString *imageID))result;
+
 @end
 
 NS_ASSUME_NONNULL_END
