@@ -12,6 +12,7 @@
 #import "JSChangeOrderDetailVC.h"
 #import "JSDeliverConfirmVC.h"
 #import "CZCommentView.h"
+#import "CustomEaseUtils.h"
 
 @interface JSOrderDetailsVC ()
 
@@ -224,7 +225,11 @@
 
 /** 聊天 */
 - (IBAction)chatAction:(id)sender {
-    [Utils showToast:@"功能暂未开通，敬请期待"];
+    if ([Utils isBlankString:self.model.driverPhone]) {
+        [Utils showToast:@"电话号码是空号"];
+        return;
+    }
+    [CustomEaseUtils EaseChatConversationID:self.model.driverPhone];
 }
 
 - (IBAction)bottomLeftBtnAction:(UIButton *)sender {

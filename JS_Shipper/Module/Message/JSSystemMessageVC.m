@@ -20,19 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"系统消息";
-    self.view.backgroundColor = PageColor;
-    self.mainTabView.delegate = self;
-    self.mainTabView.dataSource = self;
+    
+    self.baseTabView.delegate = self;
+    self.baseTabView.dataSource = self;
     _dataSource = [NSMutableArray array];
     __weak typeof(self) weakSelf = self;
-    self.mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.baseTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.page = 1;
         [weakSelf getData];
     }];
-//    [self addTabMJ_FootView];
+    _page = 1;
     [self getData];
-    // Do any additional setup after loading the view.
 }
 
 - (void)getData {
@@ -52,20 +52,20 @@
             [weakSelf.dataSource addObjectsFromArray:tempArr];
             weakSelf.page++;
         }
-        if ([weakSelf.mainTabView.mj_footer isRefreshing]) {
-            [weakSelf.mainTabView.mj_footer endRefreshing];
+        if ([weakSelf.baseTabView.mj_footer isRefreshing]) {
+            [weakSelf.baseTabView.mj_footer endRefreshing];
         }
-        if ([weakSelf.mainTabView.mj_header isRefreshing]) {
-            [weakSelf.mainTabView.mj_header endRefreshing];
+        if ([weakSelf.baseTabView.mj_header isRefreshing]) {
+            [weakSelf.baseTabView.mj_header endRefreshing];
         }
         if (weakSelf.dataSource.count==[responseData[@"total"] integerValue]) {
-            weakSelf.mainTabView.mj_footer = nil;
+            weakSelf.baseTabView.mj_footer = nil;
         }
         else {
             [weakSelf addTabMJ_FootView];
         }
         [weakSelf hiddenNoDataView:weakSelf.dataSource.count];
-        [weakSelf.mainTabView reloadData];
+        [weakSelf.baseTabView reloadData];
     }];
 }
 
@@ -80,10 +80,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SysMessageTabcell *cell = [tableView dequeueReusableCellWithIdentifier:@"SysMessageTabcell"];
     SysMessageModel *model = _dataSource[indexPath.section];
+    [cell.msgImgView sd_setImageWithURL:[NSURL URLWithString:model.image]];
     cell.titleLab.text = model.title;
     cell.contentLab.text = model.content;
     cell.readLab.text = [model.isRead boolValue]?@"已读":@"未读";
     cell.imgH.constant = model.image.length==0?0:140;
+
     if ([model.isRead boolValue]) {
         cell.readLab.backgroundColor = RGBValue(0xF5F5F5);
         cell.readLab.textColor = RGBValue(0xB4B4B4);
@@ -107,6 +109,15 @@
     [view addSubview:timelab];
     
     return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SysMessageModel *model = _dataSource[indexPath.section];
+    if ([NSString isEmpty:model.image]) {
+        return 100;
+    } else {
+        return 240;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

@@ -8,6 +8,7 @@
 
 #import "JSHomeMessageVC.h"
 #import "CustomEaseUtils.h"
+#import "JSSystemMessageVC.h"
 
 @interface JSHomeMessageVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -34,6 +35,11 @@
 //    if (loginSuccess) {//登录成功加载主窗口控制器
 //    }
     [self.tableView.mj_header beginRefreshing];
+}
+
+- (IBAction)messageAction:(id)sender {
+    UIViewController *vc = [Utils getViewController:@"Message" WithVCName:@"JSSystemMessageVC"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)chatWithCustomAction:(UIButton *)sender {

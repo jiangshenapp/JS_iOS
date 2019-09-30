@@ -210,7 +210,17 @@
 /** 聊天 */
 - (void)chatAction:(UIButton *)sender {
     RecordsModel *model = self.dataSource[sender.tag-2000];
-    [Utils showToast:@"该功能暂未开放"];
+    NSString *phone;
+    if (_pageFlag==0 || _pageFlag==2) {
+        phone = model.driverPhone;
+    } else {
+        phone = model.contractPhone;
+    }
+    if ([Utils isBlankString:phone]) {
+        [Utils showToast:@"手机号码为空"];
+    } else {
+        [CustomEaseUtils EaseChatConversationID:phone];
+    }
 }
 
 #pragma mark - 顶部切换

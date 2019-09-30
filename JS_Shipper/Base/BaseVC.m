@@ -96,11 +96,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netWorkAppear) name:@"kNetAppear" object:nil];
 }
 
--(void)hiddenNoDataView:(BOOL)hidden {
+- (void)hiddenNoDataView:(BOOL)hidden {
     self.noDataView.hidden = hidden;
     self.noDataView.height = hidden?0:self.baseTabView.height;
 }
-
 
 - (void)setupView {
     

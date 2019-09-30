@@ -84,7 +84,6 @@
         [_locationManager requestWhenInUseAuthorization];//使用程序其间允许访问位置数据（iOS8以上版本定位需要）
         [self.locationManager startUpdatingLocation];//开始定位
     }else{//不能定位用户的位置的情况再次进行判断，并给与用户提示
-        
     }
 }
 
@@ -413,9 +412,8 @@
     NSString *phone;
     if (_pageFlag==0 || _pageFlag==2) {
         phone = model.driverPhone;
-    }
-    else if (_pageFlag==3) {
-        
+    } else {
+        phone = model.contractPhone;
     }
     if ([Utils isBlankString:phone]) {
         [Utils showToast:@"手机号码为空"];

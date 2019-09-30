@@ -62,7 +62,7 @@
 
 /** 聊天 */
 - (void)chatAction {
-    [Utils showToast:@"聊天功能暂未开放"];
+    
 }
 
 /** 下单 */

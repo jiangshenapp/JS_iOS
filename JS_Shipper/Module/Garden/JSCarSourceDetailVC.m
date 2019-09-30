@@ -106,6 +106,15 @@
     }
 }
 
+/** 聊天 */
+- (void)chatAction {
+    if (![Utils isBlankString:self.dataModel.driverPhone]) {
+        [CustomEaseUtils EaseChatConversationID:self.dataModel.driverPhone];
+    } else {
+        [Utils showToast:@"手机号码为空"];
+    }
+}
+
 /*
 #pragma mark - Navigation
 

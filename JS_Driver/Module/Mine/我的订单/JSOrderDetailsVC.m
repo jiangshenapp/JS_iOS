@@ -11,6 +11,7 @@
 #import "JSOrderDistributionVC.h"
 #import "XLGMapNavVC.h"
 #import "JSAuthencationHomeVC.h"
+#import "CustomEaseUtils.h"
 
 @interface JSOrderDetailsVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
@@ -196,7 +197,11 @@
 
 /** 聊天 */
 - (IBAction)chatAction:(id)sender {
-    [Utils showToast:@"功能暂未开通，敬请期待"];
+    if ([Utils isBlankString:self.model.sendMobile]) {
+        [Utils showToast:@"电话号码是空号"];
+        return;
+    }
+    [CustomEaseUtils EaseChatConversationID:self.model.sendMobile];
 }
 
 - (IBAction)bottomLeftBtnAction:(UIButton *)sender {

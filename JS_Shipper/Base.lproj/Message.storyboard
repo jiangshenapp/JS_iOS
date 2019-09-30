@@ -51,7 +51,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <connections>
-                                                    <segue destination="cL0-UL-kp2" kind="push" id="Cyo-wq-e4H"/>
+                                                    <action selector="messageAction:" destination="cCg-YE-ruQ" eventType="touchUpInside" id="mGk-bn-eHw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -233,7 +233,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jqT-IZ-Akp" firstAttribute="top" secondItem="dfg-ee-Xlc" secondAttribute="bottom" id="8QD-Zn-SMH"/>
                             <constraint firstItem="dfg-ee-Xlc" firstAttribute="leading" secondItem="htz-7a-FCd" secondAttribute="leading" id="TSo-NQ-Zi6"/>
@@ -243,7 +242,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0rk-Mx-KKZ"/>
                     <connections>
-                        <outlet property="mainTabView" destination="dfg-ee-Xlc" id="3vc-sp-1NN"/>
+                        <outlet property="baseTabView" destination="dfg-ee-Xlc" id="vMk-D3-gWl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryV-Mw-HQn" userLabel="First Responder" sceneMemberID="firstResponder"/>

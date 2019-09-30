@@ -12,8 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSHomeMessageVC : EMConversationsViewController
+
 @property (weak, nonatomic) IBOutlet UIView *tabHeadView;
-- (IBAction)chatWithCustomAction:(UIButton *)sender;
 
 @end
 

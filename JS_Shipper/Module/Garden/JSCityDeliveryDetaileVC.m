@@ -99,6 +99,15 @@
     }
 }
 
+/** 聊天 */
+- (void)chatAction {
+    if (![Utils isBlankString:self.dataModel.contractPhone]) {
+        [CustomEaseUtils EaseChatConversationID:self.dataModel.contractPhone];
+    } else {
+        [Utils showToast:@"手机号码为空"];
+    }
+}
+
 /*
 #pragma mark - Navigation
 
