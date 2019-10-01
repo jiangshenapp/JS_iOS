@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.backBtn setImage:[UIImage imageNamed:@"app_navigationbar_icon_close_black"] forState:UIControlStateNormal];
     self.phoneTF.text = [CacheUtil getCacherWithKey:@"loginPhone"];
 }
@@ -116,6 +116,11 @@
         }
     }
     return YES;
+}
+
+/* 微信登录 */
+- (IBAction)wxLoginAction:(id)sender {
+    
 }
 
 /*

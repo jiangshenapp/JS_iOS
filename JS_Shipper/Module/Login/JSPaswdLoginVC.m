@@ -142,6 +142,7 @@
     return YES;
 }
 
+/* 微信登录 */
 - (IBAction)wxLoginAction:(UIButton *)sender {
     [WXApiRequestHandler sendAuthRequestScope: kAuthScope
                                         State:kAuthState
@@ -159,24 +160,13 @@
         NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
                              response.code, @"code",
                              nil];
-        [[NetworkManager sharedManager] postJSON:URL_WxCodeLogin parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        NSString *urlStr = [NSString stringWithFormat:@"%@?code=%@",URL_WxCodeLogin,response.code];
+        [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             
             if (status == Request_Success) {
-//                [Utils showToast:@"登录成功"];
-//
-//                NSString *token = responseData;
-//                [CacheUtil saveCacher:@"token" withValue:token];
-//                [CacheUtil saveCacher:@"loginPhone" withValue:self.phoneTF.text];
-//                [CustomEaseUtils EaseMobLoginWithUser:self.phoneTF.text completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
-//
-//                }];
-//
-//                [self getUserInfo]; //获取用户信息
-//
-//                [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:@YES];
-//
-//                // 跳转到首页
-//                [self.navigationController popToRootViewControllerAnimated:YES];
+                
+            } else {
+                
             }
         }];
     }

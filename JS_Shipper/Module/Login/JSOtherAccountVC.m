@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+}
+
+- (IBAction)anthWXActionClick:(UIButton *)sender {
+    
 }
 
 /*
@@ -29,6 +33,4 @@
 }
 */
 
-- (IBAction)anthWXActionClick:(UIButton *)sender {
-}
 @end
