@@ -72,8 +72,9 @@ static NetworkManager *_manager = nil;
             [self reLogin];
         }
         else {
-            completion(nil,Request_Fail,nil);
-            if (![Utils isBlankString:object[@"msg"]]) {
+            completion(object,Request_Fail,nil);
+            if (![Utils isBlankString:object[@"msg"]]
+                && ![name containsString:URL_WxCodeLogin]) {
                 [Utils showToast:object[@"msg"]];
             }
         }
@@ -207,8 +208,7 @@ static NetworkManager *_manager = nil;
             [self reLogin];
         }
         else {
-            id _Nullable dataObject = object[@"data"];
-            completion(dataObject,Request_Fail,nil);
+            completion(object,Request_Fail,nil);
             if (![Utils isBlankString:object[@"msg"]]) {
                 [Utils showToast:object[@"msg"]];
             }

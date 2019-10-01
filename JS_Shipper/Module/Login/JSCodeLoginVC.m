@@ -8,18 +8,44 @@
 
 #import "JSCodeLoginVC.h"
 #import "CustomEaseUtils.h"
+#import "WXApiRequestHandler.h"
+#import "WXApiManager.h"
+#import "WxAuthModel.h"
+#import "JSBindingPhoneVC.h"
 
-@interface JSCodeLoginVC ()<UITextFieldDelegate>
+@interface JSCodeLoginVC ()<UITextFieldDelegate,WXApiManagerDelegate>
 
 @end
 
 @implementation JSCodeLoginVC
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _loginWXView.hidden = ![self supportWeixin];
+    [WXApiManager sharedManager].delegate  = self;
+}
+
+- (BOOL)supportWeixin {
+    // 判是否安装微
+    if ([WXApi isWXAppInstalled] ){
+        //判断当前微信的版本是否支持OpenApi
+        if ([WXApi isWXAppSupportApi]) {
+            return YES;
+        }else{
+            NSLog(@"请升级微信至最新版本！");
+            return NO;
+        }
+    }else{
+        return NO;
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.backBtn setImage:[UIImage imageNamed:@"app_navigationbar_icon_close_black"] forState:UIControlStateNormal];
     self.phoneTF.text = [CacheUtil getCacherWithKey:@"loginPhone"];
+    [WXApiManager sharedManager].delegate = self;
 }
 
 #pragma mark - methods
@@ -62,29 +88,22 @@
         return;
     }
     
+    NSString *appType = @"2"; //司机端
+    if ([AppChannel isEqualToString:@"1"]) { //货主端
+        appType = @"1";
+    }
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                         @"1", @"appType",
+                         appType, @"appType",
                          self.phoneTF.text, @"mobile",
                          self.codeTF.text, @"code",
                          nil];
     [[NetworkManager sharedManager] postJSON:URL_SmsLogin parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
         
         if (status == Request_Success) {
-            [Utils showToast:@"登录成功"];
-            
             NSString *token = responseData;
             [CacheUtil saveCacher:@"token" withValue:token];
             [CacheUtil saveCacher:@"loginPhone" withValue:self.phoneTF.text];
-            [CustomEaseUtils EaseMobLoginWithUser:self.phoneTF.text completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
-            }];
-
-            
-            [self getUserInfo]; //获取用户信息
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:@YES];
-
-            // 跳转到首页
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self loginSuccess];
         }
     }];
 }
@@ -97,6 +116,10 @@
             //缓存用户信息
             NSDictionary *userDic = responseData;
             [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+            //环信登录
+            [CustomEaseUtils EaseMobLoginWithUser:[UserInfo share].mobile completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
+                
+            }];
         }
     }];
 }
@@ -120,7 +143,48 @@
 
 /* 微信登录 */
 - (IBAction)wxLoginAction:(id)sender {
+    [WXApiRequestHandler sendAuthRequestScope: kAuthScope
+                                        State:kAuthState
+                                       OpenID:@""
+                             InViewController:self];
+}
+
+#pragma mark - WXApiManagerDelegate
+- (void)managerDidRecvAuthResponse:(SendAuthResp *)response {
+    NSString *result = [NSString stringWithFormat:@"code:%@,state:%@,errcode:%d", response.code, response.state, response.errCode];
+    NSLog(@"微信授权结果：%@",result)
     
+    if (response.errCode==0) {
+        NSDictionary *dic = [NSDictionary dictionary];
+        NSString *urlStr = [NSString stringWithFormat:@"%@?code=%@",URL_WxCodeLogin,response.code];
+        [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+            
+            if (status == Request_Success) {
+                NSString *token = responseData;
+                [CacheUtil saveCacher:@"token" withValue:token];
+                [self loginSuccess];
+            } else if (status == Request_Fail) {
+                NSInteger code = [responseData[@"code"] integerValue];
+                if (code == 3) { //跳转到绑定手机号页面
+                    JSBindingPhoneVC *vc = (JSBindingPhoneVC *)[Utils getViewController:@"Login" WithVCName:@"JSBindingPhoneVC"];
+                    WxAuthModel *wxAuthModel = [WxAuthModel mj_objectWithKeyValues:(NSDictionary *)responseData[@"data"]];
+                    vc.wxAuthModel = wxAuthModel;
+                    [self.navigationController pushViewController:vc animated:YES];
+                } else {
+                    [Utils showToast:responseData[@"msg"]];
+                }
+            }
+        }];
+    }
+}
+
+/** 登录成功 */
+- (void)loginSuccess {
+    [Utils showToast:@"登录成功"];
+    [self getUserInfo]; //获取用户信息
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:@YES];
+    // 跳转到首页
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*

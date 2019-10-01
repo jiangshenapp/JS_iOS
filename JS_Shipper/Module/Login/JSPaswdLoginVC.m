@@ -10,6 +10,8 @@
 #import "CustomEaseUtils.h"
 #import "WXApiRequestHandler.h"
 #import "WXApiManager.h"
+#import "WxAuthModel.h"
+#import "JSBindingPhoneVC.h"
 
 @interface JSPaswdLoginVC ()<UITextFieldDelegate,WXApiManagerDelegate>
 
@@ -17,7 +19,7 @@
 
 @implementation JSPaswdLoginVC
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     _loginWXView.hidden = ![self supportWeixin];
     [WXApiManager sharedManager].delegate  = self;
@@ -92,23 +94,11 @@
                          self.pswTF.text, @"password",
                          nil];
     [[NetworkManager sharedManager] postJSON:URL_Login parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
-        
         if (status == Request_Success) {
-            [Utils showToast:@"登录成功"];
-            
             NSString *token = responseData;
             [CacheUtil saveCacher:@"token" withValue:token];
             [CacheUtil saveCacher:@"loginPhone" withValue:self.phoneTF.text];
-            [CustomEaseUtils EaseMobLoginWithUser:self.phoneTF.text completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
-                
-            }];
-            
-            [self getUserInfo]; //获取用户信息
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:@YES];
-
-            // 跳转到首页
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self loginSuccess];
         }
     }];
 }
@@ -121,6 +111,10 @@
             //缓存用户信息
             NSDictionary *userDic = responseData;
             [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+            //环信登录
+            [CustomEaseUtils EaseMobLoginWithUser:[UserInfo share].mobile completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
+                
+            }];
         }
     }];
 }
@@ -150,26 +144,42 @@
                              InViewController:self];
 }
 
-
 #pragma mark - WXApiManagerDelegate
 - (void)managerDidRecvAuthResponse:(SendAuthResp *)response {
     NSString *result = [NSString stringWithFormat:@"code:%@,state:%@,errcode:%d", response.code, response.state, response.errCode];
     NSLog(@"微信授权结果：%@",result)
     
     if (response.errCode==0) {
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                             response.code, @"code",
-                             nil];
+        NSDictionary *dic = [NSDictionary dictionary];
         NSString *urlStr = [NSString stringWithFormat:@"%@?code=%@",URL_WxCodeLogin,response.code];
         [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             
             if (status == Request_Success) {
-                
-            } else {
-                
+                NSString *token = responseData;
+                [CacheUtil saveCacher:@"token" withValue:token];
+                [self loginSuccess];
+            } else if (status == Request_Fail) {
+                NSInteger code = [responseData[@"code"] integerValue];
+                if (code == 3) { //跳转到绑定手机号页面
+                    JSBindingPhoneVC *vc = (JSBindingPhoneVC *)[Utils getViewController:@"Login" WithVCName:@"JSBindingPhoneVC"];
+                    WxAuthModel *wxAuthModel = [WxAuthModel mj_objectWithKeyValues:(NSDictionary *)responseData[@"data"]];
+                    vc.wxAuthModel = wxAuthModel;
+                    [self.navigationController pushViewController:vc animated:YES];
+                } else {
+                    [Utils showToast:responseData[@"msg"]];
+                }
             }
         }];
     }
+}
+
+/** 登录成功 */
+- (void)loginSuccess {
+    [Utils showToast:@"登录成功"];
+    [self getUserInfo]; //获取用户信息
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:@YES];
+    // 跳转到首页
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*

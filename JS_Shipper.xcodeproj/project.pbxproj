@@ -912,6 +912,10 @@
 		A075190C227D17710032A974 /* HmAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751904227D17700032A974 /* HmAddressModel.m */; };
 		A075190D227D17710032A974 /* HmSelectAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751906227D17710032A974 /* HmSelectAdView.m */; };
 		A0773E8E22885B1000C74D69 /* AuthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0773E8D22885B1000C74D69 /* AuthInfo.m */; };
+		A08207002343544B00189CF9 /* JSBindingPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A08206FF2343544B00189CF9 /* JSBindingPhoneVC.m */; };
+		A08207012343544B00189CF9 /* JSBindingPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A08206FF2343544B00189CF9 /* JSBindingPhoneVC.m */; };
+		A08207042343809B00189CF9 /* WxAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A08207032343809B00189CF9 /* WxAuthModel.m */; };
+		A08207052343809B00189CF9 /* WxAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A08207032343809B00189CF9 /* WxAuthModel.m */; };
 		A096483022B87F6D000FDBE6 /* HomeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A096482F22B87F6D000FDBE6 /* HomeDataModel.m */; };
 		A096483322B87FD2000FDBE6 /* RecordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A096483222B87FD2000FDBE6 /* RecordsModel.m */; };
 		A096483F22B8815D000FDBE6 /* CityCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A096483622B8815C000FDBE6 /* CityCustomView.m */; };
@@ -1714,6 +1718,10 @@
 		A0751908227D17710032A974 /* HmAddressCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HmAddressCityModel.h; sourceTree = "<group>"; };
 		A0773E8C22885B1000C74D69 /* AuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthInfo.h; sourceTree = "<group>"; };
 		A0773E8D22885B1000C74D69 /* AuthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthInfo.m; sourceTree = "<group>"; };
+		A08206FE2343544B00189CF9 /* JSBindingPhoneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBindingPhoneVC.h; sourceTree = "<group>"; };
+		A08206FF2343544B00189CF9 /* JSBindingPhoneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBindingPhoneVC.m; sourceTree = "<group>"; };
+		A08207022343809B00189CF9 /* WxAuthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WxAuthModel.h; sourceTree = "<group>"; };
+		A08207032343809B00189CF9 /* WxAuthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WxAuthModel.m; sourceTree = "<group>"; };
 		A096482E22B87F6D000FDBE6 /* HomeDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDataModel.h; sourceTree = "<group>"; };
 		A096482F22B87F6D000FDBE6 /* HomeDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDataModel.m; sourceTree = "<group>"; };
 		A096483122B87FD2000FDBE6 /* RecordsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordsModel.h; sourceTree = "<group>"; };
@@ -3069,6 +3077,8 @@
 				A0C98848232D2440000FAD71 /* ServiceModel.m */,
 				A013E8D9232DE2CA00C3050D /* BannerModel.h */,
 				A013E8DA232DE2CA00C3050D /* BannerModel.m */,
+				A08207022343809B00189CF9 /* WxAuthModel.h */,
+				A08207032343809B00189CF9 /* WxAuthModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3204,6 +3214,8 @@
 				20BD741A2248C8230020EA5D /* JSResetPswVC.m */,
 				20C4108B2338AD1500D068DE /* JSOtherAccountVC.h */,
 				20C4108C2338AD1500D068DE /* JSOtherAccountVC.m */,
+				A08206FE2343544B00189CF9 /* JSBindingPhoneVC.h */,
+				A08206FF2343544B00189CF9 /* JSBindingPhoneVC.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -4259,6 +4271,7 @@
 				205A905923175F72004C756E /* EMRealtimeSearch.m in Sources */,
 				20C41065233899E600D068DE /* WXApiRequestHandler.mm in Sources */,
 				205A905B23175F72004C756E /* BaseCustomView.m in Sources */,
+				A08207052343809B00189CF9 /* WxAuthModel.m in Sources */,
 				208F897823289FE500918888 /* YPTabItem.m in Sources */,
 				20815E8723176C8A00E24C75 /* JSMyCarVC.m in Sources */,
 				205A905C23175F72004C756E /* EMChatroomAdminsViewController.m in Sources */,
@@ -4357,6 +4370,7 @@
 				A0C9884A232D2440000FAD71 /* ServiceModel.m in Sources */,
 				205A90A523175F72004C756E /* EMGroupAdminsViewController.m in Sources */,
 				205A90A623175F72004C756E /* HomeDataModel.m in Sources */,
+				A08207012343544B00189CF9 /* JSBindingPhoneVC.m in Sources */,
 				A022CCD723191F5E00E3EDD5 /* AddressModel.m in Sources */,
 				205A90A723175F72004C756E /* PSTGridLayoutItem.m in Sources */,
 				205A90A823175F72004C756E /* EMMsgTextBubbleView.m in Sources */,
@@ -4489,6 +4503,7 @@
 				201C7E7D232A1C5F0078C6DE /* JSSysMsgDetailVC.m in Sources */,
 				203D8EF9224DFDE10066333A /* JSMyInfoVC.m in Sources */,
 				208684B22329E5660066EDB5 /* PostListTabCell.m in Sources */,
+				A08207002343544B00189CF9 /* JSBindingPhoneVC.m in Sources */,
 				20118F7B22DEEA7600A195D1 /* SDWebImageDecoder.m in Sources */,
 				20CDDAFE22C0CB0D005432F3 /* JSSelectGoodsNameVC.m in Sources */,
 				20118F8122DEEA7600A195D1 /* EMTextFieldViewController.m in Sources */,
@@ -4519,6 +4534,7 @@
 				201883FD2325EC6700CF780B /* JSCommunityModel.m in Sources */,
 				20C4108923389BA200D068DE /* UIAlertView+WX.mm in Sources */,
 				20118E7122DEE96000A195D1 /* EMChatroomAdminsViewController.m in Sources */,
+				A08207042343809B00189CF9 /* WxAuthModel.m in Sources */,
 				20A8C22622DEB35F008E10EB /* CustomEaseUtils.m in Sources */,
 				A096484022B8815D000FDBE6 /* SortView.m in Sources */,
 				20BD73B32248BE440020EA5D /* XLGLottie.m in Sources */,
