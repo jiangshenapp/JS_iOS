@@ -21,23 +21,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    _loginWXView.hidden = ![self supportWeixin];
+    _loginWXView.hidden = ![Utils booWeixin];
     [WXApiManager sharedManager].delegate  = self;
-}
-
-- (BOOL)supportWeixin {
-    // 判是否安装微
-    if ([WXApi isWXAppInstalled] ){
-        //判断当前微信的版本是否支持OpenApi
-        if ([WXApi isWXAppSupportApi]) {
-            return YES;
-        }else{
-            NSLog(@"请升级微信至最新版本！");
-            return NO;
-        }
-    }else{
-        return NO;
-    }
 }
 
 - (void)viewDidLoad {

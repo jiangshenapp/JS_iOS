@@ -21,23 +21,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    _loginWXView.hidden = ![self supportWeixin];
+    _loginWXView.hidden = ![Utils booWeixin];
     [WXApiManager sharedManager].delegate  = self;
-}
-
-- (BOOL)supportWeixin {
-    // 判是否安装微
-    if ([WXApi isWXAppInstalled] ){
-        //判断当前微信的版本是否支持OpenApi
-        if ([WXApi isWXAppSupportApi]) {
-            return YES;
-        }else{
-            NSLog(@"请升级微信至最新版本！");
-            return NO;
-        }
-    }else{
-        return NO;
-    }
 }
 
 - (void)viewDidLoad {
@@ -139,23 +124,23 @@
 /* 微信登录 */
 - (IBAction)wxLoginAction:(UIButton *)sender {
     
-    JSBindingPhoneVC *vc = (JSBindingPhoneVC *)[Utils getViewController:@"Login" WithVCName:@"JSBindingPhoneVC"];
-    WxAuthModel *wxAuthModel = [[WxAuthModel alloc] init];
+//    JSBindingPhoneVC *vc = (JSBindingPhoneVC *)[Utils getViewController:@"Login" WithVCName:@"JSBindingPhoneVC"];
+//    WxAuthModel *wxAuthModel = [[WxAuthModel alloc] init];
 //    wxAuthModel.headimgurl = @"http://thirdwx.qlogo.cn/mmopen/vi_32/kicVkG3iaZQ8Peg9vUCb3zRm7Uiasvz3bDEwGnldiaj1Tbtfoiasrb3vjdedy6RqlqBQ3Fq05N98ic9hm7zSrAJZD8LA/132";
 //    wxAuthModel.unionid = @"ot7iv0VsKWGUg8fPaaYc2FNoLR_Y";
 //    wxAuthModel.nickname = @"心中有路";
 //    wxAuthModel.openid = @"otQoa6IV0_RVWmaxxr1OkO95RUIs";
-    wxAuthModel.headimgurl = @"http://thirdwx.qlogo.cn/mmopen/vi_32/WcO8NfH5bIVHLnkkGficjicv3Gd7ATwvqDKicFhicWsSjVJsUqacticIFYzTfOFT4wUoj6FANw6RL51IOIoy6JXMCog/132";
-    wxAuthModel.unionid = @"oft4Q1DOh6uHSyK6L1ctVmhXCdMg";
-    wxAuthModel.nickname = @"幸运one";
-    wxAuthModel.openid = @"oNNk21huIhNNtOYLBLN4AbdYyi1k";
-    vc.wxAuthModel = wxAuthModel;
-    [self.navigationController pushViewController:vc animated:YES];
+//    wxAuthModel.headimgurl = @"http://thirdwx.qlogo.cn/mmopen/vi_32/WcO8NfH5bIVHLnkkGficjicv3Gd7ATwvqDKicFhicWsSjVJsUqacticIFYzTfOFT4wUoj6FANw6RL51IOIoy6JXMCog/132";
+//    wxAuthModel.unionid = @"oft4Q1DOh6uHSyK6L1ctVmhXCdMg";
+//    wxAuthModel.nickname = @"幸运one";
+//    wxAuthModel.openid = @"oNNk21huIhNNtOYLBLN4AbdYyi1k";
+//    vc.wxAuthModel = wxAuthModel;
+//    [self.navigationController pushViewController:vc animated:YES];
     
-//    [WXApiRequestHandler sendAuthRequestScope: kAuthScope
-//                                        State:kAuthState
-//                                       OpenID:@""
-//                             InViewController:self];
+    [WXApiRequestHandler sendAuthRequestScope: kAuthScope
+                                        State:kAuthState
+                                       OpenID:@""
+                             InViewController:self];
 }
 
 #pragma mark - WXApiManagerDelegate

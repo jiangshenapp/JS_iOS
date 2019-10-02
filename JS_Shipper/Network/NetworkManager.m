@@ -74,7 +74,8 @@ static NetworkManager *_manager = nil;
         else {
             completion(object,Request_Fail,nil);
             if (![Utils isBlankString:object[@"msg"]]
-                && ![name containsString:URL_WxCodeLogin]) {
+                && ![name containsString:URL_WxCodeLogin]
+                && ![name containsString:URL_BindingWxInfo]) {
                 [Utils showToast:object[@"msg"]];
             }
         }

@@ -131,6 +131,7 @@
 /** 字符串转时间 */
 + (NSDate *)stringToDate:(NSString *)dateStr;
 
-
+/** 判断是否安装微信 */
++ (BOOL)booWeixin;
 
 @end

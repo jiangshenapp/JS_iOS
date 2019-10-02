@@ -15,6 +15,7 @@
 #import <AddressBook/AddressBook.h>
 #import "JSPaswdLoginVC.h"
 #import "CustomEaseUtils.h"
+#import "WXApi.h"
 
 @interface Utils ()
 {
@@ -548,6 +549,21 @@ static Utils *_utils = nil;
     [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
     NSDate *datestr = [dateFormatter dateFromString:dateStr];
     return datestr;
+}
+
++ (BOOL)booWeixin {
+    // 判是否安装微
+    if ([WXApi isWXAppInstalled] ){
+        //判断当前微信的版本是否支持OpenApi
+        if ([WXApi isWXAppSupportApi]) {
+            return YES;
+        }else{
+            NSLog(@"请升级微信至最新版本！");
+            return NO;
+        }
+    }else{
+        return NO;
+    }
 }
 
 @end
