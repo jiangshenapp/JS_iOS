@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"社交账户";
 }
 
 - (IBAction)anthWXActionClick:(UIButton *)sender {
