@@ -208,7 +208,7 @@
         return;
     }
     if (_info2.address.length==0) {
-        [Utils showToast:@"请选择收获地址"];
+        [Utils showToast:@"请选择收货地址"];
         return;
     }
     if (_info1.address.length>0) {
