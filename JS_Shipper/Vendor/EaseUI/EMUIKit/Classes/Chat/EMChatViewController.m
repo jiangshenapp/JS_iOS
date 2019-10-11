@@ -490,6 +490,7 @@
 #elif TARGET_OS_IPHONE
     self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     self.imagePicker.mediaTypes = @[(NSString *)kUTTypeImage, (NSString *)kUTTypeMovie];
+    self.imagePicker.modalPresentationStyle = 0;
     [self presentViewController:self.imagePicker animated:YES completion:nil];
 #endif
 }
@@ -505,6 +506,7 @@
                 {
                     self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
                     self.imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
+                    self.imagePicker.modalPresentationStyle = 0;
                     [self presentViewController:self.imagePicker animated:YES completion:nil];
                 }
                     break;

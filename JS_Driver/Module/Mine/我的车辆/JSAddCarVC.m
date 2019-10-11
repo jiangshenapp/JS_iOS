@@ -163,6 +163,7 @@
             [weakSelf postImage:firstimg];
         }
     };
+    vc.modalPresentationStyle = 0;
     [self presentViewController:vc animated:YES completion:nil];
 }
 
@@ -180,6 +181,7 @@
             [weakSelf postImage:firstimg];
         }
     };
+    vc.modalPresentationStyle = 0;
     [self presentViewController:vc animated:YES completion:nil];
 }
 

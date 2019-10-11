@@ -163,6 +163,7 @@
                 picker.allowsEditing = YES;
                 picker.delegate = self;
                 picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                picker.modalPresentationStyle = 0;
                 [self presentViewController:picker animated:NO completion:^{}];
             }
                 break;
@@ -177,6 +178,7 @@
                     if([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
                         self.modalPresentationStyle=UIModalPresentationOverCurrentContext;
                     }
+                    imagePickerController.modalPresentationStyle = 0;
                     [self presentViewController:imagePickerController animated:NO completion:nil];
                 }
             }

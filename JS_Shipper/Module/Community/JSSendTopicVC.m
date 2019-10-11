@@ -119,6 +119,7 @@
             }];
         }
     };
+    vc.modalPresentationStyle = 0;
     [self presentViewController:vc animated:YES completion:nil];
 }
 - (IBAction)sendTopicAction:(UIButton *)sender {

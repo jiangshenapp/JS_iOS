@@ -40,6 +40,11 @@
     self.baseTabView.estimatedRowHeight = 0;
     self.baseTabView.estimatedSectionHeaderHeight = 0;
     self.baseTabView.estimatedSectionFooterHeight = 0;
+
+    if (@available(iOS 13.0, *)) {
+     self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDarkContent;
+    }
 }
 
 -(void)addTabMJ_FootView {
