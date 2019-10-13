@@ -115,7 +115,8 @@
         return;
     }
     if (![Utils isBlankString:self.dataModel.driverPhone]) {
-        [CustomEaseUtils EaseChatConversationID:self.dataModel.driverPhone];
+        NSString *chatID = [NSString stringWithFormat:@"driver%@",self.dataModel.driverPhone];
+        [CustomEaseUtils EaseChatConversationID:chatID];
     } else {
         [Utils showToast:@"手机号码为空"];
     }

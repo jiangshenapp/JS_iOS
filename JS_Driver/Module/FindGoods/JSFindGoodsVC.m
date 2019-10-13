@@ -294,7 +294,8 @@
     if ([Utils isBlankString:model.consignorMobile]) {
         [Utils showToast:@"手机号码为空"];
     } else {
-        [CustomEaseUtils EaseChatConversationID:model.consignorMobile];
+        NSString *chatID = [NSString stringWithFormat:@"shipper%@",model.consignorMobile];
+        [CustomEaseUtils EaseChatConversationID:chatID];
     }
 }
 

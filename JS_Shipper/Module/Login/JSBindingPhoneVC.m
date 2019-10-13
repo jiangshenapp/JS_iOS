@@ -78,8 +78,6 @@
             NSString *token = responseData;
             [CacheUtil saveCacher:@"token" withValue:token];
             [CacheUtil saveCacher:@"loginPhone" withValue:self.phoneTF.text];
-            [CustomEaseUtils EaseMobLoginWithUser:self.phoneTF.text completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
-            }];
             
             [self getUserInfo]; //获取用户信息
             
@@ -99,6 +97,15 @@
             //缓存用户信息
             NSDictionary *userDic = responseData;
             [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+            //环信登录
+            NSString *appFlag = @"driver"; //司机端
+            if ([AppChannel isEqualToString:@"1"]) { //货主端
+                appFlag = @"shipper";
+            }
+            NSString *easeMobUser = [NSString stringWithFormat:@"%@%@",appFlag,[UserInfo share].mobile];
+            [CustomEaseUtils EaseMobLoginWithUser:easeMobUser completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
+                
+            }];
         }
     }];
 }

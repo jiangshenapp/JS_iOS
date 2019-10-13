@@ -235,7 +235,8 @@
         [Utils showToast:@"电话号码是空号"];
         return;
     }
-    [CustomEaseUtils EaseChatConversationID:self.model.driverPhone];
+    NSString *chatID = [NSString stringWithFormat:@"driver%@",self.model.driverPhone];
+    [CustomEaseUtils EaseChatConversationID:chatID];
 }
 
 - (IBAction)bottomLeftBtnAction:(UIButton *)sender {

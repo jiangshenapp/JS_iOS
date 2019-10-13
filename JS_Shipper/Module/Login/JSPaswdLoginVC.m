@@ -97,7 +97,12 @@
             NSDictionary *userDic = responseData;
             [[UserInfo share] setUserInfo:[userDic mutableCopy]];
             //环信登录
-            [CustomEaseUtils EaseMobLoginWithUser:[UserInfo share].mobile completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
+            NSString *appFlag = @"driver"; //司机端
+            if ([AppChannel isEqualToString:@"1"]) { //货主端
+                appFlag = @"shipper";
+            }
+            NSString *easeMobUser = [NSString stringWithFormat:@"%@%@",appFlag,[UserInfo share].mobile];
+            [CustomEaseUtils EaseMobLoginWithUser:easeMobUser completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
                 
             }];
         }

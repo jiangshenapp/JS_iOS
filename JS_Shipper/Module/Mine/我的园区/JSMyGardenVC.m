@@ -216,16 +216,12 @@
         return;
     }
     RecordsModel *model = self.dataSource[sender.tag-2000];
-    NSString *phone;
-    if (_pageFlag==0 || _pageFlag==2) {
-        phone = model.driverPhone;
-    } else {
-        phone = model.contractPhone;
-    }
+    NSString *phone = model.driverPhone;
     if ([Utils isBlankString:phone]) {
         [Utils showToast:@"手机号码为空"];
     } else {
-        [CustomEaseUtils EaseChatConversationID:phone];
+        NSString *chatID = [NSString stringWithFormat:@"driver%@",phone];
+        [CustomEaseUtils EaseChatConversationID:chatID];
     }
 }
 

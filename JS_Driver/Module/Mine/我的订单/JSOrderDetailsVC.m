@@ -207,7 +207,8 @@
         [Utils showToast:@"电话号码是空号"];
         return;
     }
-    [CustomEaseUtils EaseChatConversationID:self.model.consignorMobile];
+    NSString *chatID = [NSString stringWithFormat:@"shipper%@",self.model.consignorMobile];
+    [CustomEaseUtils EaseChatConversationID:chatID];
 }
 
 - (IBAction)bottomLeftBtnAction:(UIButton *)sender {
