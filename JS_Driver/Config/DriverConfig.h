@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_UnbindingWxInfo @"/app/driverWx/unbindingWxInfo" //登录后解绑
 #define URL_WxCodeLogin @"/app/driverWx/wxCodeLogin" //code登录
 #define URL_WxLogin @"/app/driverWx/wxLogin" //绑定页面短信登录
+#define URL_GetWxBindingInfo @"/app/driverWx/getWxBindingInfo" //获取用户微信授权绑定状态
 
 #define URL_RechargeDriverDeposit @"/app/account/rechargeDriverDeposit"//运力端缴纳保证金
 
@@ -59,7 +60,6 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_CommentOrder @"/app/driver/order/comment"//回执评价"
 
 #define URL_ParkSupplement @"/app/park/supplement"//园区信息补充"
-
 
 @end
 

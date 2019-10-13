@@ -24,7 +24,8 @@
     
     [WXApiManager sharedManager].delegate  = self;
     
-    [self getUserInfo]; //获取用户信息
+//    [self getUserInfo]; //获取用户信息
+    [self GetWxBindingInfo]; //获取微信绑定信息
 }
 
 #pragma mark - 微信绑定/解绑
@@ -53,7 +54,8 @@
     [[NetworkManager sharedManager] postJSON:URL_UnbindingWxInfo parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             [Utils showToast:@"解绑成功"];
-            [self getUserInfo]; //获取用户信息
+//            [self getUserInfo]; //获取用户信息
+            [self GetWxBindingInfo]; //获取微信绑定信息
         }
     }];
 }
@@ -74,7 +76,8 @@
         [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             if (status == Request_Success) {
                 [Utils showToast:@"绑定成功"];
-                [self getUserInfo]; //获取用户信息
+//                [self getUserInfo]; //获取用户信息
+                [self GetWxBindingInfo]; //获取微信绑定信息
             } else if (status == Request_Fail) {
                 NSInteger code = [responseData[@"code"] integerValue];
                 if (code == 2) {
@@ -98,25 +101,44 @@
     [[NetworkManager sharedManager] postJSON:urlStr parameters:dic  completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             [Utils showToast:@"绑定成功"];
-            [self getUserInfo]; //获取用户信息
+//            [self getUserInfo]; //获取用户信息
+            [self GetWxBindingInfo]; //获取微信绑定信息
         }
     }];
 }
 
-/** 获取用户信息 */
-- (void)getUserInfo {
+///** 获取用户信息 */
+//- (void)getUserInfo {
+//    NSDictionary *dic = [NSDictionary dictionary];
+//    [[NetworkManager sharedManager] getJSON:URL_Profile parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+//        if (status == Request_Success) {
+//            //缓存用户信息
+//            NSDictionary *userDic = responseData;
+//            [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+//            if ([NSString isEmpty:[UserInfo share].openId]) {
+//                self.nickNameLab.text = @"未绑定";
+//                self.nickNameLab.textColor = kVerifiedUnCommitColor;
+//            } else {
+//                self.nickNameLab.text = [UserInfo share].nickName;
+//                self.nickNameLab.textColor = AppThemeColor;
+//            }
+//        }
+//    }];
+//}
+
+/** 获取微信绑定信息 */
+- (void)GetWxBindingInfo {
     NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] getJSON:URL_Profile parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+    [[NetworkManager sharedManager] postJSON:URL_GetWxBindingInfo parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             //缓存用户信息
-            NSDictionary *userDic = responseData;
-            [[UserInfo share] setUserInfo:[userDic mutableCopy]];
-            if ([NSString isEmpty:[UserInfo share].openId]) {
+            NSDictionary *resultDic = responseData;
+            if ([resultDic[@"status"] integerValue]==1) {
+                self.nickNameLab.text = resultDic[@"nickname"];
+                self.nickNameLab.textColor = AppThemeColor;
+            } else {
                 self.nickNameLab.text = @"未绑定";
                 self.nickNameLab.textColor = kVerifiedUnCommitColor;
-            } else {
-                self.nickNameLab.text = [UserInfo share].nickName;
-                self.nickNameLab.textColor = AppThemeColor;
             }
         }
     }];

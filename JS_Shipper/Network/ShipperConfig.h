@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_UnbindingWxInfo @"/app/wx/unbindingWxInfo" //登录后解绑
 #define URL_WxCodeLogin @"/app/wx/wxCodeLogin" //code登录
 #define URL_WxLogin @"/app/wx/wxLogin" //绑定页面短信登录
+#define URL_GetWxBindingInfo @"/app/wx/getWxBindingInfo" //获取用户微信授权绑定状态
 
 @end
 
