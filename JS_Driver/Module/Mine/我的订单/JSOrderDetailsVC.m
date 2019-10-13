@@ -297,7 +297,7 @@
             picker.allowsEditing = YES;
             picker.delegate = self;
             picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            picker.modalPresentationStyle 0;
+            picker.modalPresentationStyle = 0;
             [self presentViewController:picker animated:NO completion:^{}];
         }
             break;
