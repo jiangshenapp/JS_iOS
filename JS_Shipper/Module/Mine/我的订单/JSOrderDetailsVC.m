@@ -304,7 +304,7 @@
     JSDeliverConfirmVC *vc = (JSDeliverConfirmVC *)[Utils getViewController:@"DeliverGoods" WithVCName:@"JSDeliverConfirmVC"];
     vc.isAll = YES;
     vc.model = self.model;
-    vc.subscriberId = self.model.matchSubscriberId;
+//    vc.subscriberId = self.model.matchSubscriberId;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
