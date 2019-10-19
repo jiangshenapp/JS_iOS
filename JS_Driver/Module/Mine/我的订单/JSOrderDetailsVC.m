@@ -155,8 +155,12 @@
             self.bottomRightBtn.userInteractionEnabled = NO;
             break;
         case 5: //待接货
-            [self.bottomLeftBtn setTitle:@"拒绝配送" forState:UIControlStateNormal];
-            [self.bottomRightBtn setTitle:@"开始配送" forState:UIControlStateNormal];
+//            [self.bottomLeftBtn setTitle:@"拒绝配送" forState:UIControlStateNormal];
+//            [self.bottomRightBtn setTitle:@"开始配送" forState:UIControlStateNormal];
+            self.bottomBtn.hidden = NO;
+            self.bottomLeftBtn.hidden = YES;
+            self.bottomRightBtn.hidden = YES;
+            [self.bottomBtn setTitle:@"开始配送" forState:UIControlStateNormal];
             break;
         case 6: //待送达
             self.bottomBtn.hidden = NO;
@@ -216,12 +220,12 @@
     if ([title isEqualToString:@"拒绝接单"]) {
         [self rejectOrder];
     }
-    else if ([title isEqualToString:@"取消接货"]) {
+    if ([title isEqualToString:@"取消接货"]) {
          [self cancleReceiveGoodsOrder];
     }
-    else if ([title isEqualToString:@"拒绝配送"]) {
-        [self cancleDistributionOrder];
-    }
+//    if ([title isEqualToString:@"拒绝配送"]) {
+//        [self cancleDistributionOrder];
+//    }
 }
 
 - (IBAction)bottomRightBtnAction:(UIButton *)sender {
@@ -232,20 +236,23 @@
         }
         [self receiveOrder];
     }
-    else if ([title isEqualToString:@"立即确认"]) {
+    if ([title isEqualToString:@"立即确认"]) {
         [self confirmOrder];
     }
-    else if([title isEqualToString:@"开始配送"]) {
-         [self distributionOrder];
-    }
+//    if([title isEqualToString:@"开始配送"]) {
+//         [self distributionOrder];
+//    }
 }
 
 - (IBAction)bottomBtnAction:(UIButton *)sender {
     NSString *title = sender.titleLabel.text;
+    if ([title isEqualToString:@"开始配送"]) {
+        [self distributionOrder];
+    }
     if ([title isEqualToString:@"我已送达"]) {
         [self completeDistributionOrder];
     }
-    else if ([title isEqualToString:@"上传回执"]) {
+    if ([title isEqualToString:@"上传回执"]) {
         [self commentOrder];
     }
 }
@@ -452,23 +459,22 @@
     }];
 }
 
-#pragma mark - 拒绝配送
-/** 拒绝配送 */
-- (void)cancleDistributionOrder {
-    __weak typeof(self) weakSelf = self;
-    NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@/%@",URL_CancelDistributionOrder,self.model.ID] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
-        if (status == Request_Success) {
-            [Utils showToast:@"拒绝配送成功"];
-            [weakSelf pushOrderList];
-        }
-    }];
-}
+//#pragma mark - 拒绝配送
+///** 拒绝配送 */
+//- (void)cancleDistributionOrder {
+//    __weak typeof(self) weakSelf = self;
+//    NSDictionary *dic = [NSDictionary dictionary];
+//    [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@/%@",URL_CancelDistributionOrder,self.model.ID] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+//        if (status == Request_Success) {
+//            [Utils showToast:@"拒绝配送成功"];
+//            [weakSelf pushOrderList];
+//        }
+//    }];
+//}
 
 #pragma mark - 开始配送
 /** 开始配送 */
 - (void)distributionOrder {
-    
     JSOrderDistributionVC *vc = (JSOrderDistributionVC *)[Utils getViewController:@"Mine" WithVCName:@"JSOrderDistributionVC"];
     vc.orderID = self.model.ID;
     [self.navigationController pushViewController:vc animated:YES];
