@@ -200,7 +200,21 @@
     self.titleLabel.font = [UIFont systemFontOfSize:18];
     self.titleLabel.textColor = [UIColor blackColor];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.text = self.conversationModel.name;
+    
+    NSString *name = self.conversationModel.name;
+    if ([name containsString:@"driver"]) {
+        NSRange range = [name rangeOfString:@"driver"];
+        if(range.location != NSNotFound) {
+            name = [name substringFromIndex:range.length];
+        }
+    }
+    if ([name containsString:@"shipper"]) {
+        NSRange range = [name rangeOfString:@"shipper"];
+        if(range.location != NSNotFound) {
+            name = [name substringFromIndex:range.length];
+        }
+    }
+    self.titleLabel.text = name;
     [titleView addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(titleView);

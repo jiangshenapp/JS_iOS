@@ -128,8 +128,8 @@
             timestampString = "590924035.463622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "603"
-            endingLineNumber = "603"
+            startingLineNumber = "617"
+            endingLineNumber = "617"
             landmarkName = "-didSelectedEmoticonModel:"
             landmarkType = "7">
          </BreakpointContent>
