@@ -694,6 +694,8 @@
 		205F20362276A254000A8967 /* JSOrderDetailMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F20352276A254000A8967 /* JSOrderDetailMapVC.m */; };
 		20781E6F224A054F00F0767D /* JSAuthenticationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20781E6E224A054F00F0767D /* JSAuthenticationVC.m */; };
 		20781E75224A257A00F0767D /* JSMyWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20781E74224A257A00F0767D /* JSMyWalletVC.m */; };
+		207995A8235B524200F6A66F /* ImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 207995A7235B524100F6A66F /* ImageViewer.m */; };
+		207995A9235B524200F6A66F /* ImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 207995A7235B524100F6A66F /* ImageViewer.m */; };
 		207D144022714E5900594520 /* JSAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 207D143F22714E5900594520 /* JSAboutVC.m */; };
 		207D1443227153E300594520 /* JSDeliverConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 207D1442227153E300594520 /* JSDeliverConfirmVC.m */; };
 		20815E2723176C2600E24C75 /* FindGoods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20815E2623176C2600E24C75 /* FindGoods.storyboard */; };
@@ -1393,6 +1395,8 @@
 		20781E6E224A054F00F0767D /* JSAuthenticationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAuthenticationVC.m; sourceTree = "<group>"; };
 		20781E73224A257A00F0767D /* JSMyWalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyWalletVC.h; sourceTree = "<group>"; };
 		20781E74224A257A00F0767D /* JSMyWalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyWalletVC.m; sourceTree = "<group>"; };
+		207995A6235B524100F6A66F /* ImageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewer.h; sourceTree = "<group>"; };
+		207995A7235B524100F6A66F /* ImageViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewer.m; sourceTree = "<group>"; };
 		207D143E22714E5900594520 /* JSAboutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSAboutVC.h; sourceTree = "<group>"; };
 		207D143F22714E5900594520 /* JSAboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAboutVC.m; sourceTree = "<group>"; };
 		207D1441227153E300594520 /* JSDeliverConfirmVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSDeliverConfirmVC.h; sourceTree = "<group>"; };
@@ -2643,6 +2647,15 @@
 			path = JS_Driver;
 			sourceTree = "<group>";
 		};
+		207995A5235B524100F6A66F /* ImagesViewer(图片浏览) */ = {
+			isa = PBXGroup;
+			children = (
+				207995A6235B524100F6A66F /* ImageViewer.h */,
+				207995A7235B524100F6A66F /* ImageViewer.m */,
+			);
+			path = "ImagesViewer(图片浏览)";
+			sourceTree = "<group>";
+		};
 		20815E2523176BFF00E24C75 /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -2898,6 +2911,7 @@
 				201C7E782329E9420078C6DE /* UITextView+Placeholder.h */,
 				201C7E772329E9420078C6DE /* UITextView+Placeholder.m */,
 				20FB0385231D00090015787F /* YYStarView */,
+				207995A5235B524100F6A66F /* ImagesViewer(图片浏览) */,
 				20914FE022B8C734005B4A4E /* LocationTransform */,
 				20BD733C2248BE420020EA5D /* Cache */,
 				20BD73442248BE420020EA5D /* Toast */,
@@ -4380,6 +4394,7 @@
 				205A90AC23175F72004C756E /* EMEmoticonGroup.m in Sources */,
 				205A90AD23175F72004C756E /* UIViewController+Search.m in Sources */,
 				20815E8423176C8A00E24C75 /* JSAuthenticationVC.m in Sources */,
+				207995A9235B524200F6A66F /* ImageViewer.m in Sources */,
 				205A90B023175F72004C756E /* ZHPickView.m in Sources */,
 				20815E4223176C4A00E24C75 /* JSServiceVC.m in Sources */,
 			);
@@ -4553,6 +4568,7 @@
 				20118F4322DEEA7600A195D1 /* EMConversationHelper.m in Sources */,
 				A096483322B87FD2000FDBE6 /* RecordsModel.m in Sources */,
 				20118DFA22DEE95F00A195D1 /* EaseEmotionEscape.m in Sources */,
+				207995A8235B524200F6A66F /* ImageViewer.m in Sources */,
 				A02221DC22C79A09006AD29A /* AEButton.m in Sources */,
 				20118F5F22DEEA7600A195D1 /* EMAvatarNameCell.m in Sources */,
 				20BD73BD2248BE440020EA5D /* UserInfo.m in Sources */,
