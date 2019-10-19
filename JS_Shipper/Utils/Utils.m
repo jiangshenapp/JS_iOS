@@ -452,12 +452,9 @@ static Utils *_utils = nil;
 }
 
 //打电话
-+ (UIWebView *)call:(NSString *)phoneAccount {
-    NSString *callPhone = phoneAccount;
-    UIWebView *callWebView = [[UIWebView alloc] init];
-    NSURL *telURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",callPhone]];
-    [callWebView loadRequest:[NSURLRequest requestWithURL:telURL]];
-    return  callWebView;
++ (void)call:(NSString *)phone {
+    NSMutableString *str = [[NSMutableString alloc] initWithFormat:@"tel:%@",phone];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
 + (NSString *)getTimeStrToCurrentDateWith:(NSString *)dateStr1 {

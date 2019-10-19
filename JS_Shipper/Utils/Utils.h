@@ -109,7 +109,7 @@
 /*!
  *  @brief 打电话
  */
-+ (UIWebView *)call:(NSString *)phoneAccount;
++ (void)call:(NSString *)phone;
 
 /*!
  *  @brief 根据文字计算文字所占的位置
