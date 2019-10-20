@@ -168,6 +168,13 @@
             return NO;
         }
     }
+    if ([tabBarTitle isEqualToString:@"社区"]) {
+        if ([Utils isVerified]) { //已认证
+            return YES;
+        } else {
+            return NO;
+        }
+    }
     else {
         return YES;
     }
