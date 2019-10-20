@@ -177,9 +177,14 @@ static Utils *_utils = nil;
     [[UserInfo share] setUserInfo:nil]; //清除用户信息
     [CustomEaseUtils EaseMobLogout];
     if (isJumpLoginVC==YES) {
-        UIViewController *vc = [Utils getViewController:@"Login" WithVCName:@"JSPaswdLoginVC"];
-        vc.hidesBottomBarWhenPushed = YES;
-        [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+        BaseNC *nc = JSAppDelegate.tabVC.selectedViewController;
+        NSLog(@"%@",JSAppDelegate.tabVC);
+        if (![[nc topViewController] isKindOfClass:[JSPaswdLoginVC class]]) {
+            //跳转到登录页面
+            UIViewController *vc = [Utils getViewController:@"Login" WithVCName:@"JSPaswdLoginVC"];
+            vc.hidesBottomBarWhenPushed = YES;
+            [[nc topViewController].navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 

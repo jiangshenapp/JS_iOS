@@ -161,7 +161,7 @@
             
             UIImageView *imageView = [[UIImageView alloc]init];
             imageView.frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
-            [imageView sd_setImageWithURL:[NSURL URLWithString:urlArr[i]] placeholderImage:nil options:SDWebImageProgressiveLoad];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:urlArr[i]] placeholderImage:nil options:SDWebImageProgressiveDownload];
             [sc addSubview:imageView];
             
             [bgScrollView addSubview:sc];

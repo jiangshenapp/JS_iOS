@@ -175,14 +175,26 @@
     EMConversationModel *model = [self.dataArray objectAtIndex:row];
     NSDictionary *dic1 = model.emModel.ext;
     if (dic1.count>0) {
-        NSString *nickName = dic1[@"nickName"];
+//        NSString *nickName = dic1[@"nickName"];
         NSString *avatar = dic1[@"avatar"];
-        model.name = model.emModel.conversationId;
-        if (![NSString isEmpty:nickName]) {
-            model.name = nickName;
-        }
+//        model.name = model.emModel.conversationId;
+//        if (![NSString isEmpty:nickName]) {
+//            model.name = nickName;
+//        }
         if (![NSString isEmpty:avatar]) {
             model.avatar = avatar;
+        }
+    }
+    if ([model.name containsString:@"driver"]) {
+        NSRange range = [model.name rangeOfString:@"driver"];
+        if(range.location != NSNotFound) {
+            model.name = [model.name substringFromIndex:range.length];
+        }
+    }
+    if ([model.name containsString:@"shipper"]) {
+        NSRange range = [model.name rangeOfString:@"shipper"];
+        if(range.location != NSNotFound) {
+            model.name = [model.name substringFromIndex:range.length];
         }
     }
     cell.model = model;

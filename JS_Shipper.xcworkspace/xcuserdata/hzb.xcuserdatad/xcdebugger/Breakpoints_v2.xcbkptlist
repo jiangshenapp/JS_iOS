@@ -264,10 +264,10 @@
             timestampString = "591007428.991859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
-            landmarkName = "-didResortConversationsLatestMessage"
-            landmarkType = "7">
+            startingLineNumber = "298"
+            endingLineNumber = "298"
+            landmarkName = "EMConversationsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -330,9 +330,9 @@
             filePath = "JS_Shipper/Vendor/EaseUI/EMUIKit/Classes/Conversation/EMConversationsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "-conversationListDidUpdate:"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -346,10 +346,10 @@
             filePath = "JS_Shipper/Vendor/EaseUI/EMUIKit/Classes/Conversation/EMConversationsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "-messagesDidReceive:"
-            landmarkType = "7">
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "EMConversationsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -365,6 +365,22 @@
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "-dealloc"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD96B1B8-4DDD-46A1-BF9C-66D2726ED77F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JS_Driver/Module/Mine/JSMyInfoVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-logoutAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -344,9 +344,9 @@
         else {
             NSDictionary *dic = model.emModel.ext;
             model.userAvaterUrl = dic[@"avatar"];
-            model.userNickName = dic[@"nickName"];
+//            model.userNickName = dic[@"nickName"];
             self.conversationModel.emModel.ext = dic;
-            self.conversationModel.name =model.userNickName;
+//            self.conversationModel.name = model.userNickName;
             self.conversationModel.avatar = model.userAvaterUrl;
         }
         cell.model = model;
@@ -1525,15 +1525,15 @@
     //    NSString *sendText = [EaseConvertToCommonEmoticonsHelper convertToCommonEmoticons:aText];
     NSMutableDictionary *ext = [NSMutableDictionary dictionaryWithDictionary:aExt];
     NSString *avatar = @"";
-    NSString *name = @"";
+//    NSString *name = @"";
     if (![NSString isEmpty:[UserInfo share].avatar]) {
         avatar = [UserInfo share].avatar;
     }
-    if (![NSString isEmpty:[UserInfo share].nickName]) {
-        name = [UserInfo share].nickName;
-    }
+//    if (![NSString isEmpty:[UserInfo share].nickName]) {
+//        name = [UserInfo share].nickName;
+//    }
     [ext setObject:avatar forKey:@"avatar"];
-    [ext setObject:name forKey:@"nickName"];
+//    [ext setObject:name forKey:@"nickName"];
     EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithText:aText];
     [self _sendMessageWithBody:body ext:ext isUpload:NO];
     
@@ -1691,7 +1691,7 @@
     
     NSMutableDictionary *ext = [NSMutableDictionary dictionaryWithDictionary:aExt];//封装用户头像和昵称
     [ext setObject:[UserInfo share].avatar forKey:@"avatar"];
-    [ext setObject:[UserInfo share].nickName forKey:@"nickName"];
+//    [ext setObject:[UserInfo share].nickName forKey:@"nickName"];
     
     NSString *from = [[EMClient sharedClient] currentUsername];
     NSString *to = self.conversationModel.emModel.conversationId;
