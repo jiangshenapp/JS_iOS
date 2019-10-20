@@ -196,16 +196,30 @@ static Utils *_utils = nil;
     if (![self isLoginWithJump:YES]) { //先判断登录
         return NO;
     }
-    if ([[UserInfo share].personConsignorVerified integerValue] != 2
-        && [[UserInfo share].companyConsignorVerified integerValue] != 2) {
-        XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提示" content:@"您尚未认证通过" leftButtonTitle:@"取消" rightButtonTitle:@"前往认证"];
-        alert.doneBlock = ^{
-            UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthenticationVC"];
-            [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
-        };
-        return NO;
-    } else {
-        return YES;
+    if ([AppChannel isEqualToString:@"1"]) { //货主端
+        if ([[UserInfo share].personConsignorVerified integerValue] != 2
+            && [[UserInfo share].companyConsignorVerified integerValue] != 2) {
+            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提示" content:@"您尚未认证通过" leftButtonTitle:@"取消" rightButtonTitle:@"前往认证"];
+            alert.doneBlock = ^{
+                UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthenticationVC"];
+                [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+            };
+            return NO;
+        } else {
+            return YES;
+        }
+    } else { //司机端
+        if ([[UserInfo share].parkVerified integerValue] != 2
+            && [[UserInfo share].driverVerified integerValue] != 2) {
+            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提示" content:@"您尚未认证通过" leftButtonTitle:@"取消" rightButtonTitle:@"前往认证"];
+            alert.doneBlock = ^{
+                UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthencationHomeVC"];
+                [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+            };
+            return NO;
+        } else {
+            return YES;
+        }
     }
 }
 
