@@ -758,6 +758,7 @@
 		20A8C22622DEB35F008E10EB /* CustomEaseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A8C22522DEB35F008E10EB /* CustomEaseUtils.m */; };
 		20AF58592328E1A400B6FAF9 /* ZYLPreViewImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF58582328E1A300B6FAF9 /* ZYLPreViewImageTool.m */; };
 		20AF585A2328E1A400B6FAF9 /* ZYLPreViewImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF58582328E1A300B6FAF9 /* ZYLPreViewImageTool.m */; };
+		20BB53D7235C943C000EAD59 /* JSAuthencationHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815E6323176C8900E24C75 /* JSAuthencationHomeVC.m */; };
 		20BD73262248BDC20020EA5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD73252248BDC20020EA5D /* AppDelegate.m */; };
 		20BD732E2248BDC30020EA5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20BD732D2248BDC30020EA5D /* Assets.xcassets */; };
 		20BD73312248BDC30020EA5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BD732F2248BDC30020EA5D /* LaunchScreen.storyboard */; };
@@ -4404,6 +4405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BB53D7235C943C000EAD59 /* JSAuthencationHomeVC.m in Sources */,
 				20118F4122DEEA7600A195D1 /* EMNotificationHelper.m in Sources */,
 				20E41988231E3AD7001E89C7 /* JSManagerCircleVC.m in Sources */,
 				A075190B227D17710032A974 /* HmAddressCityModel.m in Sources */,
