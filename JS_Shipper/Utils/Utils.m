@@ -16,6 +16,8 @@
 #import "JSPaswdLoginVC.h"
 #import "CustomEaseUtils.h"
 #import "WXApi.h"
+#import "JSAuthenticationVC.h"
+#import "JSAuthencationHomeVC.h"
 
 @interface Utils ()
 {
@@ -155,7 +157,6 @@ static Utils *_utils = nil;
     } else {
         if (isJump==YES) {
             BaseNC *nc = JSAppDelegate.tabVC.selectedViewController;
-            NSLog(@"%@",JSAppDelegate.tabVC);
             if (![[nc topViewController] isKindOfClass:[JSPaswdLoginVC class]]) {
                 //跳转到登录页面
                 UIViewController *vc = [Utils getViewController:@"Login" WithVCName:@"JSPaswdLoginVC"];
@@ -178,7 +179,6 @@ static Utils *_utils = nil;
     [CustomEaseUtils EaseMobLogout];
     if (isJumpLoginVC==YES) {
         BaseNC *nc = JSAppDelegate.tabVC.selectedViewController;
-        NSLog(@"%@",JSAppDelegate.tabVC);
         if (![[nc topViewController] isKindOfClass:[JSPaswdLoginVC class]]) {
             //跳转到登录页面
             UIViewController *vc = [Utils getViewController:@"Login" WithVCName:@"JSPaswdLoginVC"];
@@ -201,8 +201,13 @@ static Utils *_utils = nil;
             && [[UserInfo share].companyConsignorVerified integerValue] != 2) {
             XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提示" content:@"您尚未认证通过" leftButtonTitle:@"取消" rightButtonTitle:@"前往认证"];
             alert.doneBlock = ^{
-                UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthenticationVC"];
-                [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+                BaseNC *nc = JSAppDelegate.tabVC.selectedViewController;
+                if (![[nc topViewController] isKindOfClass:[JSAuthenticationVC class]]) {
+                    //跳转到登录页面
+                    UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthenticationVC"];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [[nc topViewController].navigationController pushViewController:vc animated:YES];
+                }
             };
             return NO;
         } else {
@@ -213,8 +218,13 @@ static Utils *_utils = nil;
             && [[UserInfo share].driverVerified integerValue] != 2) {
             XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提示" content:@"您尚未认证通过" leftButtonTitle:@"取消" rightButtonTitle:@"前往认证"];
             alert.doneBlock = ^{
-                UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthencationHomeVC"];
-                [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+                BaseNC *nc = JSAppDelegate.tabVC.selectedViewController;
+                if (![[nc topViewController] isKindOfClass:[JSAuthencationHomeVC class]]) {
+                    //跳转到登录页面
+                    UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthencationHomeVC"];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [[nc topViewController].navigationController pushViewController:vc animated:YES];
+                }
             };
             return NO;
         } else {
