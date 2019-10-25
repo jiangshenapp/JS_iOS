@@ -155,6 +155,10 @@
     if (![NSString isEmpty:self.allDicKey[@"goodsType"]]) {
         [dic setObject:self.allDicKey[@"goodsType"] forKey:@"goodsType"];
     }
+    NSDictionary *currentDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loc"];
+    [dic setObject:currentDic[@"lat"] forKey:@"latitude"];
+    [dic setObject:currentDic[@"lng"] forKey:@"longitude"];
+
 //    [dic addEntriesFromDictionary:self.allDicKey];
     NSString *url = [NSString stringWithFormat:@"%@?current=%ld&size=%@",URL_DriverFind,_page,PageSize];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {

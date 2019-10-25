@@ -233,6 +233,9 @@
     if (![NSString isEmpty:_sort1]) {
         [dic setObject:_sort1 forKey:@"sort"];
     }
+    NSDictionary *currentDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loc"];
+    [dic setObject:currentDic[@"lat"] forKey:@"latitude"];
+    [dic setObject:currentDic[@"lng"] forKey:@"longitude"];
     NSString *url = [NSString stringWithFormat:@"%@?current=%ld&size=%@",_postUrlDic[@(_pageFlag)],_page,PageSize];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (weakSelf.page==1) {
