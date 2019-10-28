@@ -51,7 +51,6 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_GetOrderInfo @"/app/driver/order/get"//订单详情
 #define URL_RefuseOrder @"/app/driver/order/refuse"//拒绝接单
 #define URL_ReceiveOrder @"/app/driver/order/receive"//接单
-#define URL_ReceiveOrder @"/app/driver/order/receive"//接单
 #define URL_DriverConfirmOrder @"/app/driver/order/confirm"//确认"
 #define URL_CancelReceiveOrder @"/app/driver/order/cancelReceive"//取消接货"
 #define URL_CancelDistributionOrder @"/app/driver/order/cancelDistribution"//拒绝配送"

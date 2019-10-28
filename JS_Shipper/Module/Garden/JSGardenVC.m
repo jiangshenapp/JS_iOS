@@ -113,7 +113,7 @@
     _titleView.top = 7+kStatusBarH;
     _titleView.centerX = WIDTH/2.0;
     [self.navBar addSubview:_titleView];
-    titleArr1 = @[@"发货地",@"收货地",@"默认排序",@"筛选"];
+    titleArr1 = @[@"发货地",@"收货地",@"筛选"];
     CGFloat btW1 = WIDTH/titleArr1.count;
     for (NSInteger index = 0; index<titleArr1.count; index++) {
         FilterButton *sender = [[FilterButton alloc]initWithFrame:CGRectMake(index*btW1, 0, btW1, self.filterView1.height)];
@@ -193,7 +193,7 @@
         [weakSelf.baseTabView.mj_header beginRefreshing];
     };
     
-    titleViewArr1 = @[cityView1,cityView2,mySortView1,_myfilteView];
+    titleViewArr1 = @[cityView1,cityView2,_myfilteView];
     titleViewArr2 = @[cityView3,mySortView2,mySortView1];
     _postUrlDic = @{@(0):URL_Find,@(1):URL_CityParkList,@(2):URL_Classic};
     _allDicKey = @{@"useCarType":@"",@"carLength":@"",@"carModel":@"",@"goodsType":@""};

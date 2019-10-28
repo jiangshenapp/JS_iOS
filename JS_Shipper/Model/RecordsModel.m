@@ -17,4 +17,5 @@
     return [NSString stringWithFormat:@"%@%@",PIC_URL(),_businessLicenceImage];
 }
 
+
 @end

@@ -32,16 +32,24 @@
     }
     self.addressLab.text = model.contactAddress;
     self.isShowImgView.image = model.showFlag?[UIImage imageNamed:@"app_list_arrow_up"]:[UIImage imageNamed:@"app_list_arrow_down"];
-    
-    if (![NSString isEmpty:model.contactLocation]) {
-        self.dustanceLab.hidden = NO;
-        NSDictionary *contactLocDic = [Utils dictionaryWithJsonString:model.contactLocation];
-        NSDictionary *locDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loc"];
-        NSString *distanceStr = [NSString stringWithFormat:@"距离您%@",[Utils distanceBetweenOrderBy:[locDic[@"lat"] floatValue] :[locDic[@"lng"] floatValue] andOther:[contactLocDic[@"latitude"] floatValue] :[contactLocDic[@"longitude"] floatValue]]];
-        self.dustanceLab.text = distanceStr;
-    } else {
-        self.dustanceLab.hidden = YES;
+    NSString *distanceStr ;
+    if ([model.distance floatValue]>1000) {
+        distanceStr = [NSString stringWithFormat:@"距离您%.2fkm",[model.distance floatValue]/1000];
     }
+    else {
+        distanceStr = [NSString stringWithFormat:@"距离您%.2fm",[model.distance floatValue]];
+    }
+        self.dustanceLab.text = distanceStr;
+
+//    if (![NSString isEmpty:model.contactLocation]) {
+//        self.dustanceLab.hidden = NO;
+//        NSDictionary *contactLocDic = [Utils dictionaryWithJsonString:model.contactLocation];
+//        NSDictionary *locDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loc"];
+//        NSString *distanceStr = [NSString stringWithFormat:@"距离您%@",[Utils distanceBetweenOrderBy:[locDic[@"lat"] floatValue] :[locDic[@"lng"] floatValue] andOther:[contactLocDic[@"latitude"] floatValue] :[contactLocDic[@"longitude"] floatValue]]];
+//        self.dustanceLab.text = distanceStr;
+//    } else {
+//        self.dustanceLab.hidden = YES;
+//    }
 }
 
 #pragma mark - 导航
