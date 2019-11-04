@@ -14,7 +14,7 @@
 
 /******************************keys****************************/
 
-#define kAPPScheme  @"com.js.shipper"
+#define kAPPScheme  @"com.jiangshen.shipper"
 
 // 微信key
 #define kWechatKey @"wxc681f388f78e07c9"

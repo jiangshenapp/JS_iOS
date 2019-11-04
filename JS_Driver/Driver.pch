@@ -12,7 +12,7 @@
 #import "Public.h"
 #import "DriverConfig.h"
 
-#define kAPPScheme  @"com.js.transporter"
+#define kAPPScheme  @"com.jiangshen.driver"
 // 微信key
 #define kWechatKey @"wxbba5c5b208ed8f31"
 #define MapKey @"lgrnXXszi8tp8KLsjo3LGjnO9USnydId"
