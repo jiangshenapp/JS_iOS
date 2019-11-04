@@ -22,15 +22,7 @@
 // 友盟key
 #define kUMKey     @"5c710878b465f5fa50000071"
 
-// 网络请求key
-#define kSignKey   @"ghOwfR7Wz44cbKU93KVSxwYXPGloNu"
-#define kNonceStr  [SignKeyUtil getNonceString]
-
-#define MapKey @"lgrnXXszi8tp8KLsjo3LGjnO9USnydId"
-
-static NSString *kAuthScope = @"snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact";
-static NSString *kAuthOpenID = @"0c806938e2413ce73eef92cc3";
-static NSString *kAuthState = @"xxx";
-
+// 百度地图key
+#define MapKey @"CZYZsdBBIY7G1Qwjo8jfKVGF8UO8Glrh"
 
 #endif /* JS_pch */

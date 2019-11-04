@@ -142,7 +142,7 @@
 //    vc.wxAuthModel = wxAuthModel;
 //    [self.navigationController pushViewController:vc animated:YES];
     
-    [WXApiRequestHandler sendAuthRequestScope: kAuthScope
+    [WXApiRequestHandler sendAuthRequestScope:kAuthScope
                                         State:kAuthState
                                        OpenID:@""
                              InViewController:self];

@@ -19,16 +19,19 @@
 #import "EMNotificationHelper.h"
 #import "WXApiManager.h"
 
-
 @interface AppDelegate ()< WXApiDelegate,UNUserNotificationCenterDelegate>
 @property (nonatomic, strong) BMKMapManager *mapManager; //主引擎类
-
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSDictionary *locDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loc"];
+    if (locDic.allKeys.count == 0) {
+        NSDictionary *locDic = @{@"lat":@(0),@"lng":@(0)};
+        [[NSUserDefaults standardUserDefaults] setObject:locDic forKey:@"loc"];
+    }
     
     //监测网络
     [[NetworkUtil sharedInstance] listening];

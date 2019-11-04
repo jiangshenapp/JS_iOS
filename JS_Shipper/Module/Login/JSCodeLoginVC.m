@@ -133,7 +133,7 @@
 
 /* 微信登录 */
 - (IBAction)wxLoginAction:(id)sender {
-    [WXApiRequestHandler sendAuthRequestScope: kAuthScope
+    [WXApiRequestHandler sendAuthRequestScope:kAuthScope
                                         State:kAuthState
                                        OpenID:@""
                              InViewController:self];

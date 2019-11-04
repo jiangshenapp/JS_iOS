@@ -93,7 +93,7 @@
     CLLocation *currLocation = [locations lastObject];
     _currentLoc = currLocation.coordinate;
     NSDictionary *locDic = @{@"lat":@(_currentLoc.latitude),@"lng":@(_currentLoc.longitude)};
-    [[NSUserDefaults standardUserDefaults] setObject:locDic forKey:@"loc"];;
+    [[NSUserDefaults standardUserDefaults] setObject:locDic forKey:@"loc"];
     [self.baseTabView reloadData];
     NSLog(@"经度=%f 纬度=%f 高度=%f", currLocation.coordinate.latitude, currLocation.coordinate.longitude, currLocation.altitude);
 }
@@ -108,7 +108,7 @@
     _areaCode3 = @"";
     _dataSource = [NSMutableArray array];
     _titleBtnArr = [NSMutableArray array];
-    NSDictionary *locDic = [[NSUserDefaults standardUserDefaults]objectForKey:@"loc"];
+    NSDictionary *locDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loc"];
     _currentLoc = CLLocationCoordinate2DMake([locDic[@"lat"] floatValue], [locDic[@"lng"] floatValue]);
     _titleView.top = 7+kStatusBarH;
     _titleView.centerX = WIDTH/2.0;

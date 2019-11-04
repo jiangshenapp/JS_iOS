@@ -15,8 +15,7 @@
 #define kAPPScheme  @"com.js.transporter"
 // 微信key
 #define kWechatKey @"wxbba5c5b208ed8f31"
-#define MapKey @"CZYZsdBBIY7G1Qwjo8jfKVGF8UO8Glrh"
-
+#define MapKey @"lgrnXXszi8tp8KLsjo3LGjnO9USnydId"
 
 #define kPaySuccNotification  @"kPaySuccNotification"
 #define kPayFailNotification  @"kPayFailNotification"
@@ -25,13 +24,6 @@
 #define kAddCarSuccNotification  @"kAddCarSuccNotification"
 #define kDeleteCarSuccNotification  @"kDeleteCarSuccNotification"
 
-static NSString *kAuthScope = @"snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact";
-static NSString *kAuthOpenID = @"0c806938e2413ce73eef92cc3";
-static NSString *kAuthState = @"xxx";
-
 #define kCarStateColorDic @{@(0):RGBValue(0xECA73F),@(1):RGBValue(0x4A90E2),@(2):RGBValue(0xD0021B),@(3):RGBValue(0xECA73F)}
-
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #endif /* Driver_pch */

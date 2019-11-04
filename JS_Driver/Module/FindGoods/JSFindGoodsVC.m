@@ -66,9 +66,9 @@
     _sort = @"2";
     _allDicKey = @{@"useCarType":@"",@"carLength":@"",@"carModel":@"",@"goodsType":@""};
     _dataSource = [NSMutableArray array];
-    NSDictionary *locDic = [[NSUserDefaults standardUserDefaults]objectForKey:@"loc"];
+    NSDictionary *locDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loc"];
     _currentLoc = CLLocationCoordinate2DMake([locDic[@"lat"] floatValue], [locDic[@"lng"] floatValue]);
-   NSArray *titleArr1 = @[@"发货地",@"收货地",@"默认排序",@"筛选"];
+    NSArray *titleArr1 = @[@"发货地",@"收货地",@"默认排序",@"筛选"];
     titleBtnArr = [NSMutableArray array];
     CGFloat btW = WIDTH/4.0;
     for (NSInteger index = 0; index<4; index++) {
@@ -345,7 +345,7 @@
     CLLocation *currLocation = [locations lastObject];
     _currentLoc = currLocation.coordinate;
     NSDictionary *locDic = @{@"lat":@(_currentLoc.latitude),@"lng":@(_currentLoc.longitude)};
-    [[NSUserDefaults standardUserDefaults]setObject:locDic forKey:@"loc"];;
+    [[NSUserDefaults standardUserDefaults] setObject:locDic forKey:@"loc"];
     [self.baseTabView reloadData];
 }
 
