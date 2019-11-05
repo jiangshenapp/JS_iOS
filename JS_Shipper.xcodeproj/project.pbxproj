@@ -485,7 +485,6 @@
 		205A90B223175F72004C756E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F9B229BD18200A3D847 /* libc++.tbd */; };
 		205A90B423175F72004C756E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F91229BD16E00A3D847 /* libcrypto.a */; };
 		205A90B523175F72004C756E /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; };
-		205A90B823175F72004C756E /* libPods-JS_Shipper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F289B1DBC4F7E18335BF54E1 /* libPods-JS_Shipper.a */; };
 		205A90B923175F72004C756E /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; };
 		205A90BA23175F72004C756E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203D7F92229BD16E00A3D847 /* libssl.a */; };
 		205A90BC23175F72004C756E /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118ED222DEEA7500A195D1 /* libopencore-amrwb.a */; };
@@ -849,6 +848,7 @@
 		20FB038D231D20710015787F /* JSTopicDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB0383231CF5C90015787F /* JSTopicDetailVC.m */; };
 		20FB0390231E09220015787F /* JSSendCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB038F231E09220015787F /* JSSendCommentVC.m */; };
 		20FB0391231E09220015787F /* JSSendCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FB038F231E09220015787F /* JSSendCommentVC.m */; };
+		7075037BA50C70A296820232 /* libPods-JS_Shipper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F289B1DBC4F7E18335BF54E1 /* libPods-JS_Shipper.a */; };
 		A00A227822A5FA57002E2E0C /* JSOrderDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00A227722A5FA57002E2E0C /* JSOrderDetailsVC.m */; };
 		A010A0FF2322A018006E6C39 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A010A0FD2322A017006E6C39 /* CZCommentView.m */; };
 		A010A1002322A018006E6C39 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A010A0FD2322A017006E6C39 /* CZCommentView.m */; };
@@ -935,6 +935,7 @@
 		A0E9270522852C9C00D07C58 /* AEFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E9270422852C9C00D07C58 /* AEFilePath.m */; };
 		A0F9CC7722AF366600161945 /* AccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F9CC7522AF366600161945 /* AccountInfo.m */; };
 		C2906EBDB1A940D92FBD8960 /* libPods-JS_Shipper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F289B1DBC4F7E18335BF54E1 /* libPods-JS_Shipper.a */; };
+		EFB4A335F4B22CD8AC9DF83B /* libPods-JS_Driver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 819EE0F85646C6548E25C0AB /* libPods-JS_Driver.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1387,7 +1388,7 @@
 		204E5298227068E600DE65A8 /* JSFeedBackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSFeedBackVC.m; sourceTree = "<group>"; };
 		2055C10F225C3B4D000E13C3 /* JSSystemMessageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSystemMessageVC.h; sourceTree = "<group>"; };
 		2055C110225C3B4D000E13C3 /* JSSystemMessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSystemMessageVC.m; sourceTree = "<group>"; };
-		205A918C23175F72004C756E /* JS_Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JS_Driver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		205A918C23175F72004C756E /* 匠神司机.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "匠神司机.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		205A91902317602B004C756E /* Driver.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Driver.xcassets; sourceTree = "<group>"; };
 		205A9195231763BD004C756E /* driver.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = driver.plist; sourceTree = "<group>"; };
 		205F20342276A254000A8967 /* JSOrderDetailMapVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSOrderDetailMapVC.h; sourceTree = "<group>"; };
@@ -1491,7 +1492,7 @@
 		20A8C22522DEB35F008E10EB /* CustomEaseUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomEaseUtils.m; sourceTree = "<group>"; };
 		20AF58582328E1A300B6FAF9 /* ZYLPreViewImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLPreViewImageTool.m; sourceTree = "<group>"; };
 		20AF585B2328E1AD00B6FAF9 /* ZYLPreViewImageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYLPreViewImageTool.h; sourceTree = "<group>"; };
-		20BD73212248BDC20020EA5D /* JS_Shipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JS_Shipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20BD73212248BDC20020EA5D /* 匠神货主.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "匠神货主.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BD73242248BDC20020EA5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20BD73252248BDC20020EA5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		20BD732D2248BDC30020EA5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1633,9 +1634,9 @@
 		20FB0388231D00090015787F /* YYStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYStarView.h; sourceTree = "<group>"; };
 		20FB038E231E09220015787F /* JSSendCommentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSendCommentVC.h; sourceTree = "<group>"; };
 		20FB038F231E09220015787F /* JSSendCommentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSendCommentVC.m; sourceTree = "<group>"; };
-		3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.release.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.release.xcconfig"; sourceTree = "<group>"; };
-		485FFBE123B387C4A4ABBCD1 /* Pods-JS_Shipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.debug.xcconfig"; sourceTree = "<group>"; };
-		9B67392921C6C16FAB28EC6A /* Pods-JS_Shipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.debug.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.debug.xcconfig"; sourceTree = "<group>"; };
+		485FFBE123B387C4A4ABBCD1 /* Pods-JS_Shipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.debug.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.debug.xcconfig"; sourceTree = "<group>"; };
+		5A4AF58C15A2D879177FB4A0 /* Pods-JS_Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Driver.release.xcconfig"; path = "Target Support Files/Pods-JS_Driver/Pods-JS_Driver.release.xcconfig"; sourceTree = "<group>"; };
+		819EE0F85646C6548E25C0AB /* libPods-JS_Driver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JS_Driver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00A227622A5FA57002E2E0C /* JSOrderDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSOrderDetailsVC.h; sourceTree = "<group>"; };
 		A00A227722A5FA57002E2E0C /* JSOrderDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSOrderDetailsVC.m; sourceTree = "<group>"; };
 		A010A0FD2322A017006E6C39 /* CZCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZCommentView.m; sourceTree = "<group>"; };
@@ -1754,8 +1755,9 @@
 		A0E9270422852C9C00D07C58 /* AEFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFilePath.m; sourceTree = "<group>"; };
 		A0F9CC7522AF366600161945 /* AccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfo.m; sourceTree = "<group>"; };
 		A0F9CC7622AF366600161945 /* AccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfo.h; sourceTree = "<group>"; };
+		ECBF399024D182C315C8D35E /* Pods-JS_Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Driver.debug.xcconfig"; path = "Target Support Files/Pods-JS_Driver/Pods-JS_Driver.debug.xcconfig"; sourceTree = "<group>"; };
 		F289B1DBC4F7E18335BF54E1 /* libPods-JS_Shipper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JS_Shipper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA9A20BD52D80F462075489F /* Pods-JS_Shipper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.release.xcconfig"; path = "Pods/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.release.xcconfig"; sourceTree = "<group>"; };
+		FA9A20BD52D80F462075489F /* Pods-JS_Shipper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JS_Shipper.release.xcconfig"; path = "Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1768,7 +1770,6 @@
 				205A90B423175F72004C756E /* libcrypto.a in Frameworks */,
 				205A90B523175F72004C756E /* HyphenateLite.framework in Frameworks */,
 				20C4107823389A9600D068DE /* libWeChatSDK.a in Frameworks */,
-				205A90B823175F72004C756E /* libPods-JS_Shipper.a in Frameworks */,
 				205A90B923175F72004C756E /* HyphenateLite.framework in Frameworks */,
 				2014E2CE2334A1BE00B722CF /* BMKLocationKit.framework in Frameworks */,
 				205A90BA23175F72004C756E /* libssl.a in Frameworks */,
@@ -1776,6 +1777,7 @@
 				205A90BD23175F72004C756E /* libopencore-amrnb.a in Frameworks */,
 				20979DFD232F8C120019FE4C /* BaiduMapAPI_Base.framework in Frameworks */,
 				205A90BE23175F72004C756E /* BaiduMapAPI_Search.framework in Frameworks */,
+				EFB4A335F4B22CD8AC9DF83B /* libPods-JS_Driver.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1796,6 +1798,7 @@
 				20118F6022DEEA7600A195D1 /* libopencore-amrwb.a in Frameworks */,
 				20118F6122DEEA7600A195D1 /* libopencore-amrnb.a in Frameworks */,
 				203D7FA2229BDC6100A3D847 /* BaiduMapAPI_Search.framework in Frameworks */,
+				7075037BA50C70A296820232 /* libPods-JS_Shipper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1805,10 +1808,10 @@
 		1BB362B7C95F3C409585843B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9B67392921C6C16FAB28EC6A /* Pods-JS_Shipper.debug.xcconfig */,
-				3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */,
 				485FFBE123B387C4A4ABBCD1 /* Pods-JS_Shipper.debug.xcconfig */,
 				FA9A20BD52D80F462075489F /* Pods-JS_Shipper.release.xcconfig */,
+				ECBF399024D182C315C8D35E /* Pods-JS_Driver.debug.xcconfig */,
+				5A4AF58C15A2D879177FB4A0 /* Pods-JS_Driver.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2860,8 +2863,8 @@
 		20BD73222248BDC20020EA5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20BD73212248BDC20020EA5D /* JS_Shipper.app */,
-				205A918C23175F72004C756E /* JS_Driver.app */,
+				20BD73212248BDC20020EA5D /* 匠神货主.app */,
+				205A918C23175F72004C756E /* 匠神司机.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3540,6 +3543,7 @@
 			children = (
 				203D7F9B229BD18200A3D847 /* libc++.tbd */,
 				F289B1DBC4F7E18335BF54E1 /* libPods-JS_Shipper.a */,
+				819EE0F85646C6548E25C0AB /* libPods-JS_Driver.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3551,12 +3555,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 205A918923175F72004C756E /* Build configuration list for PBXNativeTarget "JS_Driver" */;
 			buildPhases = (
-				205A8FE523175F72004C756E /* [CP] Check Pods Manifest.lock */,
+				83A8BBDECE7071B3D1415776 /* [CP] Check Pods Manifest.lock */,
 				205A8FE623175F72004C756E /* Sources */,
 				205A90B123175F72004C756E /* Frameworks */,
 				205A90BF23175F72004C756E /* Resources */,
-				205A918623175F72004C756E /* [CP] Copy Pods Resources */,
 				205A918723175F72004C756E /* Embed Frameworks */,
+				98F4BA165254E1CD1E65A367 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3564,7 +3568,7 @@
 			);
 			name = JS_Driver;
 			productName = JS_Shipper;
-			productReference = 205A918C23175F72004C756E /* JS_Driver.app */;
+			productReference = 205A918C23175F72004C756E /* 匠神司机.app */;
 			productType = "com.apple.product-type.application";
 		};
 		20BD73202248BDC20020EA5D /* JS_Shipper */ = {
@@ -3584,7 +3588,7 @@
 			);
 			name = JS_Shipper;
 			productName = JS_Shipper;
-			productReference = 20BD73212248BDC20020EA5D /* JS_Shipper.app */;
+			productReference = 20BD73212248BDC20020EA5D /* 匠神货主.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -4065,16 +4069,20 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		205A8FE523175F72004C756E /* [CP] Check Pods Manifest.lock */ = {
+		83A8BBDECE7071B3D1415776 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -4089,28 +4097,39 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JS_Shipper-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-JS_Driver-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		205A918623175F72004C756E /* [CP] Copy Pods Resources */ = {
+		98F4BA165254E1CD1E65A367 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JS_Driver/Pods-JS_Driver-resources.sh",
+				"${PODS_ROOT}/AlipaySDK-iOS/AlipaySDK.bundle",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JS_Shipper/Pods-JS_Shipper-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JS_Driver/Pods-JS_Driver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AF8217D20F5A62D8A7074805 /* [CP] Check Pods Manifest.lock */ = {
@@ -4719,7 +4738,7 @@
 /* Begin XCBuildConfiguration section */
 		205A918A23175F72004C756E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B67392921C6C16FAB28EC6A /* Pods-JS_Shipper.debug.xcconfig */;
+			baseConfigurationReference = ECBF399024D182C315C8D35E /* Pods-JS_Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -4751,7 +4770,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.driver;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "匠神司机";
 				PROVISIONING_PROFILE_SPECIFIER = DriverDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4759,7 +4778,7 @@
 		};
 		205A918B23175F72004C756E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */;
+			baseConfigurationReference = 5A4AF58C15A2D879177FB4A0 /* Pods-JS_Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -4791,7 +4810,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.driver;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "匠神司机";
 				PROVISIONING_PROFILE_SPECIFIER = DriverDis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4913,7 +4932,7 @@
 		};
 		20BD73382248BDC30020EA5D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B67392921C6C16FAB28EC6A /* Pods-JS_Shipper.debug.xcconfig */;
+			baseConfigurationReference = 485FFBE123B387C4A4ABBCD1 /* Pods-JS_Shipper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -4945,7 +4964,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.shipper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "匠神货主";
 				PROVISIONING_PROFILE_SPECIFIER = ShipperDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4953,7 +4972,7 @@
 		};
 		20BD73392248BDC30020EA5D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F4AE2CD97BD2F091F4F87FD /* Pods-JS_Shipper.release.xcconfig */;
+			baseConfigurationReference = FA9A20BD52D80F462075489F /* Pods-JS_Shipper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -4985,7 +5004,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.shipper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "匠神货主";
 				PROVISIONING_PROFILE_SPECIFIER = ShipperDis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -15,7 +15,10 @@
 #define kAPPScheme  @"com.jiangshen.driver"
 // 微信key
 #define kWechatKey @"wxbba5c5b208ed8f31"
-#define MapKey @"lgrnXXszi8tp8KLsjo3LGjnO9USnydId"
+// 百度地图key
+#define kMapKey @"lgrnXXszi8tp8KLsjo3LGjnO9USnydId"
+// Bugly
+#define KBuglyAppId     @"07782d6cc5"
 
 #define kPaySuccNotification  @"kPaySuccNotification"
 #define kPayFailNotification  @"kPayFailNotification"

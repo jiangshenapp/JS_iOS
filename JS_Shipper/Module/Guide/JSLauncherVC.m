@@ -109,7 +109,7 @@
     [Utils showToast:@"广告点击"];
     
     BaseWebVC *vc = [[BaseWebVC alloc] initWithTitle:self.bannerModel.title withUrl:self.bannerModel.url];
-    vc.backAction = ^{
+    vc.backBlock = ^{
         if (self.doneBlock) {
             self.doneBlock();
         }

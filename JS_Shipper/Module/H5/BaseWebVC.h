@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSString *webTitle;
 
 /** 返回按钮回调 */
-@property (nonatomic, copy) dispatch_block_t backAction;
+@property (nonatomic, copy) dispatch_block_t backBlock;
 
 /** 传入控制器、url、标题*/
 + (void)showWithVC:(UIViewController *)vc withUrlStr:(NSString *)urlStr withTitle:(NSString *)title;

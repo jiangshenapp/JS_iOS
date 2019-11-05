@@ -18,8 +18,9 @@
 #import "CustomEaseUtils.h"
 #import "EMNotificationHelper.h"
 #import "WXApiManager.h"
+#import <Bugly/Bugly.h>
 
-@interface AppDelegate ()< WXApiDelegate,UNUserNotificationCenterDelegate>
+@interface AppDelegate ()< WXApiDelegate,BuglyDelegate,UNUserNotificationCenterDelegate>
 @property (nonatomic, strong) BMKMapManager *mapManager; //主引擎类
 @end
 
@@ -32,6 +33,9 @@
         NSDictionary *locDic = @{@"lat":@(0),@"lng":@(0)};
         [[NSUserDefaults standardUserDefaults] setObject:locDic forKey:@"loc"];
     }
+    
+    //Bugly
+    [self initBugly];
     
     //监测网络
     [[NetworkUtil sharedInstance] listening];
@@ -62,6 +66,33 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)initBugly {
+    BuglyConfig *config = [[BuglyConfig alloc] init];
+    config.channel = @"App Store";
+    config.blockMonitorEnable = YES; // 卡顿监控开关，默认关闭
+    config.blockMonitorTimeout = 5;
+    config.unexpectedTerminatingDetectionEnable = YES; // 非正常退出事件记录开关，默认关闭
+    config.delegate = self;
+    
+#ifdef DEBUG
+    config.debugMode = YES; // debug 模式下，开启调试模式
+    config.reportLogLevel = BuglyLogLevelVerbose; // 设置自定义日志上报的级别，默认不上报自定义日志
+#else
+    config.debugMode = NO; // release 模式下，关闭调试模式
+    config.reportLogLevel = BuglyLogLevelWarn;
+#endif
+    
+    [Bugly startWithAppId:KBuglyAppId config:config];
+}
+
+#pragma mark - BuglyDelegate
+
+- (NSString * BLY_NULLABLE)attachmentForException:(NSException * BLY_NULLABLE)exception {
+    NSDictionary *dictionary = @{@"Name":exception.name,
+                                 @"Reason":exception.reason};
+    return [NSString stringWithFormat:@"Exception:%@",dictionary];
 }
 
 - (void)processKeyBoard {
@@ -184,9 +215,9 @@
 }
 
 - (void)initMapKey {
-    NSLog(@"%@",MapKey);
+    NSLog(@"%@",kMapKey);
     // 初始化定位SDK
-//    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:MapKey authDelegate:self];
+//    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:kMapKey authDelegate:self];
     //要使用百度地图，请先启动BMKMapManager
     _mapManager = [[BMKMapManager alloc] init];
     
@@ -202,7 +233,7 @@
     }
     
     //启动引擎并设置AK并设置delegate
-    BOOL result = [_mapManager start:MapKey generalDelegate:self];
+    BOOL result = [_mapManager start:kMapKey generalDelegate:self];
     if (!result) {
         NSLog(@"启动引擎失败");
     }

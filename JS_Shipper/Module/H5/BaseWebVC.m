@@ -62,6 +62,7 @@
     
     self.title = _webTitle;
     
+    [self initWebView];
     [self.view addSubview:self.progressView];
     [self.view insertSubview:self.webView belowSubview:self.progressView];
     
@@ -133,40 +134,38 @@
 }
 
 // WebView
-- (WKWebView *)webView {
-    if (!_webView) {
-        
-        //配置环境
-        WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
-        configuration.allowsInlineMediaPlayback = true;
-        _userContentController =[[WKUserContentController alloc]init];
-        configuration.userContentController = _userContentController;
-        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarSafeH) configuration:configuration];
-        _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        _webView.backgroundColor = [UIColor whiteColor];
-        _webView.navigationDelegate = self;
-        _webView.UIDelegate = self;
-        _webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
-        if (@available(iOS 11.0, *)) {
-            self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }
-        
-        //KVO 进度及title、滑动距离
-        [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-        [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
-        [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-        
-        //注册方法
-        WKDelegateController *delegateController = [[WKDelegateController alloc]init];
-        delegateController.delegate = self;
-        [_userContentController addScriptMessageHandler:delegateController name:@"return"]; //返回
-        [_userContentController addScriptMessageHandler:delegateController name:@"login"]; //登录
-        [_userContentController addScriptMessageHandler:delegateController name:@"refresh"]; //刷新
-        [_userContentController addScriptMessageHandler:delegateController name:@"open"]; //打开新页面
-        [_userContentController addScriptMessageHandler:delegateController name:@"close"]; //关闭当前页面
-        [_userContentController addScriptMessageHandler:delegateController name:@"tapBack"]; //返回弹窗提示
+- (void)initWebView {
+    //配置环境
+    WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
+    configuration.allowsInlineMediaPlayback = true;
+    _userContentController =[[WKUserContentController alloc]init];
+    configuration.userContentController = _userContentController;
+    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarSafeH) configuration:configuration];
+    _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    _webView.backgroundColor = [UIColor whiteColor];
+    _webView.navigationDelegate = self;
+    _webView.UIDelegate = self;
+    _webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+    if (@available(iOS 11.0, *)) {
+        self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
-    return _webView;
+    
+    //KVO 进度及title、滑动距离
+    [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
+    [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+    
+    //注册方法
+    WKDelegateController *delegateController = [[WKDelegateController alloc]init];
+    delegateController.delegate = self;
+    [_userContentController addScriptMessageHandler:delegateController name:@"return"]; //返回
+    [_userContentController addScriptMessageHandler:delegateController name:@"login"]; //登录
+    [_userContentController addScriptMessageHandler:delegateController name:@"refresh"]; //刷新
+    [_userContentController addScriptMessageHandler:delegateController name:@"open"]; //打开新页面
+    [_userContentController addScriptMessageHandler:delegateController name:@"close"]; //关闭当前页面
+    [_userContentController addScriptMessageHandler:delegateController name:@"tapBack"]; //返回弹窗提示
+    
+    [self.view addSubview:_webView];
 }
 
 #pragma mark - 返回事件
@@ -188,6 +187,10 @@
         if (webCount<1 || ![self.webView canGoBack]) {
             if ([self.webTitle isEqualToString:@"个人中心"]) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:kUserInfoChangeNotification object:nil];
+            }
+            if (self.backBlock) {
+                self.backBlock();
+                return;
             }
             [self.navigationController popViewControllerAnimated:YES];
         } else {

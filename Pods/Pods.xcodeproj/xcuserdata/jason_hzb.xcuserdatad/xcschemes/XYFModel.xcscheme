@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2F71A93F9C78127A916DB8461BE99376"
+               BlueprintIdentifier = "7F7630F02BA7F4BADB8F9403C066CBA5"
                BuildableName = "libXYFModel.a"
                BlueprintName = "XYFModel"
                ReferencedContainer = "container:Pods.xcodeproj">
