@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "20BD73202248BDC20020EA5D"
-               BuildableName = "JS_Shipper.app"
+               BuildableName = "&#x5320;&#x795e;&#x8d27;&#x4e3b;.app"
                BlueprintName = "JS_Shipper"
                ReferencedContainer = "container:JS_Shipper.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20BD73202248BDC20020EA5D"
-            BuildableName = "JS_Shipper.app"
+            BuildableName = "&#x5320;&#x795e;&#x8d27;&#x4e3b;.app"
             BlueprintName = "JS_Shipper"
             ReferencedContainer = "container:JS_Shipper.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20BD73202248BDC20020EA5D"
-            BuildableName = "JS_Shipper.app"
+            BuildableName = "&#x5320;&#x795e;&#x8d27;&#x4e3b;.app"
             BlueprintName = "JS_Shipper"
             ReferencedContainer = "container:JS_Shipper.xcodeproj">
          </BuildableReference>
@@ -71,7 +71,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20BD73202248BDC20020EA5D"
-            BuildableName = "JS_Shipper.app"
+            BuildableName = "&#x5320;&#x795e;&#x8d27;&#x4e3b;.app"
             BlueprintName = "JS_Shipper"
             ReferencedContainer = "container:JS_Shipper.xcodeproj">
          </BuildableReference>
