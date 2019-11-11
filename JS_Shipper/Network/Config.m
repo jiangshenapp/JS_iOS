@@ -13,27 +13,27 @@
 
 NSString *h5Url(void) {
     if (KOnline || [Utils getServer] == 1) {
-        return @"http://www.jiangshen56.com/"; //正式地址
+        return @"https://www.jiangshen56.com/"; //正式地址
     } else {
-        return @"http://www.jiangshen56.com/"; //测试地址
+        return @"https://www.jiangshen56.com/"; //测试地址
     }
 }
 
 NSString *ROOT_URL(void) {
     
     if (KOnline || [Utils getServer] == 1) {
-        return @"http://gateway.jiangshen56.com/logistic-biz"; //正式地址
+        return @"https://gateway.jiangshen56.com/logistic-biz"; //正式地址
     } else {
-        return @"http://gateway.jiangshen56.com/logistic-biz"; //测试地址
+        return @"https://gateway.jiangshen56.com/logistic-biz"; //测试地址
     }
 }
 
 NSString *PIC_URL(void) {
     
     if (KOnline || [Utils getServer] == 1) {
-        return @"http://gateway.jiangshen56.com/admin/file/download?fileName="; //正式地址
+        return @"https://gateway.jiangshen56.com/admin/file/download?fileName="; //正式地址
     } else {
-        return @"http://gateway.jiangshen56.com/admin/file/download?fileName="; //测试地址
+        return @"https://gateway.jiangshen56.com/admin/file/download?fileName="; //测试地址
     }
 }
 

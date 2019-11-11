@@ -47,7 +47,7 @@
     }
 }
 
--(void)addTabMJ_FootView {
+- (void)addTabMJ_FootView {
     __weak typeof(self) weakSelf = self;
     self.baseTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf getData];
@@ -61,10 +61,10 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [JHHJView hideLoading]; //结束加载
     //显示系统导航条
     [self.navigationController setNavigationBarHidden:YES];
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
