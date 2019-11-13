@@ -18,8 +18,6 @@
 
 // 微信key
 #define kWechatKey @"wxc681f388f78e07c9"
-// 友盟key
-#define kUMKey     @"5c710878b465f5fa50000071"
 // Bugly
 #define KBuglyAppId     @"e61b1fcb98"
 // 百度地图key
