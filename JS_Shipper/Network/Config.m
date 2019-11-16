@@ -24,7 +24,7 @@ NSString *ROOT_URL(void) {
     if (KOnline || [Utils getServer] == 1) {
         return @"https://gateway.jiangshen56.com/logistic-biz"; //正式地址
     } else {
-        return @"https://testway.jiangshen56.com/logistic-biz"; //测试地址
+        return @"http://testway.jiangshen56.com/logistic-biz"; //测试地址
     }
 }
 
@@ -33,7 +33,7 @@ NSString *PIC_URL(void) {
     if (KOnline || [Utils getServer] == 1) {
         return @"https://gateway.jiangshen56.com/admin/file/download?fileName="; //正式地址
     } else {
-        return @"https://testway.jiangshen56.com/admin/file/download?fileName="; //测试地址
+        return @"http://testway.jiangshen56.com/admin/file/download?fileName="; //测试地址
     }
 }
 
