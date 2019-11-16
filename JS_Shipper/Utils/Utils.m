@@ -381,7 +381,7 @@ static Utils *_utils = nil;
         NSString *mediaType = AVMediaTypeVideo;
         AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
         if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
-            [self permissionSetup:@"“匠神马帮”想访问您的相机"];
+            [self permissionSetup:@"“匠神”想访问您的相机"];
             return NO;
         } else {
             return YES;
@@ -394,7 +394,7 @@ static Utils *_utils = nil;
 
 + (BOOL)isPhotoPermissionOn {
     if (![[TZImageManager manager] authorizationStatusAuthorized]) {
-        [self permissionSetup:@"“匠神马帮”想访问您的相册"];
+        [self permissionSetup:@"“匠神”想访问您的相册"];
         return NO;
     } else {
         return YES;
@@ -412,7 +412,7 @@ static Utils *_utils = nil;
                 if (error) {
                     NSLog(@"Error：%@",(__bridge NSError *)error);
                 } else if (!granted) {
-                    [self permissionSetup:@"“匠神马帮”想访问您的通讯录"];
+                    [self permissionSetup:@"“匠神”想访问您的通讯录"];
                     block(NO);
                 } else {
                     block(YES);
@@ -427,7 +427,7 @@ static Utils *_utils = nil;
 + (void)checkMicrophoneAuthorization:(void (^)(bool isAuthorized))block {
     [[AVAudioSession sharedInstance]requestRecordPermission:^(BOOL granted) {
         if (!granted){
-            [self permissionSetup:@"“匠神马帮”想访问您的麦克风"];
+            [self permissionSetup:@"“匠神”想访问您的麦克风"];
             block(NO);
         } else {
             block(YES);
