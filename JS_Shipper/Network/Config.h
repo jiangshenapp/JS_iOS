@@ -17,16 +17,15 @@
 NSString *ROOT_URL(void);
 // 图片地址
 NSString *PIC_URL(void);
+// 上传地址
+NSString *UPLOAD_URL(void);
+// 支付地址
+NSString *PAY_URL(void);
 
 #pragma mark - ---------------接口名称---------------
 
-#pragma mark - 上传文件
-
-#define URL_FileUpload @"http://gateway.jiangshen56.com/admin/file/upload" //上传文件
-
 #pragma mark - APP账户接口
 
-#define URL_GetPayRoute @"http://gateway.jiangshen56.com/pigx-pay-biz/pay/getRoute"//获取支付方式
 #define URL_Recharge @"/app/account/recharge"//账户充值
 #define URL_BalanceWithdraw @"/app/account/balanceWithdraw"//提现申请
 #define URL_GetBySubscriber @"/app/account/getBySubscriber"//账户详情

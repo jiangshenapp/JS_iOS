@@ -20,7 +20,6 @@ NSString *h5Url(void) {
 }
 
 NSString *ROOT_URL(void) {
-    
     if (KOnline || [Utils getServer] == 1) {
         return @"https://gateway.jiangshen56.com/logistic-biz"; //正式地址
     } else {
@@ -29,11 +28,26 @@ NSString *ROOT_URL(void) {
 }
 
 NSString *PIC_URL(void) {
-    
     if (KOnline || [Utils getServer] == 1) {
         return @"https://gateway.jiangshen56.com/admin/file/download?fileName="; //正式地址
     } else {
         return @"http://testway.jiangshen56.com/admin/file/download?fileName="; //测试地址
+    }
+}
+
+NSString *UPLOAD_URL(void) {
+    if (KOnline || [Utils getServer] == 1) {
+        return @"https://gateway.jiangshen56.com/admin/file/upload"; //正式地址
+    } else {
+        return @"http://testway.jiangshen56.com/admin/file/upload"; //测试地址
+    }
+}
+
+NSString *PAY_URL(void) {
+    if (KOnline || [Utils getServer] == 1) {
+        return @"https://gateway.jiangshen56.com/pigx-pay-biz/pay/getRoute"; //正式地址
+    } else {
+        return @"http://testway.jiangshen56.com/pigx-pay-biz/pay/getRoute"; //测试地址
     }
 }
 

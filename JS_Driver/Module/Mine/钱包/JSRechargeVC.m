@@ -60,7 +60,7 @@
 - (void)getData {
     // business_id 1、运力端充值 2、货主端充值 3、货主端支付运费
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSString *urlStr = [NSString stringWithFormat:@"%@?business=%d&merchantId=%d",URL_GetPayRoute,1,1];
+    NSString *urlStr = [NSString stringWithFormat:@"%@?business=%d&merchantId=%d",PAY_URL(),1,1];
     [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success) {
             self.listData = [PayRouteModel mj_objectArrayWithKeyValuesArray:responseData];
