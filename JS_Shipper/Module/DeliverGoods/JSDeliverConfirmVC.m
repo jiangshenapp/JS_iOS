@@ -626,6 +626,10 @@
     }
     [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success) {
+            //发货/收货信息清空
+            AddressInfoModel *dataModel = [[AddressInfoModel alloc] init];
+            [NSKeyedArchiver archiveRootObject:dataModel toFile:kSendAddressArchiver];
+            [NSKeyedArchiver archiveRootObject:dataModel toFile:kReceiveAddressArchiver];
             if ([Utils isBlankString:self.subscriberId]) {
                 [Utils showToast:@"下单成功"];
             } else {

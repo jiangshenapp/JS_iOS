@@ -12,6 +12,7 @@
 #import "WXApiManager.h"
 #import "WxAuthModel.h"
 #import "JSBindingPhoneVC.h"
+#import "AddressInfoModel.h"
 
 @interface JSPaswdLoginVC ()<UITextFieldDelegate,WXApiManagerDelegate>
 
@@ -100,6 +101,11 @@
             NSString *appFlag = @"driver"; //司机端
             if ([AppChannel isEqualToString:@"1"]) { //货主端
                 appFlag = @"shipper";
+                AddressInfoModel *dataModel = [[AddressInfoModel alloc] init];
+                dataModel.phone = [UserInfo share].mobile;
+                dataModel.name = [UserInfo share].nickName;
+                dataModel.detailAddress = @"";
+                [NSKeyedArchiver archiveRootObject:dataModel toFile:kSendAddressArchiver];
             }
             NSString *easeMobUser = [NSString stringWithFormat:@"%@%@",appFlag,[UserInfo share].mobile];
             [CustomEaseUtils EaseMobLoginWithUser:easeMobUser completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
