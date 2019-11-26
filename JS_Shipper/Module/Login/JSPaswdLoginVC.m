@@ -101,10 +101,12 @@
             NSString *appFlag = @"driver"; //司机端
             if ([AppChannel isEqualToString:@"1"]) { //货主端
                 appFlag = @"shipper";
-                AddressInfoModel *dataModel = [[AddressInfoModel alloc] init];
+                AddressInfoModel *dataModel = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
+                if (!dataModel) {
+                    dataModel = [[AddressInfoModel alloc] init];
+                }
                 dataModel.phone = [UserInfo share].mobile;
                 dataModel.name = [UserInfo share].nickName;
-                dataModel.detailAddress = @"";
                 [NSKeyedArchiver archiveRootObject:dataModel toFile:kSendAddressArchiver];
             }
             NSString *easeMobUser = [NSString stringWithFormat:@"%@%@",appFlag,[UserInfo share].mobile];

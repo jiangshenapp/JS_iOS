@@ -123,10 +123,12 @@
             //将用户信息解析成model
             UserInfo *userInfo = [UserInfo mj_objectWithKeyValues:(NSDictionary *)responseData];
             
-            AddressInfoModel *dataModel = [[AddressInfoModel alloc] init];
+            AddressInfoModel *dataModel = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
+            if (!dataModel) {
+                dataModel = [[AddressInfoModel alloc] init];
+            }
             dataModel.phone = userInfo.mobile;
             dataModel.name = userInfo.nickName;
-            dataModel.detailAddress = @"";
             [NSKeyedArchiver archiveRootObject:dataModel toFile:kSendAddressArchiver];
             
             [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.avatar] placeholderImage:[UIImage imageNamed:@"personalcenter_driver_icon_head_land"]];

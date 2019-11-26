@@ -208,10 +208,10 @@
     } else {
         _info1 = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
         _info2 = [NSKeyedUnarchiver unarchiveObjectWithFile:kReceiveAddressArchiver];
-        if (_info1) {
+        if (_info1 && ![NSString isEmpty:_info1.address]) {
             [self.startAddressBtn setTitle:_info1.address forState:UIControlStateNormal];
         }
-        if (_info2) {
+        if (_info2 && ![NSString isEmpty:_info2.address]) {
             [self.endAddressBtn setTitle:_info2.address forState:UIControlStateNormal];
         }
         if (_info1&&_info2) {
