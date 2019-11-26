@@ -628,8 +628,10 @@
         if (status==Request_Success) {
             //发货/收货信息清空
             AddressInfoModel *dataModel = [[AddressInfoModel alloc] init];
+            dataModel.phone = [UserInfo share].mobile;
+            dataModel.name = [UserInfo share].nickName;
             [NSKeyedArchiver archiveRootObject:dataModel toFile:kSendAddressArchiver];
-            [NSKeyedArchiver archiveRootObject:dataModel toFile:kReceiveAddressArchiver];
+            [NSKeyedArchiver archiveRootObject:[[AddressInfoModel alloc] init] toFile:kReceiveAddressArchiver];
             if ([Utils isBlankString:self.subscriberId]) {
                 [Utils showToast:@"下单成功"];
             } else {

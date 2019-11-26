@@ -36,6 +36,24 @@
 
 @implementation JSDeliverGoodsVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    _info1 = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
+    _info2 = [NSKeyedUnarchiver unarchiveObjectWithFile:kReceiveAddressArchiver];
+    if (_info1 && ![NSString isEmpty:_info1.address]) {
+        [self.startAddressBtn setTitle:_info1.address forState:UIControlStateNormal];
+    } else {
+        [self.startAddressBtn setTitle:@"点击选择发货地址" forState:UIControlStateNormal];
+    }
+    if (_info2 && ![NSString isEmpty:_info2.address]) {
+        [self.endAddressBtn setTitle:_info2.address forState:UIControlStateNormal];
+    } else {
+        [self.endAddressBtn setTitle:@"点击选择收货地址" forState:UIControlStateNormal];
+    }
+    [self getDistance];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
@@ -70,9 +88,13 @@
     _info2 = [NSKeyedUnarchiver unarchiveObjectWithFile:kReceiveAddressArchiver];
     if (_info1 && ![NSString isEmpty:_info1.address]) {
         [self.startAddressBtn setTitle:_info1.address forState:UIControlStateNormal];
+    } else {
+        [self.startAddressBtn setTitle:@"点击选择发货地址" forState:UIControlStateNormal];
     }
     if (_info2 && ![NSString isEmpty:_info2.address]) {
         [self.endAddressBtn setTitle:_info2.address forState:UIControlStateNormal];
+    } else {
+        [self.endAddressBtn setTitle:@"点击选择收货地址" forState:UIControlStateNormal];
     }
     [self getDistance];
     
