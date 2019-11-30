@@ -43,10 +43,11 @@
     
     self.navBar.hidden = YES;
     
-    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_park",@"personalcenter_icon_customer", nil];
-    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的园区",@"我的客服", nil];
+    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_park",@"personalcenter_icon_customer",@"personalcenter_icon_customer", nil];
+    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的园区",@"认证管理",@"我的客服", nil];
     
-    [self getSysServiceList]; //获取系统服务列表
+    [self createUI];
+//    [self getSysServiceList]; //获取系统服务列表
 }
 
 /** 获取系统服务列表 */
@@ -89,6 +90,10 @@
 
     if ([sender.titleLabel.text isEqualToString:@"我的园区"]) {
         UIViewController *vc = [Utils getViewController:@"Garden" WithVCName:@"JSMyGardenVC"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if ([sender.currentTitle isEqualToString:@"认证管理"]) {
+        UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthenticationVC"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([sender.currentTitle isEqualToString:@"我的客服"]) {
