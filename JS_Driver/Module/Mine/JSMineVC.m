@@ -42,10 +42,11 @@
     
     self.navBar.hidden = YES;
     
-    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_cars",@"personalcenter_icon_driver",@"personalcenter_icon_route",@"personalcenter_icon_service", nil];
-    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的车辆",@"我的司机",@"我的路线",@"我的客服", nil];
+    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_cars",@"personalcenter_icon_driver",@"personalcenter_icon_route",@"my_icon_authentication",@"personalcenter_icon_service", nil];
+    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的车辆",@"我的司机",@"我的路线",@"认证管理",@"我的客服", nil];
     
-    [self getSysServiceList]; //获取系统服务列表
+    [self createUI];
+//    [self getSysServiceList]; //获取系统服务列表
 }
 
 /** 获取系统服务列表 */
@@ -89,8 +90,10 @@
 }
 
 - (void)showAction:(UIButton *)sender {
-    if (![Utils isVerified]) {
-        return;
+    if (![sender.currentTitle isEqualToString:@"认证管理"]) {
+        if (![Utils isVerified]) {
+            return;
+        }
     }
     NSString *vcName = @"";
     if ([sender.currentTitle isEqualToString:@"我的车辆"]) {
@@ -101,6 +104,10 @@
     }
     else if ([sender.currentTitle isEqualToString:@"我的路线"]) {
         vcName = @"JSMyRouteVC";
+    }
+    else if ([sender.currentTitle isEqualToString:@"认证管理"]) {
+        UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthencationHomeVC"];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([sender.currentTitle isEqualToString:@"我的客服"]) {
         [CustomEaseUtils EaseChatConversationID:OnlineCustomerEaseMobKey];

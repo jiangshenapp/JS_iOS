@@ -37,24 +37,27 @@
     //标题数组
     NSArray *titleArr;
     //图片数组
-    NSArray *picArr ;
+    NSArray *picArr;
 
     //storyboard name 数组
-    NSArray *storyArr ;
+    NSArray *storyArr;
     
-      if ([AppChannel isEqualToString:@"1"]) { //货主端
-          controllerArr = @[@"JSGardenVC",@"JSDeliverGoodsVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
-          titleArr = @[@"园区",@"发货",@"消息",@"社区",@"我的"];
-          picArr = @[@"app_menubar_icon_searchcar_black",@"app_menubar_icon_goods_black",@"app_menubar_icon_news_black",@"app_menubar_icon_community_black",@"app_menubar_icon_my_black"];
-          storyArr = @[@"Garden",@"DeliverGoods",@"Message",@"Community",@"Mine"];
-      }
-      else if ([AppChannel isEqualToString:@"2"]) { //司机端
-          controllerArr = @[@"JSFindGoodsVC",@"JSServiceVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
-          titleArr = @[@"找货",@"服务",@"消息",@"社区",@"我的"];
-          picArr = @[@"app_home_icon_cargoods_black",@"app_home_icon_service_black",@"app_menubar_icon_news2_black",@"app_menubar_icon_community2_black",@"app_menubar_icon_me_black"];
-          storyArr = @[@"FindGoods",@"Service",@"Message",@"Community",@"Mine"];
-      }
-   
+    if ([AppChannel isEqualToString:@"1"]) { //货主端
+        controllerArr = @[@"JSGardenVC",@"JSDeliverGoodsVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
+        titleArr = @[@"园区",@"发货",@"消息",@"社区",@"我的"];
+        picArr = @[@"app_menubar_icon_searchcar_black",@"app_menubar_icon_goods_black",@"app_menubar_icon_news_black",@"app_menubar_icon_community_black",@"app_menubar_icon_my_black"];
+        storyArr = @[@"Garden",@"DeliverGoods",@"Message",@"Community",@"Mine"];
+    }
+    else if ([AppChannel isEqualToString:@"2"]) { //司机端
+//          controllerArr = @[@"JSFindGoodsVC",@"JSServiceVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
+//          titleArr = @[@"找货",@"服务",@"消息",@"社区",@"我的"];
+//          picArr = @[@"app_home_icon_cargoods_black",@"app_home_icon_service_black",@"app_menubar_icon_news2_black",@"app_menubar_icon_community2_black",@"app_menubar_icon_me_black"];
+//          storyArr = @[@"FindGoods",@"Service",@"Message",@"Community",@"Mine"];
+        controllerArr = @[@"JSFindGoodsVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
+        titleArr = @[@"找货",@"消息",@"社区",@"我的"];
+        picArr = @[@"app_home_icon_cargoods_black",@"app_menubar_icon_news2_black",@"app_menubar_icon_community2_black",@"app_menubar_icon_me_black"];
+        storyArr = @[@"FindGoods",@"Message",@"Community",@"Mine"];
+    }
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     

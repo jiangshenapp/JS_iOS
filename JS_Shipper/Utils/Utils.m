@@ -220,7 +220,7 @@ static Utils *_utils = nil;
             alert.doneBlock = ^{
                 BaseNC *nc = JSAppDelegate.tabVC.selectedViewController;
                 if (![[nc topViewController] isKindOfClass:[JSAuthencationHomeVC class]]) {
-                    //跳转到登录页面
+                    //跳转到认证页面
                     UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSAuthencationHomeVC"];
                     vc.hidesBottomBarWhenPushed = YES;
                     [[nc topViewController].navigationController pushViewController:vc animated:YES];
