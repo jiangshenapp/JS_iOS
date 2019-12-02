@@ -247,7 +247,20 @@
     [self _registerRemoteNotification];
     
     EMOptions *options = [EMOptions optionsWithAppkey:EaseMobKey];
-    options.apnsCertName = @"";
+    if ([AppChannel isEqualToString:@"1"]) { //货主端
+    #ifdef DEBUG
+        options.apnsCertName = @"shipperDev";
+    #else
+        options.apnsCertName = @"shipperDis";
+    #endif
+    }
+    else if ([AppChannel isEqualToString:@"2"]) { //司机端
+        #ifdef DEBUG
+            options.apnsCertName = @"driverDev";
+        #else
+            options.apnsCertName = @"driverDis";
+        #endif
+    }
     [[EMClient sharedClient] initializeSDKWithOptions:options];
     [CustomEaseUtils shareHelper];
     [EMNotificationHelper shared];
