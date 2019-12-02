@@ -73,6 +73,7 @@
 - (void)setupView {
     _touchType = 0;
     _bannerView.delegate = self;
+    _bannerView.backgroundColor = PageColor;
     _bannerView.currentPageDotColor = AppThemeColor;
     _bannerView.pageDotColor = kWhiteColor;
     
@@ -126,7 +127,12 @@
         for (BannerModel *model in self.bannerArr) {
             [imageArr addObject:model.bannerImage];
         }
-        self.bannerView.imageURLStringsGroup = imageArr;
+        if (imageArr.count==0) {
+            self.bannerViewH.constant = 0;
+        } else {
+            self.bannerViewH.constant = 140;
+            self.bannerView.imageURLStringsGroup = imageArr;
+        }
     }];
 }
 

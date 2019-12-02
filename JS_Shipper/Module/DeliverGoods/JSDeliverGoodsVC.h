@@ -14,12 +14,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSDeliverGoodsVC : BaseVC
+
 @property (weak, nonatomic) IBOutlet UIButton *startAddressBtn;
 @property (weak, nonatomic) IBOutlet UIButton *endAddressBtn;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 @property (weak, nonatomic) IBOutlet UIButton *carLenthBtn;
 @property (weak, nonatomic) IBOutlet UIButton *carModelBtn;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bannerViewH;
 
 - (IBAction)sendGoodsAction:(UIButton *)sender;
 - (IBAction)carLongAction:(UIButton *)sender;

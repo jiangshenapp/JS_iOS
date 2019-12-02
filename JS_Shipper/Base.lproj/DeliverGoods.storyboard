@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,14 +27,14 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTG-MM-b7r" customClass="SDCycleScrollView">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="140" id="bve-VO-HTt"/>
+                                                <constraint firstAttribute="height" id="bve-VO-HTt"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0PP-M9-tff">
-                                            <rect key="frame" x="8" y="150" width="359" height="150"/>
+                                            <rect key="frame" x="8" y="10" width="359" height="150"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76V-Al-q8r">
                                                     <rect key="frame" x="14" y="0.0" width="330" height="50"/>
@@ -84,7 +84,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfX-3e-CdE">
-                                            <rect key="frame" x="8" y="310" width="359" height="89"/>
+                                            <rect key="frame" x="8" y="170" width="359" height="89"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-Zu-Cqw">
                                                     <rect key="frame" x="0.0" y="0.0" width="359" height="44"/>
@@ -155,7 +155,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyF-6o-QuD">
-                                            <rect key="frame" x="8" y="430" width="359" height="44"/>
+                                            <rect key="frame" x="8" y="290" width="359" height="44"/>
                                             <color key="backgroundColor" red="0.92549019610000005" green="0.65490196079999996" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="fTD-NJ-zCJ"/>
@@ -203,6 +203,7 @@
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="aTG-MM-b7r" id="81M-uv-1bq"/>
+                        <outlet property="bannerViewH" destination="bve-VO-HTt" id="utX-Fg-y1u"/>
                         <outlet property="baseTabView" destination="wBn-CY-N6a" id="Tzd-2q-la1"/>
                         <outlet property="carLenthBtn" destination="Io3-Ts-lL4" id="7tY-iP-gwD"/>
                         <outlet property="carModelBtn" destination="q9p-NP-xJ6" id="xn7-a5-hRp"/>
