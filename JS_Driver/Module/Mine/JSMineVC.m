@@ -42,7 +42,7 @@
     
     self.navBar.hidden = YES;
     
-    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_cars",@"personalcenter_icon_driver",@"personalcenter_icon_route",@"my_icon_authentication",@"personalcenter_icon_service", nil];
+    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_cars",@"personalcenter_icon_driver",@"personalcenter_icon_route",@"my_icon_authentication",@"personalcenter_icon_customer", nil];
     self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的车辆",@"我的司机",@"我的路线",@"认证管理",@"我的客服", nil];
     
     [self createUI];
