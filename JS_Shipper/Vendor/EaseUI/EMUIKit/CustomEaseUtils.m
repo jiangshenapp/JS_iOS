@@ -91,7 +91,7 @@ static CustomEaseUtils *helper = nil;
 {
     [[EMClient sharedClient] logout:NO];
     [self showAlertWithMessage:@"你的账号已在其他地方登录"];
-    
+    [Utils logout:2];
     [[NSNotificationCenter defaultCenter] postNotificationName:ACCOUNT_LOGIN_CHANGED object:@NO];
 }
 

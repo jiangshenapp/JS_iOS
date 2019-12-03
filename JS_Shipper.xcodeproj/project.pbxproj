@@ -1612,6 +1612,8 @@
 		20C4108C2338AD1500D068DE /* JSOtherAccountVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSOtherAccountVC.m; sourceTree = "<group>"; };
 		20CDDAFC22C0CB0D005432F3 /* JSSelectGoodsNameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSelectGoodsNameVC.h; sourceTree = "<group>"; };
 		20CDDAFD22C0CB0D005432F3 /* JSSelectGoodsNameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSelectGoodsNameVC.m; sourceTree = "<group>"; };
+		20CEC5A923965715001FB480 /* 匠神司机.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "匠神司机.entitlements"; sourceTree = "<group>"; };
+		20CEC5AA23965737001FB480 /* 匠神货主.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "匠神货主.entitlements"; sourceTree = "<group>"; };
 		20DC7D6422BB68BE003CB4FD /* noDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noDataView.xib; sourceTree = "<group>"; };
 		20E41983231E1587001E89C7 /* JSSendTopicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSendTopicVC.h; sourceTree = "<group>"; };
 		20E41984231E1587001E89C7 /* JSSendTopicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSendTopicVC.m; sourceTree = "<group>"; };
@@ -1645,8 +1647,6 @@
 		A013E8DA232DE2CA00C3050D /* BannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerModel.m; sourceTree = "<group>"; };
 		A016031D2341EF4D00B61AC6 /* ShipperConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipperConfig.h; sourceTree = "<group>"; };
 		A016031E2341EF4D00B61AC6 /* ShipperConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipperConfig.m; sourceTree = "<group>"; };
-		A016032023422B0D00B61AC6 /* JS_Shipper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JS_Shipper.entitlements; sourceTree = "<group>"; };
-		A016032123422B4E00B61AC6 /* JS_Driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JS_Driver.entitlements; sourceTree = "<group>"; };
 		A02221D722C799B9006AD29A /* AEFlowLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFlowLayoutView.m; sourceTree = "<group>"; };
 		A02221D822C799B9006AD29A /* AEFlowLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEFlowLayoutView.h; sourceTree = "<group>"; };
 		A02221DA22C79A09006AD29A /* AEButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEButton.m; sourceTree = "<group>"; };
@@ -2637,7 +2637,7 @@
 		205A918F23175FC1004C756E /* JS_Driver */ = {
 			isa = PBXGroup;
 			children = (
-				A016032123422B4E00B61AC6 /* JS_Driver.entitlements */,
+				20CEC5A923965715001FB480 /* 匠神司机.entitlements */,
 				20815E2623176C2600E24C75 /* FindGoods.storyboard */,
 				20815E3D23176C3F00E24C75 /* Service.storyboard */,
 				20815E4323176C7D00E24C75 /* Mine.storyboard */,
@@ -2872,7 +2872,7 @@
 		20BD73232248BDC20020EA5D /* JS_Shipper */ = {
 			isa = PBXGroup;
 			children = (
-				A016032023422B0D00B61AC6 /* JS_Shipper.entitlements */,
+				20CEC5AA23965737001FB480 /* 匠神货主.entitlements */,
 				20BD73242248BDC20020EA5D /* AppDelegate.h */,
 				20BD73252248BDC20020EA5D /* AppDelegate.m */,
 				20815EA72317735A00E24C75 /* Public.h */,
@@ -4741,6 +4741,7 @@
 			baseConfigurationReference = ECBF399024D182C315C8D35E /* Pods-JS_Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JS_Driver/匠神司机.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KPMLH9CN6N;
@@ -4781,6 +4782,7 @@
 			baseConfigurationReference = 5A4AF58C15A2D879177FB4A0 /* Pods-JS_Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JS_Driver/匠神司机.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KPMLH9CN6N;
@@ -4935,6 +4937,7 @@
 			baseConfigurationReference = 485FFBE123B387C4A4ABBCD1 /* Pods-JS_Shipper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JS_Shipper/匠神货主.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KPMLH9CN6N;
@@ -4975,6 +4978,7 @@
 			baseConfigurationReference = FA9A20BD52D80F462075489F /* Pods-JS_Shipper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JS_Shipper/匠神货主.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KPMLH9CN6N;

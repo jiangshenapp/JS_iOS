@@ -105,13 +105,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_abutus_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Jm7-5y-NXj">
-                                <rect key="frame" x="119" y="78" width="137" height="128"/>
+                                <rect key="frame" x="50.5" y="78" width="274" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jm7-5y-NXj" secondAttribute="height" multiplier="137:128" id="GXF-Gl-inN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-kI-Stb">
-                                <rect key="frame" x="28" y="240" width="319" height="63"/>
+                                <rect key="frame" x="28" y="368" width="319" height="63"/>
                                 <attributedString key="attributedText">
                                     <fragment content="AntV 是蚂蚁金服全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。">
                                         <attributes>
