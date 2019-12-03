@@ -321,6 +321,8 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     [[EMClient sharedClient] applicationDidEnterBackground:application];
+    [UIApplication sharedApplication].applicationIconBadgeNumber
+    = [CustomEaseUtils getUnreadCount];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

@@ -159,4 +159,8 @@
     _msgRedLab.text = [NSString stringWithFormat:@"%@",msgBadge];
 }
 
+//- (void)messagesDidReceive:(NSArray *)aMessages {
+//    
+//}
+
 @end
