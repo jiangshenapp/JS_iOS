@@ -41,12 +41,14 @@
 
     //storyboard name 数组
     NSArray *storyArr;
+    NSInteger redPointIndex;
     
     if ([AppChannel isEqualToString:@"1"]) { //货主端
         controllerArr = @[@"JSGardenVC",@"JSDeliverGoodsVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
         titleArr = @[@"园区",@"发货",@"消息",@"社区",@"我的"];
         picArr = @[@"app_menubar_icon_searchcar_black",@"app_menubar_icon_goods_black",@"app_menubar_icon_news_black",@"app_menubar_icon_community_black",@"app_menubar_icon_my_black"];
         storyArr = @[@"Garden",@"DeliverGoods",@"Message",@"Community",@"Mine"];
+        redPointIndex = 2;
     }
     else if ([AppChannel isEqualToString:@"2"]) { //司机端
 //          controllerArr = @[@"JSFindGoodsVC",@"JSServiceVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
@@ -57,6 +59,7 @@
         titleArr = @[@"找货",@"消息",@"社区",@"我的"];
         picArr = @[@"app_home_icon_cargoods_black",@"app_menubar_icon_news2_black",@"app_menubar_icon_community2_black",@"app_menubar_icon_me_black"];
         storyArr = @[@"FindGoods",@"Message",@"Community",@"Mine"];
+        redPointIndex = 1;
     }
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -93,7 +96,7 @@
     self.viewControllers = array;
     CGFloat viewW = WIDTH/array.count;
     
-    _msgRedLab = [[UILabel alloc]initWithFrame:CGRectMake(viewW*2+(viewW-10)/2+20, 0, 16, 16)];
+    _msgRedLab = [[UILabel alloc] initWithFrame:CGRectMake(viewW*redPointIndex+(viewW-10)/2+20, 0, 16, 16)];
     _msgRedLab.backgroundColor = [UIColor redColor];
     _msgRedLab.textColor = [UIColor whiteColor];
     _msgRedLab.font = [UIFont systemFontOfSize:10];
