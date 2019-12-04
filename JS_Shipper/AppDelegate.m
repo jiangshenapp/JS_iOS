@@ -247,6 +247,7 @@
     [self _registerRemoteNotification];
     
     EMOptions *options = [EMOptions optionsWithAppkey:EaseMobKey];
+    options.isAutoLogin = YES;
     if ([AppChannel isEqualToString:@"1"]) { //货主端
     #ifdef DEBUG
         options.apnsCertName = @"shipperDev";
@@ -317,34 +318,75 @@
     }
 }
 
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-}
-
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
     [[EMClient sharedClient] applicationDidEnterBackground:application];
+    [UIApplication sharedApplication].applicationIconBadgeNumber
+    = [CustomEaseUtils getUnreadCount];
 }
 
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
     [[EMClient sharedClient] applicationWillEnterForeground:application];
 }
 
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+// 将得到的deviceToken传给SDK
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[EMClient sharedClient] bindDeviceToken:deviceToken];
+    });
 }
 
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+// 注册deviceToken失败，此处失败，与环信SDK无关，一般是您的环境配置或者证书配置有误
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"注册device token失败" message:error.description delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alert show];
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+//    if (gMainController) {
+//        [gMainController jumpToChatList];
+//    }
+    
+    [[EMClient sharedClient] application:application didReceiveRemoteNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+//    if (gMainController) {
+//        [gMainController didReceiveLocalNotification:notification];
+//    }
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+{
+    NSDictionary *userInfo = notification.request.content.userInfo;
+    [[EMClient sharedClient] application:[UIApplication sharedApplication] didReceiveRemoteNotification:userInfo];
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler
+{
+//    if (gMainController) {
+//        [gMainController didReceiveUserNotification:response.notification];
+//    }
+    completionHandler();
+}
+
+#pragma mark - EMPushManagerDelegateDevice
+
+// 打印收到的apns信息
+-(void)didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSError *parseError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userInfo options:NSJSONWritingPrettyPrinted error:&parseError];
+    NSString *str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"推送内容" message:str delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alert show];
+    
+}
 
 @end

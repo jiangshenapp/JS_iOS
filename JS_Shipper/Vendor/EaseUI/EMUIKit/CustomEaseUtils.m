@@ -18,6 +18,8 @@
 #import "EMChatroomsViewController.h"
 #import "EMChatroomInfoViewController.h"
 
+#import <UserNotifications/UserNotifications.h>
+
 
 static CustomEaseUtils *helper = nil;
 
@@ -91,7 +93,7 @@ static CustomEaseUtils *helper = nil;
 {
     [[EMClient sharedClient] logout:NO];
     [self showAlertWithMessage:@"你的账号已在其他地方登录"];
-    
+    [Utils logout:2];
     [[NSNotificationCenter defaultCenter] postNotificationName:ACCOUNT_LOGIN_CHANGED object:@NO];
 }
 
@@ -167,6 +169,59 @@ static CustomEaseUtils *helper = nil;
     AudioServicesPlaySystemSound(1012);
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     JSAppDelegate.tabVC.msgBadge = [NSString stringWithFormat:@"%ld",[CustomEaseUtils getUnreadCount]];
+    if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+        [self sendNotificationMessage];
+    }
+}
+
+- (void)sendNotificationMessage{
+    NSString *msg = NSLocalizedString(@"receiveMessage", nil);
+    if (@available(iOS 10.0,*)) {
+        // 通知中心
+        UNUserNotificationCenter * center = [UNUserNotificationCenter currentNotificationCenter];
+        // 通知内容
+        UNMutableNotificationContent * content = [[UNMutableNotificationContent alloc]init];
+        content.title = msg;
+//        content.subtitle = @"通知子标题";
+//        content.body = @"通知主体内容";
+        // 默认铃声
+        content.sound = [UNNotificationSound defaultSound];
+        // 自定义铃声
+        content.sound = [UNNotificationSound soundNamed:@"Define_Sound"];
+        // 角标
+        content.badge = @([UIApplication sharedApplication].applicationIconBadgeNumber+1);
+        
+        // 设置多长时间之后发送
+        NSTimeInterval time = [[NSDate dateWithTimeIntervalSinceNow:1] timeIntervalSinceNow];
+        UNTimeIntervalNotificationTrigger * trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:time repeats:NO];
+        
+        // id：便于以后移除、更新 指定通知
+        NSString * noticeId = @"noticeId";
+        // 通知请求
+        UNNotificationRequest * request = [UNNotificationRequest requestWithIdentifier:noticeId content:content trigger:trigger];
+        // 添加通知请求
+        [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+            if (error == nil) {
+                NSLog(@"本地推送成功");
+            }
+        }];
+        
+    }else{
+        UILocalNotification * locationNotice = [[UILocalNotification alloc]init];
+        // 发送时间
+        locationNotice.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+        // 通知内容
+        locationNotice.alertBody = msg;
+//        locationNotice.userInfo = @{@"json":@"自定义内容",@"NoticeID":@"123"};
+        // 角标
+        locationNotice.applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber+1;
+        // 默认铃声
+        locationNotice.soundName = UILocalNotificationDefaultSoundName;
+        // 循环提醒
+        locationNotice.repeatInterval = NSCalendarUnitDay;
+        // 发送
+        [[UIApplication sharedApplication] scheduleLocalNotification:locationNotice];
+    }
 }
 
 #pragma mark - EMGroupManagerDelegate

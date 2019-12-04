@@ -22,7 +22,7 @@
 
 - (void)showAlertWithMessage:(NSString *)aMsg
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"o(TωT)o" message:aMsg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:aMsg preferredStyle:UIAlertControllerStyleAlert];
     [self _showAlertController:alertController];
 }
 
