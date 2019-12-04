@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DriverConfig : NSObject
 
+#pragma mark - H5名称
+#define H5_Privacy @"privacyProtocal-driver.html" //隐私协议
+#define H5_Register @"registerProtocal-driver.html" //用户注册协议
+
 #pragma mark - APP司机端微信登录
 #define URL_BindingWxInfo @"/app/driverWx/bindingWxInfo" //登录后绑定
 #define URL_RebindingWxInfo @"/app/driverWx/rebindingWxInfo" //微信号已与其他账号绑定，解除原账号绑定，并绑定当前新账号
@@ -20,7 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_WxLogin @"/app/driverWx/wxLogin" //绑定页面短信登录
 #define URL_GetWxBindingInfo @"/app/driverWx/getWxBindingInfo" //获取用户微信授权绑定状态
 
-#define URL_RechargeDriverDeposit @"/app/account/rechargeDriverDeposit"//运力端缴纳保证金
+#pragma mark - 用户信息
+#define URL_RechargeDriverDeposit @"/app/account/rechargeDriverDeposit" //运力端缴纳保证金
+#define URL_ParkSupplement @"/app/park/supplement" //园区信息补充"
 
 #pragma mark - 我的车辆
 #define URL_AddCar @"/app/car/add" //添加车辆"
@@ -57,8 +63,6 @@ NS_ASSUME_NONNULL_BEGIN
 #define URL_DistributionOrder @"/app/driver/order/distribution"//开始配送"
 #define URL_CompleteDistributionOrder  @"/app/driver/order/completeDistribution"//完成配送"
 #define URL_CommentOrder @"/app/driver/order/comment"//回执评价"
-
-#define URL_ParkSupplement @"/app/park/supplement"//园区信息补充"
 
 @end
 

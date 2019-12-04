@@ -13,6 +13,8 @@
 
 #pragma mark - ---------------接口地址---------------
 
+// H5地址
+NSString *h5Url(void);
 // 接口地址
 NSString *ROOT_URL(void);
 // 图片地址
@@ -124,14 +126,5 @@ NSString *PAY_URL(void);
 #define URL_GetSysServiceList @"/app/sys/getSysServiceList"//获取系统服务
 #define URL_GetBannerList @"/app/banner/list"//根据类型获取banner type 1服务页广告、2发货页广告、3启动页广告
 #define URL_Feedback @"/app/feedback/save"//新增意见反馈
-
-#pragma mark - ---------------H5地址---------------
-
-NSString *h5Url(void);
-
-#pragma mark - ---------------H5名称---------------
-
-#define H5_Privacy @"yszc.html" //隐私协议
-#define H5_Register @"yhzcxy.html" //用户注册协议
 
 @end
