@@ -51,10 +51,6 @@
         redPointIndex = 2;
     }
     else if ([AppChannel isEqualToString:@"2"]) { //司机端
-//          controllerArr = @[@"JSFindGoodsVC",@"JSServiceVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
-//          titleArr = @[@"找货",@"服务",@"消息",@"社区",@"我的"];
-//          picArr = @[@"app_home_icon_cargoods_black",@"app_home_icon_service_black",@"app_menubar_icon_news2_black",@"app_menubar_icon_community2_black",@"app_menubar_icon_me_black"];
-//          storyArr = @[@"FindGoods",@"Service",@"Message",@"Community",@"Mine"];
         controllerArr = @[@"JSFindGoodsVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
         titleArr = @[@"找货",@"消息",@"社区",@"我的"];
         picArr = @[@"app_home_icon_cargoods_black",@"app_menubar_icon_news2_black",@"app_menubar_icon_community2_black",@"app_menubar_icon_me_black"];
@@ -118,25 +114,6 @@
                 [arry addObject:btn];
             }
         }
-        //添加动画
-//        //放大效果
-//        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-//        //速度控制函数，控制动画运行的节奏
-//        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-//        animation.duration = 0.2;       //执行时间
-//        animation.repeatCount = 1;      //执行次数
-//        animation.removedOnCompletion = NO;
-//        animation.fillMode = kCAFillModeForwards;           //保证动画效果延续
-//        animation.fromValue = [NSNumber numberWithFloat:1.0];   //初始伸缩倍数
-//        animation.toValue = [NSNumber numberWithFloat:1.15];     //结束伸缩倍数
-//        [[arry[index] layer] addAnimation:animation forKey:nil];
-//        //移除其他tabbar的动画
-//        for (int i = 0; i<arry.count; i++) {
-//            if (i != index) {
-//                [[arry[i] layer] removeAllAnimations];
-//            }
-//        }
-        
         //放大效果，并回到原位
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         //速度控制函数，控制动画运行的节奏
@@ -164,9 +141,5 @@
     }
     _msgRedLab.text = [NSString stringWithFormat:@"%@",msgBadge];
 }
-
-//- (void)messagesDidReceive:(NSArray *)aMessages {
-//    
-//}
 
 @end
