@@ -356,7 +356,7 @@
     
     // 系统留给的我们的时间
     NSTimeInterval time =[[UIApplication sharedApplication] backgroundTimeRemaining];
-    NSLog(@"系统留给的我们的时间 = %.02f Seconds", time);
+//    NSLog(@"系统留给的我们的时间 = %.02f Seconds", time);
   
 }
 
