@@ -17,5 +17,7 @@
 @property (nonatomic,retain) BaseTabBarVC *tabVC;
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, unsafe_unretained) UIBackgroundTaskIdentifier taskId;
+@property (nonatomic, strong) NSTimer *timer;
 @end
 

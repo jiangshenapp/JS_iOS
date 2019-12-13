@@ -323,6 +323,41 @@
     [[EMClient sharedClient] applicationDidEnterBackground:application];
     [UIApplication sharedApplication].applicationIconBadgeNumber
     = [CustomEaseUtils getUnreadCount];
+    self.taskId =[application beginBackgroundTaskWithExpirationHandler:^(void) {
+            //当申请的后台时间用完的时候调用这个block
+            //此时我们需要结束后台任务，
+            [self endTask];
+        }];
+    // 模拟一个长时间的任务 Task
+     self.timer =[NSTimer scheduledTimerWithTimeInterval:1.0f
+                                                       target:self
+                                                     selector:@selector(longTimeTask:)
+                                                     userInfo:nil
+                                                      repeats:YES];
+}
+
+#pragma mark - 停止timer
+-(void)endTask
+{
+
+    if (_timer != nil||_timer.isValid) {
+        [_timer invalidate];
+        _timer = nil;
+        
+        //结束后台任务
+        [[UIApplication sharedApplication] endBackgroundTask:_taskId];
+        _taskId = UIBackgroundTaskInvalid;
+        
+        NSLog(@"停止timer");
+    }
+}
+
+- (void)longTimeTask:(NSTimer *)timer{
+    
+    // 系统留给的我们的时间
+    NSTimeInterval time =[[UIApplication sharedApplication] backgroundTimeRemaining];
+    NSLog(@"系统留给的我们的时间 = %.02f Seconds", time);
+  
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
