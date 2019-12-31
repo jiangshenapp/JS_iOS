@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"城市配送详情";
+    self.title = @"附近网点详情";
     
     [self refreshUI];
     [self getData];

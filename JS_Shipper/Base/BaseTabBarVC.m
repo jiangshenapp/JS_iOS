@@ -44,10 +44,10 @@
     NSInteger redPointIndex;
     
     if ([AppChannel isEqualToString:@"1"]) { //货主端
-        controllerArr = @[@"JSGardenVC",@"JSDeliverGoodsVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
-        titleArr = @[@"园区",@"发货",@"消息",@"社区",@"我的"];
-        picArr = @[@"app_menubar_icon_searchcar_black",@"app_menubar_icon_goods_black",@"app_menubar_icon_news_black",@"app_menubar_icon_community_black",@"app_menubar_icon_my_black"];
-        storyArr = @[@"Garden",@"DeliverGoods",@"Message",@"Community",@"Mine"];
+        controllerArr = @[@"JSDeliverGoodsVC",@"JSGardenVC",@"JSHomeMessageVC",@"JSCommunityVC",@"JSMineVC"];
+        titleArr = @[@"发货",@"园区",@"消息",@"社区",@"我的"];
+        picArr = @[@"app_menubar_icon_goods_black",@"app_menubar_icon_searchcar_black",@"app_menubar_icon_news_black",@"app_menubar_icon_community_black",@"app_menubar_icon_my_black"];
+        storyArr = @[@"DeliverGoods",@"Garden",@"Message",@"Community",@"Mine"];
         redPointIndex = 2;
     }
     else if ([AppChannel isEqualToString:@"2"]) { //司机端

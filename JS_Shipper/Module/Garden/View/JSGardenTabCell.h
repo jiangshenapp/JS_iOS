@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JSGardenTabCell : UITableViewCell
 
-/** 0车源  1城市配送 2精品路线 */
+/** 0车源  1附近网点 2精品路线 */
 @property (nonatomic,assign) NSInteger pageFlag;
 /** 数据源 */
 @property (nonatomic,retain) RecordsModel *model;

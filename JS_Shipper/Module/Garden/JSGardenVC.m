@@ -34,7 +34,7 @@
 }
 /** 分页 */
 @property (nonatomic,assign) NSInteger page;
-/** 0车源  1城市配送 2精品路线 */
+/** 0车源  1附近网点 2精品路线 */
 @property (nonatomic,assign) NSInteger pageFlag;
 /** 传参字典 0 */
 @property (nonatomic,retain) NSDictionary *postUrlDic;
@@ -42,7 +42,7 @@
 @property (nonatomic,copy) NSString *areaCode1;
 /** 区域编码2 */
 @property (nonatomic,copy) NSString *areaCode2;
-/** 区域编码3(城市配送) */
+/** 区域编码3(附近网点) */
 @property (nonatomic,copy) NSString *areaCode3;
 
 /** 数据源 */
@@ -209,7 +209,7 @@
 - (void)getData {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    if (self.pageFlag==1) { //城市配送
+    if (self.pageFlag==1) { //附近网点
 //        if (_areaCode3.length==6) {
 //            [dic setObject:_areaCode3 forKey:@"addressCode"];
 //        }

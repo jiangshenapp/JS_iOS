@@ -4752,7 +4752,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.driver;
 				PRODUCT_NAME = "匠神来拉";
 				PROVISIONING_PROFILE_SPECIFIER = DriverDev;
@@ -4794,7 +4794,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.driver;
 				PRODUCT_NAME = "匠神来拉";
 				PROVISIONING_PROFILE_SPECIFIER = DriverDis;
@@ -4950,7 +4950,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.shipper;
 				PRODUCT_NAME = "匠神来运";
 				PROVISIONING_PROFILE_SPECIFIER = ShipperDev;
@@ -4992,7 +4992,7 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.shipper;
 				PRODUCT_NAME = "匠神来运";
 				PROVISIONING_PROFILE_SPECIFIER = ShipperDis;

@@ -18,7 +18,7 @@
 
 /** 分页 */
 @property (nonatomic,assign) NSInteger page;
-/** 0车源  1城市配送 2精品路线 */
+/** 0车源  1附近网点 2精品路线 */
 @property (nonatomic,assign) NSInteger pageFlag;
 /** 传参字典 0 */
 @property (nonatomic,retain) NSDictionary *postUrlDic;
