@@ -699,8 +699,6 @@
 		207D1443227153E300594520 /* JSDeliverConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 207D1442227153E300594520 /* JSDeliverConfirmVC.m */; };
 		20815E2723176C2600E24C75 /* FindGoods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20815E2623176C2600E24C75 /* FindGoods.storyboard */; };
 		20815E3C23176C3100E24C75 /* JSFindGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815E3523176C3100E24C75 /* JSFindGoodsVC.m */; };
-		20815E3E23176C3F00E24C75 /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20815E3D23176C3F00E24C75 /* Service.storyboard */; };
-		20815E4223176C4A00E24C75 /* JSServiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815E4023176C4A00E24C75 /* JSServiceVC.m */; };
 		20815E4423176C7E00E24C75 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20815E4323176C7D00E24C75 /* Mine.storyboard */; };
 		20815E7A23176C8900E24C75 /* JSMyRouteDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815E4823176C8900E24C75 /* JSMyRouteDetailVC.m */; };
 		20815E7B23176C8900E24C75 /* JSMyRouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815E4A23176C8900E24C75 /* JSMyRouteVC.m */; };
@@ -1388,7 +1386,7 @@
 		204E5298227068E600DE65A8 /* JSFeedBackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSFeedBackVC.m; sourceTree = "<group>"; };
 		2055C10F225C3B4D000E13C3 /* JSSystemMessageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSystemMessageVC.h; sourceTree = "<group>"; };
 		2055C110225C3B4D000E13C3 /* JSSystemMessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSystemMessageVC.m; sourceTree = "<group>"; };
-		205A918C23175F72004C756E /* 匠神司机.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "匠神司机.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		205A918C23175F72004C756E /* 匠神来拉.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "匠神来拉.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		205A91902317602B004C756E /* Driver.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Driver.xcassets; sourceTree = "<group>"; };
 		205A9195231763BD004C756E /* driver.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = driver.plist; sourceTree = "<group>"; };
 		205F20342276A254000A8967 /* JSOrderDetailMapVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSOrderDetailMapVC.h; sourceTree = "<group>"; };
@@ -1406,9 +1404,6 @@
 		20815E2623176C2600E24C75 /* FindGoods.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FindGoods.storyboard; sourceTree = "<group>"; };
 		20815E2923176C3100E24C75 /* JSFindGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSFindGoodsVC.h; sourceTree = "<group>"; };
 		20815E3523176C3100E24C75 /* JSFindGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFindGoodsVC.m; sourceTree = "<group>"; };
-		20815E3D23176C3F00E24C75 /* Service.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
-		20815E4023176C4A00E24C75 /* JSServiceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSServiceVC.m; sourceTree = "<group>"; };
-		20815E4123176C4A00E24C75 /* JSServiceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSServiceVC.h; sourceTree = "<group>"; };
 		20815E4323176C7D00E24C75 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		20815E4723176C8900E24C75 /* JSMyRouteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMyRouteVC.h; sourceTree = "<group>"; };
 		20815E4823176C8900E24C75 /* JSMyRouteDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMyRouteDetailVC.m; sourceTree = "<group>"; };
@@ -1492,7 +1487,7 @@
 		20A8C22522DEB35F008E10EB /* CustomEaseUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomEaseUtils.m; sourceTree = "<group>"; };
 		20AF58582328E1A300B6FAF9 /* ZYLPreViewImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLPreViewImageTool.m; sourceTree = "<group>"; };
 		20AF585B2328E1AD00B6FAF9 /* ZYLPreViewImageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYLPreViewImageTool.h; sourceTree = "<group>"; };
-		20BD73212248BDC20020EA5D /* 匠神货主.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "匠神货主.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20BD73212248BDC20020EA5D /* 匠神来运.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "匠神来运.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BD73242248BDC20020EA5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20BD73252248BDC20020EA5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		20BD732D2248BDC30020EA5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1612,8 +1607,8 @@
 		20C4108C2338AD1500D068DE /* JSOtherAccountVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSOtherAccountVC.m; sourceTree = "<group>"; };
 		20CDDAFC22C0CB0D005432F3 /* JSSelectGoodsNameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSelectGoodsNameVC.h; sourceTree = "<group>"; };
 		20CDDAFD22C0CB0D005432F3 /* JSSelectGoodsNameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSelectGoodsNameVC.m; sourceTree = "<group>"; };
-		20CEC5A923965715001FB480 /* 匠神司机.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "匠神司机.entitlements"; sourceTree = "<group>"; };
-		20CEC5AA23965737001FB480 /* 匠神货主.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "匠神货主.entitlements"; sourceTree = "<group>"; };
+		20CEC5A923965715001FB480 /* 匠神来拉.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "匠神来拉.entitlements"; sourceTree = "<group>"; };
+		20CEC5AA23965737001FB480 /* 匠神来运.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "匠神来运.entitlements"; sourceTree = "<group>"; };
 		20DC7D6422BB68BE003CB4FD /* noDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noDataView.xib; sourceTree = "<group>"; };
 		20E41983231E1587001E89C7 /* JSSendTopicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSendTopicVC.h; sourceTree = "<group>"; };
 		20E41984231E1587001E89C7 /* JSSendTopicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSendTopicVC.m; sourceTree = "<group>"; };
@@ -2637,9 +2632,8 @@
 		205A918F23175FC1004C756E /* JS_Driver */ = {
 			isa = PBXGroup;
 			children = (
-				20CEC5A923965715001FB480 /* 匠神司机.entitlements */,
+				20CEC5A923965715001FB480 /* 匠神来拉.entitlements */,
 				20815E2623176C2600E24C75 /* FindGoods.storyboard */,
-				20815E3D23176C3F00E24C75 /* Service.storyboard */,
 				20815E4323176C7D00E24C75 /* Mine.storyboard */,
 				20815EA62317733100E24C75 /* Driver.pch */,
 				20815EA22317719100E24C75 /* Config */,
@@ -2665,7 +2659,6 @@
 			children = (
 				20815E2823176C3100E24C75 /* FindGoods */,
 				20815E4523176C8900E24C75 /* Mine */,
-				20815E3F23176C4A00E24C75 /* Service */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -2677,15 +2670,6 @@
 				20815E3523176C3100E24C75 /* JSFindGoodsVC.m */,
 			);
 			path = FindGoods;
-			sourceTree = "<group>";
-		};
-		20815E3F23176C4A00E24C75 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				20815E4123176C4A00E24C75 /* JSServiceVC.h */,
-				20815E4023176C4A00E24C75 /* JSServiceVC.m */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		20815E4523176C8900E24C75 /* Mine */ = {
@@ -2863,8 +2847,8 @@
 		20BD73222248BDC20020EA5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20BD73212248BDC20020EA5D /* 匠神货主.app */,
-				205A918C23175F72004C756E /* 匠神司机.app */,
+				20BD73212248BDC20020EA5D /* 匠神来运.app */,
+				205A918C23175F72004C756E /* 匠神来拉.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2872,7 +2856,7 @@
 		20BD73232248BDC20020EA5D /* JS_Shipper */ = {
 			isa = PBXGroup;
 			children = (
-				20CEC5AA23965737001FB480 /* 匠神货主.entitlements */,
+				20CEC5AA23965737001FB480 /* 匠神来运.entitlements */,
 				20BD73242248BDC20020EA5D /* AppDelegate.h */,
 				20BD73252248BDC20020EA5D /* AppDelegate.m */,
 				20815EA72317735A00E24C75 /* Public.h */,
@@ -3568,7 +3552,7 @@
 			);
 			name = JS_Driver;
 			productName = JS_Shipper;
-			productReference = 205A918C23175F72004C756E /* 匠神司机.app */;
+			productReference = 205A918C23175F72004C756E /* 匠神来拉.app */;
 			productType = "com.apple.product-type.application";
 		};
 		20BD73202248BDC20020EA5D /* JS_Shipper */ = {
@@ -3588,7 +3572,7 @@
 			);
 			name = JS_Shipper;
 			productName = JS_Shipper;
-			productReference = 20BD73212248BDC20020EA5D /* 匠神货主.app */;
+			productReference = 20BD73212248BDC20020EA5D /* 匠神来运.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -3824,7 +3808,6 @@
 				205A916E23175F72004C756E /* close_gray@3x.png in Resources */,
 				205A916F23175F72004C756E /* chat_audio_red@2x.png in Resources */,
 				205A917023175F72004C756E /* Community.storyboard in Resources */,
-				20815E3E23176C3F00E24C75 /* Service.storyboard in Resources */,
 				205A917123175F72004C756E /* alert_default@3x.png in Resources */,
 				205A917223175F72004C756E /* chatbar_extend@3x.png in Resources */,
 				205A917323175F72004C756E /* chatbar_call@3x.png in Resources */,
@@ -4416,7 +4399,6 @@
 				20815E8423176C8A00E24C75 /* JSAuthenticationVC.m in Sources */,
 				207995A9235B524200F6A66F /* ImageViewer.m in Sources */,
 				205A90B023175F72004C756E /* ZHPickView.m in Sources */,
-				20815E4223176C4A00E24C75 /* JSServiceVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4741,7 +4723,7 @@
 			baseConfigurationReference = ECBF399024D182C315C8D35E /* Pods-JS_Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "JS_Driver/匠神司机.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "JS_Driver/匠神来拉.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KPMLH9CN6N;
@@ -4770,8 +4752,9 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.driver;
-				PRODUCT_NAME = "匠神司机";
+				PRODUCT_NAME = "匠神来拉";
 				PROVISIONING_PROFILE_SPECIFIER = DriverDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4782,7 +4765,7 @@
 			baseConfigurationReference = 5A4AF58C15A2D879177FB4A0 /* Pods-JS_Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "JS_Driver/匠神司机.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "JS_Driver/匠神来拉.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KPMLH9CN6N;
@@ -4811,8 +4794,9 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.driver;
-				PRODUCT_NAME = "匠神司机";
+				PRODUCT_NAME = "匠神来拉";
 				PROVISIONING_PROFILE_SPECIFIER = DriverDis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4937,7 +4921,7 @@
 			baseConfigurationReference = 485FFBE123B387C4A4ABBCD1 /* Pods-JS_Shipper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "JS_Shipper/匠神货主.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "JS_Shipper/匠神来运.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KPMLH9CN6N;
@@ -4966,8 +4950,9 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.shipper;
-				PRODUCT_NAME = "匠神货主";
+				PRODUCT_NAME = "匠神来运";
 				PROVISIONING_PROFILE_SPECIFIER = ShipperDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4978,7 +4963,7 @@
 			baseConfigurationReference = FA9A20BD52D80F462075489F /* Pods-JS_Shipper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "JS_Shipper/匠神货主.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "JS_Shipper/匠神来运.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KPMLH9CN6N;
@@ -5007,8 +4992,9 @@
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/EaseUI/EMUIKit/Helper/3rdParty/VoiceConvert",
 					"$(PROJECT_DIR)/JS_Shipper/Vendor/WeiXin/SDKExport",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangshen.shipper;
-				PRODUCT_NAME = "匠神货主";
+				PRODUCT_NAME = "匠神来运";
 				PROVISIONING_PROFILE_SPECIFIER = ShipperDis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

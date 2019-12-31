@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "205A8FE423175F72004C756E"
-               BuildableName = "&#x5320;&#x795e;&#x53f8;&#x673a;.app"
+               BuildableName = "&#x5320;&#x795e;&#x6765;&#x62c9;.app"
                BlueprintName = "JS_Driver"
                ReferencedContainer = "container:JS_Shipper.xcodeproj">
             </BuildableReference>
@@ -23,7 +23,7 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "205A8FE423175F72004C756E"
-            BuildableName = "&#x5320;&#x795e;&#x53f8;&#x673a;.app"
+            BuildableName = "&#x5320;&#x795e;&#x6765;&#x62c9;.app"
             BlueprintName = "JS_Driver"
             ReferencedContainer = "container:JS_Shipper.xcodeproj">
          </BuildableReference>
@@ -54,14 +54,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "205A8FE423175F72004C756E"
-            BuildableName = "&#x5320;&#x795e;&#x53f8;&#x673a;.app"
+            BuildableName = "&#x5320;&#x795e;&#x6765;&#x62c9;.app"
             BlueprintName = "JS_Driver"
             ReferencedContainer = "container:JS_Shipper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -71,17 +71,17 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "205A8FE423175F72004C756E"
-            BuildableName = "&#x5320;&#x795e;&#x53f8;&#x673a;.app"
+            BuildableName = "&#x5320;&#x795e;&#x6765;&#x62c9;.app"
             BlueprintName = "JS_Driver"
             ReferencedContainer = "container:JS_Shipper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
