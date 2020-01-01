@@ -103,6 +103,7 @@
     RecordsModel *model = self.dataSource[indexPath.section];
     if (_pageFlag==0 || _pageFlag==2) {
         JSGardenTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JSGardenTabCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.pageFlag = _pageFlag;
         cell.model = model;
         cell.iphoneCallBtn.tag = 1000+indexPath.section;
@@ -113,6 +114,7 @@
     }
     else if (_pageFlag == 1) {
         CityDeliveryTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CityDeliveryTabCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.model = model;
         cell.serviceBtn.tag = 3000+indexPath.section;
         cell.iphoneCallBtn.tag = 1000+indexPath.section;

@@ -210,9 +210,9 @@
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     if (self.pageFlag==1) { //附近网点
-//        if (_areaCode3.length==6) {
-//            [dic setObject:_areaCode3 forKey:@"addressCode"];
-//        }
+        if (_areaCode3.length==6) {
+            [dic setObject:_areaCode3 forKey:@"addressCode"];
+        }
         if (![NSString isEmpty:_companyType]) {
             [dic setObject:_companyType forKey:@"companyType"];
         }
@@ -290,6 +290,7 @@
     RecordsModel *model = self.dataSource[indexPath.section];
     if (_pageFlag==0 || _pageFlag==2) {
         JSGardenTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JSGardenTabCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.pageFlag = _pageFlag;
         cell.model = model;
         cell.iphoneCallBtn.tag = 1000+indexPath.section;
@@ -301,6 +302,7 @@
     }
     else if (_pageFlag == 1) {
         CityDeliveryTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CityDeliveryTabCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.model = model;
         cell.serviceBtn.tag = 3000+indexPath.section;
         cell.iphoneCallBtn.tag = 1000+indexPath.section;
