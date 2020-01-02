@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "41969714C447659C4E01EE0CF2FAE727"
+               BlueprintIdentifier = "F5C1AEB9A6BFEA49FEE0A70E3AF1B558"
                BuildableName = "libPods-JS_Driver.a"
                BlueprintName = "Pods-JS_Driver"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -34,7 +34,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JPush-iOS-SDK.xcscheme</key>
+		<key>JCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JPush.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -121,17 +126,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>1773D868D50D39D2FB5A7C90B1C36E5D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B4C72921205CA6760DE2BCA4B22C772D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>
