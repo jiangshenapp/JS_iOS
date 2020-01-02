@@ -18,6 +18,7 @@
 #import "WXApi.h"
 #import "JSAuthenticationVC.h"
 #import "JSAuthencationHomeVC.h"
+#import <JPUSHService.h>
 
 @interface Utils ()
 {
@@ -176,6 +177,8 @@ static Utils *_utils = nil;
 + (void)logout:(BOOL)isJumpLoginVC {
     
     [[UserInfo share] setUserInfo:nil]; //清除用户信息
+    [JPUSHService deleteAlias:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+    } seq:1];
     [CustomEaseUtils EaseMobLogout];
     if (isJumpLoginVC==YES) {
         BaseNC *nc = JSAppDelegate.tabVC.selectedViewController;

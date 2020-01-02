@@ -17,6 +17,8 @@
 #define kWechatKey @"wxbba5c5b208ed8f31"
 // 百度地图key
 #define kMapKey @"lgrnXXszi8tp8KLsjo3LGjnO9USnydId"
+#define KJpushappKey @"a5c60bbad6d9199cd975cd01"
+
 // Bugly
 #define KBuglyAppId     @"07782d6cc5"
 

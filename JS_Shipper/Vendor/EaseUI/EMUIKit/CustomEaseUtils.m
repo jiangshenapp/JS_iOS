@@ -19,7 +19,7 @@
 #import "EMChatroomInfoViewController.h"
 
 #import <UserNotifications/UserNotifications.h>
-
+#import <JPUSHService.h>
 
 static CustomEaseUtils *helper = nil;
 
@@ -170,11 +170,11 @@ static CustomEaseUtils *helper = nil;
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     JSAppDelegate.tabVC.msgBadge = [NSString stringWithFormat:@"%ld",[CustomEaseUtils getUnreadCount]];
     if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
-        [self sendNotificationMessage];
+        [CustomEaseUtils sendNotificationMessage];
     }
 }
 
-- (void)sendNotificationMessage{
++ (void)sendNotificationMessage{
     NSString *msg = NSLocalizedString(@"receiveMessage", nil);
     if (@available(iOS 10.0,*)) {
         // 通知中心
@@ -582,6 +582,11 @@ static CustomEaseUtils *helper = nil;
 + (void)EaseMobLoginWithUser:(NSString *)name completion:(loginFinishBlock)completion {
     [[EMClient sharedClient] loginWithUsername:name password:name completion:^(NSString *aUsername, EMError *aError) {
         if (!aError) {
+          NSString  *resgistername = [name stringByReplacingOccurrencesOfString:@"driver" withString:@""];
+            resgistername = [resgistername stringByReplacingOccurrencesOfString:@"shipper" withString:@""];
+            [JPUSHService setAlias:resgistername completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+                NSLog(@"%@",iAlias);
+            } seq:1];;
             [[EMClient sharedClient].options setIsAutoLogin:YES];
             //发送自动登录状态通知
             [[NSNotificationCenter defaultCenter] postNotificationName:ACCOUNT_LOGIN_CHANGED object:@YES];
@@ -639,6 +644,7 @@ static CustomEaseUtils *helper = nil;
 
 + (void)EaseMobLogout {
     [[EMClient sharedClient] logout:YES];
+    [JPUSHService setAlias:@"" completion:nil seq:1];;
 }
 
 + (NSInteger)getUnreadCount {

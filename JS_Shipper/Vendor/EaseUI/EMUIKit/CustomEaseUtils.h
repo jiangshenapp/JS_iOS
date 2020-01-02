@@ -30,6 +30,8 @@ typedef void(^loginFinishBlock)(NSString *aName,EMError *error);
 
 + (NSInteger)getUnreadCount;
 
++ (void)sendNotificationMessage;
+
 @end
 
 NS_ASSUME_NONNULL_END

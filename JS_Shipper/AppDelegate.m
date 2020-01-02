@@ -19,8 +19,18 @@
 #import "EMNotificationHelper.h"
 #import "WXApiManager.h"
 #import <Bugly/Bugly.h>
+#import <AudioToolbox/AudioToolbox.h>
 
-@interface AppDelegate ()< WXApiDelegate,BuglyDelegate,UNUserNotificationCenterDelegate>
+// 引入 JPush 功能所需头文件
+#import "JPUSHService.h"
+// iOS10 注册 APNs 所需头文件
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+// 如果需要使用 idfa 功能所需要引入的头文件（可选）
+#import <AdSupport/AdSupport.h>
+
+@interface AppDelegate ()< WXApiDelegate,BuglyDelegate,UNUserNotificationCenterDelegate,JPUSHRegisterDelegate>
 @property (nonatomic, strong) BMKMapManager *mapManager; //主引擎类
 @end
 
@@ -46,6 +56,8 @@
     [self initMapKey];
     
     [self initEmData];
+    
+    [self initJpush:launchOptions];
 
     [WXApi startLogByLevel:WXLogLevelNormal logBlock:^(NSString *log) {
         NSLog(@"log : %@", log);
@@ -268,6 +280,32 @@
     
 }
 
+- (void)initJpush:(NSDictionary *)launchOptions {
+    //Required
+    //notice: 3.0.0 及以后版本注册可以这样写，也可以继续用之前的注册方式
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound|JPAuthorizationOptionProvidesAppNotificationSettings;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+      // 可以添加自定义 categories
+      // NSSet<UNNotificationCategory *> *categories for iOS10 or later
+      // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
+    }
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    
+    BOOL isProduction = NO;
+    #ifdef DEBUG
+        isProduction = NO;
+    #else
+        isProduction = YES;
+    #endif
+     // Required
+     // init Push
+     // notice: 2.1.5 版本的 SDK 新增的注册方法，改成可上报 IDFA，如果没有使用 IDFA 直接传 nil
+     [JPUSHService setupWithOption:launchOptions appKey:KJpushappKey
+                           channel:@"App Store"
+                  apsForProduction:isProduction];
+}
+
 //注册远程通知
 - (void)_registerRemoteNotification
 {
@@ -368,9 +406,10 @@
 // 将得到的deviceToken传给SDK
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [[EMClient sharedClient] bindDeviceToken:deviceToken];
-    });
+        [JPUSHService registerDeviceToken:deviceToken];
+//    });
 }
 
 // 注册deviceToken失败，此处失败，与环信SDK无关，一般是您的环境配置或者证书配置有误
@@ -385,7 +424,7 @@
 //    if (gMainController) {
 //        [gMainController jumpToChatList];
 //    }
-    
+    [JPUSHService handleRemoteNotification:userInfo];
     [[EMClient sharedClient] application:application didReceiveRemoteNotification:userInfo];
 }
 
@@ -400,6 +439,10 @@
 {
     NSDictionary *userInfo = notification.request.content.userInfo;
     [[EMClient sharedClient] application:[UIApplication sharedApplication] didReceiveRemoteNotification:userInfo];
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+      [JPUSHService handleRemoteNotification:userInfo];
+    }
+    completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有 Badge、Sound、Alert 三种类型可以选择设置
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler
@@ -407,11 +450,27 @@
 //    if (gMainController) {
 //        [gMainController didReceiveUserNotification:response.notification];
 //    }
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+      [JPUSHService handleRemoteNotification:userInfo];
+    }
     completionHandler();
 }
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    AudioServicesPlaySystemSound(1007);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    UNNotificationContent *content = notification.request.content;
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    NSString *title = [[content.body componentsSeparatedByString:@"\n"] firstObject];
+    NSString *contentStr = [[content.body componentsSeparatedByString:@"\n"] lastObject];
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"%@",contentStr] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alert show];
+    completionHandler(0);
+}
+
 
 #pragma mark - EMPushManagerDelegateDevice
-
 // 打印收到的apns信息
 -(void)didReceiveRemoteNotification:(NSDictionary *)userInfo
 {

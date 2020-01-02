@@ -23,4 +23,6 @@
 // 百度地图key
 #define kMapKey @"CZYZsdBBIY7G1Qwjo8jfKVGF8UO8Glrh"
 
+#define KJpushappKey @"4ca6c1fafc59b59d85d5fea3"
+
 #endif /* JS_pch */
