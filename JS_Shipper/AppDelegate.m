@@ -20,7 +20,7 @@
 #import "WXApiManager.h"
 #import <Bugly/Bugly.h>
 #import <AudioToolbox/AudioToolbox.h>
-
+//#import "XLGAlertView.h"
 // 引入 JPush 功能所需头文件
 #import "JPUSHService.h"
 // iOS10 注册 APNs 所需头文件
@@ -421,22 +421,18 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-//    if (gMainController) {
-//        [gMainController jumpToChatList];
-//    }
     [JPUSHService handleRemoteNotification:userInfo];
     [[EMClient sharedClient] application:application didReceiveRemoteNotification:userInfo];
+    [self pushVCWithOrderInfo:userInfo];
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-//    if (gMainController) {
-//        [gMainController didReceiveLocalNotification:notification];
-//    }
+
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
-{
+API_AVAILABLE(ios(10.0)){
     NSDictionary *userInfo = notification.request.content.userInfo;
     [[EMClient sharedClient] application:[UIApplication sharedApplication] didReceiveRemoteNotification:userInfo];
     if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
@@ -445,18 +441,15 @@
     completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有 Badge、Sound、Alert 三种类型可以选择设置
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler
-{
-//    if (gMainController) {
-//        [gMainController didReceiveUserNotification:response.notification];
-//    }
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
+    API_AVAILABLE(ios(10.0)){
     NSDictionary * userInfo = response.notification.request.content.userInfo;
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
       [JPUSHService handleRemoteNotification:userInfo];
     }
     completionHandler();
 }
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler  API_AVAILABLE(ios(10.0)){
     AudioServicesPlaySystemSound(1007);
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     UNNotificationContent *content = notification.request.content;
@@ -464,9 +457,32 @@
     NSString *title = [[content.body componentsSeparatedByString:@"\n"] firstObject];
     NSString *contentStr = [[content.body componentsSeparatedByString:@"\n"] lastObject];
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"%@",contentStr] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-    [alert show];
+     XLGAlertView *alert = [[XLGAlertView alloc]initWithTitle:title content:contentStr leftButtonTitle:@"取消" rightButtonTitle:@"查看"];
+    __weak typeof(self) weakSelf = self;
+    alert.doneBlock = ^{
+        [weakSelf pushVCWithOrderInfo:userInfo];
+    };
+    
     completionHandler(0);
+}
+
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler  API_AVAILABLE(ios(10.0)){
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
+    [self pushVCWithOrderInfo:userInfo];
+    completionHandler();
+}
+
+- (void)pushVCWithOrderInfo:(NSDictionary *)userInfo{
+    NSString *orderNO = @"";
+    NSString *orderType = @"";
+    if ([userInfo.allKeys containsObject:@"value"]) {
+        orderNO = [NSString stringWithFormat:@"%@",userInfo[@"value"]];
+    }
+    if ([userInfo.allKeys containsObject:@"type"]) {
+        orderType = [NSString stringWithFormat:@"%@",userInfo[@"type"]];
+    }
+    
+    NSLog(@"订单号  %@   %@",orderNO,orderType);
 }
 
 

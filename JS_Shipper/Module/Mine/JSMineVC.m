@@ -43,8 +43,8 @@
     
     self.navBar.hidden = YES;
     
-    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_park",@"my_icon_authentication",@"personalcenter_icon_customer", nil];
-    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的园区",@"认证管理",@"我的客服", nil];
+    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_park",@"personalcenter_icon_park",@"my_icon_authentication",@"personalcenter_icon_customer", nil];
+    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的运力",@"我的园区",@"认证管理",@"我的客服", nil];
     
     [self createUI];
 //    [self getSysServiceList]; //获取系统服务列表
