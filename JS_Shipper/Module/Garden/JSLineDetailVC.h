@@ -1,16 +1,16 @@
 //
-//  JSLineDetaileVC.h
+//  JSLineDetailVC.h
 //  JS_Shipper
 //
 //  Created by zhanbing han on 2019/6/14.
 //  Copyright © 2019 zhanbing han. All rights reserved.
 //
 
-#import "JSHomeDetaileVC.h"
+#import "JSHomeDetailVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JSLineDetaileVC : JSHomeDetaileVC
+@interface JSLineDetailVC : JSHomeDetailVC
 
 @property (weak, nonatomic) IBOutlet UILabel *startAddressLab;
 @property (weak, nonatomic) IBOutlet UILabel *endAddressLab;

@@ -1,19 +1,19 @@
 //
-//  JSHomeDetaileVC.m
+//  JSHomeDetailVC.m
 //  JS_Shipper
 //
 //  Created by zhanbing han on 2019/6/14.
 //  Copyright © 2019 zhanbing han. All rights reserved.
 //
 
-#import "JSHomeDetaileVC.h"
+#import "JSHomeDetailVC.h"
 #import "JSDeliverConfirmVC.h"
 
-@interface JSHomeDetaileVC ()
+@interface JSHomeDetailVC ()
 
 @end
 
-@implementation JSHomeDetaileVC
+@implementation JSHomeDetailVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

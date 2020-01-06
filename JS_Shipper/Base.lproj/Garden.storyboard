@@ -54,13 +54,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天津 北城区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCH-2G-A3F">
-                                                    <rect key="frame" x="130" y="15.5" width="91" height="21"/>
+                                                    <rect key="frame" x="154" y="15.5" width="91" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="home_lite_icon_going" translatesAutoresizingMaskIntoConstraints="NO" id="9tc-jB-wrL">
-                                                    <rect key="frame" x="105" y="19" width="24" height="14"/>
+                                                    <rect key="frame" x="105" y="12" width="48" height="28"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3分钟前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTe-Q7-2wd">
                                                     <rect key="frame" x="319" y="14" width="44" height="24"/>
@@ -546,7 +546,7 @@
         <!--精品路线详情-->
         <scene sceneID="yJp-Fb-Vgv">
             <objects>
-                <viewController storyboardIdentifier="JSLineDetaileVC" title="精品路线详情" id="0Ef-MG-Mxz" customClass="JSLineDetaileVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JSLineDetailVC" title="精品路线详情" id="0Ef-MG-Mxz" customClass="JSLineDetailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="690-Jr-OUa"/>
                         <viewControllerLayoutGuide type="bottom" id="JdI-NP-pbI"/>
@@ -719,7 +719,7 @@
         <!--附近网点详情-->
         <scene sceneID="hsr-3z-BO3">
             <objects>
-                <viewController storyboardIdentifier="JSCityDeliveryDetaileVC" title="附近网点详情" id="FLW-AR-dML" customClass="JSCityDeliveryDetaileVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JSCityDeliveryDetailVC" title="附近网点详情" id="FLW-AR-dML" customClass="JSCityDeliveryDetailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nuj-pv-IHa"/>
                         <viewControllerLayoutGuide type="bottom" id="4XZ-91-7D1"/>
@@ -963,13 +963,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天津 北城区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljw-i1-qNc">
-                                                    <rect key="frame" x="130" y="15.5" width="91" height="21"/>
+                                                    <rect key="frame" x="154" y="15.5" width="91" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="home_lite_icon_going" translatesAutoresizingMaskIntoConstraints="NO" id="CTt-nb-p29">
-                                                    <rect key="frame" x="105" y="19" width="24" height="14"/>
+                                                    <rect key="frame" x="105" y="12" width="48" height="28"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3分钟前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekH-kg-UIs">
                                                     <rect key="frame" x="319" y="14" width="44" height="24"/>

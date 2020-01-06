@@ -11,7 +11,7 @@
 #import "SortView.h"
 #import "FilterCustomView.h"
 #import "JSCarSourceDetailVC.h"
-#import "JSLineDetaileVC.h"
+#import "JSLineDetailVC.h"
 #import "HomeDataModel.h"
 #import "RecordsModel.h"
 #import "FilterButton.h"
@@ -370,12 +370,12 @@
         className = @"JSCarSourceDetailVC";
     }
     else if (_pageFlag==1) {
-         className = @"JSCityDeliveryDetaileVC";
+         className = @"JSCityDeliveryDetailVC";
     }
     else if (_pageFlag==2) {
-        className = @"JSLineDetaileVC";
+        className = @"JSLineDetailVC";
     }
-    JSHomeDetaileVC *vc = (JSHomeDetaileVC *)[Utils getViewController:@"Garden" WithVCName:className];
+    JSHomeDetailVC *vc = (JSHomeDetailVC *)[Utils getViewController:@"Garden" WithVCName:className];
     vc.carSourceID = model.ID;
     vc.dataModel = model;
     [self.navigationController pushViewController:vc animated:YES];

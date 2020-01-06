@@ -1,5 +1,5 @@
 //
-//  JSHomeDetaileVC.h
+//  JSHomeDetailVC.h
 //  JS_Shipper
 //
 //  Created by zhanbing han on 2019/6/14.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JSHomeDetaileVC : BaseVC
+@interface JSHomeDetailVC : BaseVC
 
 /** 车源id */
 @property (nonatomic,copy) NSString *carSourceID;
