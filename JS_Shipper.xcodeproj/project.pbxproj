@@ -284,6 +284,9 @@
 		201C7E7A2329E9430078C6DE /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 201C7E772329E9420078C6DE /* UITextView+Placeholder.m */; };
 		201C7E7D232A1C5F0078C6DE /* JSSysMsgDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 201C7E7C232A1C5F0078C6DE /* JSSysMsgDetailVC.m */; };
 		201C7E7E232A1FAA0078C6DE /* JSSysMsgDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 201C7E7C232A1C5F0078C6DE /* JSSysMsgDetailVC.m */; };
+		2029321423C2C9BF00BB3BB7 /* JSMyTransportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2029321323C2C9BF00BB3BB7 /* JSMyTransportVC.m */; };
+		2029321723C2E4B100BB3BB7 /* JSMyTransportAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2029321623C2E4B100BB3BB7 /* JSMyTransportAddVC.m */; };
+		2029321C23C3077D00BB3BB7 /* JSMyTransportTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2029321B23C3077D00BB3BB7 /* JSMyTransportTabCell.m */; };
 		203B4E2A231F5D0200A288CC /* JSTieziListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B4E29231F5D0200A288CC /* JSTieziListVC.m */; };
 		203C1982225AE02000AB5970 /* JSCarSourceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C1981225AE02000AB5970 /* JSCarSourceDetailVC.m */; };
 		203C30292320D5D20007FC53 /* JSParkAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C30282320D5D20007FC53 /* JSParkAddressVC.m */; };
@@ -1358,6 +1361,12 @@
 		201C7E782329E9420078C6DE /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		201C7E7B232A1C5F0078C6DE /* JSSysMsgDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSysMsgDetailVC.h; sourceTree = "<group>"; };
 		201C7E7C232A1C5F0078C6DE /* JSSysMsgDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSysMsgDetailVC.m; sourceTree = "<group>"; };
+		2029321223C2C9BE00BB3BB7 /* JSMyTransportVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyTransportVC.h; sourceTree = "<group>"; };
+		2029321323C2C9BF00BB3BB7 /* JSMyTransportVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyTransportVC.m; sourceTree = "<group>"; };
+		2029321523C2E4B100BB3BB7 /* JSMyTransportAddVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyTransportAddVC.h; sourceTree = "<group>"; };
+		2029321623C2E4B100BB3BB7 /* JSMyTransportAddVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyTransportAddVC.m; sourceTree = "<group>"; };
+		2029321A23C3077D00BB3BB7 /* JSMyTransportTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyTransportTabCell.h; sourceTree = "<group>"; };
+		2029321B23C3077D00BB3BB7 /* JSMyTransportTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyTransportTabCell.m; sourceTree = "<group>"; };
 		203B4E28231F5D0200A288CC /* JSTieziListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTieziListVC.h; sourceTree = "<group>"; };
 		203B4E29231F5D0200A288CC /* JSTieziListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTieziListVC.m; sourceTree = "<group>"; };
 		203C1980225AE02000AB5970 /* JSCarSourceDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCarSourceDetailVC.h; sourceTree = "<group>"; };
@@ -2578,6 +2587,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2029321823C3075600BB3BB7 /* 我的运力 */ = {
+			isa = PBXGroup;
+			children = (
+				2029321223C2C9BE00BB3BB7 /* JSMyTransportVC.h */,
+				2029321323C2C9BF00BB3BB7 /* JSMyTransportVC.m */,
+				2029321523C2E4B100BB3BB7 /* JSMyTransportAddVC.h */,
+				2029321623C2E4B100BB3BB7 /* JSMyTransportAddVC.m */,
+				2029321923C3076200BB3BB7 /* View */,
+			);
+			path = "我的运力";
+			sourceTree = "<group>";
+		};
+		2029321923C3076200BB3BB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2029321A23C3077D00BB3BB7 /* JSMyTransportTabCell.h */,
+				2029321B23C3077D00BB3BB7 /* JSMyTransportTabCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		202D3FDF226B0D91001B3353 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -3176,6 +3206,7 @@
 				204E5298227068E600DE65A8 /* JSFeedBackVC.m */,
 				207D143E22714E5900594520 /* JSAboutVC.h */,
 				207D143F22714E5900594520 /* JSAboutVC.m */,
+				2029321823C3075600BB3BB7 /* 我的运力 */,
 				A096482D22B87EF2000FDBE6 /* 我的园区 */,
 				209D7DEC224C615F00409EA2 /* 我的订单 */,
 				20306C6C224A5253004D6762 /* 钱包 */,
@@ -4493,6 +4524,7 @@
 				20118E6F22DEE96000A195D1 /* EMChatroomBlacklistViewController.m in Sources */,
 				20BD74182248C6D70020EA5D /* JSForgetPwdVC.m in Sources */,
 				20118DFE22DEE95F00A195D1 /* EMAudioRecordHelper.mm in Sources */,
+				2029321C23C3077D00BB3BB7 /* JSMyTransportTabCell.m in Sources */,
 				20C41066233899E600D068DE /* WXApiManager.mm in Sources */,
 				20F934E0224B18B4008C80DB /* JSRechargeVC.m in Sources */,
 				20118F6A22DEEA7600A195D1 /* MWTapDetectingView.m in Sources */,
@@ -4511,6 +4543,7 @@
 				20118F8022DEEA7600A195D1 /* EMRefreshViewController.m in Sources */,
 				201C7E7D232A1C5F0078C6DE /* JSSysMsgDetailVC.m in Sources */,
 				203D8EF9224DFDE10066333A /* JSMyInfoVC.m in Sources */,
+				2029321423C2C9BF00BB3BB7 /* JSMyTransportVC.m in Sources */,
 				208684B22329E5660066EDB5 /* PostListTabCell.m in Sources */,
 				A08207002343544B00189CF9 /* JSBindingPhoneVC.m in Sources */,
 				20118F7B22DEEA7600A195D1 /* SDWebImageDecoder.m in Sources */,
@@ -4605,6 +4638,7 @@
 				20118F6F22DEEA7600A195D1 /* PSTCollectionViewFlowLayout.m in Sources */,
 				20118E4922DEE96000A195D1 /* EMLocationViewController.m in Sources */,
 				20BD741B2248C8230020EA5D /* JSResetPswVC.m in Sources */,
+				2029321723C2E4B100BB3BB7 /* JSMyTransportAddVC.m in Sources */,
 				208F896E23289F5B00918888 /* JSMyTieZiListSwitchVC.m in Sources */,
 				20E41985231E1587001E89C7 /* JSSendTopicVC.m in Sources */,
 				20BD73BB2248BE440020EA5D /* CZNotDataView.m in Sources */,

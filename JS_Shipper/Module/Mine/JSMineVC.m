@@ -99,6 +99,10 @@
     else if ([sender.currentTitle isEqualToString:@"我的客服"]) {
         [CustomEaseUtils EaseChatConversationID:OnlineCustomerEaseMobKey];
     }
+    else if ([sender.currentTitle isEqualToString:@"我的运力"]) {
+        UIViewController *vc = [Utils getViewController:@"Mine" WithVCName:@"JSMyTransportVC"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     else { //系统服务配置
         NSInteger index = sender.tag-1000-2;
         ServiceModel *model = self.serviceArr[index];

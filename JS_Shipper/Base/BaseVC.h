@@ -23,6 +23,8 @@
 @property (nonatomic,assign) CGRect tableFrame;
 @property (weak, nonatomic) IBOutlet UITableView *baseTabView;
 @property (retain, nonatomic)  UIView *noDataView;
+/** 分页 */
+@property (nonatomic,assign) NSInteger currentPage;
 
 /** 添加上拉加载 */
 -(void)addTabMJ_FootView ;

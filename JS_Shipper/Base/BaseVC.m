@@ -73,7 +73,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
     [self.navigationController setNavigationBarHidden:YES];
-
+    self.currentPage = 1;
     if (@available(iOS 11.0, *)) {
         UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
