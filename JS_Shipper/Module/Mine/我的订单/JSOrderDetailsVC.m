@@ -16,6 +16,9 @@
 
 @interface JSOrderDetailsVC ()
 
+/** 订单model */
+@property (nonatomic,retain) ListOrderModel *model;
+
 /** 修改按钮 */
 @property (nonatomic,retain) UIButton *changeBtn;
 /** 评价视图 */

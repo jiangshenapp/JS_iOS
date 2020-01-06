@@ -29,6 +29,8 @@
 #endif
 // 如果需要使用 idfa 功能所需要引入的头文件（可选）
 #import <AdSupport/AdSupport.h>
+#import "JSOrderDetailsVC.h"
+#import "OrderInfoModel.h"
 
 @interface AppDelegate ()< WXApiDelegate,BuglyDelegate,UNUserNotificationCenterDelegate,JPUSHRegisterDelegate>
 @property (nonatomic, strong) BMKMapManager *mapManager; //主引擎类
@@ -479,6 +481,12 @@ API_AVAILABLE(ios(10.0)){
         value = [NSString stringWithFormat:@"%@",userInfo[@"value"]];
     }
     NSLog(@"推送信息 %@ %@", type, value);
+    
+    if ([type isEqualToString:@"orderDetail"]) {
+        JSOrderDetailsVC *vc = (JSOrderDetailsVC *)[Utils getViewController:@"Mine" WithVCName:@"JSOrderDetailsVC"];
+        vc.orderID = value;
+        [self.window.rootViewController.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark - EMPushManagerDelegateDevice

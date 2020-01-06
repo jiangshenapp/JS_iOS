@@ -14,10 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JSOrderDetailsVC : BaseVC
 
-/** 订单model */
-@property (nonatomic,retain) ListOrderModel *model;
-@property (weak, nonatomic) IBOutlet YYStarView *starView;
+/** 订单编号 */
+@property (nonatomic,copy) NSString *orderID;
 
+@property (weak, nonatomic) IBOutlet YYStarView *starView;
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScroView;
 /** 预约N分钟视图 */
 @property (weak, nonatomic) IBOutlet UIView *tileView1;

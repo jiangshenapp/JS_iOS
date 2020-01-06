@@ -273,7 +273,6 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
 /** 打电话 */
 - (void)callAction:(UIButton *)sender {
     if (![Utils isVerified]) {
