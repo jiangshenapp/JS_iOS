@@ -311,7 +311,7 @@
 {
     UIApplication *application = [UIApplication sharedApplication];
     application.applicationIconBadgeNumber = 0;
-    
+    [JPUSHService setBadge:0];
     if (NSClassFromString(@"UNUserNotificationCenter")) {
         [UNUserNotificationCenter currentNotificationCenter].delegate = self;
         
@@ -481,7 +481,7 @@ API_AVAILABLE(ios(10.0)){
     if ([userInfo.allKeys containsObject:@"type"]) {//消息:message 订单:orderDetail
         orderType = [NSString stringWithFormat:@"%@",userInfo[@"type"]];
     }
-    
+    [JPUSHService setBadge:0];
     NSLog(@"收到推送信息：%@  ",userInfo);
 }
 
