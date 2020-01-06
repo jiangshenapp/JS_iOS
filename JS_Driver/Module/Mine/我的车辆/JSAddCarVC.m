@@ -51,7 +51,7 @@
     [self getCarModelInfo];
     [self getCarLengthInfo];
     
-    if (![NSString isEmpty:_carDetaileID]) {
+    if (![NSString isEmpty:_carDetailID]) {
         self.title = @"车辆详情";
         [self getData];
     }
@@ -60,7 +60,7 @@
 - (void)getData {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@/%@",URL_GetCarDetail,_carDetaileID];
+    NSString *url = [NSString stringWithFormat:@"%@/%@",URL_GetCarDetail,_carDetailID];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success) {
             weakSelf.carModel = [CarModel mj_objectWithKeyValues:responseData];
@@ -240,7 +240,7 @@
 - (void)unbindingCar {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@/%@",URL_UnbindingCar,_carDetaileID];
+    NSString *url = [NSString stringWithFormat:@"%@/%@",URL_UnbindingCar,_carDetailID];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             [Utils showToast:@"解绑成功"];
@@ -299,7 +299,7 @@
     [dic setObject:@"0" forKey:@"state"];
     NSString *urlStr = URL_AddCar;
     if ([_submitBtn.titleLabel.text isEqualToString:@"重新提交"]) {
-        urlStr = [NSString stringWithFormat:@"%@/%@",URL_ReAuditCar,_carDetaileID];
+        urlStr = [NSString stringWithFormat:@"%@/%@",URL_ReAuditCar,_carDetailID];
     }
     [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {

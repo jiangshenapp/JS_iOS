@@ -1,23 +1,23 @@
 //
-//  JSCityDeliveryDetaileVC.m
+//  JSLineDetailVC.m
 //  JS_Shipper
 //
 //  Created by zhanbing han on 2019/6/14.
 //  Copyright © 2019 zhanbing han. All rights reserved.
 //
 
-#import "JSCityDeliveryDetaileVC.h"
+#import "JSLineDetailVC.h"
 
-@interface JSCityDeliveryDetaileVC ()
+@interface JSLineDetailVC ()
 
 @end
 
-@implementation JSCityDeliveryDetaileVC
+@implementation JSLineDetailVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"附近网点详情";
+    self.title = @"精品路线详情";
     
     [self refreshUI];
     [self getData];
@@ -27,7 +27,7 @@
 - (void)getData {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@?id=%@",URL_GetParkDetail,self.carSourceID];
+    NSString *url = [NSString stringWithFormat:@"%@/%@",URL_GetLineDetail,self.carSourceID];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             weakSelf.dataModel = [RecordsModel mj_objectWithKeyValues:responseData];
@@ -37,40 +37,18 @@
 }
 
 - (void)refreshUI {
-    
+    _startAddressLab.text = self.dataModel.startAddressCodeName;
+    _endAddressLab.text = self.dataModel.arriveAddressCodeName;
+    _nameLab.text = self.dataModel.driverName;
+    _carModelLab.text = self.dataModel.carModelName;
+    _calLengthLab.text = self.dataModel.carLengthName;
+    _contentTV.text = self.dataModel.remark;
     if ([self.dataModel.isCollect isEqualToString:@"1"]) {
         self.collectBtn.selected = YES;
     } else {
         self.collectBtn.selected = NO;
     }
-    self.parkImgH.constant = 0; //园区地址二期
-    self.tabHeadView.height = 410;
-    self.dotNameLab.text = self.dataModel.companyName;
-    if (![NSString isEmpty:self.dataModel.contactLocation]) {
-        NSDictionary *contactLocDic = [Utils dictionaryWithJsonString:self.dataModel.contactLocation];
-        NSDictionary *locDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loc"];
-//        NSString *distanceStr = [NSString stringWithFormat:@"距离您%@",[Utils distanceBetweenOrderBy:[locDic[@"lat"] floatValue] :[locDic[@"lng"] floatValue] andOther:[contactLocDic[@"latitude"] floatValue] :[contactLocDic[@"longitude"] floatValue]]];
-    }
-    NSString *distanceStr ;
-    if ([self.dataModel.distance floatValue]>1000) {
-        distanceStr = [NSString stringWithFormat:@"距离您%.2fkm",[self.dataModel.distance floatValue]/1000];
-    }
-    else {
-        distanceStr = [NSString stringWithFormat:@"距离您%.2fm",[self.dataModel.distance floatValue]];
-    }
-
-    self.dotAddressLab.text = distanceStr;
-    
-    self.nameLab.text = self.dataModel.contactName;
-    self.addressLab.text = self.dataModel.contactAddress;
-    self.contentTV.text = self.dataModel.remark;
-    self.contentTV.userInteractionEnabled = NO;
-    if (self.dataModel.businessLicenceImage.length>0) {
-        self.parkImgH.constant = 150;
-        [self.parkImgView sd_setImageWithURL:[NSURL URLWithString:self.dataModel.businessLicenceImage] placeholderImage:DefaultImage];
-        self.tabHeadView.height = 560;
-    }
-    [self.baseTabView reloadData];
+    _contentTV.userInteractionEnabled = NO;
 }
 
 #pragma mark - methods
@@ -80,8 +58,8 @@
     
     if (self.collectBtn.isSelected) {
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-        [dic setObject:self.carSourceID forKey:@"parkId"];
-        [[NetworkManager sharedManager] postJSON:URL_ParkRemove parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        [dic setObject:self.carSourceID forKey:@"lineId"];
+        [[NetworkManager sharedManager] postJSON:URL_LineRemove parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             if (status == Request_Success) {
                 [Utils showToast:@"取消收藏成功"];
                 self.collectBtn.selected = !self.collectBtn.isSelected;
@@ -89,8 +67,8 @@
         }];
     } else {
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-        [dic setObject:self.carSourceID forKey:@"parkId"];
-        [[NetworkManager sharedManager] postJSON:URL_ParkAdd parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        [dic setObject:self.carSourceID forKey:@"lineId"];
+        [[NetworkManager sharedManager] postJSON:URL_LineAdd parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             if (status == Request_Success) {
                 [Utils showToast:@"收藏成功"];
                 self.collectBtn.selected = !self.collectBtn.isSelected;
@@ -104,8 +82,8 @@
     if (![Utils isVerified]) {
         return;
     }
-    if (![Utils isBlankString:self.dataModel.contractPhone]) {
-        [Utils call:self.dataModel.contractPhone];
+    if (![Utils isBlankString:self.dataModel.driverPhone]) {
+        [Utils call:self.dataModel.driverPhone];
     } else {
         [Utils showToast:@"手机号码为空"];
     }

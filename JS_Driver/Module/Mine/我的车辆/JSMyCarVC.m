@@ -89,7 +89,7 @@
     } else {
         CarModel *model = self.listData[indexPath.row];
         JSAddCarVC *vc = (JSAddCarVC *)[Utils getViewController:@"Mine" WithVCName:@"JSAddCarVC"];
-        vc.carDetaileID = model.ID;
+        vc.carDetailID = model.ID;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

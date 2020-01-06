@@ -1,16 +1,16 @@
 //
-//  JSCityDeliveryDetaileVC.h
+//  JSCityDeliveryDetailVC.h
 //  JS_Shipper
 //
 //  Created by zhanbing han on 2019/6/14.
 //  Copyright © 2019 zhanbing han. All rights reserved.
 //
 
-#import "JSHomeDetaileVC.h"
+#import "JSHomeDetailVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JSCityDeliveryDetaileVC : JSHomeDetaileVC
+@interface JSCityDeliveryDetailVC : JSHomeDetailVC
 
 @property (weak, nonatomic) IBOutlet UIView *tabHeadView;
 @property (weak, nonatomic) IBOutlet UIImageView *parkImgView;

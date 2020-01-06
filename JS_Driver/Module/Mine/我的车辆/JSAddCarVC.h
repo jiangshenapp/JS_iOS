@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JSAddCarVC : BaseVC
 
 /** 车辆详情 */
-@property (nonatomic,copy) NSString *carDetaileID;
+@property (nonatomic,copy) NSString *carDetailID;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *submitH;
 
 @property (weak, nonatomic) IBOutlet UITableView *baseTab;

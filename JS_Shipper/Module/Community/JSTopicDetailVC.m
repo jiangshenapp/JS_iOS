@@ -35,17 +35,17 @@
     self.title = @"详情";
     _commentDataSource = [NSMutableArray array];
     [self refrehUI];
-    [self getDetaile];
+    [self getDetail];
     [self getCommentData];
     [self getLikeSubject];
     __weak typeof(self) weakSelf = self;
     self.mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf getDetaile];
+        [weakSelf getDetail];
     }];
     // Do any additional setup after loading the view.
 }
 
-- (void)getDetaile {
+- (void)getDetail {
     __weak typeof(self) weakSelf = self;
     NSDictionary *dic = [NSDictionary dictionary];
     NSString *url = [NSString stringWithFormat:@"%@?postId=%@",URL_PostDetail,_dataModel.ID];
@@ -70,7 +70,7 @@
             if (weakSelf.attentionBtn.selected) {
                 weakSelf.attentionBtn.backgroundColor = [UIColor lightGrayColor];
             }
-            [weakSelf getDetaile];//获取详情
+            [weakSelf getDetail];//获取详情
         }
     }];
 }
