@@ -54,13 +54,13 @@
             [weakSelf.baseTabView.mj_header endRefreshing];
         }
         if (weakSelf.dataSource.count==[weakSelf.dataModels.total integerValue]) {
-            weakSelf.baseTabView.mj_footer = nil;
+            weakSelf.mainTab.mj_footer = nil;
         }
         else {
             [weakSelf addTabMJ_FootView];
         }
         [weakSelf hiddenNoDataView:weakSelf.dataSource.count];
-        [weakSelf.baseTabView reloadData];
+        [weakSelf.mainTab reloadData];
     }];
 }
 

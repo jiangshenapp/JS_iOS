@@ -20,7 +20,7 @@
 -(void)setDataModel:(RecordsModel *)dataModel {
     _titleLab.text = [NSString stringWithFormat:@"%@(%@到%@)",dataModel.cphm,dataModel.startAddressCodeName,dataModel.arriveAddressCodeName];
     _nameLab.text = [NSString stringWithFormat:@"%@ %@",dataModel.driverName,dataModel.driverPhone];
-    _carTypeLab.text = [NSString stringWithFormat:@"车型：%@ 车长：%@",dataModel.carModelName,dataModel.carLength];
+    _carTypeLab.text = [NSString stringWithFormat:@"车型:%@  车长:%@",dataModel.carModelName,dataModel.carLength];
     
 }
 
