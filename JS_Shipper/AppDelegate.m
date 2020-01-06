@@ -478,11 +478,11 @@ API_AVAILABLE(ios(10.0)){
     if ([userInfo.allKeys containsObject:@"value"]) {
         orderNO = [NSString stringWithFormat:@"%@",userInfo[@"value"]];
     }
-    if ([userInfo.allKeys containsObject:@"type"]) {
+    if ([userInfo.allKeys containsObject:@"type"]) {//消息:message 订单:orderDetail
         orderType = [NSString stringWithFormat:@"%@",userInfo[@"type"]];
     }
     
-    NSLog(@"订单号  %@   %@",orderNO,orderType);
+    NSLog(@"收到推送信息：%@  ",userInfo);
 }
 
 
