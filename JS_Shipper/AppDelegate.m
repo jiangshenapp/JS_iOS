@@ -311,7 +311,7 @@
 {
     UIApplication *application = [UIApplication sharedApplication];
     application.applicationIconBadgeNumber = 0;
-    
+    [JPUSHService setBadge:0];
     if (NSClassFromString(@"UNUserNotificationCenter")) {
         [UNUserNotificationCenter currentNotificationCenter].delegate = self;
         
