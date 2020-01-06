@@ -361,13 +361,13 @@
     [[EMClient sharedClient] applicationDidEnterBackground:application];
     [UIApplication sharedApplication].applicationIconBadgeNumber
     = [CustomEaseUtils getUnreadCount];
-    self.taskId =[application beginBackgroundTaskWithExpirationHandler:^(void) {
+    self.taskId = [application beginBackgroundTaskWithExpirationHandler:^(void) {
             //当申请的后台时间用完的时候调用这个block
             //此时我们需要结束后台任务，
             [self endTask];
         }];
     // 模拟一个长时间的任务 Task
-     self.timer =[NSTimer scheduledTimerWithTimeInterval:1.0f
+     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
                                                        target:self
                                                      selector:@selector(longTimeTask:)
                                                      userInfo:nil
@@ -375,9 +375,7 @@
 }
 
 #pragma mark - 停止timer
--(void)endTask
-{
-
+- (void)endTask {
     if (_timer != nil||_timer.isValid) {
         [_timer invalidate];
         _timer = nil;
@@ -395,7 +393,6 @@
     // 系统留给的我们的时间
     NSTimeInterval time =[[UIApplication sharedApplication] backgroundTimeRemaining];
 //    NSLog(@"系统留给的我们的时间 = %.02f Seconds", time);
-  
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -472,31 +469,27 @@ API_AVAILABLE(ios(10.0)){
     completionHandler();
 }
 
-- (void)pushVCWithOrderInfo:(NSDictionary *)userInfo{
-    NSString *orderNO = @"";
-    NSString *orderType = @"";
-    if ([userInfo.allKeys containsObject:@"value"]) {
-        orderNO = [NSString stringWithFormat:@"%@",userInfo[@"value"]];
-    }
+- (void)pushVCWithOrderInfo:(NSDictionary *)userInfo {
+    NSString *value = @"";
+    NSString *type = @"";
     if ([userInfo.allKeys containsObject:@"type"]) {
-        orderType = [NSString stringWithFormat:@"%@",userInfo[@"type"]];
+        type = [NSString stringWithFormat:@"%@",userInfo[@"type"]];
     }
-    
-    NSLog(@"订单号  %@   %@",orderNO,orderType);
+    if ([userInfo.allKeys containsObject:@"value"]) {
+        value = [NSString stringWithFormat:@"%@",userInfo[@"value"]];
+    }
+    NSLog(@"推送信息 %@ %@", type, value);
 }
-
 
 #pragma mark - EMPushManagerDelegateDevice
 // 打印收到的apns信息
--(void)didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
+- (void)didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSError *parseError = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userInfo options:NSJSONWritingPrettyPrinted error:&parseError];
     NSString *str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"推送内容" message:str delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
     [alert show];
-    
 }
 
 @end
