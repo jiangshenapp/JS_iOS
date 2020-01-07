@@ -9,6 +9,7 @@
 #import "JSRegisterVC.h"
 #import "JSPaswdLoginVC.h"
 #import "CustomEaseUtils.h"
+#import "AddressInfoModel.h"
 
 @interface JSRegisterVC ()<UITextFieldDelegate>
 
@@ -51,13 +52,52 @@
                          self.codeTF.text, @"code",
                          self.pswTF.text, @"password",
                          nil];
-    
     [[NetworkManager sharedManager] postJSON:URL_Registry parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
 
         if (status == Request_Success) {
             [Utils showToast:@"注册成功"];
-            [Utils isLoginWithJump:YES];
-            [CustomEaseUtils EaseMobRegisteWithUser:self.phoneTF.text completion:nil];
+            [CustomEaseUtils EaseMobRegisteWithUser:self.phoneTF.text completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
+            }]; //注册环信
+//            [Utils isLoginWithJump:YES];
+            NSString *token = responseData;
+            [CacheUtil saveCacher:@"token" withValue:token];
+            [CacheUtil saveCacher:@"loginPhone" withValue:self.phoneTF.text];
+            [self loginAction];
+        }
+    }];
+}
+
+/** 登录成功 */
+- (void)loginAction {
+    [self getUserInfo]; //获取用户信息
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:@YES];
+    // 跳转到首页
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+/* 获取用户信息 */
+- (void)getUserInfo {
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] getJSON:URL_Profile parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            //缓存用户信息
+            NSDictionary *userDic = responseData;
+            [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+            //环信登录
+            NSString *appFlag = @"driver"; //司机端
+            if ([AppChannel isEqualToString:@"1"]) { //货主端
+                appFlag = @"shipper";
+                AddressInfoModel *dataModel = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
+                if (!dataModel) {
+                    dataModel = [[AddressInfoModel alloc] init];
+                }
+                dataModel.phone = [UserInfo share].mobile;
+                dataModel.name = [UserInfo share].nickName;
+                [NSKeyedArchiver archiveRootObject:dataModel toFile:kSendAddressArchiver];
+            }
+            NSString *easeMobUser = [NSString stringWithFormat:@"%@%@",appFlag,[UserInfo share].mobile];
+            [CustomEaseUtils EaseMobLoginWithUser:easeMobUser completion:^(NSString * _Nonnull aName, EMError * _Nonnull error) {
+            }];
         }
     }];
 }
