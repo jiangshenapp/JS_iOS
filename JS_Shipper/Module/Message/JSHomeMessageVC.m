@@ -26,6 +26,38 @@
         make.top.equalTo(self.view.mas_top).offset(kNavBarH);
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginStateChange:) name:ACCOUNT_LOGIN_CHANGED object:nil];
+    [self getData];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getData];
+}
+
+- (void)getData {
+    NSString *type = [AppChannel isEqualToString:@"1"]?@"3":@"2";
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    
+    [[NetworkManager sharedManager] getJSON:[NSString stringWithFormat:@"%@?type=%@",URL_GetUnreadMessageCount,type] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        NSInteger count = 0;
+        if (status==Request_Success) {
+            count = [responseData integerValue];
+        }
+        weakSelf.systermMsgCountLab.text = [NSString stringWithFormat:@"%ld",count];
+        weakSelf.systermMsgCountLab.hidden = !count;
+    }];
+    
+    NSString *pushSide = [AppChannel isEqualToString:@"1"]?@"2":@"1";
+    [[NetworkManager sharedManager] getJSON:[NSString stringWithFormat:@"%@?pushSide=%@",URL_GetUnreadPushLogCount,pushSide] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+           NSInteger count = 0;
+           if (status==Request_Success) {
+               count = [responseData integerValue];
+           }
+           weakSelf.pushMsgCountLab.text = [NSString stringWithFormat:@"%ld",count];
+           weakSelf.pushMsgCountLab.hidden = !count;
+       }];
 }
 
 - (void)loginStateChange:(NSNotification *)aNotif {
@@ -38,7 +70,9 @@
 }
 
 - (IBAction)messageAction:(id)sender {
-    UIViewController *vc = [Utils getViewController:@"Message" WithVCName:@"JSSystemMessageVC"];
+    UIButton *btn = (UIButton *)sender;
+    JSSystemMessageVC *vc = (JSSystemMessageVC *)[Utils getViewController:@"Message" WithVCName:@"JSSystemMessageVC"];
+    vc.isPush = (btn.tag==11);
     [self.navigationController pushViewController:vc animated:YES];
 }
 

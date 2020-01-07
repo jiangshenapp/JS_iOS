@@ -122,9 +122,16 @@ NSString *PAY_URL(void);
 
 #define URL_MessageList @"/app/message/page"//消息列表"
 #define URL_MessageDetail @"/app/message"//消息详情"
+#define URL_GetUnreadMessageCount @"/app/message/getUnreadMessageCount"//获取系统消息未读数"
+#define URL_GetUnreadPushLogCount @"/app/message/getUnreadPushLogCount"//获取推送消息未读数
+#define URL_GetPushLog @"/app/message/getPushLog"//推送消息列表"
+#define URL_ReadAllPushLog @"/app/message/readAllPushLog"//标记全部推送消息为已读"
+#define URL_ReadPushLog @"/app/message/readPushLog"//标记推送消息为已读"
+#define URL_ReadPushLog @"/app/message/readPushLog"//标记推送消息为已读"
+
+
 #define URL_GetSysServiceBanner @"/app/sys/getSysServiceBanner"//获取系统服务Banner
 #define URL_GetSysServiceList @"/app/sys/getSysServiceList"//获取系统服务
 #define URL_GetBannerList @"/app/banner/list"//根据类型获取banner type 1服务页广告、2发货页广告、3启动页广告
 #define URL_Feedback @"/app/feedback/save"//新增意见反馈
-
 @end

@@ -21,5 +21,6 @@
 
 /**  */
 @property (nonatomic,copy) NSString *image;
-
+/** <#object#> */
+@property (nonatomic,copy) NSString *ID;
 @end

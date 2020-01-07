@@ -12,6 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSHomeMessageVC : EMConversationsViewController
+@property (weak, nonatomic) IBOutlet UILabel *systermMsgCountLab;
+@property (weak, nonatomic) IBOutlet UILabel *pushMsgCountLab;
 
 @property (weak, nonatomic) IBOutlet UIView *tabHeadView;
 

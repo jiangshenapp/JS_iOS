@@ -268,6 +268,8 @@
 		20118F9522DEED3D00A195D1 /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; };
 		20118F9E22DEF0B900A195D1 /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; };
 		20118F9F22DEF0B900A195D1 /* HyphenateLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20118F9422DEED3D00A195D1 /* HyphenateLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20124A3A23C4864D003611B8 /* JSMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20124A3923C4864D003611B8 /* JSMessageModel.m */; };
+		20124A3D23C486CA003611B8 /* JSSysMessageTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20124A3C23C486CA003611B8 /* JSSysMessageTabCell.m */; };
 		2012E5B322B33904001F8001 /* JSLineDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B222B33904001F8001 /* JSLineDetailVC.m */; };
 		2012E5B622B33941001F8001 /* JSCityDeliveryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B522B33941001F8001 /* JSCityDeliveryDetailVC.m */; };
 		2012E5B922B37643001F8001 /* JSHomeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2012E5B822B37643001F8001 /* JSHomeDetailVC.m */; };
@@ -1343,6 +1345,10 @@
 		20118F3F22DEEA7600A195D1 /* EMDateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDateHelper.m; sourceTree = "<group>"; };
 		20118F4022DEEA7600A195D1 /* EMChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMChineseToPinyin.m; sourceTree = "<group>"; };
 		20118F9422DEED3D00A195D1 /* HyphenateLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyphenateLite.framework; sourceTree = "<group>"; };
+		20124A3823C4864D003611B8 /* JSMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMessageModel.h; sourceTree = "<group>"; };
+		20124A3923C4864D003611B8 /* JSMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMessageModel.m; sourceTree = "<group>"; };
+		20124A3B23C486CA003611B8 /* JSSysMessageTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSysMessageTabCell.h; sourceTree = "<group>"; };
+		20124A3C23C486CA003611B8 /* JSSysMessageTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSysMessageTabCell.m; sourceTree = "<group>"; };
 		2012E5B122B33904001F8001 /* JSLineDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSLineDetailVC.h; sourceTree = "<group>"; };
 		2012E5B222B33904001F8001 /* JSLineDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSLineDetailVC.m; sourceTree = "<group>"; };
 		2012E5B422B33941001F8001 /* JSCityDeliveryDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCityDeliveryDetailVC.h; sourceTree = "<group>"; };
@@ -2576,6 +2582,24 @@
 			path = HyphenateSDK;
 			sourceTree = "<group>";
 		};
+		20124A3523C48628003611B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20124A3B23C486CA003611B8 /* JSSysMessageTabCell.h */,
+				20124A3C23C486CA003611B8 /* JSSysMessageTabCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20124A3723C48634003611B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20124A3823C4864D003611B8 /* JSMessageModel.h */,
+				20124A3923C4864D003611B8 /* JSMessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		201883FA2325EC5000CF780B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3187,6 +3211,8 @@
 				2055C110225C3B4D000E13C3 /* JSSystemMessageVC.m */,
 				201C7E7B232A1C5F0078C6DE /* JSSysMsgDetailVC.h */,
 				201C7E7C232A1C5F0078C6DE /* JSSysMsgDetailVC.m */,
+				20124A3723C48634003611B8 /* Model */,
+				20124A3523C48628003611B8 /* View */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -4580,6 +4606,7 @@
 				20A8C22622DEB35F008E10EB /* CustomEaseUtils.m in Sources */,
 				A096484022B8815D000FDBE6 /* SortView.m in Sources */,
 				20BD73B32248BE440020EA5D /* XLGLottie.m in Sources */,
+				20124A3A23C4864D003611B8 /* JSMessageModel.m in Sources */,
 				20BD73AC2248BE440020EA5D /* Toast.m in Sources */,
 				20118F6722DEEA7600A195D1 /* UIImage+MWPhotoBrowser.m in Sources */,
 				20815E9223176CC000E24C75 /* BaseVC.m in Sources */,
@@ -4597,6 +4624,7 @@
 				20118DFA22DEE95F00A195D1 /* EaseEmotionEscape.m in Sources */,
 				207995A8235B524200F6A66F /* ImageViewer.m in Sources */,
 				A02221DC22C79A09006AD29A /* AEButton.m in Sources */,
+				20124A3D23C486CA003611B8 /* JSSysMessageTabCell.m in Sources */,
 				20118F5F22DEEA7600A195D1 /* EMAvatarNameCell.m in Sources */,
 				20BD73BD2248BE440020EA5D /* UserInfo.m in Sources */,
 				20118F8622DEEA7600A195D1 /* EMAlertController.m in Sources */,

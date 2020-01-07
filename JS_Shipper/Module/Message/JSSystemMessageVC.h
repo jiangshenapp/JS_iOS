@@ -7,42 +7,17 @@
 //
 
 #import "BaseVC.h"
+#import "JSSysMessageTabCell.h"
+#import "JSMessageModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSSystemMessageVC : BaseVC
 
-//@property (weak, nonatomic) IBOutlet UITableView *mainTabView;
+@property (assign, nonatomic)  BOOL isPush;
 
 @end
 
-@interface SysMessageTabcell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *msgImgView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLab;
-@property (weak, nonatomic) IBOutlet UILabel *contentLab;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgH;
-@property (weak, nonatomic) IBOutlet UILabel *readLab;
-
-@end
-
-@interface SysMessageModel : BaseItem
-/** <#object#> */
-@property (nonatomic,copy) NSString *isRead;
-/** <#object#> */
-@property (nonatomic,copy) NSString *content;
-/** <#object#> */
-@property (nonatomic,copy) NSString *publishTime;
-/** <#object#> */
-@property (nonatomic,copy) NSString *ID;
-/** <#object#> */
-@property (nonatomic,copy) NSString *createBy;
-/** <#object#> */
-@property (nonatomic,copy) NSString *title;
-/** <#object#> */
-@property (nonatomic,copy) NSString *type;
-/** <#object#> */
-@property (nonatomic,copy) NSString *createTime;
-@end
 
 NS_ASSUME_NONNULL_END
