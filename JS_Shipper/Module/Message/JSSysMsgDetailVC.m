@@ -13,7 +13,6 @@
 #import <UIButton+WebCache.h>
 
 @interface JSSysMsgDetailVC ()
-@property (nonatomic,retain) SysMessageModel *dataModel;
 @end
 
 @implementation JSSysMsgDetailVC
@@ -21,19 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"消息详情";
-    [self getData];
-}
-
-- (void)getData {
-    __weak typeof(self) weakSelf = self;
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@/%@",URL_MessageDetail,_msgID];
-    [[NetworkManager sharedManager] getJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
-        if (status == Request_Success) {
-            weakSelf.dataModel = [SysMessageModel mj_objectWithKeyValues:responseData];
-        }
-        [weakSelf.mainTabView reloadData];
-    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -42,17 +28,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SysMsgDetailTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SysMsgDetailTabCell"];
-    cell.titleLab.text = _dataModel.title;
-    cell.contendLab.text = _dataModel.content;
-    cell.timeLab.text = _dataModel.publishTime;
-    if (_dataModel.image.length==0) {
-        cell.imgH.constant = 0;
-        cell.contentTopH = 0;
+    cell.imgH.constant = 0;
+    cell.contentTopH = 0;
+    if (self.sysModel) {
+       cell.titleLab.text = _sysModel.title;
+       cell.contendLab.text = _sysModel.content;
+       cell.timeLab.text = _sysModel.publishTime;
+       if (_sysModel.image.length>0) {
+           cell.imgH.constant = 200;
+           cell.contentTopH.constant = 10;
+           [cell.imgBtn sd_setImageWithURL:[NSURL URLWithString:_sysModel.image] forState:UIControlStateNormal placeholderImage:DefaultImage];
+       }
     }
     else {
-        cell.imgH.constant = 200;
-        cell.contentTopH.constant = 10;
-        [cell.imgBtn sd_setImageWithURL:[NSURL URLWithString:_dataModel.image] forState:UIControlStateNormal placeholderImage:DefaultImage];
+        cell.titleLab.text = _pushModel.templateName;
+        cell.contendLab.text = _pushModel.pushContent;
+        cell.timeLab.text = _pushModel.pushTime;
     }
     return cell;
 }

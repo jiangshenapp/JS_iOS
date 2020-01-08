@@ -7,12 +7,15 @@
 //
 
 #import "BaseVC.h"
+#import "JSMessageModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSSysMsgDetailVC : BaseVC
+/** <#object#> */
+@property (nonatomic,retain) SysMessageModel *sysModel;
+@property (nonatomic,retain) PushMessageModel *pushModel;
 
-@property (nonatomic,copy) NSString *msgID;
 @property (weak, nonatomic) IBOutlet UITableView *mainTabView;
 
 @end

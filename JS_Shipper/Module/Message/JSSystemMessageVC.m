@@ -10,6 +10,8 @@
 #import "JSSysMsgDetailVC.h"
 
 @interface JSSystemMessageVC ()<UITableViewDelegate,UITableViewDataSource>
+/** 1运力端，2货主端 */
+@property (nonatomic,copy) NSString *pushSide;
 /** 分页 */
 @property (nonatomic,assign) NSInteger page;
 /** 数据源 */
@@ -24,15 +26,16 @@
     if (_isPush) {
         self.title = @"推送消息";
     }
+    _pushSide = [AppChannel isEqualToString:@"1"]?@"2":@"1";
     UIButton *sender = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 44)];
     [sender setTitle:@"全部已读" forState:UIControlStateNormal];
     sender.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [sender setTitleColor:kBlackColor forState:UIControlStateNormal];
     [sender addTarget:self action:@selector(allReadAction) forControlEvents:UIControlEventTouchUpInside];
     sender.titleLabel.font = [UIFont systemFontOfSize:12];
-    if (_isPush) {
+//    if (_isPush) {
         self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:sender];
-    }
+//    }
     
     self.baseTabView.delegate = self;
     self.baseTabView.dataSource = self;
@@ -51,8 +54,7 @@
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     if (_isPush) {
-        NSString *pushSide = [AppChannel isEqualToString:@"1"]?@"2":@"1";
-        NSString *url = [NSString stringWithFormat:@"%@?pushSide=%@",URL_GetPushLog,pushSide];
+        NSString *url = [NSString stringWithFormat:@"%@?pushSide=%@",URL_GetPushLog,_pushSide];
         [[NetworkManager sharedManager] getJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             [weakSelf handleDataStatus:status resultData:responseData];
         }];
@@ -105,10 +107,16 @@
 - (void)allReadAction {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSString *pushSide = [AppChannel isEqualToString:@"1"]?@"2":@"1";
-    NSString *url = [NSString stringWithFormat:@"%@?pushSide=%@",URL_ReadAllPushLog,pushSide];
-    [[NetworkManager sharedManager] getJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
-        [weakSelf.baseTabView reloadData];
+    NSString *url = @"";
+    if (_isPush) {
+        url = [NSString stringWithFormat:@"%@?pushSide=%@",URL_ReadAllPushLog,_pushSide];
+        
+    }
+    else {
+        url = [NSString stringWithFormat:@"%@?pushSide=%@",URL_ReadAllMessage,_pushSide];
+    }
+    [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        [weakSelf.baseTabView.mj_header beginRefreshing];
     }];
 }
 
@@ -125,6 +133,7 @@
     BOOL isRead;
     if (_isPush) {
         PushMessageModel *model = _dataSource[indexPath.section];
+        cell.titleLab.text = model.templateName;
         cell.contentLab.text = model.pushContent;
         isRead = [model.state boolValue];
     }
@@ -189,37 +198,36 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     JSMessageModel *model=_dataSource[indexPath.section] ;
-//    [self readMsg:model];
     JSSysMsgDetailVC *vc = (JSSysMsgDetailVC *)[Utils getViewController:@"Message" WithVCName:@"JSSysMsgDetailVC"];
-    vc.msgID = model.ID;
+    if (_isPush) {
+        PushMessageModel *tempModel = _dataSource[indexPath.section];
+        vc.pushModel = tempModel;
+        if ([tempModel.state boolValue]==NO) {
+            __weak typeof(self) weakSelf = self;
+            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+            [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@?id=%@&pushSide=%@",URL_ReadPushLog,model.ID,_pushSide] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+                if (status==Request_Success) {
+                    tempModel.state = @"1";
+                }
+                [weakSelf.baseTabView reloadData];
+            }];
+        }
+    }
+    else {
+        SysMessageModel *tempModel = _dataSource[indexPath.section];
+        vc.sysModel = tempModel;
+        if ([tempModel.isRead boolValue]==NO) {
+            __weak typeof(self) weakSelf = self;
+            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+            [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@?messageId=%@&pushSide=%@",URL_ReadMessage,model.ID,_pushSide] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+                if (status==Request_Success) {
+                    tempModel.isRead = @"1";
+                }
+                [weakSelf.baseTabView reloadData];
+            }];
+        }
+    }
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-//设置消息为已读
-- (void)readMsg:(SysMessageModel *)model {
-    __weak typeof(self) weakSelf = self;
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:model.ID forKey:@"id"];
-    NSString *url ;
-//    if (_isPush) {
-//        if ([model.state boolValue]) {
-//            return;
-//        }
-//        url = URL_ReadPushLog;
-//    }
-//    else {
-//        if ([model.isRead boolValue]) {
-//            return;
-//        }
-//        url = URL_ReadPushLog;
-//    }
-//    [[NetworkManager sharedManager] getJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
-//        if (status==Request_Success) {
-//            model.isRead = @"1";
-//            model.state = @"1";
-//        }
-//        [weakSelf.baseTabView reloadData];
-//    }];
 }
 
 /*

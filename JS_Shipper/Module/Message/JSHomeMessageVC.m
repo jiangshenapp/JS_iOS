@@ -36,11 +36,11 @@
 }
 
 - (void)getData {
-    NSString *type = [AppChannel isEqualToString:@"1"]?@"3":@"2";
+    NSString *pushSide = [AppChannel isEqualToString:@"1"]?@"2":@"1";
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     
-    [[NetworkManager sharedManager] getJSON:[NSString stringWithFormat:@"%@?type=%@",URL_GetUnreadMessageCount,type] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+    [[NetworkManager sharedManager] getJSON:[NSString stringWithFormat:@"%@?pushSide=%@",URL_GetUnreadMessageCount,pushSide] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         NSInteger count = 0;
         if (status==Request_Success) {
             count = [responseData integerValue];
@@ -49,7 +49,6 @@
         weakSelf.systermMsgCountLab.hidden = !count;
     }];
     
-    NSString *pushSide = [AppChannel isEqualToString:@"1"]?@"2":@"1";
     [[NetworkManager sharedManager] getJSON:[NSString stringWithFormat:@"%@?pushSide=%@",URL_GetUnreadPushLogCount,pushSide] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
            NSInteger count = 0;
            if (status==Request_Success) {

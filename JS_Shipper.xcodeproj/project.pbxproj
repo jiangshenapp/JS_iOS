@@ -289,6 +289,8 @@
 		2029321423C2C9BF00BB3BB7 /* JSMyTransportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2029321323C2C9BF00BB3BB7 /* JSMyTransportVC.m */; };
 		2029321723C2E4B100BB3BB7 /* JSMyTransportAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2029321623C2E4B100BB3BB7 /* JSMyTransportAddVC.m */; };
 		2029321C23C3077D00BB3BB7 /* JSMyTransportTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2029321B23C3077D00BB3BB7 /* JSMyTransportTabCell.m */; };
+		2037D64D23C5B45700362E05 /* JSMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20124A3923C4864D003611B8 /* JSMessageModel.m */; };
+		2037D64E23C5B45A00362E05 /* JSSysMessageTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20124A3C23C486CA003611B8 /* JSSysMessageTabCell.m */; };
 		203B4E2A231F5D0200A288CC /* JSTieziListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B4E29231F5D0200A288CC /* JSTieziListVC.m */; };
 		203C1982225AE02000AB5970 /* JSCarSourceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C1981225AE02000AB5970 /* JSCarSourceDetailVC.m */; };
 		203C30292320D5D20007FC53 /* JSParkAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C30282320D5D20007FC53 /* JSParkAddressVC.m */; };
@@ -4278,6 +4280,7 @@
 				20815E7C23176C8900E24C75 /* JSAddRouteVC.m in Sources */,
 				205A902A23175F72004C756E /* EMChatroomMembersViewController.m in Sources */,
 				20FB038A231D000A0015787F /* YYStarView.m in Sources */,
+				2037D64E23C5B45A00362E05 /* JSSysMessageTabCell.m in Sources */,
 				A022CCD623191F5E00E3EDD5 /* MOFSPickerView.m in Sources */,
 				205A902B23175F72004C756E /* EMSearchViewController.m in Sources */,
 				205A902C23175F72004C756E /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
@@ -4446,6 +4449,7 @@
 				205A90AD23175F72004C756E /* UIViewController+Search.m in Sources */,
 				20815E8423176C8A00E24C75 /* JSAuthenticationVC.m in Sources */,
 				207995A9235B524200F6A66F /* ImageViewer.m in Sources */,
+				2037D64D23C5B45700362E05 /* JSMessageModel.m in Sources */,
 				205A90B023175F72004C756E /* ZHPickView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

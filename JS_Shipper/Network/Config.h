@@ -128,6 +128,8 @@ NSString *PAY_URL(void);
 #define URL_ReadAllPushLog @"/app/message/readAllPushLog"//标记全部推送消息为已读"
 #define URL_ReadPushLog @"/app/message/readPushLog"//标记推送消息为已读"
 #define URL_ReadPushLog @"/app/message/readPushLog"//标记推送消息为已读"
+#define URL_ReadMessage @"/app/message/readMessage"// 标记系统消息为已读"
+#define URL_ReadAllMessage @"/app/message/readAllMessage"//标记全部系统消息为已读"
 
 
 #define URL_GetSysServiceBanner @"/app/sys/getSysServiceBanner"//获取系统服务Banner

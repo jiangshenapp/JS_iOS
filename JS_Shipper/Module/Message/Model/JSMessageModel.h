@@ -43,6 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *state;
 /** 推送账号 */
 @property (nonatomic,copy) NSString *pushTarget;
+
+@property (nonatomic,copy) NSString *templateName;
+
 @end
 
 NS_ASSUME_NONNULL_END
