@@ -43,12 +43,6 @@
         if (status == Request_Success) {
             [weakSelf.dataSource addObjectsFromArray:[JSTransportModel mj_objectArrayWithKeyValuesArray:responseData]];
         }
-        if ([weakSelf.baseTabView.mj_footer isRefreshing]) {
-            [weakSelf.baseTabView.mj_footer endRefreshing];
-        }
-        if ([weakSelf.baseTabView.mj_header isRefreshing]) {
-            [weakSelf.baseTabView.mj_header endRefreshing];
-        }
         [weakSelf hiddenNoDataView:weakSelf.dataSource.count];
         [weakSelf.mainTab reloadData];
     }];
@@ -58,7 +52,7 @@
     JSMyTransportAddVC *vc = (JSMyTransportAddVC *)[Utils getViewController:@"Mine" WithVCName:@"JSMyTransportAddVC"];
     __weak typeof(self) weakSelf = self;
     vc.doneBlock = ^{
-        [weakSelf getData];
+        [weakSelf requestData];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -85,6 +79,25 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 10;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";//默认文字为 Delete
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        JSTransportModel *currentModel = _dataSource[indexPath.section];
+        NSMutableDictionary *param = [NSMutableDictionary dictionary];
+        __weak typeof(self) weakSelf = self;
+        [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@?id=%@",URL_ConsignorcarRemoveCar,currentModel.ID] parameters:param completion:^(id responseData, RequestState status, NSError *error) {
+            if (status==Request_Success) {
+                [weakSelf.dataSource removeObject:currentModel];
+            }
+            [weakSelf.mainTab reloadData];
+        }];
+        
+    }
 }
 
 - (void)bookOrderAction:(UIButton *)sender {

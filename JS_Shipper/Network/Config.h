@@ -87,6 +87,7 @@ NSString *PAY_URL(void);
 #define URL_ConsignorcarList @"/app/consignorcar/list"//运力列表"
 #define URL_ConsignorcarCarList @"/app/consignorcar/carList"//车辆查询列表"
 #define URL_ConsignorcarAddCar @"/app/consignorcar/addCar"//添加车辆"
+#define URL_ConsignorcarRemoveCar @"/app/consignorcar/removeCar"//删除车辆"
 
 #pragma mark - APP订单相关接口
 

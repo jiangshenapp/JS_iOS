@@ -139,7 +139,7 @@
     [self.navBar setItems:@[self.navItem]];
     
     if ([[self.navigationController viewControllers] count] != 1) { //根VC不加返回按钮
-        self.backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 44)];
+        self.backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 44)];
         [self.backBtn setImage:[UIImage imageNamed:@"app_navigationbar_back_black"] forState:UIControlStateNormal];
         self.backBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [self.backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];

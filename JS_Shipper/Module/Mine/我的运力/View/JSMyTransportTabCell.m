@@ -28,8 +28,10 @@
     if (_isAdd) {
         _bookOrderBtn.userInteractionEnabled = YES;
         [_bookOrderBtn setTitle:@"添加" forState:UIControlStateNormal];
+        _bookOrderBtn.borderColor = AppThemeColor;
         if ([dataModel.added boolValue]) {
             _bookOrderBtn.userInteractionEnabled = NO;
+            _bookOrderBtn.borderColor = PageColor;
             [_bookOrderBtn setTitle:@"已添加" forState:UIControlStateNormal];
         }
     }

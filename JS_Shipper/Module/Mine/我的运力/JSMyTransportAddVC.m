@@ -152,6 +152,10 @@
         if (status==Request_Success) {
             [Utils showToast:@"添加车辆成功"];
             weakSelf.addView.hidden = YES;
+            weakSelf.currentModel.added = @"1";
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf.mainTab reloadData];
+            });
             if (weakSelf.doneBlock) {
                 weakSelf.doneBlock();
             }
