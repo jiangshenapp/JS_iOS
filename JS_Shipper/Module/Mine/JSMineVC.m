@@ -43,8 +43,8 @@
     
     self.navBar.hidden = YES;
     
-    self.iconArr = [NSMutableArray arrayWithObjects:@"personalcenter_icon_park",@"personalcenter_icon_park",@"my_icon_authentication",@"personalcenter_icon_customer", nil];
-    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的运力",@"我的园区",@"认证管理",@"我的客服", nil];
+    self.iconArr = [NSMutableArray arrayWithObjects:@"myTransportsIcon",@"my_icon_authentication",@"personalcenter_icon_customer", nil];
+    self.menuTileArr = [NSMutableArray arrayWithObjects:@"我的运力",@"认证管理",@"我的客服", nil];
     
     [self createUI];
 //    [self getSysServiceList]; //获取系统服务列表
@@ -188,7 +188,8 @@
     UIButton *sender = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, menuBtnH, menuBtnH)];
     sender.backgroundColor = [UIColor whiteColor];
     if (iconName.length>0) {
-        UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake((sender.width-20)/2.0, sender.height/2.0-20, 20, 20)];
+        UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake((sender.width-24)/2.0, sender.height/2.0-24, 24, 24)];
+        img.contentMode = UIViewContentModeScaleAspectFit;
         if ([iconName containsString:@"http"]) {
             [img sd_setImageWithURL:[NSURL URLWithString:iconName]];
         } else {
