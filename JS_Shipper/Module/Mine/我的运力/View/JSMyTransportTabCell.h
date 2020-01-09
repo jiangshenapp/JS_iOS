@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HomeDataModel.h"
+#import "JSTransportModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,8 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *numLab;
 @property (weak, nonatomic) IBOutlet UIButton *contactBtn;
 @property (weak, nonatomic) IBOutlet UIButton *bookOrderBtn;
+@property (weak, nonatomic) IBOutlet UILabel *remarkLab;
 /** 数据源 */
-@property (nonatomic,retain) RecordsModel *dataModel;
+@property (nonatomic,retain) JSTransportModel *dataModel;
+/** <#object#> */
+@property (nonatomic,assign) BOOL isAdd;
 @end
 
 

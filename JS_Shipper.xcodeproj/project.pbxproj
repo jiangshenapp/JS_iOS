@@ -737,6 +737,7 @@
 		20815EA5231771BE00E24C75 /* DriverConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815EA4231771BE00E24C75 /* DriverConfig.m */; };
 		20815EC0231776F900E24C75 /* AuthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 20815EBF231776F900E24C75 /* AuthInfo.m */; };
 		20815EC12317776100E24C75 /* SortView.m in Sources */ = {isa = PBXBuildFile; fileRef = A096483722B8815C000FDBE6 /* SortView.m */; };
+		2085C40523C6F23A00D41EA1 /* JSTransportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2085C40423C6F23A00D41EA1 /* JSTransportModel.m */; };
 		208684B22329E5660066EDB5 /* PostListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 208684B12329E5660066EDB5 /* PostListTabCell.m */; };
 		208F89672328921C00918888 /* JSCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FC2325EC6700CF780B /* JSCommunityModel.m */; };
 		208F8968232892D300918888 /* JSPostListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FF2325EF2300CF780B /* JSPostListModel.m */; };
@@ -1476,6 +1477,8 @@
 		20815EA72317735A00E24C75 /* Public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		20815EBE231776F900E24C75 /* AuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthInfo.h; sourceTree = "<group>"; };
 		20815EBF231776F900E24C75 /* AuthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthInfo.m; sourceTree = "<group>"; };
+		2085C40323C6F23A00D41EA1 /* JSTransportModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTransportModel.h; sourceTree = "<group>"; };
+		2085C40423C6F23A00D41EA1 /* JSTransportModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTransportModel.m; sourceTree = "<group>"; };
 		208684B02329E5660066EDB5 /* PostListTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostListTabCell.h; sourceTree = "<group>"; };
 		208684B12329E5660066EDB5 /* PostListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostListTabCell.m; sourceTree = "<group>"; };
 		208F896C23289F5B00918888 /* JSMyTieZiListSwitchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyTieZiListSwitchVC.h; sourceTree = "<group>"; };
@@ -2620,6 +2623,7 @@
 				2029321323C2C9BF00BB3BB7 /* JSMyTransportVC.m */,
 				2029321523C2E4B100BB3BB7 /* JSMyTransportAddVC.h */,
 				2029321623C2E4B100BB3BB7 /* JSMyTransportAddVC.m */,
+				2085C40223C6F21300D41EA1 /* Model */,
 				2029321923C3076200BB3BB7 /* View */,
 			);
 			path = "我的运力";
@@ -2849,6 +2853,15 @@
 				20815EA4231771BE00E24C75 /* DriverConfig.m */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		2085C40223C6F21300D41EA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2085C40323C6F23A00D41EA1 /* JSTransportModel.h */,
+				2085C40423C6F23A00D41EA1 /* JSTransportModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		208F897023289FE500918888 /* YPTabBarController(订单切换卡) */ = {
@@ -4698,6 +4711,7 @@
 				20118F4822DEEA7600A195D1 /* EMEmoticonGroup.m in Sources */,
 				20118F8B22DEEA7600A195D1 /* UIViewController+Search.m in Sources */,
 				20BD73BF2248BE440020EA5D /* JSDeliverGoodsVC.m in Sources */,
+				2085C40523C6F23A00D41EA1 /* JSTransportModel.m in Sources */,
 				20BD73C22248BE440020EA5D /* JSGardenVC.m in Sources */,
 				201040BD229E7C6A00B7B258 /* ZHPickView.m in Sources */,
 				203B4E2A231F5D0200A288CC /* JSTieziListVC.m in Sources */,

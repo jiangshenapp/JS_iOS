@@ -17,10 +17,25 @@
     self.bookOrderBtn.cornerRadius = 17;
 }
 
--(void)setDataModel:(RecordsModel *)dataModel {
-    _titleLab.text = [NSString stringWithFormat:@"%@(%@到%@)",dataModel.cphm,dataModel.startAddressCodeName,dataModel.arriveAddressCodeName];
-    _nameLab.text = [NSString stringWithFormat:@"%@ %@",dataModel.driverName,dataModel.driverPhone];
-    _carTypeLab.text = [NSString stringWithFormat:@"车型:%@  车长:%@",dataModel.carModelName,dataModel.carLength];
+-(void)setDataModel:(JSTransportModel *)dataModel {
+    self.titleLab.text = dataModel.cphm;
+    self.nameLab.text = [NSString stringWithFormat:@"%@  %@",dataModel.nickName,dataModel.mobile];
+    self.carTypeLab.text =  [NSString stringWithFormat:@"车型:%@   车长:%@",dataModel.carModelName,dataModel.carLengthName];
+    self.numLab.text = @"";
+    if ([dataModel.cooperated integerValue]>0) {
+        self.numLab.text = @"合作过";
+    }
+    if (_isAdd) {
+        _bookOrderBtn.userInteractionEnabled = YES;
+        [_bookOrderBtn setTitle:@"添加" forState:UIControlStateNormal];
+        if ([dataModel.added boolValue]) {
+            _bookOrderBtn.userInteractionEnabled = NO;
+            [_bookOrderBtn setTitle:@"已添加" forState:UIControlStateNormal];
+        }
+    }
+    else {
+        self.remarkLab.text = [NSString stringWithFormat:@"备注:%@",dataModel.remark];
+    }
     
 }
 

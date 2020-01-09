@@ -107,7 +107,7 @@ static NetworkManager *_manager = nil;
     if (![name containsString:@"http"]) {
         name = [NSString stringWithFormat:@"%@%@",ROOT_URL(),name];
     }
-    
+    name = [name urlEncoding];
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
     [self GET:name parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

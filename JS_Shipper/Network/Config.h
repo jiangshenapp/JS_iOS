@@ -84,6 +84,10 @@ NSString *PAY_URL(void);
 #define URL_ParkRemove @"/app/collect/park/remove" //取消园区收藏
 #define URL_ParkList @"/app/collect/park/list" //我的园区收藏
 
+#define URL_ConsignorcarList @"/app/consignorcar/list"//运力列表"
+#define URL_ConsignorcarCarList @"/app/consignorcar/carList"//车辆查询列表"
+#define URL_ConsignorcarAddCar @"/app/consignorcar/addCar"//添加车辆"
+
 #pragma mark - APP订单相关接口
 
 #define URL_AddOrder @"/app/order/addOrder"//发货 --综合下单
