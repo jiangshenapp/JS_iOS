@@ -130,6 +130,7 @@
     JSOrderDetailsVC *vc = (JSOrderDetailsVC *)[Utils getViewController:@"Mine" WithVCName:@"JSOrderDetailsVC"];
     ListOrderModel *model = self.listData[indexPath.row];
     vc.orderID = model.ID;
+    vc.model = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

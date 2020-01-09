@@ -34,6 +34,8 @@
         }
     }
     else {
+        NSString *typeStr = [dataModel.type integerValue]==1?@"自有车辆":@"外调车辆";
+        self.titleLab.text = [NSString stringWithFormat:@"%@ [%@]",dataModel.cphm,typeStr];
         self.remarkLab.text = [NSString stringWithFormat:@"备注:%@",dataModel.remark];
     }
     

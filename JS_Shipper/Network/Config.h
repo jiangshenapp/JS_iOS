@@ -125,6 +125,7 @@ NSString *PAY_URL(void);
 #pragma mark - 系统消息、banner相关接口
 
 #define URL_MessageList @"/app/message/page"//消息列表"
+#define URL_GetMessagePage @"/app/message/getMessagePage2"//系统消息列表"
 #define URL_MessageDetail @"/app/message"//消息详情"
 #define URL_GetUnreadMessageCount @"/app/message/getUnreadMessageCount"//获取系统消息未读数"
 #define URL_GetUnreadPushLogCount @"/app/message/getUnreadPushLogCount"//获取推送消息未读数

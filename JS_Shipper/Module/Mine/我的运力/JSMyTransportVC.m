@@ -8,6 +8,7 @@
 
 #import "JSMyTransportVC.h"
 #import "JSMyTransportAddVC.h"
+#import "JSDeliverConfirmVC.h"
 
 @interface JSMyTransportVC ()<UITableViewDelegate,UITableViewDataSource>
 /** <#object#> */
@@ -75,7 +76,6 @@
     cell.dataModel = self.dataSource[indexPath.section];
     [cell.bookOrderBtn addTarget:self action:@selector(bookOrderAction:) forControlEvents:UIControlEventTouchUpInside];
     [cell.contactBtn addTarget:self action:@selector(callAction:) forControlEvents:UIControlEventTouchUpInside];
-
     return cell;
 }
 
@@ -91,6 +91,18 @@
     UITableViewCell *cell = (UITableViewCell *)sender.superview.superview;
     NSIndexPath *indexPath = [_mainTab indexPathForCell:cell];
     JSTransportModel *currentModel = _dataSource[indexPath.section];
+    JSDeliverConfirmVC *vc = (JSDeliverConfirmVC *)[Utils getViewController:@"DeliverGoods" WithVCName:@"JSDeliverConfirmVC"];
+    vc.isAll = YES;
+    ListOrderModel *mode = [[ListOrderModel alloc]init];
+    mode.carModel = currentModel.carModelId;
+    mode.carLength = currentModel.carLengthId;
+    mode.carModelName = currentModel.carModelName;
+    mode.carLengthName = currentModel.carLengthName;
+    vc.model = mode;
+    if (![Utils isBlankString:currentModel.subscriberId]) {
+        vc.subscriberId = currentModel.subscriberId;
+    }
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)callAction:(UIButton *)sender {

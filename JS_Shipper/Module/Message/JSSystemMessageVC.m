@@ -50,7 +50,6 @@
 }
 
 - (void)getData {
-    NSString *type = [AppChannel isEqualToString:@"1"]?@"3":@"2";
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     if (_isPush) {
@@ -60,8 +59,7 @@
         }];
     }
     else {
-        NSString *url = [NSString stringWithFormat:@"%@/%@?current=%ld&size=%@",URL_MessageList,type,_page,PageSize];
-
+        NSString *url = [NSString stringWithFormat:@"%@?pushSide=%@&current=%ld&size=%@",URL_GetMessagePage,_pushSide,_page,PageSize];
         [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
             [weakSelf handleDataStatus:status resultData:responseData];
         }];

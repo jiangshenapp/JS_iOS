@@ -10,7 +10,7 @@
 #import "JSMyTransportVC.h"
 #import "JSTransportModel.h"
 
-@interface JSMyTransportAddVC ()
+@interface JSMyTransportAddVC ()<UITextViewDelegate,UITextFieldDelegate>
 {
     NSInteger _type;//1 自由运力 2外调
 }
@@ -74,6 +74,25 @@
     _addView.hidden = NO;
     _currentModel = _dataSource[indexPath.section];
     _addViewCarTitleLab.text = [NSString stringWithFormat:@"添加%@到我的运力",_currentModel.cphm];
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    //text为输入中的内容的最后一个字符
+    ////判断输入的字是否是回车，即按下【Return】
+    if ([text isEqualToString:@"\n"]){
+        //在这里做你响应【Return】键的代码
+        [self.view endEditing:YES];
+        //一般通常也会收键盘，即取消textView的第一响应者
+        /**这里返回NO，就代表【Return】键值失效，即在页面上按下
+      【Return】键，不会出现换行，如果为YES，则输入页面会换行*/
+        return NO;
+    }
+
+    return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self searchActionClick:nil];
+    return YES;
 }
 
 /*
