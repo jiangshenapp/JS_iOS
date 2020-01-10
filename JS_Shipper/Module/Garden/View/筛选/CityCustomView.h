@@ -12,6 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CityCustomView : BaseCustomView
+/** 当前定位城市 */
+@property (nonatomic,copy) NSString *locName;
 /** 当前数据 */
 @property (nonatomic,copy) void (^getCityData)(NSDictionary *dataDic);
 @end

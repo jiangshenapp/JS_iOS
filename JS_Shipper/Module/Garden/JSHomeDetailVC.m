@@ -32,8 +32,12 @@
     CGFloat bottomY = HEIGHT-viewH-kTabBarSafeH;
     CGFloat firstViewW = (WIDTH/2.0-30)/2.0;
     self.callBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, bottomY, firstViewW*2, viewH)];
-    [self.callBtn setImage:[UIImage imageNamed:@"home_list_btn_phone"] forState:UIControlStateNormal];
+    [self.callBtn setImage:[UIImage imageNamed:@"order_btn_phone"] forState:UIControlStateNormal];
     self.callBtn.backgroundColor = [UIColor whiteColor];
+    self.callBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
+    [self.callBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
+    self.callBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [self.callBtn setTitle:@"联系我们" forState:UIControlStateNormal];
     [self.callBtn addTarget:self action:@selector(callAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.callBtn];
     

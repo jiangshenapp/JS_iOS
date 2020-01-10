@@ -129,7 +129,6 @@
         _cityCode = result.addressDetail.adCode;
         [self setCityName:result.addressDetail.city];
         if (!_isSearchResult) {
-            _cityCode = @"330200";
             [self getNetData];
         }
     }

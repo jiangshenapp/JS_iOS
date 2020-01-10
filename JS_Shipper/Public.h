@@ -59,7 +59,7 @@ static NSString *kAuthState = @"xxx";
 #define kSendAddressArchiver [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"sendAddress.archiver"]
 #define kReceiveAddressArchiver [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"receiveAddress.archiver"]
 
-#define kCompanyTypeStrDic @{@"全部":@"",@"服务中心":@"1",@"车代点":@"2",@"网点":@"3",@"1":@"服务中心",@"2":@"车代点",@"3":@"网点"}
+#define kCompanyTypeStrDic @{@"全部":@"",@"专线":@"1",@"落地配":@"2",@"网点":@"3",@"1":@"专线",@"2":@"落地配",@"3":@"网点"}
 #define DefaultImage [UIImage imageNamed:@"personalcenter_shipper_icon_head_landing"]
 #define kAuthStateStrDic @{@(0):@"未提交",@(1):@"认证中",@(2):@"已认证",@(3):@"认证失败"}
 #define kAuthStateColorDic @{@(0):kVerifiedUnCommitColor,@(1):kVerifiedOnColor,@(2):AppThemeColor,@(3):kVerifiedFailColor}

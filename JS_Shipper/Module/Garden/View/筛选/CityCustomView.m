@@ -50,6 +50,10 @@
     return self;
 }
 
+-(void)setLocName:(NSString *)locName {
+    currentCityLab.text = [@"选择:" stringByAppendingString:locName];
+}
+
 - (void)setupView {
     self.clipsToBounds = YES;
     UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
@@ -114,13 +118,13 @@
         firstName = @"全省";
         _currentPage = 1;
         NSDictionary *dic = provinceArr[provinceIndex-2000-1];
-         address = [NSString stringWithFormat:@"全%@",dic[@"sysArea"][@"address"]];
+         address = [NSString stringWithFormat:@"%@",dic[@"sysArea"][@"address"]];
     }
     else if (baseTag==4000) {
         firstName = @"全市";
         _currentPage = 2;
         NSDictionary *dic = cityArr[cityIndex-3000-1];
-       address = [NSString stringWithFormat:@"全%@",dic[@"sysArea"][@"address"]];
+       address = [NSString stringWithFormat:@"%@",dic[@"sysArea"][@"address"]];
     }
     [_bgScro.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     NSInteger index = 0;
@@ -171,6 +175,9 @@
         districtIndex = 4000;
         if (sender.tag==2000) {//全国
             [self hiddenView];
+            if (_getCityData) {
+                self.getCityData(sender.dataDic);
+            }
         }else {
             NSDictionary *dic = provinceArr[sender.tag-2000-1];
             cityArr = dic[@"children"];
@@ -179,6 +186,9 @@
             }
             else {
                 [self hiddenView];
+                if (_getCityData) {
+                    self.getCityData(sender.dataDic);
+                }
             }
         }
     }
@@ -189,6 +199,9 @@
         cityIndex = sender.tag;
         if (sender.tag==3000) {
             [self hiddenView];
+            if (_getCityData) {
+                self.getCityData(sender.dataDic);
+            }
         }
         else {
             districtArr = cityArr[sender.tag-3000-1][@"children"];
@@ -198,6 +211,9 @@
             }
             else {
                 [self hiddenView];
+                if (_getCityData) {
+                    self.getCityData(sender.dataDic);
+                }
             }
         }
     }
@@ -206,9 +222,9 @@
         lastBtn.isSelect = NO;
         districtIndex = sender.tag;
         [self hiddenView];
-    }
-    if (_getCityData) {
-        self.getCityData(sender.dataDic);
+        if (_getCityData) {
+            self.getCityData(sender.dataDic);
+        }
     }
     sender.isSelect = YES;
 }

@@ -17,9 +17,11 @@
 #import "FilterButton.h"
 #import "JSGardenTabCell.h"
 #import "CityDeliveryTabCell.h"
+#import "LocationTransform.h"
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
 
 
-@interface JSGardenVC ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate>
+@interface JSGardenVC ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,BMKGeoCodeSearchDelegate>
 {
     NSArray *titleArr1;
     NSArray *titleArr2;
@@ -31,7 +33,9 @@
     SortView *mySortView1;
     SortView *mySortView2;
     CityCustomView *cityView3;
+    BOOL firstLoad;
 }
+@property (nonatomic,retain) BMKGeoCodeSearch *geocodesearch;;
 /** 分页 */
 @property (nonatomic,assign) NSInteger page;
 /** 0车源  1附近网点 2精品路线 */
@@ -65,13 +69,24 @@
 @end
 
 @implementation JSGardenVC
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //    [locationService startUserLocationService];
+    _geocodesearch.delegate = self;
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    //    [locationService stopUserLocationService];
+    _geocodesearch.delegate = nil;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self startLocation];
     [self initView];
-    [self getData];
     [self getDicList];
+    [self startLocation];
 }
 
 #pragma mark 定位
@@ -85,18 +100,68 @@
         [self.locationManager startUpdatingLocation];//开始定位
     }else{//不能定位用户的位置的情况再次进行判断，并给与用户提示
     }
+    _geocodesearch = [[BMKGeoCodeSearch alloc]init];
+    _geocodesearch.delegate = self;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     [self.locationManager stopUpdatingLocation];
+    if (firstLoad) {
+        return;
+    }
+    firstLoad = YES;
     //当前所在城市的坐标值
     CLLocation *currLocation = [locations lastObject];
     _currentLoc = currLocation.coordinate;
     NSDictionary *locDic = @{@"lat":@(_currentLoc.latitude),@"lng":@(_currentLoc.longitude)};
     [[NSUserDefaults standardUserDefaults] setObject:locDic forKey:@"loc"];
-    [self.baseTabView reloadData];
+    [self getCityInfoWithLoc];
     NSLog(@"经度=%f 纬度=%f 高度=%f", currLocation.coordinate.latitude, currLocation.coordinate.longitude, currLocation.altitude);
 }
+
+- (void)getCityInfoWithLoc {
+    
+    LocationTransform *beforeLocation = [[LocationTransform alloc] initWithLatitude:_currentLoc.latitude andLongitude:_currentLoc.longitude];
+    //高德转化为GPS
+    LocationTransform *afterLocation = [beforeLocation transformFromGDToBD];
+    
+    __weak typeof(self) weakSelf = self;
+    // 显示所有信息
+    BMKReverseGeoCodeSearchOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeSearchOption alloc]init];
+    reverseGeocodeSearchOption.isLatestAdmin = YES;
+    reverseGeocodeSearchOption.location = CLLocationCoordinate2DMake(afterLocation.latitude, afterLocation.longitude);
+    [weakSelf.geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
+}
+
+/**
+ *返回反地理编码搜索结果
+ *@param searcher 搜索对象
+ *@param result 搜索结果
+ *@param error 错误号，@see BMKSearchErrorCode
+ */
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error {
+    NSLog(@"d地址 %@    %@   %@    %@    ",result.addressDetail.streetName,result.address,result.addressDetail.streetNumber,result.addressDetail.distance);
+    NSString * locareaCode =@"";
+    if (error==0&&result!=nil) {
+        __weak typeof(self) weakSelf = self;
+        if (result.addressDetail.adCode.length>4) {
+          locareaCode  = [[result.addressDetail.adCode substringToIndex:4] stringByAppendingString:@"00"];
+        }
+        _areaCode1 = locareaCode;
+        _areaCode3 = locareaCode;
+        FilterButton *tempBtn = [self.view viewWithTag:20000];
+       tempBtn.isSelect = NO;
+       [tempBtn setTitle:result.addressDetail.city forState:UIControlStateNormal];
+        cityView1.locName =result.addressDetail.city ;
+        cityView3.locName =result.addressDetail.city ;
+        FilterButton *tempBtn3 = [weakSelf.view viewWithTag:30000];
+        [tempBtn3 setTitle:result.addressDetail.city forState:UIControlStateNormal];
+        tempBtn3.isSelect = NO;
+    }
+    [self.baseTabView.mj_header beginRefreshing];
+    
+}
+
 
 - (void)initView {
     _pageFlag = 0;
@@ -184,7 +249,7 @@
     };
     
     mySortView2 = [[SortView alloc]init];
-    mySortView2.titleArr = @[@"全部",@"服务中心",@"车代点",@"网点"];
+    mySortView2.titleArr = @[@"全部",@"专线",@"落地配",@"网点"];
     mySortView2.getSortString = ^(NSString * _Nonnull sorts) {
         FilterButton *tempBtn = [weakSelf.view viewWithTag:30001];
         [tempBtn setTitle:sorts forState:UIControlStateNormal];

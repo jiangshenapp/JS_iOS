@@ -285,7 +285,7 @@
 /* 选择机构类型 */
 - (IBAction)selectOrganizationTypeAction:(id)sender {
     [self.view endEditing:YES]; //隐藏键盘
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"关闭" destructiveButtonTitle:nil otherButtonTitles:@"服务中心",@"车代点",@"网点", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"关闭" destructiveButtonTitle:nil otherButtonTitles:@"专线",@"落地配",@"网点", nil];
     sheet.tag = 102;
     [sheet showInView:self.view];
 }
