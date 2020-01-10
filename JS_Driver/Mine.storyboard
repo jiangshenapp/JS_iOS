@@ -3449,7 +3449,7 @@ Copyright © 2019</string>
                                                     <rect key="frame" x="22" y="74" width="371" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -3662,6 +3662,7 @@ Copyright © 2019</string>
                         <outlet property="bankCardBtn" destination="7aU-Id-pYr" id="eB3-q1-gLG"/>
                         <outlet property="bankCardNoTF" destination="l8s-Ib-eeq" id="Q84-Vz-BVP"/>
                         <outlet property="baseTabView" destination="DNl-3d-YGi" id="vVS-KX-R7h"/>
+                        <outlet property="driverServiceFeeLab" destination="Qy7-qO-l2s" id="M7c-RC-0Dq"/>
                         <outlet property="maxMoneyLab" destination="13H-Xy-MgK" id="j9h-f7-cdv"/>
                         <outlet property="moneyTF" destination="ETr-0p-ACd" id="NZp-Gh-opI"/>
                         <outlet property="openBankBranchNameTF" destination="kLO-v0-TmV" id="2dt-ql-Jp3"/>

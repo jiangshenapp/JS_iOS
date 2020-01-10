@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *bankCardNoTF;
 @property (weak, nonatomic) IBOutlet UITextField *openBankNameTF;
 @property (weak, nonatomic) IBOutlet UITextField *openBankBranchNameTF;
+@property (weak, nonatomic) IBOutlet UILabel *driverServiceFeeLab;
 
 @end
 

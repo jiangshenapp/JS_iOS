@@ -22,7 +22,26 @@
     self.moneyTF.text = self.maxMoney;
     self.moneyTF.enabled = NO;
     self.maxMoneyLab.text = [NSString stringWithFormat:@"当前最大提现金额：%@元",self.maxMoney];
-}
+        [self getServiceFeeData];
+    }
+
+    /** 手续费 */
+    - (void)getServiceFeeData {
+        __weak typeof(self) weakSelf = self;
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        NSString *url = [NSString stringWithFormat:@"%@?type=servicefee",URL_GetDictByType];
+        [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+            if (status==Request_Success) {
+                NSArray *arr = responseData;
+                if ([arr isKindOfClass:[NSArray class]]) {
+                    if (arr.count>0) {
+                        NSDictionary *dic = [arr firstObject];
+                        weakSelf.driverServiceFeeLab.text = [NSString stringWithFormat:@"提现手续费：%.2f%@",[dic[@"value"] floatValue],@"%"];
+                    }
+                }
+            }
+        }];
+    }
 
 #pragma mark - get data
 
