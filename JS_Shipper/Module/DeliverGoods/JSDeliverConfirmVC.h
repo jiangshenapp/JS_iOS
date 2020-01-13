@@ -51,6 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *depositSwitchBtn;
 @property (weak, nonatomic) IBOutlet UITextField *depositFeeTF;
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+@property (weak, nonatomic) IBOutlet UIView *specificFeeView;
+@property (weak, nonatomic) IBOutlet UILabel *specificFeeLab;
 
 /** 选择货物名称 */
 - (IBAction)selectGoodsNameAction:(UIButton *)sender;

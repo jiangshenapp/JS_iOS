@@ -99,11 +99,11 @@
     self.payType = @"2";
     self.daoPayBtn.userInteractionEnabled = NO;
     if (_isAll) { //综合发货
-        _tabHeaderView.height = 1300;
+        _tabHeaderView.height = 1112;
         self.title = @"发货";
     }
     else {
-        _tabHeaderView.height = 1035;
+        _tabHeaderView.height = 947;
     }
     if (![Utils isBlankString:self.subscriberId]) { //指定发布
         [_submitBtn setTitle:@"指定发布" forState:UIControlStateNormal];
@@ -378,6 +378,12 @@
         weakSelf.useCarType = weakSelf.useCarTypeArr[[arr indexOfObject:selectedStr]][@"value"];
         weakSelf.useCarTypeLab.text = selectedStr;
         weakSelf.useCarTypeLab.textColor = [UIColor grayColor];
+        weakSelf.specificFeeView.hidden = YES;
+        weakSelf.specificFeeView.superview.height = 134;
+        if ([selectedStr isEqualToString:@"零担"]) {
+            weakSelf.specificFeeView.hidden = NO;
+            weakSelf.specificFeeView.superview.height = 84;
+        }
     };
 }
 
@@ -662,10 +668,10 @@
         if (dotLocation != NSNotFound){
             if ([string isEqualToString:@"."])return NO;
         }
-        if (textField.tag == 1000 || textField.tag == 1001) {
+//        if (textField.tag == 1000 || textField.tag == 1001) {
             //判断小数点后最多两位
             if (dotLocation != NSNotFound && range.location > dotLocation + 2) { return NO; }
-        }
+//        }
         //判断总长度
         if (textField.text.length > 11) {
             return NO;
