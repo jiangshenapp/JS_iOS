@@ -93,7 +93,7 @@
     }
     self.carInfoLab.text = info;
     self.goodsNameLab.text = self.model.goodsName;
-    self.carTypeLab.text = self.model.useCarType;
+    self.carTypeLab.text = self.model.useCarTypeName;
     self.goodsPackTypeLab.text = self.model.packType;
     if ([self.model.payWay isEqualToString:@"1"]) {
         self.payTypeLab.text = @"线上支付";
