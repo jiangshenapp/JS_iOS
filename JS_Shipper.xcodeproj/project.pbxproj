@@ -739,6 +739,7 @@
 		20815EC12317776100E24C75 /* SortView.m in Sources */ = {isa = PBXBuildFile; fileRef = A096483722B8815C000FDBE6 /* SortView.m */; };
 		2085C40523C6F23A00D41EA1 /* JSTransportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2085C40423C6F23A00D41EA1 /* JSTransportModel.m */; };
 		208684B22329E5660066EDB5 /* PostListTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 208684B12329E5660066EDB5 /* PostListTabCell.m */; };
+		208A1DD523CDA9D5003FC9BA /* addressDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 208A1DD423CDA9D4003FC9BA /* addressDetail.json */; };
 		208F89672328921C00918888 /* JSCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FC2325EC6700CF780B /* JSCommunityModel.m */; };
 		208F8968232892D300918888 /* JSPostListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 201883FF2325EF2300CF780B /* JSPostListModel.m */; };
 		208F8969232892EE00918888 /* JSSendTopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E41984231E1587001E89C7 /* JSSendTopicVC.m */; };
@@ -1481,6 +1482,7 @@
 		2085C40423C6F23A00D41EA1 /* JSTransportModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTransportModel.m; sourceTree = "<group>"; };
 		208684B02329E5660066EDB5 /* PostListTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostListTabCell.h; sourceTree = "<group>"; };
 		208684B12329E5660066EDB5 /* PostListTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostListTabCell.m; sourceTree = "<group>"; };
+		208A1DD423CDA9D4003FC9BA /* addressDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = addressDetail.json; sourceTree = "<group>"; };
 		208F896C23289F5B00918888 /* JSMyTieZiListSwitchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSMyTieZiListSwitchVC.h; sourceTree = "<group>"; };
 		208F896D23289F5B00918888 /* JSMyTieZiListSwitchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSMyTieZiListSwitchVC.m; sourceTree = "<group>"; };
 		208F897123289FE500918888 /* YPTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTabItem.h; sourceTree = "<group>"; };
@@ -3526,6 +3528,7 @@
 		A0263530228C236700C924E2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				208A1DD423CDA9D4003FC9BA /* addressDetail.json */,
 				A02634E8228C234800C924E2 /* Animation */,
 			);
 			path = Resource;
@@ -4094,6 +4097,7 @@
 				20118E5E22DEE96000A195D1 /* videocs_theme@2x.png in Resources */,
 				20118E0F22DEE95F00A195D1 /* chatbar_photo_blue@3x.png in Resources */,
 				20BD74012248BEB00020EA5D /* Mine.storyboard in Resources */,
+				208A1DD523CDA9D5003FC9BA /* addressDetail.json in Resources */,
 				20118F4C22DEEA7600A195D1 /* user_avatar_blue@3x.png in Resources */,
 				20118E4A22DEE96000A195D1 /* image@2x.png in Resources */,
 				20118E7522DEE96000A195D1 /* group_join@3x.png in Resources */,

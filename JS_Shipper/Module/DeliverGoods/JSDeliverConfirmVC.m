@@ -60,7 +60,8 @@
 @property (nonatomic,copy) NSString *useCarType;
 /** 用车类型 */
 @property (nonatomic,retain) NSArray *useCarTypeArr;
-
+/** <#object#> */
+@property (nonatomic,copy) NSString *calculateNo;
 @end
 
 @implementation JSDeliverConfirmVC
@@ -75,7 +76,7 @@
     [super viewDidLoad];
     
     self.title = @"确认订单";
-    
+    _calculateNo = @"";
     _touchType = 0;
     _carLengthView =  [[FilterCustomView alloc]init];
     _carLengthView.viewHeight = HEIGHT-kNavBarH-kTabBarSafeH;;
@@ -103,7 +104,7 @@
         self.title = @"发货";
     }
     else {
-        _tabHeaderView.height = 947;
+        _tabHeaderView.height = 845;
     }
     if (![Utils isBlankString:self.subscriberId]) { //指定发布
         [_submitBtn setTitle:@"指定发布" forState:UIControlStateNormal];
@@ -383,8 +384,27 @@
         if ([selectedStr isEqualToString:@"零担"]) {
             weakSelf.specificFeeView.hidden = NO;
             weakSelf.specificFeeView.superview.height = 84;
+            [weakSelf getOrderFee];
         }
     };
+}
+
+- (void)getOrderFee {
+    NSLog(@"%@",_info1.streetCode);
+    _info1.streetCode = @"330203006";
+    _info2.streetCode = @"330203008";
+    if (_info1.streetCode.length==0||_info1.streetCode.length==0||_goodAreaTF.text.length==0||_weightTF.text.length==0) {
+        return;
+    }
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    NSString *url = [NSString stringWithFormat:@"%@?startAddressCode=%@&arriveAddressCode=%@&goodsVolume=%@&goodsWeight=%@",URL_OrderGetFee,_info1.streetCode,_info2.streetCode,_goodAreaTF.text,_weightTF.text];
+    [[NetworkManager sharedManager] getJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status==Request_Success) {
+            weakSelf.specificFeeLab.text = [NSString stringWithFormat:@"%.2f元",[responseData[@"totalFee"] floatValue]];
+            weakSelf.calculateNo = responseData[@"calculateNo"];
+        }
+    }];
 }
 
 #pragma mark - 上传照片左
@@ -592,7 +612,7 @@
         _remark = _markTF.text;
     }
     _fee = @"";
-    if ([_feeType integerValue]==1) {
+    if ([_feeType integerValue]==1&&[_useCarType isEqualToString:@"整车"]) {
         if ([NSString isEmpty:_priceLab.text]) {
             [Utils showToast:@"请输入价格"];
             return;
@@ -610,6 +630,7 @@
     if (![Utils isBlankString:_orderID]) {
         [dic setObject:_orderID forKey:@"id"];
     }
+    [dic setObject:_calculateNo forKey:@"calculateNo"];
     [dic setObject:_useCarType forKey:@"useCarType"];
     [dic setObject:_loadingTime forKey:@"loadingTime"];
     [dic setObject:_goodsNameTypeTF.text forKey:@"goodsName"];

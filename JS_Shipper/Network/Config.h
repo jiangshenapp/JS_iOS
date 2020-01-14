@@ -102,6 +102,7 @@ NSString *PAY_URL(void);
 #define URL_GetOrderDetail @"/app/order/get"//订单详情
 #define URL_OrdeList @"/app/order/list"//我的运单
 #define URL_EditOrderDetail @"/app/order/edit" //修改订单
+#define URL_OrderGetFee @"/app/order/getFee"//获取报价"
 
 #pragma mark - 圈子相关接口
 

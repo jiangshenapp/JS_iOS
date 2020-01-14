@@ -139,7 +139,7 @@
  *@param error 错误号，@see BMKSearchErrorCode
  */
 - (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error {
-    NSLog(@"%@    %@   %@    %@    ",result.addressDetail.streetName,result.addressDetail.streetNumber,result.addressDetail.streetNumber,result.addressDetail.distance);
+    NSLog(@"%@    %@   %@    %@    ",result.addressDetail.streetName,result.addressDetail.streetNumber,result.addressDetail.direction,result.addressDetail.distance);
     if (error==0&&result!=nil) {
         NSString *businessCircle = result.businessCircle;
         if (businessCircle.length==0) {
@@ -307,12 +307,15 @@
         __weak typeof(self) weakSelf = self;
         JSEditAddressVC *vc = segue.destinationViewController;
         vc.isReceive = _sourceType;
+        vc.areaCode = areaCode;
         vc.addressInfo = @{@"title":_addressNameLab.text,@"address":_addressInfoLab.text};
         vc.getAddressInfo = ^(NSDictionary * _Nonnull getAddressInfo) {
             weakSelf.dataModel.phone = getAddressInfo[@"phone"];
             weakSelf.dataModel.name = getAddressInfo[@"name"];
             weakSelf.dataModel.detailAddress = getAddressInfo[@"detailAddress"];
-            
+            weakSelf.dataModel.streetCode = getAddressInfo[@"streetCode"];
+            weakSelf.dataModel.street = getAddressInfo[@"street"];
+
             if (weakSelf.sourceType==1) {
                 [NSKeyedArchiver archiveRootObject:weakSelf.dataModel toFile:kReceiveAddressArchiver];
             } else {

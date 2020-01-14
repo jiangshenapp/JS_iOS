@@ -99,7 +99,7 @@
 /*!
  *  @brief 读取本地JSON文件
  */
-+ (NSDictionary *)readLocalFileWithName:(NSString *)name;
++ (id )readLocalFileWithName:(NSString *)name;
 
 /*!
  *  @brief JSON字符串转字典

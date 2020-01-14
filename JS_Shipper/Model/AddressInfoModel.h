@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *address; //浙江省宁波市江东区彩虹南路224
 /** 地址名称 */
 @property (nonatomic,copy) NSString *addressName; //白鹤,飞越广场,彩虹广场
+/** 街道编码 */
+@property (nonatomic,copy) NSString *streetCode;
+/** 街道名字 */
+@property (nonatomic,copy) NSString *street;
 /** 纬度 */
 @property (nonatomic,assign) CGFloat lat;
 /** 经度 */

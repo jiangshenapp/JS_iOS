@@ -8,11 +8,20 @@
 
 #import "JSEditAddressVC.h"
 #import "AddressInfoModel.h"
+#import "ZHPickView.h"
 
 @interface JSEditAddressVC ()<UITextFieldDelegate>
-
+{
+    NSInteger index;
+    NSArray *codeArr;
+}
 /** 地址模型 */
 @property (nonatomic,retain) AddressInfoModel *dataModel;
+/** <#object#> */
+@property (nonatomic,retain) NSArray *streetArr;
+@property (weak, nonatomic) IBOutlet UITextField *streetTF;
+/** <#object#> */
+@property (nonatomic,copy) NSString *streetCode;
 
 @end
 
@@ -20,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    index = 0;
     self.title = @"发货人";
     self.dataModel = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
     
@@ -35,7 +44,56 @@
     _detailAddressLab.text = self.dataModel.detailAddress;
     _nameLab.text = self.dataModel.name;
     _phoneLab.text = self.dataModel.phone;
+    _streetTF.text = self.dataModel.street;
+    _streetCode = self.dataModel.streetCode;
+    
+    NSString  *provinceCode = _areaCode;
+    NSString  *cityCode = _areaCode;
+    if (_areaCode.length>2) {
+        provinceCode = [_areaCode substringToIndex:2];
+    }
+    if (_areaCode.length>4) {
+        cityCode = [_areaCode substringToIndex:4];
+    }
+    codeArr = @[provinceCode,cityCode,_areaCode];
+    
+    NSArray *provinceArr = [Utils readLocalFileWithName:@"addressDetail"];
+    [self getStreetArr:provinceArr];
+    NSLog(@"%@",_streetArr);
 }
+- (IBAction)selectStreetAction:(UIButton *)sender {
+    __weak typeof(self) weakSelf = self;
+    ZHPickView *pickView = [[ZHPickView alloc] init];
+    NSMutableArray *arr = [NSMutableArray array];
+    for (NSDictionary *dic in self.streetArr) {
+        [arr addObject:dic[@"name"]];
+    }
+    [pickView setDataViewWithItem:arr title:@"选择街道"];
+    [pickView showPickView:self];
+    pickView.block = ^(NSString *selectedStr) {
+        weakSelf.streetTF.text = selectedStr;
+        NSInteger tempIndex = [arr indexOfObject:selectedStr];
+        weakSelf.streetCode = weakSelf.streetArr[tempIndex][@"code"];
+    };
+}
+
+- (void)getStreetArr:(NSArray *)dataArr {
+    if (index>=codeArr.count) {
+        return;
+    }
+    NSString *code = codeArr[index];
+    NSString *predicateStr = [NSString stringWithFormat:@"code = '%@'",code];
+     NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateStr];
+     NSArray *resultArr = [dataArr filteredArrayUsingPredicate:predicate];
+     NSDictionary *districtInfo ;
+     if (resultArr.count>0) {
+         districtInfo = [resultArr firstObject];
+     }
+    _streetArr = districtInfo[@"childs"];
+    index++;
+    [self getStreetArr:_streetArr];
+}
+
 
 #pragma mark - UITextFieldDelegate
 
@@ -62,7 +120,7 @@
     if (_detailAddressLab.text.length>0) {
         text = _detailAddressLab.text;
     }
-    NSDictionary *addressDic = @{@"phone":_phoneLab.text,@"name":_nameLab.text,@"detailAddress":text};
+    NSDictionary *addressDic = @{@"phone":_phoneLab.text,@"name":_nameLab.text,@"detailAddress":text,@"streetCode":_streetCode,@"street":_streetTF.text};
     if (self.getAddressInfo) {
         self.getAddressInfo(addressDic);
     }

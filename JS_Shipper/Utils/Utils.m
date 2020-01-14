@@ -457,7 +457,7 @@ static Utils *_utils = nil;
 }
 
 // 读取本地JSON文件
-+ (NSDictionary *)readLocalFileWithName:(NSString *)name {
++ (id)readLocalFileWithName:(NSString *)name {
     // 获取文件路径
     NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
     // 将文件数据化

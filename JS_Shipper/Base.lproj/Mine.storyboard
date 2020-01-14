@@ -105,13 +105,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_abutus_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Jm7-5y-NXj">
-                                <rect key="frame" x="119" y="78" width="137" height="128"/>
+                                <rect key="frame" x="50.5" y="78" width="274" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jm7-5y-NXj" secondAttribute="height" multiplier="137:128" id="GXF-Gl-inN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-kI-Stb">
-                                <rect key="frame" x="28" y="240" width="319" height="154"/>
+                                <rect key="frame" x="28" y="368" width="319" height="154"/>
                                 <attributedString key="attributedText">
                                     <fragment content="匠神来运是浙江省数据管理有限公司和浙江匠神物流科技有限公司共同打造的产业供应链交易平台型企业，也是宁波市镇海区政府重点招商引资的宁波首家物流平台型企业。匠神物流科技以物流">
                                         <attributes>
@@ -1121,7 +1121,7 @@ Copyright © 2019</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8F-7Z-WZQ">
-                                                    <rect key="frame" x="243" y="99" width="32" height="32"/>
+                                                    <rect key="frame" x="211" y="83" width="64" height="64"/>
                                                     <state key="normal" image="home_list_btn_phone"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTf-W3-ZjC">
@@ -1373,7 +1373,7 @@ Copyright © 2019</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjo-Vm-KX0">
-                                                <rect key="frame" x="59" y="49" width="90" height="17"/>
+                                                <rect key="frame" x="59" y="41.5" width="90" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="vHd-PI-3Zg"/>
                                                 </constraints>
@@ -1388,7 +1388,7 @@ Copyright © 2019</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTN-l2-Jay">
-                                                <rect key="frame" x="159" y="49" width="90" height="17"/>
+                                                <rect key="frame" x="159" y="41.5" width="90" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="VHh-to-r7J"/>
                                                 </constraints>

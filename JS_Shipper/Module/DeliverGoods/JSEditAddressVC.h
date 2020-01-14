@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSEditAddressVC : BaseVC
+/** 地理编码 */
+@property (nonatomic,copy) NSString *areaCode;
 /** 是否是收货人 */
 @property (nonatomic,assign) BOOL isReceive;
 /** 用户信息 */
