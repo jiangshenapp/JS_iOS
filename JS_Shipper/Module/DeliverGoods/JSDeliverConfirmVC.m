@@ -400,8 +400,8 @@
         return;
     }
     NSLog(@"%@",_info1.streetCode);
-    _info1.streetCode = @"330203006";
-    _info2.streetCode = @"330203008";
+//    _info1.streetCode = @"330203006";
+//    _info2.streetCode = @"330203008";
     if (_info1.streetCode.length==0||_info1.streetCode.length==0||_goodAreaTF.text.length==0||_weightTF.text.length==0) {
         return;
     }
