@@ -13,7 +13,7 @@
 #import "FilterCustomView.h"
 #import "JSSelectGoodsNameVC.h"
 
-@interface JSDeliverConfirmVC ()<TZImagePickerControllerDelegate>
+@interface JSDeliverConfirmVC ()<TZImagePickerControllerDelegate,UITextFieldDelegate>
 {
    __block NSInteger imageType;
 }
@@ -60,8 +60,10 @@
 @property (nonatomic,copy) NSString *useCarType;
 /** 用车类型 */
 @property (nonatomic,retain) NSArray *useCarTypeArr;
-/** <#object#> */
+/** 专线费用 */
 @property (nonatomic,copy) NSString *calculateNo;
+/** 专线错误提示 */
+@property (nonatomic,copy) NSString *calculateErrorMsg;
 @end
 
 @implementation JSDeliverConfirmVC
@@ -284,6 +286,7 @@
                 NSString *disStr = [Utils distanceBetweenOrderBy:weakSelf.info1.lat :weakSelf.info1.lng andOther:weakSelf.info2.lat :weakSelf.info2.lng];
                 weakSelf.distanceLab.text = [NSString stringWithFormat:@"总里程:%@",disStr];
             }
+            [weakSelf getOrderFee];
         };
     }
     else if ([segue.identifier isEqualToString:@"end"]) {
@@ -296,6 +299,7 @@
                 NSString *disStr = [Utils distanceBetweenOrderBy:weakSelf.info1.lat :weakSelf.info1.lng andOther:weakSelf.info2.lat :weakSelf.info2.lng];
                 weakSelf.distanceLab.text = [NSString stringWithFormat:@"总里程:%@",disStr];
             }
+            [weakSelf getOrderFee];
         };
     }
 }
@@ -389,7 +393,12 @@
     };
 }
 
+#pragma mark - 获取专线费用
+/** 获取专线费用 */
 - (void)getOrderFee {
+    if (![self.useCarTypeLab.text isEqual:@"零担"]) {
+        return;
+    }
     NSLog(@"%@",_info1.streetCode);
     _info1.streetCode = @"330203006";
     _info2.streetCode = @"330203008";
@@ -400,6 +409,7 @@
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     NSString *url = [NSString stringWithFormat:@"%@?startAddressCode=%@&arriveAddressCode=%@&goodsVolume=%@&goodsWeight=%@",URL_OrderGetFee,_info1.streetCode,_info2.streetCode,_goodAreaTF.text,_weightTF.text];
     [[NetworkManager sharedManager] getJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        weakSelf.calculateNo = @"";
         if (status==Request_Success) {
             weakSelf.specificFeeLab.text = [NSString stringWithFormat:@"%.2f元",[responseData[@"totalFee"] floatValue]];
             weakSelf.calculateNo = responseData[@"calculateNo"];
@@ -612,12 +622,20 @@
         _remark = _markTF.text;
     }
     _fee = @"";
-    if ([_feeType integerValue]==1&&[_useCarType isEqualToString:@"整车"]) {
-        if ([NSString isEmpty:_priceLab.text]) {
-            [Utils showToast:@"请输入价格"];
+    if ([_useCarType isEqualToString:@"零担"]) {
+        if (self.calculateNo.length==0) {
+            [Utils showToast:@"线路未开通，请联系客服或选择整车"];
             return;
         }
-        _fee = _priceLab.text;
+    }
+    else {
+        if ([_feeType integerValue]==1) {
+            if ([NSString isEmpty:_priceLab.text]) {
+                [Utils showToast:@"请输入价格"];
+                return;
+            }
+            _fee = _priceLab.text;
+        }
     }
     if (self.depositSwitchBtn.isSelected == YES && [NSString isEmpty:self.depositFeeTF.text]) {
         [Utils showToast:@"请输入保证金金额"];
@@ -699,6 +717,12 @@
         }
     }
     return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if ([textField isEqual:_goodAreaTF]||[textField isEqual:_weightTF]) {
+        [self getOrderFee];
+    }
 }
 
 @end

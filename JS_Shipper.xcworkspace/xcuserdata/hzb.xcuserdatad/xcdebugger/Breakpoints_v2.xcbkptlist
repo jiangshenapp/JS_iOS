@@ -18,15 +18,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "28A20879-F2C6-4CC3-9C28-401E258EFDFB"
+            uuid = "B0E78BE1-ABB1-4152-AD26-598681BE7FA8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JS_Shipper/Module/DeliverGoods/JSDeliverConfirmVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
             landmarkName = "-getOrderFee"
             landmarkType = "7">
          </BreakpointContent>
