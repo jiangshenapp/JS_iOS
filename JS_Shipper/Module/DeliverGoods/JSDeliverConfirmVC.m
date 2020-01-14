@@ -622,7 +622,7 @@
         _remark = _markTF.text;
     }
     _fee = @"";
-    if ([_useCarType isEqualToString:@"零担"]) {
+    if ([_useCarTypeLab.text isEqualToString:@"零担"]) {
         if (self.calculateNo.length==0) {
             [Utils showToast:@"线路未开通，请联系客服或选择整车"];
             return;
