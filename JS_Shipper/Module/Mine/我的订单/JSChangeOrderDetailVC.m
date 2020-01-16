@@ -75,14 +75,14 @@
             [Utils showToast:@"请填写运费"];
             return;
         }
-        if ([Utils isBlankString:_payTypeLab.text]) {
-            [Utils showToast:@"请选择支付方式"];
-            return;
-        }
-        if ([Utils isBlankString:_paymentTypeLab.text]) {
-            [Utils showToast:@"请选择付款方式"];
-            return;
-        }
+//        if ([Utils isBlankString:_payTypeLab.text]) {
+//            [Utils showToast:@"请选择支付方式"];
+//            return;
+//        }
+//        if ([Utils isBlankString:_paymentTypeLab.text]) {
+//            [Utils showToast:@"请选择付款方式"];
+//            return;
+//        }
     }
     if ([Utils isBlankString:_nameTF.text]) {
         [Utils showToast:@"请填写收货人"];
@@ -99,8 +99,10 @@
     [dic setObject:_phoneTF.text forKey:@"receiveMobile"];
     if ([self.model.state integerValue] == 3) {
         [dic setObject:_feeTF.text forKey:@"fee"];
-        [dic setObject:[_paymentTypeLab.text isEqualToString:@"到付"]?@"1":@"2" forKey:@"payType"];
-        [dic setObject:[_payTypeLab.text isEqualToString:@"线上支付"]?@"1":@"2" forKey:@"payWay"];
+//        [dic setObject:[_paymentTypeLab.text isEqualToString:@"到付"]?@"1":@"2" forKey:@"payType"];
+//        [dic setObject:[_payTypeLab.text isEqualToString:@"线上支付"]?@"1":@"2" forKey:@"payWay"];
+        [dic setObject:@"2" forKey:@"payType"];
+        [dic setObject:@"1" forKey:@"payWay"];
     }
     [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@/%@",URL_EditOrderDetail,self.model.ID] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
