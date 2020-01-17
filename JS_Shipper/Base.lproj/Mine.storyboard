@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1121,7 +1121,11 @@ Copyright © 2019</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8F-7Z-WZQ">
-                                                    <rect key="frame" x="211" y="83" width="64" height="64"/>
+                                                    <rect key="frame" x="235" y="95" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="S8F-7Z-WZQ" secondAttribute="height" multiplier="1:1" id="c5R-Sa-dtZ"/>
+                                                        <constraint firstAttribute="width" constant="40" id="yed-YD-hNn"/>
+                                                    </constraints>
                                                     <state key="normal" image="home_list_btn_phone"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTf-W3-ZjC">
@@ -1135,7 +1139,7 @@ Copyright © 2019</string>
                                                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-ZB-8bp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-ZB-8bp">
                                                     <rect key="frame" x="12" y="104" width="33" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -1154,7 +1158,7 @@ Copyright © 2019</string>
                                                 <constraint firstAttribute="trailing" secondItem="efm-2g-H68" secondAttribute="trailing" constant="12" id="ST7-5k-Nza"/>
                                                 <constraint firstAttribute="bottom" secondItem="SWH-ZB-8bp" secondAttribute="bottom" constant="15" id="Ztm-R4-s9S"/>
                                                 <constraint firstItem="eG5-JF-OoJ" firstAttribute="centerY" secondItem="RpQ-pP-FuW" secondAttribute="centerY" id="bel-bp-Ybz"/>
-                                                <constraint firstItem="S8F-7Z-WZQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SWH-ZB-8bp" secondAttribute="trailing" priority="900" constant="10" id="bt5-TF-BUt"/>
+                                                <constraint firstItem="S8F-7Z-WZQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SWH-ZB-8bp" secondAttribute="trailing" priority="900" constant="2" id="bt5-TF-BUt"/>
                                                 <constraint firstAttribute="trailing" secondItem="eG5-JF-OoJ" secondAttribute="trailing" constant="12" id="scp-qD-JK9"/>
                                                 <constraint firstItem="eTf-W3-ZjC" firstAttribute="leading" secondItem="S8F-7Z-WZQ" secondAttribute="trailing" constant="18" id="uBT-HO-e5T"/>
                                                 <constraint firstItem="efm-2g-H68" firstAttribute="leading" secondItem="Mdc-y1-FG5" secondAttribute="leading" id="vdT-AQ-KDR"/>
@@ -1373,7 +1377,7 @@ Copyright © 2019</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjo-Vm-KX0">
-                                                <rect key="frame" x="59" y="41.5" width="90" height="32"/>
+                                                <rect key="frame" x="59" y="49" width="90" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="vHd-PI-3Zg"/>
                                                 </constraints>
@@ -1388,7 +1392,7 @@ Copyright © 2019</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTN-l2-Jay">
-                                                <rect key="frame" x="159" y="41.5" width="90" height="32"/>
+                                                <rect key="frame" x="159" y="49" width="90" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="VHh-to-r7J"/>
                                                 </constraints>
