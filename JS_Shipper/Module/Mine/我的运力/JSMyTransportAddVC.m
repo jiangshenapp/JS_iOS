@@ -63,7 +63,7 @@
     return 10;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 1;
 }
 
@@ -86,7 +86,10 @@
       【Return】键，不会出现换行，如果为YES，则输入页面会换行*/
         return NO;
     }
-    if (textView.text.length>=20) {
+    //判断加上输入的字符，是否超过界限
+    NSString *str = [NSString stringWithFormat:@"%@%@", textView.text, text];
+    if (str.length > 20) {
+        textView.text = [str substringToIndex:20];
         return NO;
     }
     return YES;
@@ -151,6 +154,7 @@
             if (weakSelf.doneBlock) {
                 weakSelf.doneBlock();
             }
+            [weakSelf backAction];
         }
     }];
 }
