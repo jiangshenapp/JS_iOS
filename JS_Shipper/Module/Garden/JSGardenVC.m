@@ -59,7 +59,7 @@
 @property (nonatomic,retain) NSMutableArray <RecordsModel *>*dataSource;
 /** 排序，1发货时间 2距离; */
 @property (nonatomic,copy) NSString *sort1;
-/** 排序，1服务中心 2车代点  3网点; */
+/** 排序，1专线 2落地配 3网点; */
 @property (nonatomic,copy) NSString *companyType;
 /** 定位管理器 */
 @property (retain, nonatomic) CLLocationManager *locationManager;
@@ -167,7 +167,7 @@
     _pageFlag = 0;
     _page = 1;
     _sort1 = @"1";
-    _companyType = @"";
+    _companyType = @"1";
     _areaCode1 = @"";
     _areaCode2 = @"";
     _areaCode3 = @"";
@@ -189,7 +189,8 @@
         [_titleBtnArr addObject:sender];
     }
     
-    titleArr2 = @[@"区域",@"全部",@"默认排序"];
+//    titleArr2 = @[@"区域",@"全部",@"默认排序"];
+    titleArr2 = @[@"区域",@"默认排序"];
     CGFloat btW2 = WIDTH/titleArr2.count;
     for (NSInteger index = 0; index<titleArr2.count; index++) {
         FilterButton *sender = [[FilterButton alloc]initWithFrame:CGRectMake(index*btW2, 0, btW2, self.filterView2.height)];
@@ -259,7 +260,8 @@
     };
     
     titleViewArr1 = @[cityView1,cityView2,_myfilteView];
-    titleViewArr2 = @[cityView3,mySortView2,mySortView1];
+//    titleViewArr2 = @[cityView3,mySortView2,mySortView1];
+    titleViewArr2 = @[cityView3,mySortView1];
     _postUrlDic = @{@(0):URL_Find,@(1):URL_CityParkList,@(2):URL_Classic};
     _allDicKey = @{@"useCarType":@"",@"carLength":@"",@"carModel":@"",@"goodsType":@""};
     self.baseTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

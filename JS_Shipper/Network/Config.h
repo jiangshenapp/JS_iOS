@@ -138,9 +138,9 @@ NSString *PAY_URL(void);
 #define URL_ReadMessage @"/app/message/readMessage"// 标记系统消息为已读"
 #define URL_ReadAllMessage @"/app/message/readAllMessage"//标记全部系统消息为已读"
 
-
 #define URL_GetSysServiceBanner @"/app/sys/getSysServiceBanner"//获取系统服务Banner
 #define URL_GetSysServiceList @"/app/sys/getSysServiceList"//获取系统服务
 #define URL_GetBannerList @"/app/banner/list"//根据类型获取banner type 1服务页广告、2发货页广告、3启动页广告
 #define URL_Feedback @"/app/feedback/save"//新增意见反馈
+
 @end

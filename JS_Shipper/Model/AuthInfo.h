@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *registrationNumber; //证件号码
 @property (nonatomic,copy) NSString *businessLicenceImage; //营业执照
 @property (nonatomic,copy) NSString *companyName; //公司名称
-@property (nonatomic,copy) NSString *companyType; //机构类型
+@property (nonatomic,copy) NSString *companyType; //园区属性
 @property (nonatomic,copy) NSString *detailAddress; //详细地址
 
 @end

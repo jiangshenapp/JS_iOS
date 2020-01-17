@@ -192,7 +192,7 @@
         if (tag == 101) { //选择驾驶证类型
             self.driverLicenceTypeTF.text = [actionSheet buttonTitleAtIndex:buttonIndex];
         }
-        if (tag == 102) { //选择机构类型
+        if (tag == 102) { //选择园区属性
             self.organizationTypeTF.text = [actionSheet buttonTitleAtIndex:buttonIndex];
         }
     }
@@ -282,7 +282,7 @@
     [sheet showInView:self.view];
 }
 
-/* 选择机构类型 */
+/* 选择园区属性 */
 - (IBAction)selectOrganizationTypeAction:(id)sender {
     [self.view endEditing:YES]; //隐藏键盘
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"关闭" destructiveButtonTitle:nil otherButtonTitles:@"专线",@"落地配",@"网点", nil];
@@ -420,7 +420,7 @@
         return;
     }
     if ([NSString isEmpty:self.organizationTypeTF.text]) {
-        [Utils showToast:@"请选择机构类型"];
+        [Utils showToast:@"请选择园区属性"];
         return;
     }
     if ([NSString isEmpty:self.IDNumberTF.text]) {

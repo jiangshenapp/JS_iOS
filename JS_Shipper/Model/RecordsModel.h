@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *image4;
 /** 机构名称 */
 @property (nonatomic,copy) NSString *companyName;
-/** 机构类型 1专线，2落地配，3网点 */
+/** 园区属性 1专线，2落地配，3网点 */
 @property (nonatomic,copy) NSString *companyType;
 /** YES、展开 NO、隐藏 */
 @property (nonatomic,assign) BOOL showFlag;
