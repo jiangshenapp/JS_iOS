@@ -33,18 +33,17 @@
     _searchTF.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 12, 20)];
     _searchTF.leftViewMode = UITextFieldViewModeAlways;
     _dataSource = [NSMutableArray array];
+    _remarkTV.delegate = self;
     _remarkTV.borderColor = kColor_Gray;
     _remarkTV.borderWidth = 1;
     _cancleBtn.borderColor = kColor_Gray;
     _cancleBtn.borderWidth = 1;
-//    UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
-//    [myWindow addSubview:_addView];
     _addView.hidden = YES;
     _type = 1;
-    // Do any additional setup after loading the view.
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#pragma mark - UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return _dataSource.count;
 }
 
@@ -75,6 +74,7 @@
     _currentModel = _dataSource[indexPath.section];
     _addViewCarTitleLab.text = [NSString stringWithFormat:@"添加%@到我的运力",_currentModel.cphm];
 }
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     //text为输入中的内容的最后一个字符
     ////判断输入的字是否是回车，即按下【Return】
@@ -86,25 +86,16 @@
       【Return】键，不会出现换行，如果为YES，则输入页面会换行*/
         return NO;
     }
-
+    if (textView.text.length>=20) {
+        return NO;
+    }
     return YES;
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self searchActionClick:nil];
     return YES;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 - (IBAction)searchActionClick:(UIButton *)sender {
     if (_searchTF.text.length==0) {
@@ -122,6 +113,7 @@
         [weakSelf.mainTab reloadData];
     }];
 }
+
 - (IBAction)selectTypeClickAction:(UIButton *)sender {
     if (sender.selected) {
         return;
@@ -137,8 +129,8 @@
         btn.selected = NO;
         _type = 2;
     }
-    
 }
+
 - (IBAction)cancleBtnAction:(UIButton *)sender {
     _addView.hidden = YES;
 }
@@ -162,4 +154,15 @@
         }
     }];
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
 @end
