@@ -315,7 +315,7 @@
             weakSelf.dataModel.detailAddress = getAddressInfo[@"detailAddress"];
             weakSelf.dataModel.streetCode = getAddressInfo[@"streetCode"];
             weakSelf.dataModel.street = getAddressInfo[@"street"];
-
+            
             if (weakSelf.sourceType==1) {
                 [NSKeyedArchiver archiveRootObject:weakSelf.dataModel toFile:kReceiveAddressArchiver];
             } else {
@@ -333,11 +333,11 @@
         }
         return;
     }
-    if(_dataModel.phone.length==0||_dataModel.name.length==0) {
+    if(_dataModel.phone.length==0||_dataModel.name.length==0||[NSString isEmpty:_dataModel.streetCode]) {
         if (_sourceType==1) {
-            [Utils showToast:@"请填写收货人信息"];
+            [Utils showToast:@"请完善收货人信息"];
         } else {
-            [Utils showToast:@"请填写发货人信息"];
+            [Utils showToast:@"请完善发货人信息"];
         }
         return;
     }

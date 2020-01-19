@@ -17,10 +17,10 @@
 }
 /** 地址模型 */
 @property (nonatomic,retain) AddressInfoModel *dataModel;
-/** <#object#> */
+/** 街道数组 */
 @property (nonatomic,retain) NSArray *streetArr;
 @property (weak, nonatomic) IBOutlet UITextField *streetTF;
-/** <#object#> */
+/** 街道编码 */
 @property (nonatomic,copy) NSString *streetCode;
 
 @end
@@ -107,12 +107,16 @@
 }
 
 - (IBAction)confirmAddressAction:(UIButton *)sender {
+    if ([Utils isBlankString:_streetCode]) {
+        [Utils showToast:@"请选择街道"];
+        return;
+    }
     if (_nameLab.text.length==0) {
-        [Utils showToast:@"请填写收货人姓名"];
+        [Utils showToast:@"请输入姓名"];
         return;
     }
     if (_phoneLab.text.length==0||_phoneLab.text.length!=11) {
-        [Utils showToast:@"请填写正确的手机号码"];
+        [Utils showToast:@"请输入手机号"];
         return;
     }
     NSString *text = @"";
