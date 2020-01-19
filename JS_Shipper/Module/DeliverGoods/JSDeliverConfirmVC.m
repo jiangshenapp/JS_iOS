@@ -399,7 +399,6 @@
     if (![self.useCarTypeLab.text isEqual:@"零担"]) {
         return;
     }
-    NSLog(@"%@",_info1.streetCode);
 //    _info1.streetCode = @"330203006";
 //    _info2.streetCode = @"330203008";
     if (_info1.streetCode.length==0||_info1.streetCode.length==0||_goodAreaTF.text.length==0||_weightTF.text.length==0) {
@@ -623,32 +622,40 @@
     }
     _fee = @"";
     if ([_useCarTypeLab.text isEqualToString:@"零担"]) {
+        if ([NSString isEmpty:_info1.streetCode]) {
+            [Utils showToast:@"请完善发货地址信息"];
+            return;
+        }
+        if ([NSString isEmpty:_info2.streetCode]) {
+            [Utils showToast:@"请完善收货地址信息"];
+            return;
+        }
         if (self.calculateNo.length==0) {
             [Utils showToast:@"线路未开通，请联系客服或选择整车"];
             return;
         }
-    }
-    else {
+        [dic setObject:_calculateNo forKey:@"calculateNo"];
+    } else { //整车
         if ([_feeType integerValue]==1) {
             if ([NSString isEmpty:_priceLab.text]) {
                 [Utils showToast:@"请输入价格"];
                 return;
             }
             _fee = _priceLab.text;
+            [dic setObject:_fee forKey:@"fee"];
         }
+        [dic setObject:_feeType forKey:@"feeType"];
     }
     if (self.depositSwitchBtn.isSelected == YES && [NSString isEmpty:self.depositFeeTF.text]) {
         [Utils showToast:@"请输入保证金金额"];
         return;
     }
-    
     if (![Utils isBlankString:_subscriberId]) {
         [dic setObject:_subscriberId forKey:@"matchId"];
     }
     if (![Utils isBlankString:_orderID]) {
         [dic setObject:_orderID forKey:@"id"];
     }
-    [dic setObject:_calculateNo forKey:@"calculateNo"];
     [dic setObject:_useCarType forKey:@"useCarType"];
     [dic setObject:_loadingTime forKey:@"loadingTime"];
     [dic setObject:_goodsNameTypeTF.text forKey:@"goodsName"];
@@ -658,8 +665,6 @@
     [dic setObject:_image1 forKey:@"image1"];
     [dic setObject:_image2 forKey:@"image2"];
     [dic setObject:_remark forKey:@"remark"];
-    [dic setObject:_feeType forKey:@"feeType"];
-    [dic setObject:_fee forKey:@"fee"];
     [dic setObject:_payWay forKey:@"payWay"];
     [dic setObject:_payType forKey:@"payType"];
     if (_depositSwitchBtn.isSelected == YES) {
