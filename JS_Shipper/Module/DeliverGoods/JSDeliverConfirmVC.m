@@ -78,9 +78,10 @@
     [super viewDidLoad];
     
     self.title = @"确认订单";
+    
     _calculateNo = @"";
     _touchType = 0;
-    _carLengthView =  [[FilterCustomView alloc]init];
+    _carLengthView =  [[FilterCustomView alloc] init];
     _carLengthView.viewHeight = HEIGHT-kNavBarH-kTabBarSafeH;;
     _carLengthView.top = kNavBarH;
     __weak typeof(self) weakSelf = self;
@@ -159,11 +160,29 @@
         _useCarType = self.model.useCarType;
         _markTF.text = self.model.remark;
         _feeType = self.model.feeType;
-        _priceLab.text = self.model.fee;
         _image1 = self.model.image1;
         _image2 = self.model.image2;
         _payWay = self.model.payWay;
         _payType = self.model.payType;
+        
+        if (![NSString isEmpty:_useCarType]) {
+            if ([_useCarType isEqualToString:@"零担"]) {
+                self.wholeFeeView.hidden = YES;
+                self.lineFeeView.hidden = NO;
+                [self getOrderFee];
+            } else { //整车
+                self.wholeFeeView.hidden = NO;
+                self.lineFeeView.hidden = YES;
+                if ([_feeType integerValue] == 1) { //自己出价
+                    _chujiaBtn.selected = YES;
+                    _dianyiBtn.selected = NO;
+                    _priceLab.text = self.model.fee;
+                } else { //电议
+                    _chujiaBtn.selected = NO;
+                    _dianyiBtn.selected = YES;
+                }
+            }
+        }
         
         [_startAddressBtn setTitle:self.model.sendAddress forState:UIControlStateNormal];
         [_endAddressBtn setTitle:self.model.receiveAddress forState:UIControlStateNormal];
@@ -179,13 +198,6 @@
         }
         [_image1Btn sd_setImageWithURL:[NSURL URLWithString:self.model.image1] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"order_upload_icon_photo"]];
         [_image2Btn sd_setImageWithURL:[NSURL URLWithString:self.model.image2] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"order_upload_icon_photo"]];
-        if ([_feeType integerValue] == 1) { //自己出价
-            _chujiaBtn.selected = YES;
-            _dianyiBtn.selected = NO;
-        } else { //电议
-            _chujiaBtn.selected = NO;
-            _dianyiBtn.selected = YES;
-        }
         if ([_payWay integerValue] == 1) { //线上支付
             _onPayBtn.selected = YES;
             _offPayBtn.selected = NO;
@@ -383,12 +395,13 @@
         weakSelf.useCarType = weakSelf.useCarTypeArr[[arr indexOfObject:selectedStr]][@"value"];
         weakSelf.useCarTypeLab.text = selectedStr;
         weakSelf.useCarTypeLab.textColor = [UIColor grayColor];
-        weakSelf.specificFeeView.hidden = YES;
-        weakSelf.specificFeeView.superview.height = 134;
         if ([selectedStr isEqualToString:@"零担"]) {
-            weakSelf.specificFeeView.hidden = NO;
-            weakSelf.specificFeeView.superview.height = 84;
+            weakSelf.wholeFeeView.hidden = YES;
+            weakSelf.lineFeeView.hidden = NO;
             [weakSelf getOrderFee];
+        } else {
+            weakSelf.wholeFeeView.hidden = NO;
+            weakSelf.lineFeeView.hidden = YES;
         }
     };
 }

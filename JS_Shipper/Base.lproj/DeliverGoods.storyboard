@@ -739,7 +739,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Z-QB-DIz">
+                                        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Z-QB-DIz">
                                             <rect key="frame" x="0.0" y="911" width="375" height="134"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                             <subviews>
@@ -817,23 +817,37 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCO-kL-7at">
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOE-Tx-6ax">
+                                            <rect key="frame" x="0.0" y="489" width="375" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="运费" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buE-xP-W2a">
+                                                    <rect key="frame" x="14" y="0.0" width="63" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-Kg-3Kw">
                                                     <rect key="frame" x="0.0" y="34" width="375" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="专线运输费用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-dx-oJ6">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="专线运输费用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBd-UU-2XO">
                                                             <rect key="frame" x="14" y="0.0" width="120" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GtQ-UL-wNc">
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ECg-z4-Nrw">
                                                             <rect key="frame" x="12" y="0.0" width="350" height="1"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00元" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPQ-7w-kc1">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00元" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCT-JF-lKn">
                                                             <rect key="frame" x="215" y="0.0" width="150" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -969,7 +983,7 @@
                                                 <button opaque="NO" tag="111" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnz-MI-ddj">
                                                     <rect key="frame" x="0.0" y="0.0" width="162" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="是否需要保证金" image="app_checkbox_icon_default">
@@ -984,7 +998,7 @@
                                                     <rect key="frame" x="176" y="7" width="191" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="Awa-zj-wG3" id="BzY-XT-WJx"/>
@@ -1053,18 +1067,19 @@
                         <outlet property="goodsTimeLab" destination="5er-Dh-rIW" id="Xdn-ce-gsa"/>
                         <outlet property="image1Btn" destination="k7s-oU-qBb" id="AZI-sc-3jV"/>
                         <outlet property="image2Btn" destination="1zU-uz-F8w" id="eIy-L5-gTa"/>
+                        <outlet property="lineFeeView" destination="kOE-Tx-6ax" id="HgE-8d-sGu"/>
                         <outlet property="markTF" destination="VTk-LQ-FSp" id="FYm-aD-sIV"/>
                         <outlet property="nowPayBtn" destination="42R-Qb-Rw0" id="Thy-YT-SB0"/>
                         <outlet property="offPayBtn" destination="AY3-h0-2WM" id="coR-pq-VhD"/>
                         <outlet property="onPayBtn" destination="Ppr-se-7ex" id="bny-F5-Yc0"/>
                         <outlet property="priceLab" destination="yNT-rn-NF9" id="evb-ep-Alu"/>
-                        <outlet property="specificFeeLab" destination="vPQ-7w-kc1" id="wyz-Cc-pGk"/>
-                        <outlet property="specificFeeView" destination="yCO-kL-7at" id="YUo-O2-g6Q"/>
+                        <outlet property="specificFeeLab" destination="pCT-JF-lKn" id="Fp1-EK-1Sk"/>
                         <outlet property="startAddressBtn" destination="8Sp-Jx-NJE" id="CpL-Zm-L6Y"/>
                         <outlet property="submitBtn" destination="3pc-rS-T4n" id="XLb-Mp-wPm"/>
                         <outlet property="tabHeaderView" destination="G1c-sL-g5K" id="O9Z-i6-Gu9"/>
                         <outlet property="useCarTypeLab" destination="gtH-hT-9Vn" id="Z1a-Fl-Pgq"/>
                         <outlet property="weightTF" destination="igN-db-14O" id="mDN-tU-Fe6"/>
+                        <outlet property="wholeFeeView" destination="Y7Z-QB-DIz" id="eMc-V9-cdi"/>
                         <outlet property="xiehuoBtn" destination="RHK-sR-73L" id="mie-Ja-eiY"/>
                     </connections>
                 </viewController>
