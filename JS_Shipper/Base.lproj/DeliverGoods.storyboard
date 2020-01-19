@@ -847,7 +847,7 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00元" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCT-JF-lKn">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCT-JF-lKn">
                                                             <rect key="frame" x="215" y="0.0" width="150" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1058,6 +1058,7 @@
                         <outlet property="daoPayBtn" destination="Bca-jF-Pfx" id="0Uv-fN-Hdv"/>
                         <outlet property="depositFeeTF" destination="tvg-3q-KKh" id="g2Q-sN-9BR"/>
                         <outlet property="depositSwitchBtn" destination="dnz-MI-ddj" id="xUm-GZ-5IP"/>
+                        <outlet property="depositView" destination="gav-k6-HpH" id="eLz-cv-zbn"/>
                         <outlet property="dianyiBtn" destination="SR1-Im-7tM" id="ijq-qq-Yv4"/>
                         <outlet property="distanceLab" destination="qeQ-BL-EGK" id="cf8-TJ-ubL"/>
                         <outlet property="endAddressBtn" destination="59B-Fv-OQu" id="uqE-TT-Fgl"/>
@@ -1073,6 +1074,7 @@
                         <outlet property="offPayBtn" destination="AY3-h0-2WM" id="coR-pq-VhD"/>
                         <outlet property="onPayBtn" destination="Ppr-se-7ex" id="bny-F5-Yc0"/>
                         <outlet property="priceLab" destination="yNT-rn-NF9" id="evb-ep-Alu"/>
+                        <outlet property="remarkView" destination="QgU-1s-mZT" id="tPS-34-VyT"/>
                         <outlet property="specificFeeLab" destination="pCT-JF-lKn" id="Fp1-EK-1Sk"/>
                         <outlet property="startAddressBtn" destination="8Sp-Jx-NJE" id="CpL-Zm-L6Y"/>
                         <outlet property="submitBtn" destination="3pc-rS-T4n" id="XLb-Mp-wPm"/>

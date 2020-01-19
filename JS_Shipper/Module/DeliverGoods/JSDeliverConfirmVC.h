@@ -54,6 +54,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *wholeFeeView;
 @property (weak, nonatomic) IBOutlet UIView *lineFeeView;
 @property (weak, nonatomic) IBOutlet UILabel *specificFeeLab;
+@property (weak, nonatomic) IBOutlet UIView *remarkView;
+@property (weak, nonatomic) IBOutlet UIView *depositView;
+
 
 /** 选择货物名称 */
 - (IBAction)selectGoodsNameAction:(UIButton *)sender;

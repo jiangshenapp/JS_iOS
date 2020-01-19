@@ -56,7 +56,7 @@
         self.orderState = @"0";
     }
     if (typeFlage == 1) { //发布中
-        self.orderState = @"1";
+        self.orderState = @"2";
     }
     if (typeFlage == 2) { //待支付
         self.orderState = @"4";

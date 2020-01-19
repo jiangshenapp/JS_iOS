@@ -118,6 +118,8 @@
 
     self.depositFeeTF.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 6, 0)];
     self.depositFeeTF.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.depositView.top = self.remarkView.bottom;
 
     [self getCarLengthInfo]; //车长
     [self getCarModelInfo]; //车型
@@ -169,10 +171,12 @@
             if ([_useCarType isEqualToString:@"零担"]) {
                 self.wholeFeeView.hidden = YES;
                 self.lineFeeView.hidden = NO;
+                self.depositView.top = self.lineFeeView.bottom + 10;
                 [self getOrderFee];
             } else { //整车
                 self.wholeFeeView.hidden = NO;
                 self.lineFeeView.hidden = YES;
+                self.depositView.top = self.wholeFeeView.bottom + 10;
                 if ([_feeType integerValue] == 1) { //自己出价
                     _chujiaBtn.selected = YES;
                     _dianyiBtn.selected = NO;
@@ -398,10 +402,12 @@
         if ([selectedStr isEqualToString:@"零担"]) {
             weakSelf.wholeFeeView.hidden = YES;
             weakSelf.lineFeeView.hidden = NO;
+            weakSelf.depositView.top = weakSelf.lineFeeView.bottom + 10;
             [weakSelf getOrderFee];
         } else {
             weakSelf.wholeFeeView.hidden = NO;
             weakSelf.lineFeeView.hidden = YES;
+            weakSelf.depositView.top = weakSelf.wholeFeeView.bottom + 10;
         }
     };
 }
