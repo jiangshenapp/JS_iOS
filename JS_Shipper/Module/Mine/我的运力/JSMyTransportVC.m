@@ -106,13 +106,12 @@
     JSTransportModel *currentModel = _dataSource[indexPath.section];
     JSDeliverConfirmVC *vc = (JSDeliverConfirmVC *)[Utils getViewController:@"DeliverGoods" WithVCName:@"JSDeliverConfirmVC"];
     vc.isAll = YES;
-    ListOrderModel *mode = [[ListOrderModel alloc]init];
-    mode.carModel = currentModel.carModelId;
-    mode.carLength = currentModel.carLengthId;
-    mode.carModelName = currentModel.carModelName;
-    mode.carLengthName = currentModel.carLengthName;
-    vc.model = mode;
-    if (![Utils isBlankString:currentModel.subscriberId]) {
+    vc.carModel = currentModel.carModelId;
+    vc.carLength = currentModel.carLengthId;
+    vc.carModelName = currentModel.carModelName;
+    vc.carLengthName = currentModel.carLengthName;
+    if (![Utils isBlankString:currentModel.subscriberId]
+        && ![currentModel.subscriberId isEqualToString:@"0"]) {
         vc.subscriberId = currentModel.subscriberId;
     }
     [self.navigationController pushViewController:vc animated:YES];

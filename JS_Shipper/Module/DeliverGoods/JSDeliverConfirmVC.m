@@ -130,6 +130,18 @@
 #pragma mark - 重新发货数据初始化
 /** 重新发货数据初始化 */
 - (void)initData {
+    if (![NSString isEmpty:self.carLength]) {
+        _carLengthDic = @{@"carLength":self.carLength};
+        if (![Utils isBlankString:self.carLengthName]) {
+            [_carLengthBtn setTitle:self.carLengthName forState:UIControlStateNormal];
+        }
+    }
+    if (![NSString isEmpty:self.carModel]) {
+        _carModelDic = @{@"carLength":self.carModel};
+        if (![Utils isBlankString:self.carModelName]) {
+            [_carModelBtn setTitle:self.carModelName forState:UIControlStateNormal];
+        }
+    }
     if (self.model != nil) {
         _carLengthDic = @{@"carLength":self.model.carLength};
         _carModelDic = @{@"carModel":self.model.carModel};

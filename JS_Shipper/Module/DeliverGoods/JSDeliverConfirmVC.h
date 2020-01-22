@@ -21,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL isAll;
 /** 订单model(订单详情重新发货带过来) */
 @property (nonatomic,retain) ListOrderModel *model;
+/** 车长 */
+@property (nonatomic,copy) NSString *carLength;
+@property (nonatomic,copy) NSString *carLengthName;
+/** 车型 */
+@property (nonatomic,copy) NSString *carModel;
+@property (nonatomic,copy) NSString *carModelName;
 
 @property (weak, nonatomic) IBOutlet UIView *tabHeaderView;
 @property (weak, nonatomic) IBOutlet UIButton *startAddressBtn;

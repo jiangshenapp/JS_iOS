@@ -75,8 +75,11 @@
         return;
     }
     JSDeliverConfirmVC *vc = (JSDeliverConfirmVC *)[Utils getViewController:@"DeliverGoods" WithVCName:@"JSDeliverConfirmVC"];
-    vc.subscriberId = self.dataModel.subscriberId;
     vc.isAll = YES;
+    if (![Utils isBlankString:self.dataModel.subscriberId]
+        && ![self.dataModel.subscriberId isEqualToString:@"0"]) {
+        vc.subscriberId = self.dataModel.subscriberId;
+    }
     [self.navigationController pushViewController:vc animated:YES];
 }
 
