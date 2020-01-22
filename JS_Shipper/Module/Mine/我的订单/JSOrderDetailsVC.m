@@ -16,12 +16,13 @@
 
 @interface JSOrderDetailsVC ()
 
-
-
 /** 修改按钮 */
 @property (nonatomic,retain) UIButton *changeBtn;
 /** 评价视图 */
 @property (nonatomic,retain) CZCommentView *commentView;
+
+/** 订单model */
+@property (nonatomic,retain) ListOrderModel *model;
 
 @end
 
@@ -53,7 +54,7 @@
 #pragma mark - get data
 - (void)getData {
     NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@/%@",URL_GetOrderDetail,self.model.ID] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+    [[NetworkManager sharedManager] postJSON:[NSString stringWithFormat:@"%@/%@",URL_GetOrderDetail,self.orderID] parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             //将用户信息解析成model
             self.model = [ListOrderModel mj_objectWithKeyValues:(NSDictionary *)responseData];
@@ -203,6 +204,15 @@
 }
 
 #pragma mark - methods
+
+/** 返回 */
+- (void)backAction {
+    if (self.isPresent==YES) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 #pragma mark - 修改/再发一次
 /** 修改订单信息 */

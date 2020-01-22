@@ -172,7 +172,8 @@
         else {
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
-    }}
+    }
+}
 
 //初始化页面
 - (void)initView {

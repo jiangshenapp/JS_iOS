@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 订单编号 */
 @property (nonatomic,copy) NSString *orderID;
-/** 订单model */
-@property (nonatomic,retain) ListOrderModel *model;
+/** YES:Present NO:Push */
+@property (nonatomic, assign) BOOL isPresent;
 
 @property (weak, nonatomic) IBOutlet YYStarView *starView;
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScroView;

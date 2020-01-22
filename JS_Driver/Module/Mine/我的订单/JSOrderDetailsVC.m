@@ -49,10 +49,10 @@
     [self getOrderInfo];
 }
 
--(void)getOrderInfo {
+- (void)getOrderInfo {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSString *url = [NSString stringWithFormat:@"%@/%@",URL_GetOrderInfo,_orderID];
+    NSString *url = [NSString stringWithFormat:@"%@/%@",URL_GetOrderInfo,self.orderID];
     [[NetworkManager sharedManager] postJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             weakSelf.model = [OrderInfoModel mj_objectWithKeyValues:responseData];
@@ -189,6 +189,15 @@
 }
 
 #pragma mark - methods
+
+/** 返回 */
+- (void)backAction {
+    if (self.isPresent==YES) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 /** 打电话 */
 - (IBAction)callPhone:(id)sender {

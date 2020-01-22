@@ -484,8 +484,10 @@ API_AVAILABLE(ios(10.0)){
     
     if ([type isEqualToString:@"orderDetail"]) {
         JSOrderDetailsVC *vc = (JSOrderDetailsVC *)[Utils getViewController:@"Mine" WithVCName:@"JSOrderDetailsVC"];
+        vc.isPresent = YES;
         vc.orderID = value;
-        [self.window.rootViewController.navigationController pushViewController:vc animated:YES];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
     }
 }
 
