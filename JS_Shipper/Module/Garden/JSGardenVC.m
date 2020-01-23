@@ -20,7 +20,6 @@
 #import "LocationTransform.h"
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 
-
 @interface JSGardenVC ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,BMKGeoCodeSearchDelegate>
 {
     NSArray *titleArr1;
@@ -35,7 +34,6 @@
     CityCustomView *cityView3;
     BOOL firstLoad;
 }
-@property (nonatomic,retain) BMKGeoCodeSearch *geocodesearch;;
 /** 分页 */
 @property (nonatomic,assign) NSInteger page;
 /** 0车源  1附近网点 2精品路线 */
@@ -61,6 +59,8 @@
 @property (nonatomic,copy) NSString *sort1;
 /** 排序，1专线 2落地配 3网点; */
 @property (nonatomic,copy) NSString *companyType;
+/** 地理搜索 */
+@property (nonatomic,retain) BMKGeoCodeSearch *geocodesearch;
 /** 定位管理器 */
 @property (retain, nonatomic) CLLocationManager *locationManager;
 /** 当前经纬度 */
@@ -69,19 +69,17 @@
 @end
 
 @implementation JSGardenVC
--(void)viewWillAppear:(BOOL)animated
-{
+
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //    [locationService startUserLocationService];
     _geocodesearch.delegate = self;
 }
--(void)viewWillDisappear:(BOOL)animated
-{
+
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    //    [locationService stopUserLocationService];
     _geocodesearch.delegate = nil;
-    
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];
@@ -152,16 +150,14 @@
         FilterButton *tempBtn = [self.view viewWithTag:20000];
        tempBtn.isSelect = NO;
        [tempBtn setTitle:result.addressDetail.city forState:UIControlStateNormal];
-        cityView1.locName =result.addressDetail.city ;
-        cityView3.locName =result.addressDetail.city ;
+        cityView1.locName =result.addressDetail.city;
+        cityView3.locName =result.addressDetail.city;
         FilterButton *tempBtn3 = [weakSelf.view viewWithTag:30000];
         [tempBtn3 setTitle:result.addressDetail.city forState:UIControlStateNormal];
         tempBtn3.isSelect = NO;
     }
     [self.baseTabView.mj_header beginRefreshing];
-    
 }
-
 
 - (void)initView {
     _pageFlag = 0;
@@ -226,7 +222,6 @@
         tempBtn.isSelect = NO;
         [weakSelf.baseTabView.mj_header beginRefreshing];
     };
-    
     
     mySortView1 = [[SortView alloc]init];
     mySortView1.titleArr = @[@"默认排序",@"距离排序"];

@@ -58,7 +58,6 @@
     else {
         self.serachViewH.constant = 0;
     }
-    // Do any additional setup after loading the view.
     _cityCode = @"";
     _geocodesearch = [[BMKGeoCodeSearch alloc]init];
     _geocodesearch.delegate = self;
@@ -78,6 +77,7 @@
     }
     //    [self.locationService startUpdatingLocation];
 }
+
 #pragma mark 定位
 - (void)startLocation {
     if ([CLLocationManager locationServicesEnabled]) {//判断定位操作是否被允许
@@ -104,7 +104,6 @@
 }
 
 - (void)getCityInfoWithLoc {
-    
     LocationTransform *beforeLocation = [[LocationTransform alloc] initWithLatitude:_currentLoc.latitude andLongitude:_currentLoc.longitude];
     //高德转化为GPS
     LocationTransform *afterLocation = [beforeLocation transformFromBDToGD];

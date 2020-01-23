@@ -1315,7 +1315,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJ5-Fz-zXu">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前定位城市：宁波市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdA-jJ-kEs">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前定位城市：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdA-jJ-kEs">
                                         <rect key="frame" x="12" y="0.0" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1352,6 +1352,7 @@
                     <navigationItem key="navigationItem" id="765-HV-3fa"/>
                     <connections>
                         <outlet property="baseTabView" destination="sln-Xh-BDo" id="KjR-Ad-1E7"/>
+                        <outlet property="locationCityLab" destination="vdA-jJ-kEs" id="oya-GL-b4L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbe-bR-1T1" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,15 +7,36 @@
 //
 
 #import "JSSelectCityVC.h"
+#import "LocationTransform.h"
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
 
-@interface JSSelectCityVC ()<UITableViewDelegate,UITableViewDataSource>
-/** <#object#> */
-@property (nonatomic,retain) NSArray *datas;
-@property (nonatomic, strong) NSMutableArray *groupTempArray;   /*用来存放分组的首字母 A --- Z*/
-@property (nonatomic, strong) NSMutableDictionary *cityDic;     /*用来存放分组之后的数据*/
+@interface JSSelectCityVC ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,BMKGeoCodeSearchDelegate>
+
+@property (nonatomic, retain) NSArray *datas;
+/** 用来存放分组的首字母 A --- Z */
+@property (nonatomic, strong) NSMutableArray *groupTempArray;
+/** 用来存放分组之后的数据 */
+@property (nonatomic, strong) NSMutableDictionary *cityDic;
+/** 地理搜索 */
+@property (nonatomic, retain) BMKGeoCodeSearch *geocodesearch;
+/** 定位管理器 */
+@property (nonatomic, retain) CLLocationManager *locationManager;
+/** 当前经纬度 */
+@property (nonatomic, assign) CLLocationCoordinate2D currentLoc;
+
 @end
 
 @implementation JSSelectCityVC
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _geocodesearch.delegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    _geocodesearch.delegate = nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,9 +44,57 @@
     _cityDic = [NSMutableDictionary dictionary];
     _groupTempArray = [NSMutableArray array];
     [self getCityList];
-    // Do any additional setup after loading the view.
+    [self startLocation];
 }
 
+#pragma mark 定位
+- (void)startLocation {
+    if ([CLLocationManager locationServicesEnabled]) {//判断定位操作是否被允许
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;//遵循代理
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = 10.0f;
+        [_locationManager requestWhenInUseAuthorization];//使用程序其间允许访问位置数据（iOS8以上版本定位需要）
+        [self.locationManager startUpdatingLocation];//开始定位
+    }else{//不能定位用户的位置的情况再次进行判断，并给与用户提示
+    }
+    _geocodesearch = [[BMKGeoCodeSearch alloc]init];
+    _geocodesearch.delegate = self;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    [self.locationManager stopUpdatingLocation];
+    //当前所在城市的坐标值
+    CLLocation *currLocation = [locations lastObject];
+    _currentLoc = currLocation.coordinate;
+    NSDictionary *locDic = @{@"lat":@(_currentLoc.latitude),@"lng":@(_currentLoc.longitude)};
+    [[NSUserDefaults standardUserDefaults] setObject:locDic forKey:@"loc"];
+    [self getCityInfoWithLoc];
+}
+
+- (void)getCityInfoWithLoc {
+    
+    LocationTransform *beforeLocation = [[LocationTransform alloc] initWithLatitude:_currentLoc.latitude andLongitude:_currentLoc.longitude];
+    //高德转化为GPS
+    LocationTransform *afterLocation = [beforeLocation transformFromGDToBD];
+    
+    __weak typeof(self) weakSelf = self;
+    // 显示所有信息
+    BMKReverseGeoCodeSearchOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeSearchOption alloc]init];
+    reverseGeocodeSearchOption.isLatestAdmin = YES;
+    reverseGeocodeSearchOption.location = CLLocationCoordinate2DMake(afterLocation.latitude, afterLocation.longitude);
+    [weakSelf.geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
+}
+
+/**
+ *返回反地理编码搜索结果
+ *@param searcher 搜索对象
+ *@param result 搜索结果
+ *@param error 错误号，@see BMKSearchErrorCode
+ */
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error {
+    self.locationCityLab.text = [NSString stringWithFormat:@"当前定位城市：%@",result.addressDetail.city];
+}
 
 #pragma mark - 获取数据
 - (void)getCityList {
@@ -36,10 +105,8 @@
             weakSelf.datas = responseData;
             [weakSelf processData];
         }
-        
     }];
 }
-
 
 - (void)processData {
     NSMutableArray *arr = nil;
@@ -60,7 +127,6 @@
     self.groupTempArray= [NSMutableArray arrayWithArray:[[_cityDic allKeys] sortedArrayUsingSelector:@selector(compare:)]];
     [self.baseTabView reloadData];
 }
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -110,18 +176,17 @@
     header.backgroundColor = RGBValue(0xFAFAFA);
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 1;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 44;
 }
-
 
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
 
@@ -145,17 +210,15 @@
 //    return index-2;
 //}
 
-- (void)sectionForSectionMJNIndexTitle:(NSString *)title atIndex:(NSInteger)index;
-{
+- (void)sectionForSectionMJNIndexTitle:(NSString *)title atIndex:(NSInteger)index {
     if (index>=2) {
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:index-2] atScrollPosition: UITableViewScrollPositionTop animated:YES];
     }
 }
+
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
     return index;
 }
-
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -193,7 +256,6 @@
     NSString *pinYin = [str capitalizedString];
     return [pinYin substringToIndex:1];
 }
-
 
 /*
 #pragma mark - Navigation

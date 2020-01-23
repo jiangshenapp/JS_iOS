@@ -270,7 +270,6 @@
         [self payOrder];
     }
     if ([title isEqualToString:@"确认收货"]) {
-        [Utils showToast:@"确认收货"];
         [self confirmGoodsOrder];
     }
     if ([title isEqualToString:@"回单收到确认"]) {

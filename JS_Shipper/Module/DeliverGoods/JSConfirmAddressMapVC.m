@@ -271,7 +271,7 @@
     [self.navBar addSubview:_titleView];
     
     _cityBtn = [[UIButton alloc]initWithFrame:CGRectMake(3, 0, 80, _titleView.height)];
-    [_cityBtn setTitle:@"宁波市" forState:UIControlStateNormal];
+    [_cityBtn setTitle:@"定位中" forState:UIControlStateNormal];
     [_cityBtn addTarget:self action:@selector(selectCityBtn:) forControlEvents:UIControlEventTouchUpInside];
     _cityBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [_cityBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
