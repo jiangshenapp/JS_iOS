@@ -105,13 +105,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_abutus_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Jm7-5y-NXj">
-                                <rect key="frame" x="70" y="78" width="274" height="256"/>
+                                <rect key="frame" x="138.5" y="78" width="137" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jm7-5y-NXj" secondAttribute="height" multiplier="137:128" id="GXF-Gl-inN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-kI-Stb">
-                                <rect key="frame" x="28" y="368" width="358" height="154"/>
+                                <rect key="frame" x="28" y="240" width="358" height="154"/>
                                 <attributedString key="attributedText">
                                     <fragment content="匠神来运是浙江省数据管理有限公司和浙江匠神物流科技有限公司共同打造的产业供应链交易平台型企业，也是宁波市镇海区政府重点招商引资的宁波首家物流平台型企业。匠神物流科技以物流">
                                         <attributes>
@@ -4123,7 +4123,7 @@ Copyright © 2019</string>
                                                     <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="普货 高栏货车4.2米/1.3方/1.0吨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1i-mj-GcK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="普货 高栏货车4.2米/1.3方/1.0千克" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1i-mj-GcK">
                                                     <rect key="frame" x="10" y="93" width="279" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -4711,7 +4711,7 @@ Cg
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="吨" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRN-jB-4Of">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="千克" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRN-jB-4Of">
                                                     <rect key="frame" x="140" y="0.0" width="259" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

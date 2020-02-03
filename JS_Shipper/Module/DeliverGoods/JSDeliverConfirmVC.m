@@ -42,7 +42,7 @@
 @property (nonatomic,copy) NSString *goodsType;
 /** 货物体积，单位立方米 */
 @property (nonatomic,copy) NSString *goodsVolume;
-/** 货物重量、吨 */
+/** 货物重量、千克 */
 @property (nonatomic,copy) NSString *goodsWeight;
 /** 图1 */
 @property (nonatomic,copy) NSString *image1;

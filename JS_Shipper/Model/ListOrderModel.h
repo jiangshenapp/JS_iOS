@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property  (nonatomic , copy) NSString *carLengthName;
 /** 货物体积，单位立方米 */
 @property  (nonatomic , copy) NSString *goodsVolume;
-/** 货物重量、吨 */
+/** 货物重量、千克 */
 @property  (nonatomic , copy) NSString *goodsWeight;
 /** 运费 */
 @property  (nonatomic , copy) NSString *fee;

@@ -179,7 +179,7 @@
         info = [info stringByAppendingString:[NSString stringWithFormat:@"/%@方",model.goodsVolume]];
     }
     if (![NSString isEmpty:model.goodsWeight]) {
-        info = [info stringByAppendingString:[NSString stringWithFormat:@"/%@吨",model.goodsWeight]];
+        info = [info stringByAppendingString:[NSString stringWithFormat:@"/%@千克",model.goodsWeight]];
     }
     self.goodsDetailLab.text = info;
     if ([Utils isBlankString:model.fee]) {

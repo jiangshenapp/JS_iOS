@@ -96,7 +96,7 @@
     _carTypeLab.text = _carModel.carModelName;
     _carLengthLab.text = _carModel.carLengthName;
     _carSpaceTF.text = [NSString stringWithFormat:@"%@方",_carModel.capacityVolume];
-    _carWeightTF.text = [NSString stringWithFormat:@"%@吨",_carModel.capacityTonnage];
+    _carWeightTF.text = [NSString stringWithFormat:@"%@千克",_carModel.capacityTonnage];
     [self.carDriverBtn sd_setImageWithURL:[NSURL URLWithString:_carModel.image1] forState:UIControlStateNormal placeholderImage:DefaultImage];
     [self.carHeadIMgBtn sd_setImageWithURL:[NSURL URLWithString:_carModel.image2] forState:UIControlStateNormal placeholderImage:DefaultImage];
 }

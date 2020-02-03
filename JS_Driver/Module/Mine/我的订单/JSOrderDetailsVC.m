@@ -83,7 +83,7 @@
         info = [info stringByAppendingString:[NSString stringWithFormat:@"/%@方",self.model.goodsVolume]];
     }
     if (![NSString isEmpty:self.model.goodsWeight]) {
-        info = [info stringByAppendingString:[NSString stringWithFormat:@"/%@吨",self.model.goodsWeight]];
+        info = [info stringByAppendingString:[NSString stringWithFormat:@"/%@千克",self.model.goodsWeight]];
     }
     self.carInfoLab.text = info;
     self.goodsNameLab.text = self.model.goodsName;

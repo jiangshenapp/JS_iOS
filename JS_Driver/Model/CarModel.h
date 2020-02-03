@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *capacityVolume;
 /** 车牌号 */
 @property (nonatomic,copy) NSString *cphm;
-/** 载重吨位 */
+/** 载重千克位 */
 @property (nonatomic,copy) NSString *capacityTonnage;
 /** 车长 */
 @property (nonatomic,copy) NSString *carLengthId;

@@ -72,7 +72,7 @@
     cell.checkStateLab.text = dic[[NSString stringWithFormat:@"%@",model.state]];
     cell.checkStateLab.textColor = dicColor[[NSString stringWithFormat:@"%@",model.state]];
     [cell.carImgView sd_setImageWithURL:[NSURL URLWithString:model.image2] placeholderImage:DefaultImage];
-    cell.typeLab.text = [NSString stringWithFormat:@"%@ %@米/%@方/%@吨",model.carModelName,model.carLengthName,model.capacityVolume,model.capacityTonnage];
+    cell.typeLab.text = [NSString stringWithFormat:@"%@ %@米/%@方/%@千克",model.carModelName,model.carLengthName,model.capacityVolume,model.capacityTonnage];
     return cell;
 }
 
