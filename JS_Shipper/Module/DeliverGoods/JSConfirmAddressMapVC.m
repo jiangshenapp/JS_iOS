@@ -27,6 +27,8 @@
 @property (nonatomic,retain) BMKPoiSearch *poisearch;
 /** 搜索数据源 */
 @property (nonatomic,retain) NSMutableArray *searchAddressArr;
+/** 是否重新选择街道 */
+@property (nonatomic,assign) BOOL reSelectStreet;
 @end
 
 @implementation JSConfirmAddressMapVC
@@ -55,11 +57,11 @@
 
 - (void)initView {
 
-    if (self.sourceType==1) {
+    if (self.sourceType==1) { //收货地址
         _dataModel = [NSKeyedUnarchiver unarchiveObjectWithFile:kReceiveAddressArchiver];
-    } else if (self.sourceType==0) {
+    } else if (self.sourceType==0) { //发货地址
         _dataModel = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
-    } else if (self.sourceType==2) {
+    } else if (self.sourceType==2) { //园区地址
         [_confrirmBtn setTitle:@"确认地址" forState:UIControlStateNormal];
         _editInfoViewW.constant = 0;
     }
@@ -121,6 +123,16 @@
     if(flag) {
         _dataModel.lat = latitude;
         _dataModel.lng = longitude;
+        AddressInfoModel *model = [[AddressInfoModel alloc] init];
+        if (self.sourceType==1) { //收货地址
+            model = [NSKeyedUnarchiver unarchiveObjectWithFile:kReceiveAddressArchiver];
+        } else if (self.sourceType==0) { //发货地址
+            model = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
+        }
+        if (![_dataModel.addressName isEqualToString:model.addressName]
+            && ![NSString isEmpty:_dataModel.streetCode]) {
+            self.reSelectStreet = YES;
+        }
         NSLog(@"反geo检索发送成功");
     }
     else {
@@ -162,6 +174,16 @@
         if (result.location.latitude>0) {
             _dataModel.lat = result.location.latitude;
             _dataModel.lng = result.location.longitude;
+            AddressInfoModel *model = [[AddressInfoModel alloc] init];
+            if (self.sourceType==1) { //收货地址
+                model = [NSKeyedUnarchiver unarchiveObjectWithFile:kReceiveAddressArchiver];
+            } else if (self.sourceType==0) { //发货地址
+                model = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
+            }
+            if (![_dataModel.addressName isEqualToString:model.addressName]
+                && ![NSString isEmpty:_dataModel.streetCode]) {
+                self.reSelectStreet = YES;
+            }
         }
     }
 }
@@ -226,26 +248,13 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    JSEditAddressVC *vc = (JSEditAddressVC *)[Utils getViewController:@"DeliverGoods" WithVCName:@"JSEditAddressVC"];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BMKPoiInfo *poiInfo = _searchAddressArr[indexPath.row];
-//    NSString *title = @"";
-//    if (![NSString isEmpty:poiInfo.name]) {
-//        title = poiInfo.name;
-//    }
-//    NSString *address = @"";;
-//    if (![NSString isEmpty:poiInfo.address]) {
-//        address = poiInfo.address;
-//    }
-//    vc.addressInfo = @{@"title":title,@"address":address};
-//    [self.navigationController pushViewController:vc animated:YES];
     _ceterAddressLab.text =[NSString stringWithFormat:@"%@",poiInfo.name];
     _addressNameLab.text =[NSString stringWithFormat:@"%@",poiInfo.name];
     _addressInfoLab.text =[NSString stringWithFormat:@"%@",poiInfo.address];
     [_bdMapView setCenterCoordinate:poiInfo.pt animated:YES];
     areaCode = @"";
-    
     [_searchAddressArr removeAllObjects];
     [self.baseTabView reloadData];
     self.baseTabView.hidden = YES;
@@ -298,14 +307,11 @@
 }
 
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"address"]) {
         __weak typeof(self) weakSelf = self;
         JSEditAddressVC *vc = segue.destinationViewController;
+        vc.reSelectStreet = self.reSelectStreet;
         vc.isReceive = _sourceType;
         vc.areaCode = areaCode;
         vc.addressInfo = @{@"title":_addressNameLab.text,@"address":_addressInfoLab.text};
@@ -315,12 +321,12 @@
             weakSelf.dataModel.detailAddress = getAddressInfo[@"detailAddress"];
             weakSelf.dataModel.streetCode = getAddressInfo[@"streetCode"];
             weakSelf.dataModel.street = getAddressInfo[@"street"];
-            
             if (weakSelf.sourceType==1) {
                 [NSKeyedArchiver archiveRootObject:weakSelf.dataModel toFile:kReceiveAddressArchiver];
             } else {
                 [NSKeyedArchiver archiveRootObject:weakSelf.dataModel toFile:kSendAddressArchiver];
             }
+            self.reSelectStreet = NO;
         };
     }
 }
@@ -341,10 +347,21 @@
         }
         return;
     }
+    AddressInfoModel *model = [[AddressInfoModel alloc] init];
+    if (self.sourceType==1) { //收货地址
+        model = [NSKeyedUnarchiver unarchiveObjectWithFile:kReceiveAddressArchiver];
+    } else if (self.sourceType==0) { //发货地址
+        model = [NSKeyedUnarchiver unarchiveObjectWithFile:kSendAddressArchiver];
+    }
+    if (![_dataModel.addressName isEqualToString:model.addressName]
+        && ![NSString isEmpty:_dataModel.streetCode]) {
+        [Utils showToast:@"请重新选择街道地址"];
+        self.reSelectStreet = YES;
+        return;
+    }
     if (self.getAddressinfo) {
         if (_dataModel!=nil) {
             _dataModel.areaCode = areaCode;
-            
             if (_sourceType==1) {
                 [NSKeyedArchiver archiveRootObject:_dataModel toFile:kReceiveAddressArchiver];
             } else {

@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSEditAddressVC : BaseVC
+/** 是否重新选择街道 */
+@property (nonatomic,assign) BOOL reSelectStreet;
 /** 地理编码 */
 @property (nonatomic,copy) NSString *areaCode;
 /** 是否是收货人 */

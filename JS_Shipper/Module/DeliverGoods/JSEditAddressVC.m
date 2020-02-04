@@ -44,9 +44,12 @@
     _detailAddressLab.text = self.dataModel.detailAddress;
     _nameLab.text = self.dataModel.name;
     _phoneLab.text = self.dataModel.phone;
-    _streetTF.text = self.dataModel.street;
-    _streetCode = self.dataModel.streetCode;
     
+    if (self.reSelectStreet == NO) {
+        _streetTF.text = self.dataModel.street;
+        _streetCode = self.dataModel.streetCode;
+    }
+
     NSString  *provinceCode = _areaCode;
     NSString  *cityCode = _areaCode;
     if (_areaCode.length>2) {
@@ -61,6 +64,7 @@
     [self getStreetArr:provinceArr];
     NSLog(@"%@",_streetArr);
 }
+
 - (IBAction)selectStreetAction:(UIButton *)sender {
     __weak typeof(self) weakSelf = self;
     ZHPickView *pickView = [[ZHPickView alloc] init];
