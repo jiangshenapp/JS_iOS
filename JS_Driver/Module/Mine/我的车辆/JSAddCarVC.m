@@ -24,7 +24,7 @@
 /** 车型数组 */
 @property (nonatomic,retain) NSArray *carModelArr;
 /** 当前车类型 */
-@property (nonatomic,copy) NSString *useCarTypeStr;
+@property (nonatomic,copy) NSString *carModelID;
 /** 当前车类型 */
 @property (nonatomic,copy) NSString *useCarLengthStr;
 /** 图1 */
@@ -46,7 +46,7 @@
     
     self.title = @"添加车辆";
     self.baseTab.tableFooterView = [[UIView alloc]init];
-    _useCarTypeStr = @"";
+    _carModelID = @"";
     _useCarLengthStr = @"";
     [self getCarModelInfo];
     [self getCarLengthInfo];
@@ -216,7 +216,7 @@
     pickView.block = ^(NSString *selectedStr) {
         weakSelf.carTypeLab.text = selectedStr;
         NSInteger index = [carModelNameArr indexOfObject:selectedStr];
-        weakSelf.useCarTypeStr = weakSelf.carModelArr[index][@"value"];
+        weakSelf.carModelID = weakSelf.carModelArr[index][@"value"];
     };
 }
 
@@ -292,7 +292,7 @@
     [dic setObject:_transportNoTF.text forKey:@"transportNo"];
     [dic setObject:_carSpaceTF.text forKey:@"capacityVolume"];
     [dic setObject:_useCarLengthStr forKey:@"carLengthId"];
-    [dic setObject:_useCarTypeStr forKey:@"carModelId"];
+    [dic setObject:_carModelID forKey:@"carModelId"];
     [dic setObject:_carNumLab.text forKey:@"cphm"];
     [dic setObject:_image1 forKey:@"image1"];
     [dic setObject:_image2 forKey:@"image2"];

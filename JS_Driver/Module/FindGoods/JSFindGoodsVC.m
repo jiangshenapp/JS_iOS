@@ -218,11 +218,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FindGoodsTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FindGoodsTabCell"];
     OrderInfoModel *model = self.dataSource[indexPath.row];
-    NSString *useCarType = model.useCarTypeName;
-    cell.orderNOLab.text = [NSString stringWithFormat:@"订单编号：%@ %@",model.orderNo,useCarType];
-    if (useCarType.length>0) {
+    NSString *useCarTypeName = model.useCarTypeName;
+    cell.orderNOLab.text = [NSString stringWithFormat:@"订单编号：%@ %@",model.orderNo,useCarTypeName];
+    if (useCarTypeName.length>0) {
         NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc]initWithString:cell.orderNOLab.text];
-        [attributeStr addAttribute:NSForegroundColorAttributeName value:RGBValue(0x7ED321) range:NSMakeRange(cell.orderNOLab.text.length-useCarType.length, useCarType.length)];
+        [attributeStr addAttribute:NSForegroundColorAttributeName value:RGBValue(0x7ED321) range:NSMakeRange(cell.orderNOLab.text.length-useCarTypeName.length, useCarTypeName.length)];
         cell.orderNOLab.attributedText = attributeStr;
     }
    

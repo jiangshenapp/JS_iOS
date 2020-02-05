@@ -355,7 +355,7 @@
     }
     if (![_dataModel.addressName isEqualToString:model.addressName]
         && ![NSString isEmpty:_dataModel.streetCode]) {
-        [Utils showToast:@"请重新选择街道地址"];
+        [Utils showToast:@"请重新选择街道"];
         self.reSelectStreet = YES;
         return;
     }

@@ -60,8 +60,10 @@
 @property (nonatomic,copy) NSString *useCarType;
 /** 用车类型 */
 @property (nonatomic,retain) NSArray *useCarTypeArr;
-/** 专线费用 */
+/** 专线NO */
 @property (nonatomic,copy) NSString *calculateNo;
+/** 专线费用 */
+@property (nonatomic,copy) NSString *lineFee;
 /** 专线错误提示 */
 @property (nonatomic,copy) NSString *calculateErrorMsg;
 @end
@@ -80,6 +82,7 @@
     self.title = @"确认订单";
     
     _calculateNo = @"";
+    _lineFee = @"0";
     _touchType = 0;
     _carLengthView =  [[FilterCustomView alloc] init];
     _carLengthView.viewHeight = HEIGHT-kNavBarH-kTabBarSafeH;;
@@ -180,7 +183,7 @@
         _payType = self.model.payType;
         
         if (![NSString isEmpty:_useCarType]) {
-            if ([_useCarType isEqualToString:@"零担"]) {
+            if ([_useCarType isEqualToString:@"2"]) { //零担
                 self.wholeFeeView.hidden = YES;
                 self.lineFeeView.hidden = NO;
                 self.depositView.top = self.lineFeeView.bottom + 10;
@@ -411,7 +414,7 @@
         weakSelf.useCarType = weakSelf.useCarTypeArr[[arr indexOfObject:selectedStr]][@"value"];
         weakSelf.useCarTypeLab.text = selectedStr;
         weakSelf.useCarTypeLab.textColor = [UIColor grayColor];
-        if ([selectedStr isEqualToString:@"零担"]) {
+        if ([weakSelf.useCarType isEqualToString:@"2"]) { //零担
             weakSelf.wholeFeeView.hidden = YES;
             weakSelf.lineFeeView.hidden = NO;
             weakSelf.depositView.top = weakSelf.lineFeeView.bottom + 10;
@@ -427,7 +430,7 @@
 #pragma mark - 获取专线费用
 /** 获取专线费用 */
 - (void)getOrderFee {
-    if (![self.useCarTypeLab.text isEqual:@"零担"]) {
+    if (![self.useCarType isEqualToString:@"2"]) { //零担
         return;
     }
 //    _info1.streetCode = @"330203006";
@@ -440,9 +443,11 @@
     NSString *url = [NSString stringWithFormat:@"%@?startAddressCode=%@&arriveAddressCode=%@&goodsVolume=%@&goodsWeight=%@",URL_OrderGetFee,_info1.streetCode,_info2.streetCode,_goodAreaTF.text,_weightTF.text];
     [[NetworkManager sharedManager] getJSON:url parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         weakSelf.calculateNo = @"";
+        weakSelf.lineFee = @"0";
         if (status==Request_Success) {
             weakSelf.specificFeeLab.text = [NSString stringWithFormat:@"%.2f元",[responseData[@"totalFee"] floatValue]];
             weakSelf.calculateNo = responseData[@"calculateNo"];
+            weakSelf.lineFee = responseData[@"totalFee"];
         }
     }];
 }
@@ -652,7 +657,7 @@
         _remark = _markTF.text;
     }
     _fee = @"";
-    if ([_useCarTypeLab.text isEqualToString:@"零担"]) {
+    if ([_useCarType isEqualToString:@"2"]) { //零担
         if ([NSString isEmpty:_info1.streetCode]) {
             [Utils showToast:@"请完善发货地址信息"];
             return;
@@ -666,6 +671,7 @@
             return;
         }
         [dic setObject:_calculateNo forKey:@"calculateNo"];
+        [dic setObject:_lineFee forKey:@"fee"];
     } else { //整车
         if ([_feeType integerValue]==1) {
             if ([NSString isEmpty:_priceLab.text]) {

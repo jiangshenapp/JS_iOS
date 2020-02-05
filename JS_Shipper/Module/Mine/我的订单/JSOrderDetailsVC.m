@@ -101,15 +101,19 @@
     } else {
         self.payTypeLab.text = @"线下支付";
     }
-    if ([self.model.feeType isEqualToString:@"1"]) {
-        self.orderFeeLab.text = [NSString stringWithFormat:@"￥%@",self.model.fee];
-    } else {
-        self.orderFeeLab.text = @"电议";
-    }
     if ([self.model.payType isEqualToString:@"1"]) {
         self.goodsPayTypeLab.text = @"到付";
     } else {
         self.goodsPayTypeLab.text = @"现付";
+    }
+    if ([self.model.useCarType isEqualToString:@"2"]) { //零担
+        self.orderFeeLab.text = [NSString stringWithFormat:@"￥%@",self.model.fee];
+    } else { //整车
+        if ([self.model.feeType isEqualToString:@"1"]) {
+            self.orderFeeLab.text = [NSString stringWithFormat:@"￥%@",self.model.fee];
+        } else {
+            self.orderFeeLab.text = @"电议";
+        }
     }
     self.depositLab.text = [NSString stringWithFormat:@"￥%@",self.model.deposit];
     self.explainLab.text = self.model.remark;

@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property  (nonatomic , copy) NSString *receiveName;
 /** 匹配会员id */
 @property  (nonatomic , copy) NSString *matchSubscriberId;
-/** 用车类型，字典 */
+/** 用车类型，整车1、零担2 */
 @property  (nonatomic , copy) NSString *useCarType;
 /** 用车类型名称 */
 @property  (nonatomic , copy) NSString *useCarTypeName;
