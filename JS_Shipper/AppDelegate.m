@@ -74,7 +74,8 @@
     launcherVC.doneBlock = ^{
         self.tabVC = [[BaseTabBarVC alloc] init];
         self.tabVC.delegate = self;
-        self.window.rootViewController = self.tabVC;
+        self.nav = [[BaseNC alloc] initWithRootViewController:self.tabVC];
+        self.window.rootViewController = self.nav;
     };
     self.nav = [[BaseNC alloc] initWithRootViewController:launcherVC];
     self.nav.navigationBar.hidden = YES;
