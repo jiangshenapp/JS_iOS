@@ -107,10 +107,10 @@
         self.goodsPayTypeLab.text = @"现付";
     }
     if ([self.model.useCarType isEqualToString:@"2"]) { //零担
-        self.orderFeeLab.text = [NSString stringWithFormat:@"￥%@",self.model.fee];
+        self.orderFeeLab.text = [NSString stringWithFormat:@"¥%.2f",[self.model.fee floatValue]];
     } else { //整车
         if ([self.model.feeType isEqualToString:@"1"]) {
-            self.orderFeeLab.text = [NSString stringWithFormat:@"￥%@",self.model.fee];
+            self.orderFeeLab.text = [NSString stringWithFormat:@"¥%.2f",[self.model.fee floatValue]];
         } else {
             self.orderFeeLab.text = @"电议";
         }

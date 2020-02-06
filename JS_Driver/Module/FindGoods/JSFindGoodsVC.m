@@ -229,11 +229,15 @@
     cell.timeLab.text = [NSString stringWithFormat:@"%@发布",[Utils getTimeStrToCurrentDateWith:model.createTime]];
     [cell.startDotNameLab setTitle:model.sendAddress forState:UIControlStateNormal];
     [cell.endDotNameLab setTitle:model.receiveAddress forState:UIControlStateNormal];
-    if ([model.feeType integerValue]==1) {
+    if ([model.useCarType isEqualToString:@"2"]) { //零担
         cell.priceLab.text = [NSString stringWithFormat:@"¥%.2f",[model.fee floatValue]];
-    }
-    else {
-        cell.priceLab.text = [NSString stringWithFormat:@"电议"];
+    } else { //整车
+        if ([model.feeType integerValue] == 1) {
+            cell.priceLab.text = [NSString stringWithFormat:@"¥%.2f",[model.fee floatValue]];
+        }
+        else {
+            cell.priceLab.text = [NSString stringWithFormat:@"电议"];
+        }
     }
     NSString *info = @"";
     if (![NSString isEmpty:model.carModelName]) {
