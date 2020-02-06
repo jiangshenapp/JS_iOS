@@ -25,6 +25,8 @@
     //将导航条默认黑线改成阴影
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     [UINavigationBar appearance].shadowImage = [UIImage imageNamed:@"NavbarShadow"]; //阴影图片
+    //解决照片被导航栏遮挡的偏移问题
+    [[UINavigationBar appearance] setTranslucent:NO];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
