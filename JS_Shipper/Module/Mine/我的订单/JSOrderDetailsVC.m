@@ -211,11 +211,7 @@
 
 /** 返回 */
 - (void)backAction {
-    if (self.isPresent==YES) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - 修改/再发一次

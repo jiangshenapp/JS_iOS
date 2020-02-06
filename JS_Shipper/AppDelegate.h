@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseNC.h"
 #import "BaseTabBarVC.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>
 {
 //    EMConnectionState _connectionState;
 }
-/**  */
-@property (nonatomic,retain) BaseTabBarVC *tabVC;
+@property (nonatomic, retain) BaseNC *nav;
+@property (nonatomic, retain) BaseTabBarVC *tabVC;
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, unsafe_unretained) UIBackgroundTaskIdentifier taskId;

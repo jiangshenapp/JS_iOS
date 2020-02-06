@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 订单编号 */
 @property (nonatomic, copy) NSString *orderID;
-/** YES:Present NO:Push */
-@property (nonatomic, assign) BOOL isPresent;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScroView;
 /** 预约N分钟视图 */

@@ -71,12 +71,13 @@
         }
         controller.title = titleArr[i];
         
-        BaseNC *nv = [[BaseNC alloc] initWithRootViewController:controller];
-        nv.tabBarItem.title = titleArr[i];
+        BaseNC *nav = [[BaseNC alloc] initWithRootViewController:controller];
+        JSAppDelegate.nav = nav;
+        nav.tabBarItem.title = titleArr[i];
         NSString *norName = picArr[i];
-        nv.tabBarItem.image = [[UIImage imageNamed:norName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        nv.tabBarItem.selectedImage = [[UIImage imageNamed:[NSString stringWithFormat:@"%@",[norName stringByReplacingOccurrencesOfString:@"black" withString:@"yellow"]]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        [array addObject:nv];
+        nav.tabBarItem.image = [[UIImage imageNamed:norName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        nav.tabBarItem.selectedImage = [[UIImage imageNamed:[NSString stringWithFormat:@"%@",[norName stringByReplacingOccurrencesOfString:@"black" withString:@"yellow"]]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        [array addObject:nav];
     }
     
     //设置字体的颜色和大小

@@ -76,7 +76,9 @@
         self.tabVC.delegate = self;
         self.window.rootViewController = self.tabVC;
     };
-    self.window.rootViewController = launcherVC;
+    self.nav = [[BaseNC alloc] initWithRootViewController:launcherVC];
+    self.nav.navigationBar.hidden = YES;
+    self.window.rootViewController = self.nav;
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -484,10 +486,8 @@ API_AVAILABLE(ios(10.0)){
     
     if ([type isEqualToString:@"orderDetail"]) {
         JSOrderDetailsVC *vc = (JSOrderDetailsVC *)[Utils getViewController:@"Mine" WithVCName:@"JSOrderDetailsVC"];
-        vc.isPresent = YES;
         vc.orderID = value;
-        vc.modalPresentationStyle = UIModalPresentationFullScreen;
-        [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
+        [JSAppDelegate.nav pushViewController:vc animated:YES];
     }
 }
 
