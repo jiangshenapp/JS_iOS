@@ -195,7 +195,7 @@
                 if ([_feeType integerValue] == 1) { //自己出价
                     _chujiaBtn.selected = YES;
                     _dianyiBtn.selected = NO;
-                    _priceLab.text = self.model.fee;
+                    _priceLab.text = [NSString stringWithFormat:@"%.2f",[self.model.fee floatValue]];
                 } else { //电议
                     _chujiaBtn.selected = NO;
                     _dianyiBtn.selected = YES;

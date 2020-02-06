@@ -372,7 +372,7 @@
 - (void)payOrder {
     JSPayVC *vc = (JSPayVC *)[Utils getViewController:@"Mine" WithVCName:@"JSPayVC"];
     vc.orderID  = [NSString stringWithFormat:@"%@",self.model.orderNo];
-    vc.price = [NSString stringWithFormat:@"%@",self.model.fee];
+    vc.price = [NSString stringWithFormat:@"%.2f",[self.model.fee floatValue]];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

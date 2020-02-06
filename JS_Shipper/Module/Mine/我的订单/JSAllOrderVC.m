@@ -185,7 +185,7 @@
     if ([Utils isBlankString:model.fee]) {
         self.orderPriceLab.text = @"";
     } else {
-        self.orderPriceLab.text = [NSString stringWithFormat:@"￥%@",model.fee];
+        self.orderPriceLab.text = [NSString stringWithFormat:@"￥%.2f",[model.fee floatValue]];
     }
 }
 

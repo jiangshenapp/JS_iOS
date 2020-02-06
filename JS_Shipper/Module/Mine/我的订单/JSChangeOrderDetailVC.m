@@ -37,7 +37,7 @@
             self.payTypeLab.text = @"线下支付";
         }
         if ([self.model.feeType isEqualToString:@"1"]) {
-            self.feeTF.text = self.model.fee;
+            self.feeTF.text = [NSString stringWithFormat:@"%.2f",[self.model.fee floatValue]];
         } else {
             self.feeTF.text = @"";
         }
