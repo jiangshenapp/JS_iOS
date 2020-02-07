@@ -53,7 +53,7 @@
 #pragma mark - 初始化订单状态
 - (void)initOrderState:(NSInteger)typeFlage {
     if (typeFlage == 0) { //全部
-        self.orderState = @"0";
+        self.orderState = @"";
     }
     if (typeFlage == 1) { //发布中
         self.orderState = @"2";
