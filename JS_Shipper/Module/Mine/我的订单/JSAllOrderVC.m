@@ -65,7 +65,7 @@
         self.orderState = @"5";
     }
     if (typeFlage == 4) { //待收货
-        self.orderState = @"6，7";
+        self.orderState = @"6,7";
     }
 }
 
