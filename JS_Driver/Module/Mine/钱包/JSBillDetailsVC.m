@@ -91,7 +91,7 @@
     self.orderNoLab.text = [NSString stringWithFormat:@"订单编号：%@",model.tradeNo];
     self.orderTitleLab.text = model.remark;
     self.orderTimeLab.text = model.createTime;
-    self.orderMoneyLab.text = model.tradeMoney;
+    self.orderMoneyLab.text = [NSString stringWithFormat:@"%.2f",[model.tradeMoney floatValue]];
     if ([model.tradeMoney floatValue] < 0) {
         self.orderMoneyLab.textColor = RGBValue(0xD0021B);
     } else {
