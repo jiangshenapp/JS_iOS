@@ -75,7 +75,7 @@
     [self.navigationController setNavigationBarHidden:YES];
     self.currentPage = 1;
     if (@available(iOS 11.0, *)) {
-        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever; //iOS11 解决SafeArea的问题，同时能解决pop时上级页面scrollView抖动的问题
     }
     
     if (@available(iOS 13.0, *)) {

@@ -190,6 +190,9 @@
         case 0:
         {
             UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            if (@available(iOS 11, *)) { //解决图片被导航条遮挡的问题
+                UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+            }
             picker.allowsEditing = YES;
             picker.delegate = self;
             picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -223,6 +226,9 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    if (@available(iOS 11, *)) {
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever; //iOS11 解决SafeArea的问题，同时能解决pop时上级页面scrollView抖动的问题
+    }
     UIImage *iconImage = info[UIImagePickerControllerEditedImage];
     if (self.photoType == 1) {
         [self.idCardFrontBtn setImage:iconImage forState:UIControlStateNormal];
