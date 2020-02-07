@@ -1377,7 +1377,7 @@ Copyright © 2019</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjo-Vm-KX0">
-                                                <rect key="frame" x="59" y="49" width="90" height="17"/>
+                                                <rect key="frame" x="59" y="41.5" width="90" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="vHd-PI-3Zg"/>
                                                 </constraints>
@@ -1392,7 +1392,7 @@ Copyright © 2019</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTN-l2-Jay">
-                                                <rect key="frame" x="159" y="49" width="90" height="17"/>
+                                                <rect key="frame" x="159" y="41.5" width="90" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="VHh-to-r7J"/>
                                                 </constraints>
@@ -2975,7 +2975,7 @@ Copyright © 2019</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="发布中" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGI-7F-tTs">
-                                                            <rect key="frame" x="319" y="0.0" width="80" height="30"/>
+                                                            <rect key="frame" x="302" y="0.0" width="100" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.92549019610000005" green="0.65490196079999996" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
