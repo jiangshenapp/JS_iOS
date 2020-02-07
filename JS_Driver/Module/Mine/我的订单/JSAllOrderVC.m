@@ -71,7 +71,7 @@
 - (void)getData {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *para = [NSMutableDictionary dictionary];
-    [para setObject:self.orderState forKey:@"state"];
+    [para setObject:self.orderState forKey:@"stateList"];
     NSString *urlStr = [NSString stringWithFormat:@"%@?current=%ld&size=%@",URL_DriverOrdeList,_page,PageSize];
     [[NetworkManager sharedManager] postJSON:urlStr parameters:para completion:^(id responseData, RequestState status, NSError *error) {
         if (status==Request_Success) {
