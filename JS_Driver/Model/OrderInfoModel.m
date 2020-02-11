@@ -10,4 +10,14 @@
 
 @implementation OrderInfoModel
 
+- (NSString *)goodsVolume {
+    _goodsVolume = [NSString stringWithFormat:@"%.2f",[_goodsVolume doubleValue]];
+    return _goodsVolume;
+}
+
+- (NSString *)goodsWeight {
+    _goodsWeight = [NSString stringWithFormat:@"%.2f",[_goodsWeight doubleValue]];
+    return _goodsWeight;
+}
+
 @end

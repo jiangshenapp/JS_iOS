@@ -17,27 +17,6 @@
     return _driverAvatar;
 }
 
-//- (NSString *)commentImage1 {
-//    if (![_commentImage1 containsString:@"http"]) {
-//        _commentImage1 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_commentImage1];
-//    }
-//    return _commentImage1;
-//}
-//
-//- (NSString *)commentImage2 {
-//    if (![_commentImage2 containsString:@"http"]) {
-//        _commentImage2 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_commentImage2];
-//    }
-//    return _commentImage2;
-//}
-//
-//- (NSString *)commentImage3 {
-//    if (![_commentImage3 containsString:@"http"]) {
-//        _commentImage3 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_commentImage3];
-//    }
-//    return _commentImage3;
-//}
-
 - (NSString *)image1 {
     if (![_image1 containsString:@"http"]) {
         _image1 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image1];
@@ -50,6 +29,16 @@
         _image2 = [NSString stringWithFormat:@"%@%@",PIC_URL(),_image2];
     }
     return _image2;
+}
+
+- (NSString *)goodsVolume {
+    _goodsVolume = [NSString stringWithFormat:@"%.2f",[_goodsVolume doubleValue]];
+    return _goodsVolume;
+}
+
+- (NSString *)goodsWeight {
+    _goodsWeight = [NSString stringWithFormat:@"%.2f",[_goodsWeight doubleValue]];
+    return _goodsWeight;
 }
 
 @end
