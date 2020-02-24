@@ -87,12 +87,12 @@
     }
     NSString *code = codeArr[index];
     NSString *predicateStr = [NSString stringWithFormat:@"code = '%@'",code];
-     NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateStr];
-     NSArray *resultArr = [dataArr filteredArrayUsingPredicate:predicate];
-     NSDictionary *districtInfo ;
-     if (resultArr.count>0) {
-         districtInfo = [resultArr firstObject];
-     }
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateStr];
+    NSArray *resultArr = [dataArr filteredArrayUsingPredicate:predicate];
+    NSDictionary *districtInfo ;
+    if (resultArr.count>0) {
+        districtInfo = [resultArr firstObject];
+    }
     _streetArr = districtInfo[@"childs"];
     index++;
     [self getStreetArr:_streetArr];
